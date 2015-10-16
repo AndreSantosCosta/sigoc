@@ -23,3 +23,9 @@ Route::get('index', function () {
 Route::get('teste', function () {
     return "Ola";
 });
+
+Route::resource("militars","MilitarController");
+
+Route::resource("caos","CaoController");
+
+Route::resource("binomios","BinomioController");
