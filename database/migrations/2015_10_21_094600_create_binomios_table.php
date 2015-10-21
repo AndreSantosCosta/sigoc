@@ -15,8 +15,8 @@ class CreateBinomiosTable extends Migration {
 		Schema::create('binomios', function(Blueprint $table) {
             $table->increments('id');
             $table->date('data_inicio');
-            $table->string('num_mecanografico_id')->primary();
-            $table->string('num_matricula_id')->primary();
+            $table->string('num_mecanografico');
+            $table->string('num_matricula');
             $table->text('vertente');
             $table->boolean('inativo');
             $table->date('data_inativo')->nullable();

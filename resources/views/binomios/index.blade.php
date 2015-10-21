@@ -19,8 +19,8 @@
                         <tr>
                             <th>ID</th>
                             <th>DATA_INICIO</th>
-                        <th>NUM_MECANOGRAFICO_ID</th>
-                        <th>NUM_MATRICULA_ID</th>
+                        <th>NUM_MECANOGRAFICO</th>
+                        <th>NUM_MATRICULA</th>
                         <th>VERTENTE</th>
                         <th>INATIVO</th>
                         <th>DATA_INATIVO</th>
@@ -34,8 +34,8 @@
                             <tr>
                                 <td>{{$binomio->id}}</td>
                                 <td>{{$binomio->data_inicio}}</td>
-                    <td>{{$binomio->num_mecanografico_id}}</td>
-                    <td>{{$binomio->num_matricula_id}}</td>
+                    <td>{{$binomio->num_mecanografico}}</td>
+                    <td>{{$binomio->num_matricula}}</td>
                     <td>{{$binomio->vertente}}</td>
                     <td>{{$binomio->inativo}}</td>
                     <td>{{$binomio->data_inativo}}</td>

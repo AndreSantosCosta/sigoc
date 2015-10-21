@@ -27,12 +27,12 @@
                      <p class="form-control-static">{{$binomio->data_inicio}}</p>
                 </div>
                     <div class="form-group">
-                     <label for="num_mecanografico_id">NUM_MECANOGRAFICO_ID</label>
-                     <p class="form-control-static">{{$binomio->num_mecanografico_id}}</p>
+                     <label for="num_mecanografico">NUM_MECANOGRAFICO</label>
+                     <p class="form-control-static">{{$binomio->num_mecanografico}}</p>
                 </div>
                     <div class="form-group">
-                     <label for="num_matricula_id">NUM_MATRICULA_ID</label>
-                     <p class="form-control-static">{{$binomio->num_matricula_id}}</p>
+                     <label for="num_matricula">NUM_MATRICULA</label>
+                     <p class="form-control-static">{{$binomio->num_matricula}}</p>
                 </div>
                     <div class="form-group">
                      <label for="vertente">VERTENTE</label>

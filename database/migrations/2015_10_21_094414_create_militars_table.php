@@ -14,7 +14,7 @@ class CreateMilitarsTable extends Migration {
 	{
 		Schema::create('militars', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('num_mecanografico')->primary();
+            $table->string('num_mecanografico')->unique();
             $table->integer('posto_id')->unsigned();
             $table->string('apelido');
             $table->string('nome');

@@ -23,18 +23,18 @@
                         <span class="help-block">{{ $errors->first("data_inicio") }}</span>
                        @endif
                     </div>
-                    <div class="form-group @if($errors->has('num_mecanografico_id')) has-error @endif">
-                       <label for="num_mecanografico_id-field">Num_mecanografico_id</label>
-                    <input type="text" id="num_mecanografico_id-field" name="num_mecanografico_id" class="form-control" value="{{ $binomio->num_mecanografico_id }}"/>
-                       @if($errors->has("num_mecanografico_id"))
-                        <span class="help-block">{{ $errors->first("num_mecanografico_id") }}</span>
+                    <div class="form-group @if($errors->has('num_mecanografico')) has-error @endif">
+                       <label for="num_mecanografico-field">Num_mecanografico</label>
+                    <input type="text" id="num_mecanografico-field" name="num_mecanografico" class="form-control" value="{{ $binomio->num_mecanografico }}"/>
+                       @if($errors->has("num_mecanografico"))
+                        <span class="help-block">{{ $errors->first("num_mecanografico") }}</span>
                        @endif
                     </div>
-                    <div class="form-group @if($errors->has('num_matricula_id')) has-error @endif">
-                       <label for="num_matricula_id-field">Num_matricula_id</label>
-                    <input type="text" id="num_matricula_id-field" name="num_matricula_id" class="form-control" value="{{ $binomio->num_matricula_id }}"/>
-                       @if($errors->has("num_matricula_id"))
-                        <span class="help-block">{{ $errors->first("num_matricula_id") }}</span>
+                    <div class="form-group @if($errors->has('num_matricula')) has-error @endif">
+                       <label for="num_matricula-field">Num_matricula</label>
+                    <input type="text" id="num_matricula-field" name="num_matricula" class="form-control" value="{{ $binomio->num_matricula }}"/>
+                       @if($errors->has("num_matricula"))
+                        <span class="help-block">{{ $errors->first("num_matricula") }}</span>
                        @endif
                     </div>
                     <div class="form-group @if($errors->has('vertente')) has-error @endif">
