@@ -11,14 +11,13 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', ['as' => 'home', function () {
     return view('index');
-});
+}]);
 
 Route::get('index', function () {
     return view::make('');
 });
-
 
 Route::get('teste', function () {
     return "Ola";

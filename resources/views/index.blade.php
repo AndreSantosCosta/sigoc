@@ -82,7 +82,7 @@
             <span class="icon-bar"></span>
           </button>-->
           <?php /*<a class="navbar-brand" href="#">Project name</a>*/ ?>
-          <a class="navbar-brand" href="{{ url('resources/views/index') }}">
+          <a class="navbar-brand" href="{{ route('home') }}">
             <img src="{{ asset ('assets/img/logo_sigoc.png') }}" alt="sigoc">
           </a>
         </div>
