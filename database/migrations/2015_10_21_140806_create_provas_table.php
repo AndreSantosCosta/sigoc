@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBinomiosTable extends Migration {
+class CreateProvasTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,15 +12,13 @@ class CreateBinomiosTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('binomios', function(Blueprint $table) {
+		Schema::create('provas', function(Blueprint $table) {
             $table->increments('id');
-            $table->date('data_inicio');
+            $table->string('tipo_prova');
+            $table->date('data_prova');
             $table->integer('militar_id')->unsigned();
             $table->integer('cao_id')->unsigned();
-            $table->text('vertente');
-            $table->boolean('inativo');
-            $table->date('data_inativo')->nullable();
-            $table->text('motivo_inativo')->nullable();
+            $table->integer('binomio_id')->unsigned();
             $table->timestamps();
         });
 	}
@@ -32,7 +30,7 @@ class CreateBinomiosTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('binomios');
+		Schema::drop('provas');
 	}
 
 }

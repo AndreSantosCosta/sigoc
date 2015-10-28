@@ -13,10 +13,17 @@ class ForeignKeysIndexs extends Migration
     public function up()
     {
         Schema::table('binomios', function($table){
-            $table->unique(['num_matricula','num_mecanografico']);
-
-
+            $table->unique(['cao_id','militar_id']);
+            //chaves estrangueiras..
+            $table->foreign('cao_id')->references('id')->on('caos');
+            $table->foreign('militar_id')->references('id')->on('militars');
         });
+
+        Schema::table('provas', function($table){
+            //chaves estrangueiras..
+        });
+
+        
     }
 
     /**
@@ -26,6 +33,11 @@ class ForeignKeysIndexs extends Migration
      */
     public function down()
     {
-        //
+         Schema::table('binomios', function($table){
+        $table->dropForeign('binomios_cao_id_foreign');
+         $table->dropForeign('binomios_militar_id_foreign');
+          $table->dropUnique('binomios_cao_id_militar_id_unique');
+    });
+
     }
 }
