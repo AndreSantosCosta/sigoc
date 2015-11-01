@@ -61,7 +61,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
     <!-- Custom styles for this template -->
-    <link href="{{ asset ('assets/css/index.css') }}" rel="stylesheet">
+    <link href="{{ asset ('assets/css/styles.css') }}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -92,14 +92,28 @@
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="{{ route('login') }}">Login</a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Alterar Senha</a></li>
+                        <li><a href="">Logout</a></li>
+                    </ul>
+            </li>
+          </ul>
+
+
         </div><!--/.nav-collapse -->
       </div>
     </nav>
     <!-- DIV AMARELA -->
-    <div id="barra-nav">
+    <div id="barra-navbar">
        <!-- <img src="{{ asset ('assets/img/barra_nav.png') }}" alt="barra_nav"> -->
     </div>
-
 
 @section('content')
     <!-- Header -->
@@ -126,10 +140,6 @@
     </div>
 @show
 
-
-
-
-
 <?php /*
     <div class="container">
 
@@ -149,7 +159,7 @@
  
 
     </div><!-- /.container -->
-  */ ?>
+*/ ?>
 
 
 

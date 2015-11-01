@@ -1,0 +1,150 @@
+/* ************************************************************************** */
+/* Global da Página                                                           */
+/* ************************************************************************** */
+
+body {
+	padding-top: 44px;
+	/*background-image: url('/assets/img/fundo_formas.jpg');*/
+	background-position-y: 60px;
+    /*background-repeat: repeat;*/
+    background-color: #080826;
+}
+
+html, body {
+	/*padding-top: 44px;*/
+	/*background-image: url ("/img/sigoc.jpg");*/
+	/*background-image: url('img/barra_nav.png');*/
+	
+}
+
+/* ************************************************************************** */
+/* Navbar da Página                                                           */
+/* ************************************************************************** */
+
+.navbar-brand{
+	padding: 9px 15px;
+}
+
+.navbar-nav>li>.dropdown-menu{
+	background-color: #080826;
+}
+
+.dropdown-menu>li>a{
+	color: #ffffff;
+}
+
+.dropdown-menu>li>a:hover{
+	background-color: #a37b40;
+	color: #080826;
+}
+
+.navbar-inverse {
+    background-color: #080826;
+    border-bottom: 0px;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+	background-color: #080826;
+	color: #a37b40;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+	color: #a37b40;
+}
+
+.navbar-inverse .navbar-nav>.open>a:focus{
+	background-color: #a37b40;
+	color: #080826;
+}
+
+/* ************************************************************************** */
+/* Barra de Navbar da Página                                                  */
+/* ************************************************************************** */
+
+#barra-navbar{
+	background-color: #a37b40;
+    height: 16px;
+}
+
+/* ************************************************************************** */
+/* Corpo da Página                                                            */
+/* ************************************************************************** */
+
+/* ****************************************************** */
+/* 		Comum no Corpo das Páginas                        */
+/* ****************************************************** */
+
+.geral_container {
+    text-align: center;
+    /*background-image: url('/assets/img/sigoc_1.jpg');*/
+    background-color: #ffffff;
+    margin: 30px;
+    opacity: 0.8;
+}
+
+/* ****************************************************** */
+/* 		Página Index                                      */
+/* ****************************************************** */
+
+.geral_container .container {
+    padding-top: 200px;
+    padding-bottom: 100px;
+}
+
+.col-lg-12 {
+    width: 100%;
+    padding: 0 70px 0 70px;
+}
+
+.geral_container .container .row .col-lg-12 .intro-text span.name{
+	font-family: "Futura";
+	font-size: 130px;
+	color: #a37b40;
+}
+
+.geral_container .container .row .col-lg-12 .sub-intro-text{
+	background-color: #a37b40;
+	height: 66px;
+    line-height: 66px;
+}
+
+.geral_container .container .row .col-lg-12 .sub-intro-text span.skills{
+	color: #ffffff;
+	opacity: 0.8;
+	font-family: "Futura";
+	font-size: 28px;
+	padding: 0 37px 0 37px;
+}
+
+/*.geral_container .container .row .col-lg-12 .sub-intro-text img.img-barra-left, .geral_container .container .row .col-lg-12 .sub-intro-text img.img-barra-right{
+	line-height: 66px;
+}*/
+
+/*.geral_container .container .row .col-lg-12 .sub-intro-text .sub-intro-text-left-color{
+	background-color: red;
+}
+.geral_container .container .row .col-lg-12 .sub-intro-text .sub-intro-text-right-color{
+	background-color: red;
+}*/
+
+/*
+.starter-template{
+	background-color: red;
+}*/
+
+/* ****************************************************** */
+/* 		Página Login                                      */
+/* ****************************************************** */
+
+.geral_container .container_login {
+    padding-top: 200px;
+    padding-bottom: 100px;
+    background-image: url('/assets/img/fundo_formas_2.jpg');
+    background-repeat: no-repeat;
+}
+
+

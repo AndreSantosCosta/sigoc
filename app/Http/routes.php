@@ -15,9 +15,15 @@ Route::get('/', ['as' => 'home', function () {
     return view('index');
 }]);
 
-Route::get('index', function () {
-    return view::make('');
-});
+//Route::get('index', function () {
+//    return view::make('');
+//});
+
+//Route::get('login', 'PagesController@login');
+
+Route::get('login', ['as' => 'login', function () {
+	return view('pages.login');
+}]);
 
 Route::get('teste', function () {
     return "Ola";
