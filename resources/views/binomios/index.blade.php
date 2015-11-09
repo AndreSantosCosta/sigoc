@@ -3,8 +3,8 @@
 @section('header')
     <div class="page-header clearfix">
         <h1>
-            <i class="glyphicon glyphicon-align-justify"></i> Binomios
-            <a class="btn btn-success pull-right" href="{{ route('binomios.create') }}"><i class="glyphicon glyphicon-plus"></i> Create</a>
+            <i class="glyphicon glyphicon-align-justify"></i> Binómios
+            <a class="btn btn-success pull-right" href="{{ route('binomios.create') }}"><i class="glyphicon glyphicon-plus"></i> Criar </a>
         </h1>
 
     </div>
@@ -19,8 +19,8 @@
                         <tr>
                             <th>ID</th>
                             <th>DATA_INICIO</th>
-                        <th>NUM_MECANOGRAFICO</th>
-                        <th>NUM_MATRICULA</th>
+                        <th>MILITAR_ID</th>
+                        <th>CAO_ID</th>
                         <th>VERTENTE</th>
                         <th>INATIVO</th>
                         <th>DATA_INATIVO</th>
@@ -34,8 +34,8 @@
                             <tr>
                                 <td>{{$binomio->id}}</td>
                                 <td>{{$binomio->data_inicio}}</td>
-                    <td>{{$binomio->num_mecanografico}}</td>
-                    <td>{{$binomio->num_matricula}}</td>
+                    <td>{{$binomio->militar_id}}</td>
+                    <td>{{$binomio->cao_id}}</td>
                     <td>{{$binomio->vertente}}</td>
                     <td>{{$binomio->inativo}}</td>
                     <td>{{$binomio->data_inativo}}</td>
@@ -55,7 +55,7 @@
                 </table>
                 {!! $binomios->render() !!}
             @else
-                <h3 class="text-center alert alert-info">Empty!</h3>
+                <h3 class="text-center alert alert-info">Vazio!</h3>
             @endif
 
         </div>

@@ -23,6 +23,13 @@
                         <span class="help-block">{{ $errors->first("num_mecanografico") }}</span>
                        @endif
                     </div>
+                    <div class="form-group @if($errors->has('user_id')) has-error @endif">
+                       <label for="user_id-field">User_id</label>
+                    <input type="text" id="user_id-field" name="user_id" class="form-control" value="{{ $militar->user_id }}"/>
+                       @if($errors->has("user_id"))
+                        <span class="help-block">{{ $errors->first("user_id") }}</span>
+                       @endif
+                    </div>
                     <div class="form-group @if($errors->has('posto_id')) has-error @endif">
                        <label for="posto_id-field">Posto_id</label>
                     <input type="text" id="posto_id-field" name="posto_id" class="form-control" value="{{ $militar->posto_id }}"/>

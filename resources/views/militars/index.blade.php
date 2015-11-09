@@ -3,8 +3,8 @@
 @section('header')
     <div class="page-header clearfix">
         <h1>
-            <i class="glyphicon glyphicon-align-justify"></i> Militars
-            <a class="btn btn-success pull-right" href="{{ route('militars.create') }}"><i class="glyphicon glyphicon-plus"></i> Create</a>
+            <i class="glyphicon glyphicon-align-justify"></i> Militares
+            <a class="btn btn-success pull-right" href="{{ route('militars.create') }}"><i class="glyphicon glyphicon-plus"></i> Criar </a>
         </h1>
 
     </div>
@@ -19,6 +19,7 @@
                         <tr>
                             <th>ID</th>
                             <th>NUM_MECANOGRAFICO</th>
+                        <th>USER_ID</th>
                         <th>POSTO_ID</th>
                         <th>APELIDO</th>
                         <th>NOME</th>
@@ -38,6 +39,7 @@
                             <tr>
                                 <td>{{$militar->id}}</td>
                                 <td>{{$militar->num_mecanografico}}</td>
+                    <td>{{$militar->user_id}}</td>
                     <td>{{$militar->posto_id}}</td>
                     <td>{{$militar->apelido}}</td>
                     <td>{{$militar->nome}}</td>
@@ -63,7 +65,7 @@
                 </table>
                 {!! $militars->render() !!}
             @else
-                <h3 class="text-center alert alert-info">Empty!</h3>
+                <h3 class="text-center alert alert-info">Vazio!</h3>
             @endif
 
         </div>

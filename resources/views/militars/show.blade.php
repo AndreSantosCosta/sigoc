@@ -27,6 +27,10 @@
                      <p class="form-control-static">{{$militar->num_mecanografico}}</p>
                 </div>
                     <div class="form-group">
+                     <label for="user_id">USER_ID</label>
+                     <p class="form-control-static">{{$militar->user_id}}</p>
+                </div>
+                    <div class="form-group">
                      <label for="posto_id">POSTO_ID</label>
                      <p class="form-control-static">{{$militar->posto_id}}</p>
                 </div>

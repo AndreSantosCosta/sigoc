@@ -14,7 +14,7 @@ class CreateCaosTable extends Migration {
 	{
 		Schema::create('caos', function(Blueprint $table) {
             $table->increments('id');
-           // $table->string('cao_id')->unique();
+            $table->string('num_matricula');
             $table->string('num_chip');
             $table->string('nome');
             $table->string('raca');

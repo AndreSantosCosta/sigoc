@@ -41,8 +41,8 @@ class BinomioController extends Controller {
 		$binomio = new Binomio();
 
 		$binomio->data_inicio = $request->input("data_inicio");
-        $binomio->num_mecanografico_id = $request->input("num_mecanografico_id");
-        $binomio->num_matricula_id = $request->input("num_matricula_id");
+        $binomio->militar_id = $request->input("militar_id");
+        $binomio->cao_id = $request->input("cao_id");
         $binomio->vertente = $request->input("vertente");
         $binomio->inativo = $request->input("inativo");
         $binomio->data_inativo = $request->input("data_inativo");
@@ -91,8 +91,8 @@ class BinomioController extends Controller {
 		$binomio = Binomio::findOrFail($id);
 
 		$binomio->data_inicio = $request->input("data_inicio");
-        $binomio->num_mecanografico_id = $request->input("num_mecanografico_id");
-        $binomio->num_matricula_id = $request->input("num_matricula_id");
+        $binomio->militar_id = $request->input("militar_id");
+        $binomio->cao_id = $request->input("cao_id");
         $binomio->vertente = $request->input("vertente");
         $binomio->inativo = $request->input("inativo");
         $binomio->data_inativo = $request->input("data_inativo");

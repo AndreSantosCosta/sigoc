@@ -2,7 +2,7 @@
 
 @section('header')
     <div class="page-header">
-        <h1><i class="glyphicon glyphicon-plus"></i> Binomios / Create </h1>
+        <h1><i class="glyphicon glyphicon-plus"></i> Criar Binómio </h1>
     </div>
 @endsection
 
@@ -22,18 +22,18 @@
                         <span class="help-block">{{ $errors->first("data_inicio") }}</span>
                        @endif
                     </div>
-                    <div class="form-group @if($errors->has('num_mecanografico')) has-error @endif">
-                       <label for="num_mecanografico-field">Num_mecanografico</label>
-                    <input type="text" id="num_mecanografico-field" name="num_mecanografico" class="form-control" value="{{ old("num_mecanografico") }}"/>
-                       @if($errors->has("num_mecanografico"))
-                        <span class="help-block">{{ $errors->first("num_mecanografico") }}</span>
+                    <div class="form-group @if($errors->has('militar_id')) has-error @endif">
+                       <label for="militar_id-field">Militar_id</label>
+                    <input type="text" id="militar_id-field" name="militar_id" class="form-control" value="{{ old("militar_id") }}"/>
+                       @if($errors->has("militar_id"))
+                        <span class="help-block">{{ $errors->first("militar_id") }}</span>
                        @endif
                     </div>
-                    <div class="form-group @if($errors->has('num_matricula')) has-error @endif">
-                       <label for="num_matricula-field">Num_matricula</label>
-                    <input type="text" id="num_matricula-field" name="num_matricula" class="form-control" value="{{ old("num_matricula") }}"/>
-                       @if($errors->has("num_matricula"))
-                        <span class="help-block">{{ $errors->first("num_matricula") }}</span>
+                    <div class="form-group @if($errors->has('cao_id')) has-error @endif">
+                       <label for="cao_id-field">Cao_id</label>
+                    <input type="text" id="cao_id-field" name="cao_id" class="form-control" value="{{ old("cao_id") }}"/>
+                       @if($errors->has("cao_id"))
+                        <span class="help-block">{{ $errors->first("cao_id") }}</span>
                        @endif
                     </div>
                     <div class="form-group @if($errors->has('vertente')) has-error @endif">
@@ -65,8 +65,8 @@
                        @endif
                     </div>
                 <div class="well well-sm">
-                    <button type="submit" class="btn btn-primary">Create</button>
-                    <a class="btn btn-link pull-right" href="{{ route('binomios.index') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>
+                    <button type="submit" class="btn btn-primary">Criar</button>
+                    <a class="btn btn-link pull-right" href="{{ route('binomios.index') }}"><i class="glyphicon glyphicon-backward"></i> Voltar</a>
                 </div>
             </form>
 

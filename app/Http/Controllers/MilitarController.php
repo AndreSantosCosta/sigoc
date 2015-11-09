@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Militar;
+use App\Posto;
 use Illuminate\Http\Request;
 
 class MilitarController extends Controller {
@@ -27,7 +28,8 @@ class MilitarController extends Controller {
 	 */
 	public function create()
 	{
-		return view('militars.create');
+		$listaPostos = Posto::all(['id', 'descricao']);
+		return view('militars.create', compact('listaPostos'));
 	}
 
 	/**
@@ -41,6 +43,7 @@ class MilitarController extends Controller {
 		$militar = new Militar();
 
 		$militar->num_mecanografico = $request->input("num_mecanografico");
+        $militar->user_id = $request->input("user_id");
         $militar->posto_id = $request->input("posto_id");
         $militar->apelido = $request->input("apelido");
         $militar->nome = $request->input("nome");
@@ -95,6 +98,7 @@ class MilitarController extends Controller {
 		$militar = Militar::findOrFail($id);
 
 		$militar->num_mecanografico = $request->input("num_mecanografico");
+        $militar->user_id = $request->input("user_id");
         $militar->posto_id = $request->input("posto_id");
         $militar->apelido = $request->input("apelido");
         $militar->nome = $request->input("nome");

@@ -138,6 +138,9 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
 
+        Laralib\L5scaffold\GeneratorsServiceProvider::class,
+        
+
         /*
          * Application Service Providers...
          */
@@ -145,8 +148,6 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
-        //Laralib\L5scaffold\GeneratorsServiceProvider::class,
 
     ],
 

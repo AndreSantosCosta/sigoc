@@ -15,22 +15,16 @@ Route::get('/', ['as' => 'home', function () {
     return view('index');
 }]);
 
-//Route::get('index', function () {
-//    return view::make('');
-//});
-
-//Route::get('login', 'PagesController@login');
-
 Route::get('login', ['as' => 'login', function () {
 	return view('pages.login');
 }]);
-
-Route::get('teste', function () {
-    return "Ola";
-});
 
 Route::resource("militars","MilitarController");
 
 Route::resource("caos","CaoController");
 
 Route::resource("binomios","BinomioController");
+
+Route::resource("provas","ProvaController");
+
+Route::resource("prova_tiros","ProvaTiroController"); 

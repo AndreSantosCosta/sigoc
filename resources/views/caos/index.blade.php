@@ -3,8 +3,8 @@
 @section('header')
     <div class="page-header clearfix">
         <h1>
-            <i class="glyphicon glyphicon-align-justify"></i> Caos
-            <a class="btn btn-success pull-right" href="{{ route('caos.create') }}"><i class="glyphicon glyphicon-plus"></i> Create</a>
+            <i class="glyphicon glyphicon-align-justify"></i> Cães
+            <a class="btn btn-success pull-right" href="{{ route('caos.create') }}"><i class="glyphicon glyphicon-plus"></i> Criar </a>
         </h1>
 
     </div>
@@ -69,7 +69,7 @@
                 </table>
                 {!! $caos->render() !!}
             @else
-                <h3 class="text-center alert alert-info">Empty!</h3>
+                <h3 class="text-center alert alert-info">Vazio!</h3>
             @endif
 
         </div>
