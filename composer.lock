@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "44958aa670be62ac7882d7227cfe9d14",
-    "content-hash": "489483defca3efcf3968c4806b87c834",
+    "hash": "6d7053ebbb5a51b29e45ca2c9b4f640f",
+    "content-hash": "6901dbc969d0ed76949feed4b8c5fd57",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -218,6 +218,52 @@
             "time": "2014-12-20 21:24:13"
         },
         {
+            "name": "illuminate/html",
+            "version": "v5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/html.git",
+                "reference": "3d1009bb8e0f25720c914af5c1f4015dd373c9ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/html/zipball/3d1009bb8e0f25720c914af5c1f4015dd373c9ef",
+                "reference": "3d1009bb8e0f25720c914af5c1f4015dd373c9ef",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "~5.0",
+                "illuminate/session": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Html\\": ""
+                },
+                "files": [
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "time": "2015-01-01 16:31:18"
+        },
+        {
             "name": "jakub-onderka/php-console-color",
             "version": "0.1",
             "source": {
@@ -372,7 +418,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/693caa92494e30418ba33e105b891943e7e80632",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/7e885d47e4f1627f3b28273d69321764f3bd3c33",
                 "reference": "1f804b9b518902f1fb736f86a8847b589f824a0f",
                 "shasum": ""
             },
@@ -1370,7 +1416,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/0d79bdce8d9fe348e98b74bc356815e7b4cbbdcb",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/3d306680ba2b547ce2569aaac07d665dbab7d5b2",
                 "reference": "8096996ca9869a0808c8b236daea22095468fb61",
                 "shasum": ""
             },
@@ -1495,7 +1541,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/routing/zipball/f18b924e9fb82b69124b5fd7da690868bb37959b",
+                "url": "https://api.github.com/repos/symfony/routing/zipball/26c3f4784cd99c67fc8693a748f45c847c8c23ab",
                 "reference": "96d2a38dff9bd674cbe0b7cd441f8e70dcc8cc41",
                 "shasum": ""
             },
@@ -1626,7 +1672,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/0cb77825db69e3ee169956d0dd46d70e9906198b",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/1f8908dda47aa8452d8f72064d9947b9503bcc0b",
                 "reference": "7ea1039d1abd76eb7e0a413ca90b123edf714b84",
                 "shasum": ""
             },
@@ -2927,6 +2973,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "illuminate/html": 20,
         "laralib/l5scaffold": 20,
         "laracasts/generators": 20
     },

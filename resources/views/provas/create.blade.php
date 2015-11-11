@@ -16,14 +16,14 @@
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                 <div class="form-group @if($errors->has('tipo_prova')) has-error @endif">
-                       <label for="tipo_prova-field">Tipo_prova</label>
+                       <label for="tipo_prova-field">Prova</label>
                     <input type="text" id="tipo_prova-field" name="tipo_prova" class="form-control" value="{{ old("tipo_prova") }}"/>
                        @if($errors->has("tipo_prova"))
                         <span class="help-block">{{ $errors->first("tipo_prova") }}</span>
                        @endif
                     </div>
                     <div class="form-group @if($errors->has('data_prova')) has-error @endif">
-                       <label for="data_prova-field">Data_prova</label>
+                       <label for="data_prova-field">Data de Prova</label>
                     <input type="text" id="data_prova-field" name="data_prova" class="form-control" value="{{ old("data_prova") }}"/>
                        @if($errors->has("data_prova"))
                         <span class="help-block">{{ $errors->first("data_prova") }}</span>

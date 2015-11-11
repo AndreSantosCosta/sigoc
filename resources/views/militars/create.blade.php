@@ -14,15 +14,9 @@
 
   <form action="{{ route('militars.store') }}" method="POST">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-    <div class="col-md-12">
-      <div class="form-group @if($errors->has('num_mecanografico')) has-error @endif">
-       <label for="num_mecanografico-field">Número Mecanográfico</label>
-       <input type="text" id="num_mecanografico-field" name="num_mecanografico" class="form-control" value="{{ old("num_mecanografico") }}"/>
-       @if($errors->has("num_mecanografico"))
-       <span class="help-block">{{ $errors->first("num_mecanografico") }}</span>
-       @endif
-     </div> 
-   </div>
+
+
+
                    <?php /* <div class="form-group @if($errors->has('user_id')) has-error @endif">
                        <label for="user_id-field">User_id</label>
                     <input type="text" id="user_id-field" name="user_id" class="form-control" value="{{ old("user_id") }}"/>
@@ -37,34 +31,44 @@
                         <span class="help-block">{{ $errors->first("posto_id") }}</span>
                        @endif
                      </div> */?>
-
-                     <div class="col-md-6">
-                      <div class="form-group @if($errors->has('nome')) has-error @endif">
-                       <label for="nome-field">Nome</label>
-                       <input type="text" id="nome-field" name="nome" class="form-control" value="{{ old("nome") }}"/>
-                       @if($errors->has("nome"))
-                       <span class="help-block">{{ $errors->first("nome") }}</span>
-                       @endif
+      
+                       <div class="col-md-4">
+                        <div class="form-group @if($errors->has('nome')) has-error @endif">
+                         <label for="nome-field">Nome</label>
+                         <input type="text" id="nome-field" name="nome" class="form-control" value="{{ old("nome") }}"/>
+                         @if($errors->has("nome"))
+                         <span class="help-block">{{ $errors->first("nome") }}</span>
+                         @endif
+                       </div>
                      </div>
-                   </div>
-                   <div class="col-md-6">
-                     <div class="form-group @if($errors->has('apelido')) has-error @endif">
-                       <label for="apelido-field">Apelido</label>
-                       <input type="text" id="apelido-field" name="apelido" class="form-control" value="{{ old("apelido") }}"/>
-                       @if($errors->has("apelido"))
-                       <span class="help-block">{{ $errors->first("apelido") }}</span>
-                       @endif
+                     <div class="col-md-4">
+                       <div class="form-group @if($errors->has('apelido')) has-error @endif">
+                         <label for="apelido-field">Apelido</label>
+                         <input type="text" id="apelido-field" name="apelido" class="form-control" value="{{ old("apelido") }}"/>
+                         @if($errors->has("apelido"))
+                         <span class="help-block">{{ $errors->first("apelido") }}</span>
+                         @endif
+                       </div>
                      </div>
-                   </div>
+                     <div class="col-md-4">
+                       <div class="form-group @if($errors->has('num_mecanografico')) has-error @endif">
+                         <label for="num_mecanografico-field">Número Mecanográfico</label>
+                         <input type="text" id="num_mecanografico-field" name="num_mecanografico" class="form-control" value="{{ old("num_mecanografico") }}"/>
+                         @if($errors->has("num_mecanografico"))
+                         <span class="help-block">{{ $errors->first("num_mecanografico") }}</span>
+                         @endif
+                       </div> 
+                     </div> 
+                  
                    <div class="col-md-6">
                     <div class="form-group @if($errors->has('posto_id')) has-error @endif">
-                    <label for="posto_id-field">Posto</label>
-                     <input type="text" id="posto_id-field" name="posto_id" class="form-control" value="{{ old("posto_id") }}"/>
-                     @if($errors->has("posto_id"))
-                     <span class="help-block">{{ $errors->first("posto_id") }}</span>
-                     @endif
-                   </div>  
-                 </div> 
+                      <label for="posto_id-field">Posto</label>
+                      <input type="text" id="posto_id-field" name="posto_id" class="form-control" value="{{ old("posto_id") }}"/>
+                      @if($errors->has("posto_id"))
+                      <span class="help-block">{{ $errors->first("posto_id") }}</span>
+                      @endif
+                    </div>  
+                  </div> 
                   <?php /* <div class="col-md-6">
                      <div class="form-group @if($errors->has('posto_id')) has-error @endif">
                        <label for="posto_id-field">Posto</label>
