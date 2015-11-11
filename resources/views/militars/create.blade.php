@@ -1,3 +1,4 @@
+
 @extends('layout')
 
 @section('header')
@@ -10,6 +11,7 @@
 @include('error')
 
 <div class="row">
+
 
 
   <form action="{{ route('militars.store') }}" method="POST">
@@ -69,6 +71,20 @@
                       @endif
                     </div>  
                   </div> 
+
+                                      <div class="col-md-6">
+                       <div class="form-group @if($errors->has('posto_id')) has-error @endif">
+                         <label for="posto_id-field">Posto</label>
+                         <select class="form-control" name="posto_id">
+                           @foreach($listaPostos as $item)
+                           <option value="{{$item->id}}">{{$item->descricao}}</option>
+                           @endforeach
+                         </select>
+                         @if($errors->has("posto_id"))
+                         <span class="help-block">{{ $errors->first("posto_id") }}</span>
+                         @endif
+                       </div>
+                     </div> 
                   <?php /* <div class="col-md-6">
                      <div class="form-group @if($errors->has('posto_id')) has-error @endif">
                        <label for="posto_id-field">Posto</label>

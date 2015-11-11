@@ -43,17 +43,17 @@ class MilitarController extends Controller {
 		$militar = new Militar();
 
 		$militar->num_mecanografico = $request->input("num_mecanografico");
-        $militar->user_id = $request->input("user_id");
-        $militar->posto_id = $request->input("posto_id");
-        $militar->apelido = $request->input("apelido");
-        $militar->nome = $request->input("nome");
-        $militar->data_nascim = $request->input("data_nascim");
-        $militar->grupo_sang = $request->input("grupo_sang");
-        $militar->sexo = $request->input("sexo");
-        $militar->unidade_id = $request->input("unidade_id");
-        $militar->inativo = $request->input("inativo");
-        $militar->data_inativo = $request->input("data_inativo");
-        $militar->motivo_inativo = $request->input("motivo_inativo");
+		$militar->user_id = $request->input("user_id");
+		$militar->posto_id = $request->input("posto_id");
+		$militar->apelido = $request->input("apelido");
+		$militar->nome = $request->input("nome");
+		$militar->data_nascim = $request->input("data_nascim");
+		$militar->grupo_sang = $request->input("grupo_sang");
+		$militar->sexo = $request->input("sexo");
+		$militar->unidade_id = $request->input("unidade_id");
+		$militar->inativo = $request->input("inativo");
+		$militar->data_inativo = $request->input("data_inativo");
+		$militar->motivo_inativo = $request->input("motivo_inativo");
 
 		$militar->save();
 
@@ -82,8 +82,16 @@ class MilitarController extends Controller {
 	public function edit($id)
 	{
 		$militar = Militar::findOrFail($id);
+		$listaPostos = Posto::all(['id', 'descricao']);
+	
 
-		return view('militars.edit', compact('militar'));
+		//$listaPostos = Posto::all(['id', 'descricao'])->toArray(); //Posto::lists('descricao', 'id');
+
+		$listaPostos = Posto::lists('descricao', 'id');
+
+		$gruposSang= array('A','B','AB');
+
+		return view('militars.edit', compact('militar', 'listaPostos','gruposSang'));
 	}
 
 	/**
@@ -98,17 +106,17 @@ class MilitarController extends Controller {
 		$militar = Militar::findOrFail($id);
 
 		$militar->num_mecanografico = $request->input("num_mecanografico");
-        $militar->user_id = $request->input("user_id");
-        $militar->posto_id = $request->input("posto_id");
-        $militar->apelido = $request->input("apelido");
-        $militar->nome = $request->input("nome");
-        $militar->data_nascim = $request->input("data_nascim");
-        $militar->grupo_sang = $request->input("grupo_sang");
-        $militar->sexo = $request->input("sexo");
-        $militar->unidade_id = $request->input("unidade_id");
-        $militar->inativo = $request->input("inativo");
-        $militar->data_inativo = $request->input("data_inativo");
-        $militar->motivo_inativo = $request->input("motivo_inativo");
+		$militar->user_id = $request->input("user_id");
+		$militar->posto_id = $request->input("posto_id");
+		$militar->apelido = $request->input("apelido");
+		$militar->nome = $request->input("nome");
+		$militar->data_nascim = $request->input("data_nascim");
+		$militar->grupo_sang = $request->input("grupo_sang");
+		$militar->sexo = $request->input("sexo");
+		$militar->unidade_id = $request->input("unidade_id");
+		$militar->inativo = $request->input("inativo");
+		$militar->data_inativo = $request->input("data_inativo");
+		$militar->motivo_inativo = $request->input("motivo_inativo");
 
 		$militar->save();
 

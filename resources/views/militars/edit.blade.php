@@ -9,6 +9,26 @@
 @section('content')
     @include('error')
 
+<div class="row">
+{!! Form::model($militar, array('route' => array( 'militars.update', $militar->id ), 'method' =>'put')) !!}
+    {!! Form::label('nome') !!}
+    {!! Form::text('nome') !!}
+
+    {!! Form::label('data_nascim', 'Data') !!}
+    {!! Form::date('data_nascim') !!}
+
+    {!! Form::label('grupo_sang') !!}
+    {!! Form::text('grupo_sang') !!}
+
+    {!! Form::select('grupo_sang', $gruposSang, $militar->grupo_sang, array('class'=>'form-control')) !!}
+    
+    {!! Form::select('posto_id', $listaPostos, $militar->posto_id) !!}
+
+    {!! Form::submit('Send') !!}
+
+{!! Form::close() !!}
+</div>
+
     <div class="row">
         <div class="col-md-12">
 
@@ -37,6 +57,7 @@
                         <span class="help-block">{{ $errors->first("posto_id") }}</span>
                        @endif
                     </div>
+
                     <div class="form-group @if($errors->has('apelido')) has-error @endif">
                        <label for="apelido-field">Apelido</label>
                     <input type="text" id="apelido-field" name="apelido" class="form-control" value="{{ $militar->apelido }}"/>
