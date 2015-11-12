@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-    Index
+    SIGOC
 @stop
 
 @section('content')
