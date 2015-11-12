@@ -12,4 +12,9 @@ class Militar extends Model
 		return $posto->descricao;
 	}
 
+	public function getNomeUnidadeAttribute(){
+		$unidade = Unidade::findOrFail($this->unidade_id);
+		return $unidade->descricao;
+	}
+
 }

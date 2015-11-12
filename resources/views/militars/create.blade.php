@@ -10,9 +10,11 @@
 @section('content')
 @include('error')
 
+
+
 <div class="row">
 
-
+<div class="col-md-12">
 
   <form action="{{ route('militars.store') }}" method="POST">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -33,35 +35,35 @@
                         <span class="help-block">{{ $errors->first("posto_id") }}</span>
                        @endif
                      </div> */?>
-      
-                       <div class="col-md-4">
-                        <div class="form-group @if($errors->has('nome')) has-error @endif">
-                         <label for="nome-field">Nome</label>
-                         <input type="text" id="nome-field" name="nome" class="form-control" value="{{ old("nome") }}"/>
-                         @if($errors->has("nome"))
-                         <span class="help-block">{{ $errors->first("nome") }}</span>
-                         @endif
-                       </div>
-                     </div>
+
                      <div class="col-md-4">
-                       <div class="form-group @if($errors->has('apelido')) has-error @endif">
-                         <label for="apelido-field">Apelido</label>
-                         <input type="text" id="apelido-field" name="apelido" class="form-control" value="{{ old("apelido") }}"/>
-                         @if($errors->has("apelido"))
-                         <span class="help-block">{{ $errors->first("apelido") }}</span>
-                         @endif
-                       </div>
+                      <div class="form-group @if($errors->has('nome')) has-error @endif">
+                       <label for="nome-field">Nome</label>
+                       <input type="text" id="nome-field" name="nome" class="form-control" value="{{ old("nome") }}"/>
+                       @if($errors->has("nome"))
+                       <span class="help-block">{{ $errors->first("nome") }}</span>
+                       @endif
                      </div>
-                     <div class="col-md-4">
-                       <div class="form-group @if($errors->has('num_mecanografico')) has-error @endif">
-                         <label for="num_mecanografico-field">Número Mecanográfico</label>
-                         <input type="text" id="num_mecanografico-field" name="num_mecanografico" class="form-control" value="{{ old("num_mecanografico") }}"/>
-                         @if($errors->has("num_mecanografico"))
-                         <span class="help-block">{{ $errors->first("num_mecanografico") }}</span>
-                         @endif
-                       </div> 
+                   </div>
+                   <div class="col-md-4">
+                     <div class="form-group @if($errors->has('apelido')) has-error @endif">
+                       <label for="apelido-field">Apelido</label>
+                       <input type="text" id="apelido-field" name="apelido" class="form-control" value="{{ old("apelido") }}"/>
+                       @if($errors->has("apelido"))
+                       <span class="help-block">{{ $errors->first("apelido") }}</span>
+                       @endif
+                     </div>
+                   </div>
+                   <div class="col-md-4">
+                     <div class="form-group @if($errors->has('num_mecanografico')) has-error @endif">
+                       <label for="num_mecanografico-field">Número Mecanográfico</label>
+                       <input type="text" id="num_mecanografico-field" name="num_mecanografico" class="form-control" value="{{ old("num_mecanografico") }}"/>
+                       @if($errors->has("num_mecanografico"))
+                       <span class="help-block">{{ $errors->first("num_mecanografico") }}</span>
+                       @endif
                      </div> 
-                  
+                   </div> 
+
                    <div class="col-md-6">
                     <div class="form-group @if($errors->has('posto_id')) has-error @endif">
                       <label for="posto_id-field">Posto</label>
@@ -72,19 +74,19 @@
                     </div>  
                   </div> 
 
-                                      <div class="col-md-6">
-                       <div class="form-group @if($errors->has('posto_id')) has-error @endif">
-                         <label for="posto_id-field">Posto</label>
-                         <select class="form-control" name="posto_id">
-                           @foreach($listaPostos as $item)
-                           <option value="{{$item->id}}">{{$item->descricao}}</option>
-                           @endforeach
-                         </select>
-                         @if($errors->has("posto_id"))
-                         <span class="help-block">{{ $errors->first("posto_id") }}</span>
-                         @endif
-                       </div>
-                     </div> 
+                  <div class="col-md-6">
+                   <div class="form-group @if($errors->has('posto_id')) has-error @endif">
+                     <label for="posto_id-field">Posto</label>
+                     <select class="form-control" name="posto_id">
+                       @foreach($listaPostos as $item)
+                       <option value="{{$item->id}}">{{$item->descricao}}</option>
+                       @endforeach
+                     </select>
+                     @if($errors->has("posto_id"))
+                     <span class="help-block">{{ $errors->first("posto_id") }}</span>
+                     @endif
+                   </div>
+                 </div> 
                   <?php /* <div class="col-md-6">
                      <div class="form-group @if($errors->has('posto_id')) has-error @endif">
                        <label for="posto_id-field">Posto</label>
@@ -167,6 +169,8 @@
          @endif
        </div>
 
+
+        
        <div class="well well-sm">
          <button type="submit" class="btn btn-primary">Criar</button>
          <a class="btn btn-link pull-right" href="{{ route('militars.index') }}"><i class="glyphicon glyphicon-backward"></i> Voltar</a>
@@ -175,4 +179,6 @@
 
    </div>
  </div>
+
+
  @endsection

@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Militar;
 use App\Posto;
+use App\Unidade;
 use Illuminate\Http\Request;
 
 class MilitarController extends Controller {
@@ -29,7 +30,11 @@ class MilitarController extends Controller {
 	public function create()
 	{
 		$listaPostos = Posto::all(['id', 'descricao']);
-		return view('militars.create', compact('listaPostos'));
+		$listaUnidades = Unidade::lists('descricao', 'id');
+		$gruposSang= array('A+','A-','B+','B-','O+','O-','AB+','AB-');
+		$listaMotivos = array('Afasto da Especialidade porIncapacidade Técnica', 'Reforma','Transferido','Morte');
+		$listaSexo = array('Feminino', 'Masculino');
+		return view('militars.create', compact('listaPostos','listaUnidades','gruposSang','listaSexo','listaMotivos'));
 	}
 
 	/**
@@ -82,18 +87,20 @@ class MilitarController extends Controller {
 	public function edit($id)
 	{
 		$militar = Militar::findOrFail($id);
-		$listaPostos = Posto::all(['id', 'descricao']);
 	
-
-		//$listaPostos = Posto::all(['id', 'descricao'])->toArray(); //Posto::lists('descricao', 'id');
-
 		$listaPostos = Posto::lists('descricao', 'id');
 
-		$gruposSang= array('A','B','AB');
+		$listaUnidades = Unidade::lists('descricao', 'id');
+		
+		$gruposSang= array('A+','A-','B+','B-','O+','O-','AB+','AB-');
 
-		return view('militars.edit', compact('militar', 'listaPostos','gruposSang'));
+		$listaMotivos = array('Afasto da Especialidade por Incapacidade Técnica', 'Reforma','Transferido','Morte');
+
+		$listaSexo = array('Feminino', 'Masculino');
+
+		return view('militars.edit', compact('militar', 'listaPostos','gruposSang', 'listaUnidades', 'listaSexo','listaMotivos'));
 	}
-
+  
 	/**
 	 * Update the specified resource in storage.
 	 *
