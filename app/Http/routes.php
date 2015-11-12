@@ -29,4 +29,4 @@ Route::resource("binomios","BinomioController");
 
 Route::resource("provas","ProvaController");
 
-Route::resource("prova_tiros","ProvaTiroController"); 
+Route::resource("prova_tiros","ProvaTiroController");

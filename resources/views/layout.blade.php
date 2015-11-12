@@ -60,6 +60,7 @@
     <!-- DIV AMARELA -->
     <div id="barra-navbar">
     </div>
+@yield('header')
 @yield('content')
 
     <!-- Bootstrap core JavaScript
