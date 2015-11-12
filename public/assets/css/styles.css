@@ -7,7 +7,7 @@ body {
 	/*background-image: url('/assets/img/fundo_formas.jpg');*/
 	background-position-y: 60px;
     /*background-repeat: repeat;*/
-    background-color: #A1A1A1;
+    background-color: #080826;
 }
 
 html, body {
@@ -146,5 +146,3 @@ html, body {
     background-image: url('/assets/img/fundo_formas_2.jpg');
     background-repeat: no-repeat;
 }
-
-

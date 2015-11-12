@@ -12,12 +12,18 @@
 */
 
 Route::get('/', ['as' => 'home', function () {
-    return view('index');
+    return view('layout');
 }]);
 
 Route::get('login', ['as' => 'login', function () {
 	return view('pages.login');
 }]);
+
+Route::get('index', ['as' => 'index', function () {
+	return view('pages.index');
+}]);
+
+
 
 Route::resource("militars","MilitarController");
 
