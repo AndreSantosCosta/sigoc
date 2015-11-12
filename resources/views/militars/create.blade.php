@@ -10,17 +10,13 @@
 @section('content')
 @include('error')
 
-
-
 <div class="row">
 
-  <div class="col-md-12">
-    {!! Form::open(array('route' => array( 'militars.store'), 'method' =>'PUT')) !!}
-    
+  {!! Form::open(array('route' => array( 'militars.store'), 'method' =>'PUT')) !!}
     <div class="col-md-4">
       <div class="form-group @if($errors->has('nome')) has-error @endif">
         {!! Form::label('nome', 'Nome') !!}
-        {!! Form::text('nome') !!}
+        {!! Form::text('nome', '', ['class'=>'form-control']) !!}
         @if($errors->has("nome"))
         <span class="help-block">{{ $errors->first("nome") }}</span>
         @endif
@@ -29,7 +25,7 @@
     <div class="col-md-4">
      <div class="form-group @if($errors->has('apelido')) has-error @endif">
        {!! Form::label('apelido', 'Apelido') !!}
-       {!! Form::text('apelido') !!}
+       {!! Form::text('apelido','', ['class'=>'form-control']) !!}
        @if($errors->has("apelido"))
        <span class="help-block">{{ $errors->first("apelido") }}</span>
        @endif
@@ -38,7 +34,7 @@
    <div class="col-md-4">
      <div class="form-group @if($errors->has('num_mecanografico')) has-error @endif">
        {!! Form::label('num_mecanografico', 'Número Mecanográfico') !!}
-       {!! Form::text('num_mecanografico') !!}
+       {!! Form::text('num_mecanografico','', ['class'=>'form-control']) !!}
        @if($errors->has("num_mecanografico"))
        <span class="help-block">{{ $errors->first("num_mecanografico") }}</span>
        @endif
@@ -47,7 +43,7 @@
    <div class="col-md-6">
      <div class="form-group @if($errors->has('posto_id')) has-error @endif">
        {!! Form::label('posto_id', 'Posto') !!}
-       {!! Form::select('posto_id', $listaPostos) !!}
+       {!! Form::select('posto_id', $listaPostos,'', ['class'=>'form-control']) !!}
        @if($errors->has("posto_id"))
        <span class="help-block">{{ $errors->first("posto_id") }}</span>
        @endif
@@ -56,16 +52,17 @@
    <div class="col-md-6">
     <div class="form-group @if($errors->has('unidade_id')) has-error @endif">
      {!! Form::label('unidade_id', 'Unidade') !!}
-     {!! Form::select('unidade_id', $listaUnidades) !!}
+     {!! Form::select('unidade_id', $listaUnidades,'', ['class'=>'form-control']) !!}
      @if($errors->has("unidade_id"))
      <span class="help-block">{{ $errors->first("unidade_id") }}</span>
      @endif
    </div>
  </div>
+
  <div class="col-md-3">
   <div class="form-group @if($errors->has('data_nascim')) has-error @endif">
    {!! Form::label('data_nascim', 'Data de Nascimento') !!}
-   {!! Form::date('data_nascim') !!}
+   {!! Form::date('data_nascim','', ['class'=>'form-control']) !!}
    @if($errors->has("data_nascim"))
    <span class="help-block">{{ $errors->first("data_nascim") }}</span>
    @endif
@@ -74,7 +71,7 @@
 <div class="col-md-3">
   <div class="form-group @if($errors->has('grupo_sang')) has-error @endif">
     {!! Form::label('grupo_sang', 'Grupo Sanguíneo') !!}
-    {!! Form::select('grupo_sang', $gruposSang) !!}
+    {!! Form::select('grupo_sang', $gruposSang,'', ['class'=>'form-control']) !!}
     @if($errors->has("grupo_sang"))
     <span class="help-block">{{ $errors->first("grupo_sang") }}</span>
     @endif
@@ -83,16 +80,19 @@
 <div class="col-md-3">
   <div class="form-group @if($errors->has('sexo')) has-error @endif">
     {!! Form::label('sexo', 'Sexo') !!}
-    {!! Form::select('sexo', $listaSexo) !!}
+    {!! Form::select('sexo', $listaSexo,'', ['class'=>'form-control']) !!}
     @if($errors->has("sexo"))
     <span class="help-block">{{ $errors->first("sexo") }}</span>
     @endif
   </div>
 </div>
-<div class="col-md-6">
+<div class="col-md-4">
+
+</div>
+<div class="col-md-2">
   <div class="form-group @if($errors->has('inativo')) has-error @endif">
    {!! Form::label('inativo', 'Inativo') !!}
-   {!! Form::radio('inativo') !!}
+   {!! Form::radio('inativo','', ['class'=>'form-control']) !!}
    @if($errors->has("inativo"))
    <span class="help-block">{{ $errors->first("inativo") }}</span>
    @endif
@@ -101,7 +101,7 @@
 <div class="col-md-6">
   <div class="form-group @if($errors->has('data_inativo')) has-error @endif">
     {!! Form::label('data_inativo', 'Data de Inativação') !!}
-    {!! Form::date('data_inativo') !!}
+    {!! Form::date('data_inativo','', ['class'=>'form-control']) !!}
     @if($errors->has("data_inativo"))
     <span class="help-block">{{ $errors->first("data_inativo") }}</span>
     @endif
@@ -110,7 +110,7 @@
 <div class="col-md-12">
   <div class="form-group @if($errors->has('motivo_inativo')) has-error @endif">
     {!! Form::label('motivo_inativo', 'Motivo de Inativação') !!}
-    {!! Form::select('motivo_inativo', $listaMotivos) !!}
+    {!! Form::select('motivo_inativo', $listaMotivos,'', ['class'=>'form-control']) !!}
     @if($errors->has("motivo_inativo"))
     <span class="help-block">{{ $errors->first("motivo_inativo") }}</span>
     @endif
@@ -122,8 +122,10 @@
     <a class="btn btn-link pull-right" href="{{ route('militars.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
   </div>
 </div>
+
 {!! Form::close() !!}
 
+</div>
 
 <?php /* <form action="{{ route('militars.store') }}" method="POST">
   <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -283,8 +285,8 @@
        </div>
      </form>
 */?>
-   </div>
- </div>
+ 
+
 
 
  @endsection
