@@ -29,7 +29,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="{{ route('index') }}">
+          <a class="navbar-brand" href="{{ route('home') }}">
             <img src="{{ asset ('assets/img/logo_sigoc.png') }}" alt="sigoc">
           </a>
         </div>
