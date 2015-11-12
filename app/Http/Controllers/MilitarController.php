@@ -33,6 +33,7 @@ class MilitarController extends Controller {
 		$listaUnidades = Unidade::lists('descricao', 'id');
 		$gruposSang= array('A+','A-','B+','B-','O+','O-','AB+','AB-');
 		$listaMotivos = array('Afasto da Especialidade porIncapacidade Técnica', 'Reforma','Transferido','Morte');
+		$listaSexo = array('F'=>'Feminino', 'M'=>'Masculino');
 		$listaSexo = array('Feminino', 'Masculino');
 		return view('militars.create', compact('listaPostos','listaUnidades','gruposSang','listaSexo','listaMotivos'));
 	}
