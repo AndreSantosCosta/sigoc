@@ -29,7 +29,7 @@ class MilitarController extends Controller {
 	 */
 	public function create()
 	{
-		$listaPostos = Posto::all(['id', 'descricao']);
+		$listaPostos = Posto::lists('descricao', 'id');
 		$listaUnidades = Unidade::lists('descricao', 'id');
 		$gruposSang= array('A+','A-','B+','B-','O+','O-','AB+','AB-');
 		$listaMotivos = array('Afasto da Especialidade porIncapacidade Técnica', 'Reforma','Transferido','Morte');
