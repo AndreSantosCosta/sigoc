@@ -98,7 +98,7 @@
    @endif
  </div>
 </div>
-<div class="col-md-6">
+<div class="col-md-3">
   <div class="form-group @if($errors->has('data_inativo')) has-error @endif">
     {!! Form::label('data_inativo', 'Data de Inativação') !!}
     {!! Form::date('data_inativo','', ['class'=>'form-control']) !!}
@@ -107,7 +107,7 @@
     @endif
   </div>
 </div>
-<div class="col-md-12">
+<div class="col-md-7">
   <div class="form-group @if($errors->has('motivo_inativo')) has-error @endif">
     {!! Form::label('motivo_inativo', 'Motivo de Inativação') !!}
     {!! Form::select('motivo_inativo', $listaMotivos,'', ['class'=>'form-control']) !!}

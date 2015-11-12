@@ -12,7 +12,7 @@
 */
 
 Route::get('/', ['as' => 'home', function () {
-    return view('layout');
+    return view('pages.index');
 }]);
 
 Route::get('login', ['as' => 'login', function () {
