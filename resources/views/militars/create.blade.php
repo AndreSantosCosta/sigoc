@@ -14,14 +14,120 @@
 
 <div class="row">
 
+  <div class="col-md-12">
+    {!! Form::open(array('route' => array( 'militars.store'), 'method' =>'PUT')) !!}
+    
+    <div class="col-md-4">
+      <div class="form-group @if($errors->has('nome')) has-error @endif">
+        {!! Form::label('nome', 'Nome') !!}
+        {!! Form::text('nome') !!}
+        @if($errors->has("nome"))
+        <span class="help-block">{{ $errors->first("nome") }}</span>
+        @endif
+      </div>
+    </div>
+    <div class="col-md-4">
+     <div class="form-group @if($errors->has('apelido')) has-error @endif">
+       {!! Form::label('apelido', 'Apelido') !!}
+       {!! Form::text('apelido') !!}
+       @if($errors->has("apelido"))
+       <span class="help-block">{{ $errors->first("apelido") }}</span>
+       @endif
+     </div>
+   </div>
+   <div class="col-md-4">
+     <div class="form-group @if($errors->has('num_mecanografico')) has-error @endif">
+       {!! Form::label('num_mecanografico', 'Número Mecanográfico') !!}
+       {!! Form::text('num_mecanografico') !!}
+       @if($errors->has("num_mecanografico"))
+       <span class="help-block">{{ $errors->first("num_mecanografico") }}</span>
+       @endif
+     </div> 
+   </div> 
+   <div class="col-md-6">
+     <div class="form-group @if($errors->has('posto_id')) has-error @endif">
+       {!! Form::label('posto_id', 'Posto') !!}
+       {!! Form::select('posto_id', $listaPostos) !!}
+       @if($errors->has("posto_id"))
+       <span class="help-block">{{ $errors->first("posto_id") }}</span>
+       @endif
+     </div>
+   </div>
+   <div class="col-md-6">
+    <div class="form-group @if($errors->has('unidade_id')) has-error @endif">
+     {!! Form::label('unidade_id', 'Unidade') !!}
+     {!! Form::select('unidade_id', $listaUnidades) !!}
+     @if($errors->has("unidade_id"))
+     <span class="help-block">{{ $errors->first("unidade_id") }}</span>
+     @endif
+   </div>
+ </div>
+ <div class="col-md-3">
+  <div class="form-group @if($errors->has('data_nascim')) has-error @endif">
+   {!! Form::label('data_nascim', 'Data de Nascimento') !!}
+   {!! Form::date('data_nascim') !!}
+   @if($errors->has("data_nascim"))
+   <span class="help-block">{{ $errors->first("data_nascim") }}</span>
+   @endif
+ </div>
+</div>
+<div class="col-md-3">
+  <div class="form-group @if($errors->has('grupo_sang')) has-error @endif">
+    {!! Form::label('grupo_sang', 'Grupo Sanguíneo') !!}
+    {!! Form::select('grupo_sang', $gruposSang) !!}
+    @if($errors->has("grupo_sang"))
+    <span class="help-block">{{ $errors->first("grupo_sang") }}</span>
+    @endif
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="form-group @if($errors->has('sexo')) has-error @endif">
+    {!! Form::label('sexo', 'Sexo') !!}
+    {!! Form::select('sexo', $listaSexo) !!}
+    @if($errors->has("sexo"))
+    <span class="help-block">{{ $errors->first("sexo") }}</span>
+    @endif
+  </div>
+</div>
+<div class="col-md-6">
+  <div class="form-group @if($errors->has('inativo')) has-error @endif">
+   {!! Form::label('inativo', 'Inativo') !!}
+   {!! Form::radio('inativo') !!}
+   @if($errors->has("inativo"))
+   <span class="help-block">{{ $errors->first("inativo") }}</span>
+   @endif
+ </div>
+</div>
+<div class="col-md-6">
+  <div class="form-group @if($errors->has('data_inativo')) has-error @endif">
+    {!! Form::label('data_inativo', 'Data de Inativação') !!}
+    {!! Form::date('data_inativo') !!}
+    @if($errors->has("data_inativo"))
+    <span class="help-block">{{ $errors->first("data_inativo") }}</span>
+    @endif
+  </div>
+</div>
 <div class="col-md-12">
+  <div class="form-group @if($errors->has('motivo_inativo')) has-error @endif">
+    {!! Form::label('motivo_inativo', 'Motivo de Inativação') !!}
+    {!! Form::select('motivo_inativo', $listaMotivos) !!}
+    @if($errors->has("motivo_inativo"))
+    <span class="help-block">{{ $errors->first("motivo_inativo") }}</span>
+    @endif
+  </div>
+</div>
+<div class="col-md-12">
+  <div class="well well-sm">
+    {!! Form::submit('Criar', '', array('class'=>'btn btn-primary')) !!}
+    <a class="btn btn-link pull-right" href="{{ route('militars.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
+  </div>
+</div>
+{!! Form::close() !!}
 
-  <form action="{{ route('militars.store') }}" method="POST">
-    <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-
-
-                   <?php /* <div class="form-group @if($errors->has('user_id')) has-error @endif">
+<?php /* <form action="{{ route('militars.store') }}" method="POST">
+  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <div class="form-group @if($errors->has('user_id')) has-error @endif">
                        <label for="user_id-field">User_id</label>
                     <input type="text" id="user_id-field" name="user_id" class="form-control" value="{{ old("user_id") }}"/>
                        @if($errors->has("user_id"))
@@ -34,7 +140,7 @@
                        @if($errors->has("posto_id"))
                         <span class="help-block">{{ $errors->first("posto_id") }}</span>
                        @endif
-                     </div> */?>
+                     </div> 
 
                      <div class="col-md-4">
                       <div class="form-group @if($errors->has('nome')) has-error @endif">
@@ -74,7 +180,7 @@
                     </div>  
                   </div> 
 
-                  <div class="col-md-6">
+                   <div class="col-md-6">
                    <div class="form-group @if($errors->has('posto_id')) has-error @endif">
                      <label for="posto_id-field">Posto</label>
                      <select class="form-control" name="posto_id">
@@ -87,7 +193,7 @@
                      @endif
                    </div>
                  </div> 
-                  <?php /* <div class="col-md-6">
+                  /* <div class="col-md-6">
                      <div class="form-group @if($errors->has('posto_id')) has-error @endif">
                        <label for="posto_id-field">Posto</label>
                        <select class="form-control" name="posto_id">
@@ -99,8 +205,7 @@
                        <span class="help-block">{{ $errors->first("posto_id") }}</span>
                        @endif
                      </div>
-                   </div>  */ ?>
-                   <div class="col-md-6">
+                   </div>    <div class="col-md-6">
                     <div class="form-group @if($errors->has('unidade_id')) has-error @endif">
                      <label for="unidade_id-field">Unidade</label>
                      <input type="text" id="unidade_id-field" name="unidade_id" class="form-control" value="{{ old("unidade_id") }}"/>
@@ -109,6 +214,7 @@
                      @endif
                    </div>
                  </div>
+
 
                  <div class="col-md-3">
                   <div class="form-group @if($errors->has('data_nascim')) has-error @endif">
@@ -170,13 +276,13 @@
        </div>
 
 
-        
+
        <div class="well well-sm">
          <button type="submit" class="btn btn-primary">Criar</button>
          <a class="btn btn-link pull-right" href="{{ route('militars.index') }}"><i class="glyphicon glyphicon-backward"></i> Voltar</a>
        </div>
      </form>
-
+*/?>
    </div>
  </div>
 
