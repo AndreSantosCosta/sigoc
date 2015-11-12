@@ -1,5 +1,9 @@
 @extends('layout')
 
+@section('title')
+    Index
+@stop
+
 @section('content')
     <!-- Header -->
     <div class="geral_container">
@@ -23,4 +27,4 @@
             </div>
         </div>
     </div>
-@endsection
+@stop
