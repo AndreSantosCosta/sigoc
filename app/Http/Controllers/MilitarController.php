@@ -75,8 +75,11 @@ class MilitarController extends Controller {
 	public function show($id)
 	{
 		$militar = Militar::findOrFail($id);
+		$listaSexo = array('F'=>'Feminino', 'M'=>'Masculino');
+		$gruposSang= array('A+','A-','B+','B-','O+','O-','AB+','AB-');
+		$listaMotivos = array('Afasto da Especialidade por Incapacidade Técnica', 'Reforma','Transferido','Morte');
 
-		return view('militars.show', compact('militar'));
+		return view('militars.show', compact('militar', 'listaSexo', 'gruposSang', 'listaMotivos'));
 	}
 
 	/**
@@ -97,7 +100,7 @@ class MilitarController extends Controller {
 
 		$listaMotivos = array('Afasto da Especialidade por Incapacidade Técnica', 'Reforma','Transferido','Morte');
 
-		$listaSexo = array('Feminino', 'Masculino');
+		$listaSexo = array('F'=>'Feminino', 'M'=>'Masculino');
 
 		return view('militars.edit', compact('militar', 'listaPostos','gruposSang', 'listaUnidades', 'listaSexo','listaMotivos'));
 	}

@@ -12,7 +12,7 @@
 
 <div class="row">
 
-  {!! Form::open(array('route' => array( 'militars.store'), 'method' =>'PUT')) !!}
+  {!! Form::open(array('route' => array( 'militars.store'), 'method' =>'POST')) !!}
     <div class="col-md-4">
       <div class="form-group @if($errors->has('nome')) has-error @endif">
         {!! Form::label('nome', 'Nome') !!}
@@ -118,7 +118,8 @@
 </div>
 <div class="col-md-12">
   <div class="well well-sm">
-    {!! Form::submit('Criar', '', array('class'=>'btn btn-primary')) !!}
+    <button type="submit" class="btn btn-primary">Criar</button>
+    <?php /*{!! Form::submit('Criar', '', array('class'=>'btn btn-primary')) !!} */?>
     <a class="btn btn-link pull-right" href="{{ route('militars.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
   </div>
 </div>
