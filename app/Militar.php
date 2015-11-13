@@ -17,9 +17,4 @@ class Militar extends Model
 		return $unidade->descricao;
 	}
 
-	public function getSexoValorAttribute(){
-		$genero = Militar::findOrFail($this->sexo);
-		return $genero->sexo;
-	}
-
 }

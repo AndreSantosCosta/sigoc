@@ -3,7 +3,7 @@
 
 @section('header')
 <div class="page-header">
-  <h1><i class="glyphicon glyphicon-plus"></i> Criar Militares </h1>
+  <h1><i class="glyphicon glyphicon-plus"></i> Criar Militar </h1>
 </div>
 @endsection
 

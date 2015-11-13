@@ -3,8 +3,8 @@
 @section('header')
     <div class="page-header clearfix">
         <h1>
-            <i class="glyphicon glyphicon-align-justify"></i> ProvaTiros
-            <a class="btn btn-success pull-right" href="{{ route('prova_tiros.create') }}"><i class="glyphicon glyphicon-plus"></i> Create</a>
+            <i class="glyphicon glyphicon-align-justify"></i> Prova Tiros
+            <a class="btn btn-success pull-right" href="{{ route('prova_tiros.create') }}"><i class="glyphicon glyphicon-plus"></i> Criar</a>
         </h1>
 
     </div>
