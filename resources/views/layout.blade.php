@@ -60,10 +60,11 @@
     <!-- DIV AMARELA -->
     <div id="barra-navbar">
     </div>
-    <div class="container">
+    <!-- FIM DIV AMARELA -->
+    
 @yield('header')
 @yield('content')
-</div>
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
