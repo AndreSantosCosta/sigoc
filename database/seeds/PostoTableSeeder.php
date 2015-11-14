@@ -2,8 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-// composer require laracasts/testdummy
-//use Laracasts\TestDummy\Factory as TestDummy;
+
 
 class PostoTableSeeder extends Seeder {
 
@@ -11,7 +10,6 @@ class PostoTableSeeder extends Seeder {
     {
     	DB::table('postos')->truncate();
 
-    	//$descricao= array( 'Alferes', 'Tenente');
     	$descricao = array(
     		array(
     			'descricao' => 'Guarda'
@@ -34,11 +32,11 @@ class PostoTableSeeder extends Seeder {
     		),
 
     		array(
-    			'descricao' => '2 Sargento'
+    			'descricao' => 'Segundo Sargento'
     		),
 
     		array(
-    			'descricao' => '1 Sargento'
+    			'descricao' => 'Primeiro Sargento'
     		),
 
     		array(
@@ -74,7 +72,6 @@ class PostoTableSeeder extends Seeder {
     		)
     	);
 
-    	DB::table('postos')->insert($descricao);
-
+        DB::table('postos')->insert($descricao);
     }
 }
