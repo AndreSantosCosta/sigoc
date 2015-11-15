@@ -79,7 +79,7 @@ html, body {
 /* ****************************************************** */
 
 .geral_container {
-    text-align: center;
+    /*text-align: center;*/
     /*background-image: url('/assets/img/sigoc_1.jpg');*/
     background-color: #ffffff;
     margin: 30px;
@@ -100,6 +100,10 @@ html, body {
     padding: 0 70px 0 70px;
 }
 
+.geral_container .container .row .col-lg-12 .intro-text{
+	text-align: center;
+}
+
 .geral_container .container .row .col-lg-12 .intro-text span.name{
 	font-family: "Futura";
 	font-size: 130px;
@@ -108,6 +112,7 @@ html, body {
 
 .geral_container .container .row .col-lg-12 .sub-intro-text{
 	background-color: #a37b40;
+	text-align: center;
 	height: 66px;
     line-height: 66px;
 }
