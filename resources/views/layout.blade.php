@@ -26,21 +26,37 @@
 
   <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">SIGOC</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
           <a class="navbar-brand" href="{{ route('home') }}">
             <img src="{{ asset ('assets/img/logo_sigoc.png') }}" alt="sigoc">
           </a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="{{ route('militars.index') }}">Militar</a></li>
-            <li><a href="{{ route('caos.index') }}">Cão</a></li>
-            <li><a href="{{ route('binomios.index') }}">Binómio</a></li>
-            <li><a href="{{ route('provas.index') }}">Provas</a></li>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-left">
+            <li>
+              <a href="{{ route('militars.index') }}">Militar</a>
+            </li>
+            <li>
+              <a href="{{ route('caos.index') }}">Cão</a>
+            </li>
+            <li>
+              <a href="{{ route('binomios.index') }}">Binómio</a>
+            </li>
+            <li>
+              <a href="{{ route('provas.index') }}">Provas</a>
+            </li>
           </ul>
-
           <ul class="nav navbar-nav navbar-right">
             <li>
                 <a href="{{ route('login') }}">Login</a>
@@ -53,16 +69,24 @@
                     </ul>
             </li>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>
+        <!--/.nav-collapse -->
       </div>
+      <!-- /.container -->
     </nav>
 
     <!-- DIV AMARELA -->
     <div id="barra-navbar">
     </div>
     <!-- FIM DIV AMARELA -->
+
+<!-- Page Content -->
+<div class="geral_container">
 @yield('header')
 @yield('content')
+</div>
+<!-- /.geral_container -->
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
