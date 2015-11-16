@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('header')
+<div class="col-md-12">
     <div class="page-header clearfix">
         <h1>
             <i class="glyphicon glyphicon-align-justify"></i> Provas
@@ -8,6 +9,7 @@
         </h1>
 
     </div>
+ </div>
 @endsection
 
 @section('content')

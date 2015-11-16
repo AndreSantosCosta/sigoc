@@ -11,8 +11,8 @@
 @include('error')
 
 <div class="row">
-
-  {!! Form::open(array('route' => array( 'militars.store'), 'method' =>'POST')) !!}
+  <div class="col-md-12">
+    {!! Form::open(array('route' => array( 'militars.store'), 'method' =>'POST')) !!}
     <div class="col-md-4">
       <div class="form-group @if($errors->has('nome')) has-error @endif">
         {!! Form::label('nome', 'Nome') !!}
@@ -127,7 +127,7 @@
 {!! Form::close() !!}
 
 </div>
-
+</div>
 <?php /* <form action="{{ route('militars.store') }}" method="POST">
   <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-group @if($errors->has('user_id')) has-error @endif">
@@ -286,8 +286,8 @@
        </div>
      </form>
 */?>
- 
 
 
 
- @endsection
+
+@endsection

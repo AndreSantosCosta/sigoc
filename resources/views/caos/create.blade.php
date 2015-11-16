@@ -1,8 +1,10 @@
 @extends('layout')
 
 @section('header')
-<div class="page-header">
-	<h1><i class="glyphicon glyphicon-plus"></i> Criar Cão </h1>
+<div class="col-md-12">
+	<div class="page-header">
+		<h1><i class="glyphicon glyphicon-plus"></i> Criar Cão </h1>
+	</div>
 </div>
 @endsection
 
@@ -10,7 +12,7 @@
 @include('error')
 
 <div class="row">
-	
+  <div class="col-md-12">
 
 	<form action="{{ route('caos.store') }}" method="POST">
 		<input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -147,6 +149,6 @@
 			</div>
 		</div>
 	</form>
-
+</div>\
 </div>
 @endsection

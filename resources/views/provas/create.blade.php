@@ -59,6 +59,7 @@
     <a class="btn btn-link pull-right" href="{{ route('militars.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
   </div>
 </div>
+</div>
 {!! Form::close() !!}  
 
 <?php /*
@@ -109,5 +110,5 @@
 </form>
 
 </div> */?>
-</div>
+
 @endsection

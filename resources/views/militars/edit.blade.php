@@ -1,8 +1,10 @@
 @extends('layout')
 
 @section('header')
-<div class="page-header">
-  <h1><i class="glyphicon glyphicon-edit"></i> Editar Militar #{{$militar->num_mecanografico}}</h1>
+<div class="col-md-12">
+  <div class="page-header">
+    <h1><i class="glyphicon glyphicon-edit"></i> Editar Militar #{{$militar->num_mecanografico}}</h1>
+  </div>
 </div>
 @endsection
 
@@ -10,7 +12,7 @@
 @include('error')
 
 <div class="row">
-
+ <div class="col-md-12">
 
     <!-- <form action="{{ route('militars.update', $militar->id) }}" method="POST">
     <input type="hidden" name="_method" value="PUT"> -->
@@ -120,7 +122,8 @@
     </div>
     <div class="col-md-12">
       <div class="well well-sm">
-        {!! Form::submit('Guardar', '', array('class'=>'btn btn-primary')) !!}
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <?php /*{!! Form::submit('Guardar', '', array('class'=>'btn btn-primary')) !!} */?>
         <a class="btn btn-link pull-right" href="{{ route('militars.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
       </div>
     </div>

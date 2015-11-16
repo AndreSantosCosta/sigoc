@@ -1,8 +1,10 @@
 @extends('layout')
 
 @section('header')
+<div class="col-md-12">
 <div class="page-header">
   <h1><i class="glyphicon glyphicon-edit"></i> Editar Prova #{{$prova->tipo_prova}}</h1>
+</div>
 </div>
 @endsection
 
@@ -54,13 +56,15 @@
 </div>
 <div class="col-md-12">
   <div class="well well-sm">
-    {!! Form::submit('Guardar', '', array('class'=>'btn btn-primary')) !!}
-    <a class="btn btn-link pull-right" href="{{ route('provas.index') }}"><i class="glyphicon glyphicon-backward"></i>  Back</a>
+    <button type="submit" class="btn btn-primary">Criar</button>
+    <?php /*{!! Form::submit('Criar', '', array('class'=>'btn btn-primary')) !!} */?>
+    <a class="btn btn-link pull-right" href="{{ route('provas.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
   </div>
 </div>
+
 {!! Form::close() !!}
 
-
+ 
 
 <?php /* <div class="col-md-12">
 
