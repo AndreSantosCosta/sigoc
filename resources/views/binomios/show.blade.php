@@ -58,24 +58,27 @@
    </div>
    <div class="col-md-12">
      <div class="form-group">
-     <label for="motivo_inativo">MOTIVO DE INATIVAÇÃO</label>
+       <label for="motivo_inativo">MOTIVO DE INATIVAÇÃO</label>
        <p class="form-control-static">{{$binomio->motivo_inativo}}</p>
      </div>
    </div>
 
    <div class="col-md-12">
-  <div class="form-group">
-   <label for="motivo_inativo">PROVAS DO BINÓMIO</label>
-   <?php /*<a class="btn btn-link" href="{{ route('prova_*.show', $prova_*->id) }}"> Prova *</a> */?>
-   <a class="btn btn-link" href="{{ route('binomios.index') }}"> Prova Avaliação Binómios Obediência</a> 
-   <a class="btn btn-link" href="{{ route('binomios.index') }}"> Prova Avaliação Binómios Defesa</a>
+    <div class="form-group">
+     <label for="motivo_inativo">PROVAS DO BINÓMIO</label>
+     <?php /*<a class="btn btn-link" href="{{ route('prova_*.show', $prova_*->id) }}"> Prova *</a> */?>
+     <a class="btn btn-link" href="{{ route('binomios.index') }}"> Prova Avaliação Binómios Obediência</a> 
+     <a class="btn btn-link" href="{{ route('binomios.index') }}"> Prova Avaliação Binómios Defesa</a>
+   </div>
+ </div>
+
+ <div class="col-md-12">
+  <div class="well well-sm">
+   <a class="btn btn-link" href="{{ route('binomios.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
  </div>
 </div>
 
-   <div class="col-md-12">
-     <a class="btn btn-link" href="{{ route('binomios.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
-   </div>
- </form>
+</form>
 </div>
 </div>
 

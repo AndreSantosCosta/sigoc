@@ -109,9 +109,10 @@
  </div>
 </div>
 
-
 <div class="col-md-12">
+ <div class="well well-sm">
   <a class="btn btn-link" href="{{ route('militars.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
+</div>
 </div>
 
 </form>

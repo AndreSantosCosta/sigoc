@@ -107,15 +107,17 @@
 
    <div class="col-md-12">
     <div class="form-group">
-    <label for="motivo_inativo">PROVAS DO CÃO</label>
-     <?php /*<a class="btn btn-link" href="{{ route('prova_*.show', $prova_*->id) }}"> Prova Tiro</a> */?>
-     <a class="btn btn-link" href="{{ route('caos.index') }}"> Medição de Parâmetros Morfológicos</a> 
-     <a class="btn btn-link" href="{{ route('caos.index') }}"> Teste Inicial de Personalidade</a>
-   </div>
- </div>
+      <label for="motivo_inativo">PROVAS DO CÃO</label>
+      <?php /*<a class="btn btn-link" href="{{ route('prova_*.show', $prova_*->id) }}"> Prova Tiro</a> */?>
+      <a class="btn btn-link" href="{{ route('caos.index') }}"> Medição de Parâmetros Morfológicos</a> 
+      <a class="btn btn-link" href="{{ route('caos.index') }}"> Teste Inicial de Personalidade</a>
+    </div>
+  </div>
 
- <div class="col-md-12">
-   <a class="btn btn-link" href="{{ route('caos.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
+  <div class="col-md-12">
+    <div class="well well-sm">
+     <a class="btn btn-link" href="{{ route('caos.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
+   </div>
  </div>
 
  {!! Form::close() !!}
