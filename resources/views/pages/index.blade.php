@@ -1,12 +1,8 @@
 @extends('layout')
 
-@section('title')
-    SIGOC
-@stop
-
 @section('content')
     <!-- Header -->
-    <div class="geral_container">
+    <!-- <div class="geral_container"> -->
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -26,5 +22,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    <!-- </div> -->
 @stop 
