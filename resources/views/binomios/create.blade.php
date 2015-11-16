@@ -1,5 +1,5 @@
 @extends('layout')
-
+ 
 @section('header')
 <div class="col-md-12">
   <div class="page-header">

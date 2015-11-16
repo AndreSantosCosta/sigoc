@@ -1,5 +1,5 @@
 <?php namespace App\Http\Controllers;
-
+ 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -27,7 +27,10 @@ class CaoController extends Controller {
 	 */
 	public function create()
 	{
-		return view('caos.create');
+		$listaOrigem = array(' '=>' ', 'Procriação'=>'Procriação', 'Doacção'=>'Doacção', 'Remonta'=>'Remonta');
+		$listaMotivos = array(' '=>' ','Incapacidade Técnica'=>'Incapacidade Técnica', 'Incapacidade Veterinária'=>'Incapacidade Veterinária','Morte'=>'Morte');
+		$listaSexo = array(' '=>' ', 'Fêmea'=>'Fêmea', 'Macho'=>'Macho');
+		return view('caos.create', compact('listaMotivos', 'listaSexo', 'listaOrigem'));
 	}
 
 	/**
@@ -69,8 +72,11 @@ class CaoController extends Controller {
 	public function show($id)
 	{
 		$cao = Cao::findOrFail($id);
-
-		return view('caos.show', compact('cao'));
+		$listaOrigem = array(' '=>' ', 'Procriação'=>'Procriação', 'Doacção'=>'Doacção', 'Remonta'=>'Remonta');
+		$listaMotivos = array(' '=>' ','Incapacidade Técnica'=>'Incapacidade Técnica', 'Incapacidade Veterinária'=>'Incapacidade Veterinária','Morte'=>'Morte');
+		$listaSexo = array(' '=>' ', 'Fêmea'=>'Fêmea', 'Macho'=>'Macho');
+		
+		return view('caos.show', compact('cao', 'listaOrigem', 'listaMotivos', 'listaSexo'));
 	}
 
 	/**
@@ -82,8 +88,11 @@ class CaoController extends Controller {
 	public function edit($id)
 	{
 		$cao = Cao::findOrFail($id);
-
-		return view('caos.edit', compact('cao'));
+		$listaOrigem = array(' '=>' ', 'Procriação'=>'Procriação', 'Doacção'=>'Doacção', 'Remonta'=>'Remonta');
+		$listaMotivos = array(' '=>' ','Incapacidade Técnica'=>'Incapacidade Técnica', 'Incapacidade Veterinária'=>'Incapacidade Veterinária','Morte'=>'Morte');
+		$listaSexo = array(' '=>' ', 'Fêmea'=>'Fêmea', 'Macho'=>'Macho');
+		
+		return view('caos.edit', compact('cao', 'listaOrigem', 'listaMotivos', 'listaSexo'));
 	}
 
 	/**
