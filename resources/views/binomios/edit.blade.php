@@ -3,7 +3,7 @@
 @section('header')
 <div class="col-md-12">
   <div class="page-header">
-  <h1><i class="glyphicon glyphicon-edit"></i> Editar Binómio #{{$binomio->id}}</h1>
+    <h1><i class="glyphicon glyphicon-edit"></i> Editar Binómio # <?php /*{{$militar->num_mecanografico}}_{{$cao->matricula}}*/?></h1>
   </div>
 </div>
 @endsection
@@ -13,65 +13,79 @@
 
 <div class="row">
   <div class="col-md-12">
-
-    <form action="{{ route('binomios.update', $binomio->id) }}" method="POST">
-      <input type="hidden" name="_method" value="PUT">
-      <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    {!! Form::model($binomio, array('route' => array( 'binomios.update', $binomio->id ), 'method' =>'PUT')) !!}
+    <div class="col-md-4">
       <div class="form-group @if($errors->has('data_inicio')) has-error @endif">
-       <label for="data_inicio-field">Data_inicio</label>
-       <input type="text" id="data_inicio-field" name="data_inicio" class="form-control" value="{{ $binomio->data_inicio }}"/>
-       @if($errors->has("data_inicio"))
-       <span class="help-block">{{ $errors->first("data_inicio") }}</span>
-       @endif
-     </div>
-     <div class="form-group @if($errors->has('militar_id')) has-error @endif">
-       <label for="militar_id-field">Militar_id</label>
-       <input type="text" id="militar_id-field" name="militar_id" class="form-control" value="{{ $binomio->militar_id }}"/>
-       @if($errors->has("militar_id"))
-       <span class="help-block">{{ $errors->first("militar_id") }}</span>
-       @endif
-     </div>
-     <div class="form-group @if($errors->has('cao_id')) has-error @endif">
-       <label for="cao_id-field">Cao_id</label>
-       <input type="text" id="cao_id-field" name="cao_id" class="form-control" value="{{ $binomio->cao_id }}"/>
-       @if($errors->has("cao_id"))
-       <span class="help-block">{{ $errors->first("cao_id") }}</span>
-       @endif
-     </div>
-     <div class="form-group @if($errors->has('vertente')) has-error @endif">
-       <label for="vertente-field">Vertente</label>
-       <textarea class="form-control" id="vertente-field" rows="3" name="vertente">{{ $binomio->vertente }}</textarea>
+        {!! Form::label('data_inicio', 'Data de Início') !!}
+        {!! Form::date('data_inicio', $binomio->data_inicio, array('class'=>'form-control')) !!}
+        @if($errors->has("data_inicio"))
+        <span class="help-block">{{ $errors->first("data_inicio") }}</span>
+        @endif
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group @if($errors->has('militar_id')) has-error @endif">
+        {!! Form::label('militar_id', 'Número Mecanográfico') !!}
+        {!! Form::text('militar_id', $binomio->militar_id, array('class'=>'form-control')) !!}
+        @if($errors->has("militar_id"))
+        <span class="help-block">{{ $errors->first("militar_id") }}</span>
+        @endif
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group @if($errors->has('cao_id')) has-error @endif">
+        {!! Form::label('cao_id', 'Número Matricula') !!}
+        {!! Form::text('cao_id', $binomio->cao_id, array('class'=>'form-control')) !!}
+        @if($errors->has("cao_id"))
+        <span class="help-block">{{ $errors->first("cao_id") }}</span>
+        @endif
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group @if($errors->has('vertente')) has-error @endif">
+       {!! Form::label('vertente', 'Vertente') !!}
+       {!! Form::select('vertente', $listaVertente, $binomio->vertente, array('class'=>'form-control')) !!}
        @if($errors->has("vertente"))
        <span class="help-block">{{ $errors->first("vertente") }}</span>
        @endif
      </div>
+   </div>
+   <div class="col-md-7">
      <div class="form-group @if($errors->has('inativo')) has-error @endif">
-       <label for="inativo-field">Inativo</label>
-       <input type="text" id="inativo-field" name="inativo" class="form-control" value="{{ $binomio->inativo }}"/>
+       {!! Form::label('inativo') !!}
+       {!! Form::radio('inativo', $binomio->inativo) !!}
        @if($errors->has("inativo"))
        <span class="help-block">{{ $errors->first("inativo") }}</span>
        @endif
      </div>
+   </div>
+   <div class="col-md-5">
      <div class="form-group @if($errors->has('data_inativo')) has-error @endif">
-       <label for="data_inativo-field">Data_inativo</label>
-       <input type="text" id="data_inativo-field" name="data_inativo" class="form-control" value="{{ $binomio->data_inativo }}"/>
+       {!! Form::label('data_inativo', 'Data de Inativação') !!}
+       {!! Form::date('data_inativo', $binomio->data_inativo, array('class'=>'form-control')) !!}
        @if($errors->has("data_inativo"))
        <span class="help-block">{{ $errors->first("data_inativo") }}</span>
        @endif
      </div>
+   </div>
+   <div class="col-md-12">
      <div class="form-group @if($errors->has('motivo_inativo')) has-error @endif">
-       <label for="motivo_inativo-field">Motivo_inativo</label>
-       <textarea class="form-control" id="motivo_inativo-field" rows="3" name="motivo_inativo">{{ $binomio->motivo_inativo }}</textarea>
+       {!! Form::label('motivo_inativo', 'Motivo de Inativação') !!}
+       {!! Form::text('motivo_inativo', $binomio->motivo_inativo, array('class'=>'form-control')) !!}
        @if($errors->has("motivo_inativo"))
        <span class="help-block">{{ $errors->first("motivo_inativo") }}</span>
        @endif
      </div>
+   </div>
+   <div class="col-md-12">
      <div class="well well-sm">
-      <button type="submit" class="btn btn-primary">Save</button>
-      <a class="btn btn-link pull-right" href="{{ route('binomios.index') }}"><i class="glyphicon glyphicon-backward"></i>  Back</a>
+      <button type="submit" class="btn btn-primary">Guardar</button>
+      <a class="btn btn-link pull-right" href="{{ route('binomios.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
     </div>
-  </form>
+  </div>
+</div>
+{!! Form::close() !!}
 
 </div>
 </div>

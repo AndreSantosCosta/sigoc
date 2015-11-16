@@ -27,7 +27,8 @@ class BinomioController extends Controller {
 	 */
 	public function create()
 	{
-		return view('binomios.create');
+		$listaVertente = array(' '=>' ','Uso da Força'=>'Uso da Força', 'Intervenção Tática'=>'Intervenção Tática', 'Deteção de Odor'=>'Deteção de Odor', 'Humano'=>'Humano', 'Deteção de Explosivos'=>'Deteção de Explosivos', 'Deteção de Droga/Papel Moeda'=>'Deteção de Droga/Papel Moeda', 'Outras Deteções'=>'Outras Deteções','Formação e Desenvolvimento de Cachorros'=>'Formação e Desenvolvimento de Cachorros');
+		return view('binomios.create', compact('listaVertente'));
 	}
 
 	/**
@@ -62,8 +63,9 @@ class BinomioController extends Controller {
 	public function show($id)
 	{
 		$binomio = Binomio::findOrFail($id);
-
-		return view('binomios.show', compact('binomio'));
+		$listaVertente = array(' '=>' ','Uso da Força'=>'Uso da Força', 'Intervenção Tática'=>'Intervenção Tática', 'Deteção de Odor'=>'Deteção de Odor', 'Humano'=>'Humano', 'Deteção de Explosivos'=>'Deteção de Explosivos', 'Deteção de Droga/Papel Moeda'=>'Deteção de Droga/Papel Moeda', 'Outras Deteções'=>'Outras Deteções','Formação e Desenvolvimento de Cachorros'=>'Formação e Desenvolvimento de Cachorros');
+		
+		return view('binomios.show', compact('binomio', 'listaVertente'));
 	}
 
 	/**
@@ -75,8 +77,9 @@ class BinomioController extends Controller {
 	public function edit($id)
 	{
 		$binomio = Binomio::findOrFail($id);
-
-		return view('binomios.edit', compact('binomio'));
+		$listaVertente = array(' '=>' ','Uso da Força'=>'Uso da Força', 'Intervenção Tática'=>'Intervenção Tática', 'Deteção de Odor'=>'Deteção de Odor', 'Humano'=>'Humano', 'Deteção de Explosivos'=>'Deteção de Explosivos', 'Deteção de Droga/Papel Moeda'=>'Deteção de Droga/Papel Moeda', 'Outras Deteções'=>'Outras Deteções','Formação e Desenvolvimento de Cachorros'=>'Formação e Desenvolvimento de Cachorros');
+		//$militar = Militar::findOrFail($id);
+		return view('binomios.edit', compact('binomio', 'listaVertente'));
 	}
 
 	/**
