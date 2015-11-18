@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-	Login
+	Login a
 @stop
 
 @section('content')
@@ -24,7 +24,7 @@
 						{!! Form::password('password', array('class'=>'form-control', 'placeholder'=>'Password')) !!}
 					</div>
 		        	{!! Form::close() !!}
-		        	<div class='col-xs-14 text-center'> 
+		        	<div class='col-xs-8 text-center'> 
             			<input type="reset" id="idReset" value="Limpar" class="btn btn-warning">  
             			<input type="submit" id="idSubmit" value="Entrar" class="btn btn-primary"> 
         			</div>
