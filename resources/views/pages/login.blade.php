@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-	Login a
+	Login
 @stop
 
 @section('content')
