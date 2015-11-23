@@ -95,7 +95,7 @@
       <div class="col-md-2">
         <div class="form-group @if($errors->has('inativo')) has-error @endif">
           {!! Form::label('inativo') !!}
-          {!! Form::radio('inativo', $militar->inativo) !!}
+          {!! Form::checkbox('inativo', $militar->inativo) !!}
           @if($errors->has("inativo"))
           <span class="help-block">{{ $errors->first("inativo") }}</span>
           @endif
