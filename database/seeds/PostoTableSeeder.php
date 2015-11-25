@@ -8,7 +8,15 @@ class PostoTableSeeder extends Seeder {
 
     public function run()
     {
-    	DB::table('postos')->truncate();
+    	
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        DB::table('militars')->truncate();
+        DB::table('postos')->truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+
+
+
+        //DB::table('postos')->truncate();
 
     	$descricao = array(
     		array(
