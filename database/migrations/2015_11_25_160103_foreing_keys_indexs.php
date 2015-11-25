@@ -12,11 +12,6 @@ class ForeingKeysIndexs extends Migration
      */
     public function up()
     {   
-      /*  Schema::table('militarUtilizador', function($table){
-            $table->foreign('militar_id')->references('id')->on('militars');
-            $table->foreign('utilizador_id')->references('id')->on('users');
-        }); */
-        
         Schema::table('militarUtilizador', function($table){
             $table->foreign('militar_id')->references('id')->on('militars');
             $table->foreign('utilizador_id')->references('id')->on('users');
