@@ -19,15 +19,19 @@ class CreateCaosTable extends Migration {
             $table->string('nome');
             $table->string('raca');
             $table->string('sexo');
-            $table->string('origem');
+            $table->integer('origem')->unsigned();
             $table->date('data_nascim');
-            $table->string('mae');
-            $table->string('pai');
+            $table->integer('mae')->unsigned();
+            $table->integer('pai')->unsigned();
             $table->string('ninhada');
-            $table->boolean('inativo');
+            $table->string('fotografia')->nullable();
+            $table->integer('tamanhoImagem')->nullable();
+            $table->string('tipoImagem')->nullable();
+            $table->boolean('inativo')->nullable();
             $table->date('data_inativo')->nullable();
-            $table->string('motivo_inativo')->nullable();
-            $table->text('observacoes')->nulable();
+            $table->date('data_ativo')->nullable();
+            $table->integer('motivo_inativo')->nullable()->unsigned();
+            $table->text('observacoes')->nullable();
             $table->timestamps();
         });
 	}

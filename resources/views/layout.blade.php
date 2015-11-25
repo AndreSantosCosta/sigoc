@@ -53,9 +53,7 @@
             <li>
               <a href="{{ route('binomios.index') }}">Binómio</a>
             </li>
-            <li>
-              <a href="{{ route('provas.index') }}">Provas</a>
-            </li>
+           
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li>

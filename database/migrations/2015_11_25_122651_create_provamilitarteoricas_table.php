@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProvaTirosTable extends Migration {
+class CreateProvaMilitarTeoricasTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,12 @@ class CreateProvaTirosTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('prova_tiros', function(Blueprint $table) {
+		Schema::create('prova_militar_teoricas', function(Blueprint $table) {
             $table->increments('id');
-            $table->integer('prova_id')->unsigned();
-            $table->date('data_prova');
-            $table->string('num_mecanografico');
-            $table->text('local');
-            $table->text('tipo');
-            $table->double('nota_final');
+            $table->integer('IdProvaMilitar')->unsigned();
+            $table->integer('ambito')->unsigned();
+            $table->text('materias');
+            $table->double('notaFinal');
             $table->text('arquivo');
             $table->timestamps();
         });
@@ -32,7 +30,7 @@ class CreateProvaTirosTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('prova_tiros');
+		Schema::drop('prova_militar_teoricas');
 	}
 
 }

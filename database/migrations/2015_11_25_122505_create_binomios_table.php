@@ -17,9 +17,10 @@ class CreateBinomiosTable extends Migration {
             $table->date('data_inicio');
             $table->integer('militar_id')->unsigned();
             $table->integer('cao_id')->unsigned();
-            $table->text('vertente');
-            $table->boolean('inativo');
+            $table->integer('vertente')->unsigned();
+            $table->boolean('inativo')->nullable();
             $table->date('data_inativo')->nullable();
+            $table->date('data_ativo')->nullable();
             $table->text('motivo_inativo')->nullable();
             $table->timestamps();
         });

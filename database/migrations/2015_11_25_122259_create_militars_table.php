@@ -20,12 +20,16 @@ class CreateMilitarsTable extends Migration {
             $table->string('apelido');
             $table->string('nome');
             $table->date('data_nascim');
-            $table->string('grupo_sang')->nullable();
+            $table->string('grupo_sang');
             $table->string('sexo');
             $table->integer('unidade_id')->unsigned();
-            $table->boolean('inativo');
+            $table->string('fotografia')->nullable();
+            $table->integer('tamanhoImagem')->nullable();
+            $table->string('tipoImagem')->nullable();
+            $table->boolean('inativo')->nullable();
             $table->date('data_inativo')->nullable();
-            $table->string('motivo_inativo')->nullable();
+            $table->date('data_ativo')->nullable();
+            $table->integer('motivo_inativo')->unsigned()->nullable();
             $table->timestamps();
         });
 	}
