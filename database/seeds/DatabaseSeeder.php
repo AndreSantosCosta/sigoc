@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call('UnidadeTableSeeder');
         $this->call('MotivoInativoMilitarTableSeeder');
         $this->call('UserTableSeeder');
+        $this->call('MilitarTableSeeder');
         //FALTA TABELA MILITARS
         $this->call('VertenteBinomioTableSeeder');
         //FALTA TABELA BINOMIO

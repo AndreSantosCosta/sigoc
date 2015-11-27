@@ -14,7 +14,7 @@ class PostoTableSeeder extends Seeder {
         DB::table('postos')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
-
+        //$candidates = Candidate::lists('id');
 
         //DB::table('postos')->truncate();
 

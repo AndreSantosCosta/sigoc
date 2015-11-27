@@ -9,7 +9,10 @@ class BinomioTableSeeder extends Seeder {
 
     public function run()
     {
-        // TestDummy::times(20)->create('App\Post');
+    	DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        DB::table('prova_binomios')->truncate();
+        DB::table('binomios')->truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 
 }
