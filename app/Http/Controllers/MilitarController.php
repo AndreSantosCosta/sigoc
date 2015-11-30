@@ -29,13 +29,14 @@ class MilitarController extends Controller {
 	 */
 	public function create()
 	{
+		$militar = new Militar();
 		$listaPostos = Posto::lists('descricao', 'id');
 		$listaUnidades = Unidade::lists('descricao', 'id');
 		$listaSexo = array(' '=>' ', 'Feminino'=>'Feminino', 'Masculino'=>'Masculino');
 		$listaMotivos = array(' '=>' ','Afasto da Especialidade por Incapacidade Técnica'=>'Afasto da Especialidade por Incapacidade Técnica', 'Reforma'=>'Reforma','Transferido'=>'Transferido','Morte'=>'Morte');
 		$gruposSang= array(' '=>' ', 'A Positivo'=>'A Positivo','A Negativo'=>'A Negativo','B Positivo'=>'B Positivo','B Negativo'=>'B Negativo','O Positivo'=>'O Positivo','O Negativo'=>'O Negativo','AB Positivo'=>'AB Positivo','AB Negativo'=>'AB Negativo');
 		
-		return view('militars.create', compact('listaPostos','listaUnidades','gruposSang','listaSexo','listaMotivos'));
+		return view('militars.create', compact('militar','listaPostos','listaUnidades','gruposSang','listaSexo','listaMotivos'));
 	}
 
 	/**
