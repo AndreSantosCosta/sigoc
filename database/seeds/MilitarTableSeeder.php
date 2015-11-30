@@ -13,7 +13,7 @@ class MilitarTableSeeder extends Seeder {
         // TestDummy::times(20)->create('App\Post');
 
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        DB::table('prova_militars')->truncate();
+        //DB::table('prova_militars')->truncate();
         DB::table('militars')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 

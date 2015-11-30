@@ -23,10 +23,6 @@
                     <p class="form-control-static"></p>
                 </div>
                 <div class="form-group">
-                     <label for="idprovamilitar">IDPROVAMILITAR</label>
-                     <p class="form-control-static">{{$prova_militar_p_a_fisica->idprovamilitar}}</p>
-                </div>
-                    <div class="form-group">
                      <label for="escalao">ESCALAO</label>
                      <p class="form-control-static">{{$prova_militar_p_a_fisica->escalao}}</p>
                 </div>

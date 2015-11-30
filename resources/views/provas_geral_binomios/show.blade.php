@@ -23,10 +23,6 @@
                     <p class="form-control-static"></p>
                 </div>
                 <div class="form-group">
-                     <label for="idprovabinomio">IDPROVABINOMIO</label>
-                     <p class="form-control-static">{{$provas_geral_binomio->idprovabinomio}}</p>
-                </div>
-                    <div class="form-group">
                      <label for="data_nascim">DATA_NASCIM</label>
                      <p class="form-control-static">{{$provas_geral_binomio->data_nascim}}</p>
                 </div>

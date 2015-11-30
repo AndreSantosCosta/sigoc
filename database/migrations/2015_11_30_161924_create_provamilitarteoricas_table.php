@@ -13,12 +13,11 @@ class CreateProvaMilitarTeoricasTable extends Migration {
 	public function up()
 	{
 		Schema::create('prova_militar_teoricas', function(Blueprint $table) {
-            $table->increments('id');
-            $table->integer('IdProvaMilitar')->unsigned();
+            $table->integer('id')->primary()->unsigned();
             $table->integer('ambito')->unsigned();
-            $table->text('materias');
+            $table->string('materias');
             $table->double('notaFinal');
-            $table->text('arquivo');
+            $table->string('arquivo', 20);
             $table->timestamps();
         });
 	}

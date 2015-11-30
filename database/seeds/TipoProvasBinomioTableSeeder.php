@@ -10,7 +10,7 @@ class TipoProvasBinomioTableSeeder extends Seeder {
     {
     	
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        DB::table('prova_binomios')->truncate();
+        //DB::table('prova_binomios')->truncate();
         DB::table('tipoProvasBinomio')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 

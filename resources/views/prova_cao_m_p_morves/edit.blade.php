@@ -16,14 +16,7 @@
                 <input type="hidden" name="_method" value="PUT">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                <div class="form-group @if($errors->has('idprovacao')) has-error @endif">
-                       <label for="idprovacao-field">IdProvaCao</label>
-                    <input type="text" id="idprovacao-field" name="idprovacao" class="form-control" value="{{ $prova_cao_m_p_morf->idprovacao }}"/>
-                       @if($errors->has("idprovacao"))
-                        <span class="help-block">{{ $errors->first("idprovacao") }}</span>
-                       @endif
-                    </div>
-                    <div class="form-group @if($errors->has('data_nascim')) has-error @endif">
+                <div class="form-group @if($errors->has('data_nascim')) has-error @endif">
                        <label for="data_nascim-field">Data_nascim</label>
                     <input type="text" id="data_nascim-field" name="data_nascim" class="form-control" value="{{ $prova_cao_m_p_morf->data_nascim }}"/>
                        @if($errors->has("data_nascim"))
@@ -60,7 +53,7 @@
                     </div>
                     <div class="form-group @if($errors->has('pelagem')) has-error @endif">
                        <label for="pelagem-field">Pelagem</label>
-                    <textarea class="form-control" id="pelagem-field" rows="3" name="pelagem">{{ $prova_cao_m_p_morf->pelagem }}</textarea>
+                    <input type="text" id="pelagem-field" name="pelagem" class="form-control" value="{{ $prova_cao_m_p_morf->pelagem }}"/>
                        @if($errors->has("pelagem"))
                         <span class="help-block">{{ $errors->first("pelagem") }}</span>
                        @endif
@@ -116,7 +109,7 @@
                     </div>
                     <div class="form-group @if($errors->has('arquivo')) has-error @endif">
                        <label for="arquivo-field">Arquivo</label>
-                    <textarea class="form-control" id="arquivo-field" rows="3" name="arquivo">{{ $prova_cao_m_p_morf->arquivo }}</textarea>
+                    <input type="text" id="arquivo-field" name="arquivo" class="form-control" value="{{ $prova_cao_m_p_morf->arquivo }}"/>
                        @if($errors->has("arquivo"))
                         <span class="help-block">{{ $errors->first("arquivo") }}</span>
                        @endif

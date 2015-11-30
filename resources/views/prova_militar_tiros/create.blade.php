@@ -15,23 +15,16 @@
             <form action="{{ route('prova_militar_tiros.store') }}" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                <div class="form-group @if($errors->has('idprovamilitar')) has-error @endif">
-                       <label for="idprovamilitar-field">IdProvaMilitar</label>
-                    <input type="text" id="idprovamilitar-field" name="idprovamilitar" class="form-control" value="{{ old("idprovamilitar") }}"/>
-                       @if($errors->has("idprovamilitar"))
-                        <span class="help-block">{{ $errors->first("idprovamilitar") }}</span>
-                       @endif
-                    </div>
-                    <div class="form-group @if($errors->has('local')) has-error @endif">
+                <div class="form-group @if($errors->has('local')) has-error @endif">
                        <label for="local-field">Local</label>
-                    <textarea class="form-control" id="local-field" rows="3" name="local">{{ old("local") }}</textarea>
+                    <input type="text" id="local-field" name="local" class="form-control" value="{{ old("local") }}"/>
                        @if($errors->has("local"))
                         <span class="help-block">{{ $errors->first("local") }}</span>
                        @endif
                     </div>
                     <div class="form-group @if($errors->has('tipo')) has-error @endif">
                        <label for="tipo-field">Tipo</label>
-                    <textarea class="form-control" id="tipo-field" rows="3" name="tipo">{{ old("tipo") }}</textarea>
+                    <input type="text" id="tipo-field" name="tipo" class="form-control" value="{{ old("tipo") }}"/>
                        @if($errors->has("tipo"))
                         <span class="help-block">{{ $errors->first("tipo") }}</span>
                        @endif
@@ -45,7 +38,7 @@
                     </div>
                     <div class="form-group @if($errors->has('arquivo')) has-error @endif">
                        <label for="arquivo-field">Arquivo</label>
-                    <textarea class="form-control" id="arquivo-field" rows="3" name="arquivo">{{ old("arquivo") }}</textarea>
+                    <input type="text" id="arquivo-field" name="arquivo" class="form-control" value="{{ old("arquivo") }}"/>
                        @if($errors->has("arquivo"))
                         <span class="help-block">{{ $errors->first("arquivo") }}</span>
                        @endif

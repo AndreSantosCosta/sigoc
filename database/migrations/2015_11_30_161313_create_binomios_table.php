@@ -22,6 +22,7 @@ class CreateBinomiosTable extends Migration {
             $table->date('data_inativo')->nullable();
             $table->date('data_ativo')->nullable();
             $table->text('motivo_inativo')->nullable();
+            $table->text('observacoes')->nullable();
             $table->timestamps();
         });
 	}

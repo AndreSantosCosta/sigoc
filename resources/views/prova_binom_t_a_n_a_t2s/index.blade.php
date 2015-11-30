@@ -18,8 +18,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>IDPROVABINOMIO</th>
-                        <th>DATA_NASCIM</th>
+                            <th>DATA_NASCIM</th>
                         <th>AVALIADOR</th>
                         <th>LOCAL</th>
                         <th>ATITUTE</th>
@@ -48,8 +47,7 @@
                         @foreach($prova_binom_t_a_n_a_t2s as $prova_binom_t_a_n_a_t2)
                             <tr>
                                 <td>{{$prova_binom_t_a_n_a_t2->id}}</td>
-                                <td>{{$prova_binom_t_a_n_a_t2->idprovabinomio}}</td>
-                    <td>{{$prova_binom_t_a_n_a_t2->data_nascim}}</td>
+                                <td>{{$prova_binom_t_a_n_a_t2->data_nascim}}</td>
                     <td>{{$prova_binom_t_a_n_a_t2->avaliador}}</td>
                     <td>{{$prova_binom_t_a_n_a_t2->local}}</td>
                     <td>{{$prova_binom_t_a_n_a_t2->atitute}}</td>

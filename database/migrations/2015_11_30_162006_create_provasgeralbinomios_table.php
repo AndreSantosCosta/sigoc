@@ -13,18 +13,17 @@ class CreateProvasGeralBinomiosTable extends Migration {
 	public function up()
 	{
 		Schema::create('provas_geral_binomios', function(Blueprint $table) {
-            $table->increments('id');
-            $table->integer('IdProvaBinomio')->unsigned();
+            $table->integer('id')->primary()->unsigned();
             $table->date('data_nascim');
-            $table->string('avaliador1');
-            $table->string('avaliador2');
-            $table->string('avaliador3');
-            $table->string('local');
+            $table->string('avaliador1', 50);
+            $table->string('avaliador2', 50);
+            $table->string('avaliador3', 50);
+            $table->string('local', 100);
             $table->integer('ambito')->unsigned();
             $table->double('nota');
-            $table->string('situacao');
+            $table->string('situacao', 100);
             $table->text('observacoes');
-            $table->text('arquivo');
+            $table->string('arquivo', 20);
             $table->timestamps();
         });
 	}

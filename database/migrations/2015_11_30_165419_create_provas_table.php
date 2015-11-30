@@ -14,7 +14,13 @@ class CreateProvasTable extends Migration {
 	{
 		Schema::create('provas', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('tipoProva');
+            $table->string('tipoEntidade', 1);
+            $table->string('tipoProva', 10);
+            $table->date('dataProva');
+            $table->integer('cao_id')->unsigned()->nullable();
+            $table->integer('militar_id')->unsigned()->nullable();
+            $table->integer('binomio_id')->unsigned()->nullable();
+            $table->text('observacoes')->nullable();
             $table->timestamps();
         });
 	}

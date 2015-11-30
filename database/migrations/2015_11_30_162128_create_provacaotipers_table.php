@@ -13,12 +13,11 @@ class CreateProvaCaoTIPersTable extends Migration {
 	public function up()
 	{
 		Schema::create('prova_cao_t_i_pers', function(Blueprint $table) {
-            $table->increments('id');
-            $table->integer('IdProvaCao')->unsigned();
+            $table->integer('id')->primary()->unsigned();
             $table->date('data_nascim');
-            $table->string('avaliador');
-            $table->string('executante');
-            $table->text('local');
+            $table->string('avaliador', 50);
+            $table->string('executante', 50);
+            $table->string('local', 100);
             $table->integer('seguimento');
             $table->integer('levantar');
             $table->integer('submissao');
@@ -30,7 +29,7 @@ class CreateProvaCaoTIPersTable extends Migration {
             $table->integer('dor');
             $table->double('notaFinal');
             $table->text('observacoes');
-            $table->text('arquivo');
+            $table->string('arquivo', 20);
             $table->timestamps();
         });
 	}

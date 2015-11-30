@@ -18,8 +18,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>IDPROVABINOMIO</th>
-                        <th>DATA_NASCIM</th>
+                            <th>DATA_NASCIM</th>
                         <th>AVALIADOR1</th>
                         <th>AVALIADOR2</th>
                         <th>AVALIADOR3</th>
@@ -37,8 +36,7 @@
                         @foreach($provas_geral_binomios as $provas_geral_binomio)
                             <tr>
                                 <td>{{$provas_geral_binomio->id}}</td>
-                                <td>{{$provas_geral_binomio->idprovabinomio}}</td>
-                    <td>{{$provas_geral_binomio->data_nascim}}</td>
+                                <td>{{$provas_geral_binomio->data_nascim}}</td>
                     <td>{{$provas_geral_binomio->avaliador1}}</td>
                     <td>{{$provas_geral_binomio->avaliador2}}</td>
                     <td>{{$provas_geral_binomio->avaliador3}}</td>

@@ -13,14 +13,13 @@ class CreateProvaCaoMPMorvesTable extends Migration {
 	public function up()
 	{
 		Schema::create('prova_cao_m_p_morves', function(Blueprint $table) {
-            $table->increments('id');
-            $table->integer('IdProvaCao')->unsigned();
+            $table->integer('id')->primary()->unsigned();
             $table->date('data_nascim');
             $table->double('peso');
             $table->double('comprimento');
             $table->double('altGarrote');
             $table->double('altGarupa');
-            $table->text('pelagem');
+            $table->string('pelagem');
             $table->double('perimetro');
             $table->double('orelhas');
             $table->double('distOlhos');
@@ -28,7 +27,7 @@ class CreateProvaCaoMPMorvesTable extends Migration {
             $table->double('compChanfro');
             $table->double('diamChanfro');
             $table->text('observacoes');
-            $table->text('arquivo');
+            $table->string('arquivo', 20);
             $table->timestamps();
         });
 	}

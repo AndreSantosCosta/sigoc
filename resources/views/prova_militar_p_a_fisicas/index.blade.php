@@ -18,8 +18,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>IDPROVAMILITAR</th>
-                        <th>ESCALAO</th>
+                            <th>ESCALAO</th>
                         <th>FLEXOESTRAVE</th>
                         <th>ABDOMINAIS</th>
                         <th>EXTSOLO</th>
@@ -35,8 +34,7 @@
                         @foreach($prova_militar_p_a_fisicas as $prova_militar_p_a_fisica)
                             <tr>
                                 <td>{{$prova_militar_p_a_fisica->id}}</td>
-                                <td>{{$prova_militar_p_a_fisica->idprovamilitar}}</td>
-                    <td>{{$prova_militar_p_a_fisica->escalao}}</td>
+                                <td>{{$prova_militar_p_a_fisica->escalao}}</td>
                     <td>{{$prova_militar_p_a_fisica->flexoestrave}}</td>
                     <td>{{$prova_militar_p_a_fisica->abdominais}}</td>
                     <td>{{$prova_militar_p_a_fisica->extsolo}}</td>

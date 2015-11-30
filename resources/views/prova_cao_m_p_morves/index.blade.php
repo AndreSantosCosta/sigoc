@@ -18,8 +18,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>IDPROVACAO</th>
-                        <th>DATA_NASCIM</th>
+                            <th>DATA_NASCIM</th>
                         <th>PESO</th>
                         <th>COMPRIMENTO</th>
                         <th>ALTGARROTE</th>
@@ -41,8 +40,7 @@
                         @foreach($prova_cao_m_p_morves as $prova_cao_m_p_morf)
                             <tr>
                                 <td>{{$prova_cao_m_p_morf->id}}</td>
-                                <td>{{$prova_cao_m_p_morf->idprovacao}}</td>
-                    <td>{{$prova_cao_m_p_morf->data_nascim}}</td>
+                                <td>{{$prova_cao_m_p_morf->data_nascim}}</td>
                     <td>{{$prova_cao_m_p_morf->peso}}</td>
                     <td>{{$prova_cao_m_p_morf->comprimento}}</td>
                     <td>{{$prova_cao_m_p_morf->altgarrote}}</td>

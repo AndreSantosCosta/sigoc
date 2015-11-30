@@ -23,10 +23,6 @@
                     <p class="form-control-static"></p>
                 </div>
                 <div class="form-group">
-                     <label for="idprovacao">IDPROVACAO</label>
-                     <p class="form-control-static">{{$prova_cao_t_a_n_a_t1->idprovacao}}</p>
-                </div>
-                    <div class="form-group">
                      <label for="data_nascim">DATA_NASCIM</label>
                      <p class="form-control-static">{{$prova_cao_t_a_n_a_t1->data_nascim}}</p>
                 </div>

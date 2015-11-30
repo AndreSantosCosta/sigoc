@@ -18,8 +18,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>IDPROVACAO</th>
-                        <th>DATA_NASCIM</th>
+                            <th>DATA_NASCIM</th>
                         <th>AVALIADOR</th>
                         <th>EXECUTANTE</th>
                         <th>LOCAL</th>
@@ -43,8 +42,7 @@
                         @foreach($prova_cao_t_i_pers as $prova_cao_t_i_per)
                             <tr>
                                 <td>{{$prova_cao_t_i_per->id}}</td>
-                                <td>{{$prova_cao_t_i_per->idprovacao}}</td>
-                    <td>{{$prova_cao_t_i_per->data_nascim}}</td>
+                                <td>{{$prova_cao_t_i_per->data_nascim}}</td>
                     <td>{{$prova_cao_t_i_per->avaliador}}</td>
                     <td>{{$prova_cao_t_i_per->executante}}</td>
                     <td>{{$prova_cao_t_i_per->local}}</td>

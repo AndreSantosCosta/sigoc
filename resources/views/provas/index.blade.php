@@ -18,7 +18,13 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>TIPOPROVA</th>
+                            <th>TIPOENTIDADE</th>
+                        <th>TIPOPROVA</th>
+                        <th>DATAPROVA</th>
+                        <th>CAO_ID</th>
+                        <th>MILITAR_ID</th>
+                        <th>BINOMIO_ID</th>
+                        <th>OBSERVACOES</th>
                             <th class="text-right">OPTIONS</th>
                         </tr>
                     </thead>
@@ -27,7 +33,13 @@
                         @foreach($provas as $prova)
                             <tr>
                                 <td>{{$prova->id}}</td>
-                                <td>{{$prova->tipoprova}}</td>
+                                <td>{{$prova->tipoentidade}}</td>
+                    <td>{{$prova->tipoprova}}</td>
+                    <td>{{$prova->dataprova}}</td>
+                    <td>{{$prova->cao_id}}</td>
+                    <td>{{$prova->militar_id}}</td>
+                    <td>{{$prova->binomio_id}}</td>
+                    <td>{{$prova->observacoes}}</td>
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="{{ route('provas.show', $prova->id) }}"><i class="glyphicon glyphicon-eye-open"></i> View</a>
                                     <a class="btn btn-xs btn-warning" href="{{ route('provas.edit', $prova->id) }}"><i class="glyphicon glyphicon-edit"></i> Edit</a>

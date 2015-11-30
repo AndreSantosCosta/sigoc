@@ -13,8 +13,7 @@ class CreateProvaMilitarPAFisicasTable extends Migration {
 	public function up()
 	{
 		Schema::create('prova_militar_p_a_fisicas', function(Blueprint $table) {
-            $table->increments('id');
-            $table->integer('IdProvaMilitar')->unsigned();
+            $table->integer('id')->primary()->unsigned();
             $table->integer('escalao');
             $table->double('flexoesTrave');
             $table->double('abdominais');
@@ -22,7 +21,7 @@ class CreateProvaMilitarPAFisicasTable extends Migration {
             $table->double('testCooper');
             $table->double('notaFinal');
             $table->integer('ambito')->unsigned();
-            $table->text('arquivo');
+            $table->string('arquivo', 20);
             $table->timestamps();
         });
 	}

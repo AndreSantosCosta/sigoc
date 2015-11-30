@@ -18,8 +18,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>IDPROVAMILITAR</th>
-                        <th>LOCAL</th>
+                            <th>LOCAL</th>
                         <th>TIPO</th>
                         <th>NOTAFINAL</th>
                         <th>ARQUIVO</th>
@@ -31,8 +30,7 @@
                         @foreach($prova_militar_tiros as $prova_militar_tiro)
                             <tr>
                                 <td>{{$prova_militar_tiro->id}}</td>
-                                <td>{{$prova_militar_tiro->idprovamilitar}}</td>
-                    <td>{{$prova_militar_tiro->local}}</td>
+                                <td>{{$prova_militar_tiro->local}}</td>
                     <td>{{$prova_militar_tiro->tipo}}</td>
                     <td>{{$prova_militar_tiro->notafinal}}</td>
                     <td>{{$prova_militar_tiro->arquivo}}</td>

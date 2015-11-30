@@ -13,11 +13,10 @@ class CreateProvaCaoTANAT1sTable extends Migration {
 	public function up()
 	{
 		Schema::create('prova_cao_t_a_n_a_t1s', function(Blueprint $table) {
-            $table->increments('id');
-            $table->integer('IdProvaCao')->unsigned();
+            $table->integer('id')->primary()->unsigned();
             $table->date('data_nascim');
-            $table->string('avaliador');
-            $table->string('local');
+            $table->string('avaliador', 50);
+            $table->string('local', 100);
             $table->double('atitute');
             $table->double('agilidadeConfianca');
             $table->double('rPisosSons');
@@ -32,7 +31,7 @@ class CreateProvaCaoTANAT1sTable extends Migration {
             $table->double('CombatLuta');
             $table->double('notaFinal');
             $table->text('observacoes');
-            $table->text('arquivo');
+            $table->string('arquivo', 20);
             $table->timestamps();
         });
 	}

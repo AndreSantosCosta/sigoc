@@ -33,19 +33,14 @@ Route::resource("prova_militar_teoricas","ProvaMilitarTeoricaController");
 
 Route::resource("prova_militar_tiros","ProvaMilitarTiroController");
 
-Route::resource("prova_militars","ProvaMilitarController");
-
 Route::resource("provas_geral_binomios","ProvasGeralBinomioController");
 
 Route::resource("prova_binom_t_a_n_a_t2s","ProvaBinomTANAT2Controller");
 
-Route::resource("prova_binomios","ProvaBinomioController");
-
 Route::resource("prova_cao_m_p_morves","ProvaCaoMPMorfController");
 
-Route::resource("prova_cao_m_p_morves","ProvaCaoMPMorfController");
+Route::resource("prova_cao_t_i_pers","ProvaCaoTIPerController");
 
 Route::resource("prova_cao_t_a_n_a_t1s","ProvaCaoTANAT1Controller");
 
-Route::resource("prova_caos","ProvaCaoController");
-
+Route::resource("provas","ProvaController");

@@ -23,10 +23,6 @@
                     <p class="form-control-static"></p>
                 </div>
                 <div class="form-group">
-                     <label for="idprovamilitar">IDPROVAMILITAR</label>
-                     <p class="form-control-static">{{$prova_militar_tiro->idprovamilitar}}</p>
-                </div>
-                    <div class="form-group">
                      <label for="local">LOCAL</label>
                      <p class="form-control-static">{{$prova_militar_tiro->local}}</p>
                 </div>

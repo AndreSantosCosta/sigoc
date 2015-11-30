@@ -10,7 +10,7 @@ class TipoProvasMilitarTableSeeder extends Seeder {
     {
     	
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        DB::table('prova_militars')->truncate();
+        //DB::table('prova_militars')->truncate();
         DB::table('tipoProvasMilitar')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 

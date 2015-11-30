@@ -23,8 +23,32 @@
                     <p class="form-control-static"></p>
                 </div>
                 <div class="form-group">
+                     <label for="tipoentidade">TIPOENTIDADE</label>
+                     <p class="form-control-static">{{$prova->tipoentidade}}</p>
+                </div>
+                    <div class="form-group">
                      <label for="tipoprova">TIPOPROVA</label>
                      <p class="form-control-static">{{$prova->tipoprova}}</p>
+                </div>
+                    <div class="form-group">
+                     <label for="dataprova">DATAPROVA</label>
+                     <p class="form-control-static">{{$prova->dataprova}}</p>
+                </div>
+                    <div class="form-group">
+                     <label for="cao_id">CAO_ID</label>
+                     <p class="form-control-static">{{$prova->cao_id}}</p>
+                </div>
+                    <div class="form-group">
+                     <label for="militar_id">MILITAR_ID</label>
+                     <p class="form-control-static">{{$prova->militar_id}}</p>
+                </div>
+                    <div class="form-group">
+                     <label for="binomio_id">BINOMIO_ID</label>
+                     <p class="form-control-static">{{$prova->binomio_id}}</p>
+                </div>
+                    <div class="form-group">
+                     <label for="observacoes">OBSERVACOES</label>
+                     <p class="form-control-static">{{$prova->observacoes}}</p>
                 </div>
             </form>
 

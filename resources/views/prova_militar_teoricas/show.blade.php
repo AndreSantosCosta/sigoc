@@ -23,10 +23,6 @@
                     <p class="form-control-static"></p>
                 </div>
                 <div class="form-group">
-                     <label for="idprovamilitar">IDPROVAMILITAR</label>
-                     <p class="form-control-static">{{$prova_militar_teorica->idprovamilitar}}</p>
-                </div>
-                    <div class="form-group">
                      <label for="ambito">AMBITO</label>
                      <p class="form-control-static">{{$prova_militar_teorica->ambito}}</p>
                 </div>

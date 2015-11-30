@@ -16,14 +16,7 @@
                 <input type="hidden" name="_method" value="PUT">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                <div class="form-group @if($errors->has('idprovabinomio')) has-error @endif">
-                       <label for="idprovabinomio-field">IdProvaBinomio</label>
-                    <input type="text" id="idprovabinomio-field" name="idprovabinomio" class="form-control" value="{{ $provas_geral_binomio->idprovabinomio }}"/>
-                       @if($errors->has("idprovabinomio"))
-                        <span class="help-block">{{ $errors->first("idprovabinomio") }}</span>
-                       @endif
-                    </div>
-                    <div class="form-group @if($errors->has('data_nascim')) has-error @endif">
+                <div class="form-group @if($errors->has('data_nascim')) has-error @endif">
                        <label for="data_nascim-field">Data_nascim</label>
                     <input type="text" id="data_nascim-field" name="data_nascim" class="form-control" value="{{ $provas_geral_binomio->data_nascim }}"/>
                        @if($errors->has("data_nascim"))
@@ -88,7 +81,7 @@
                     </div>
                     <div class="form-group @if($errors->has('arquivo')) has-error @endif">
                        <label for="arquivo-field">Arquivo</label>
-                    <textarea class="form-control" id="arquivo-field" rows="3" name="arquivo">{{ $provas_geral_binomio->arquivo }}</textarea>
+                    <input type="text" id="arquivo-field" name="arquivo" class="form-control" value="{{ $provas_geral_binomio->arquivo }}"/>
                        @if($errors->has("arquivo"))
                         <span class="help-block">{{ $errors->first("arquivo") }}</span>
                        @endif

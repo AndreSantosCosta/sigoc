@@ -16,23 +16,16 @@
                 <input type="hidden" name="_method" value="PUT">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                <div class="form-group @if($errors->has('idprovamilitar')) has-error @endif">
-                       <label for="idprovamilitar-field">IdProvaMilitar</label>
-                    <input type="text" id="idprovamilitar-field" name="idprovamilitar" class="form-control" value="{{ $prova_militar_tiro->idprovamilitar }}"/>
-                       @if($errors->has("idprovamilitar"))
-                        <span class="help-block">{{ $errors->first("idprovamilitar") }}</span>
-                       @endif
-                    </div>
-                    <div class="form-group @if($errors->has('local')) has-error @endif">
+                <div class="form-group @if($errors->has('local')) has-error @endif">
                        <label for="local-field">Local</label>
-                    <textarea class="form-control" id="local-field" rows="3" name="local">{{ $prova_militar_tiro->local }}</textarea>
+                    <input type="text" id="local-field" name="local" class="form-control" value="{{ $prova_militar_tiro->local }}"/>
                        @if($errors->has("local"))
                         <span class="help-block">{{ $errors->first("local") }}</span>
                        @endif
                     </div>
                     <div class="form-group @if($errors->has('tipo')) has-error @endif">
                        <label for="tipo-field">Tipo</label>
-                    <textarea class="form-control" id="tipo-field" rows="3" name="tipo">{{ $prova_militar_tiro->tipo }}</textarea>
+                    <input type="text" id="tipo-field" name="tipo" class="form-control" value="{{ $prova_militar_tiro->tipo }}"/>
                        @if($errors->has("tipo"))
                         <span class="help-block">{{ $errors->first("tipo") }}</span>
                        @endif
@@ -46,7 +39,7 @@
                     </div>
                     <div class="form-group @if($errors->has('arquivo')) has-error @endif">
                        <label for="arquivo-field">Arquivo</label>
-                    <textarea class="form-control" id="arquivo-field" rows="3" name="arquivo">{{ $prova_militar_tiro->arquivo }}</textarea>
+                    <input type="text" id="arquivo-field" name="arquivo" class="form-control" value="{{ $prova_militar_tiro->arquivo }}"/>
                        @if($errors->has("arquivo"))
                         <span class="help-block">{{ $errors->first("arquivo") }}</span>
                        @endif

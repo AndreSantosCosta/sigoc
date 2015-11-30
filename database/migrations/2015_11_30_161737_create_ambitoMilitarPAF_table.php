@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTipoProvasBinomioTable extends Migration
+class CreateAmbitoMilitarPAFTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,8 @@ class CreateTipoProvasBinomioTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipoProvasBinomio', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('ambitoMilitarPAF', function (Blueprint $table) {
+            $table->integer('id')->primary()->unsigned();
             $table->string('descricao');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateTipoProvasBinomioTable extends Migration
      */
     public function down()
     {
-        Schema::drop('tipoProvasBinomio');
+        Schema::drop('ambitoMilitarPAF');
     }
 }
