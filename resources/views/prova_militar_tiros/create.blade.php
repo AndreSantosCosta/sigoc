@@ -36,13 +36,6 @@
                         <span class="help-block">{{ $errors->first("notafinal") }}</span>
                        @endif
                     </div>
-                    <div class="form-group @if($errors->has('arquivo')) has-error @endif">
-                       <label for="arquivo-field">Arquivo</label>
-                    <input type="text" id="arquivo-field" name="arquivo" class="form-control" value="{{ old("arquivo") }}"/>
-                       @if($errors->has("arquivo"))
-                        <span class="help-block">{{ $errors->first("arquivo") }}</span>
-                       @endif
-                    </div>
                 <div class="well well-sm">
                     <button type="submit" class="btn btn-primary">Create</button>
                     <a class="btn btn-link pull-right" href="{{ route('prova_militar_tiros.index') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>

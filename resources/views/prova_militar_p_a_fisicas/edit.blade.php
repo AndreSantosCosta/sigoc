@@ -65,13 +65,6 @@
                         <span class="help-block">{{ $errors->first("ambito") }}</span>
                        @endif
                     </div>
-                    <div class="form-group @if($errors->has('arquivo')) has-error @endif">
-                       <label for="arquivo-field">Arquivo</label>
-                    <input type="text" id="arquivo-field" name="arquivo" class="form-control" value="{{ $prova_militar_p_a_fisica->arquivo }}"/>
-                       @if($errors->has("arquivo"))
-                        <span class="help-block">{{ $errors->first("arquivo") }}</span>
-                       @endif
-                    </div>
                 <div class="well well-sm">
                     <button type="submit" class="btn btn-primary">Save</button>
                     <a class="btn btn-link pull-right" href="{{ route('prova_militar_p_a_fisicas.index') }}"><i class="glyphicon glyphicon-backward"></i>  Back</a>

@@ -21,7 +21,6 @@
                             <th>AMBITO</th>
                         <th>MATERIAS</th>
                         <th>NOTAFINAL</th>
-                        <th>ARQUIVO</th>
                             <th class="text-right">OPTIONS</th>
                         </tr>
                     </thead>
@@ -33,7 +32,6 @@
                                 <td>{{$prova_militar_teorica->ambito}}</td>
                     <td>{{$prova_militar_teorica->materias}}</td>
                     <td>{{$prova_militar_teorica->notafinal}}</td>
-                    <td>{{$prova_militar_teorica->arquivo}}</td>
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="{{ route('prova_militar_teoricas.show', $prova_militar_teorica->id) }}"><i class="glyphicon glyphicon-eye-open"></i> View</a>
                                     <a class="btn btn-xs btn-warning" href="{{ route('prova_militar_teoricas.edit', $prova_militar_teorica->id) }}"><i class="glyphicon glyphicon-edit"></i> Edit</a>

@@ -23,10 +23,6 @@
                     <p class="form-control-static"></p>
                 </div>
                 <div class="form-group">
-                     <label for="data_nascim">DATA_NASCIM</label>
-                     <p class="form-control-static">{{$provas_geral_binomio->data_nascim}}</p>
-                </div>
-                    <div class="form-group">
                      <label for="avaliador1">AVALIADOR1</label>
                      <p class="form-control-static">{{$provas_geral_binomio->avaliador1}}</p>
                 </div>
@@ -53,14 +49,6 @@
                     <div class="form-group">
                      <label for="situacao">SITUACAO</label>
                      <p class="form-control-static">{{$provas_geral_binomio->situacao}}</p>
-                </div>
-                    <div class="form-group">
-                     <label for="observacoes">OBSERVACOES</label>
-                     <p class="form-control-static">{{$provas_geral_binomio->observacoes}}</p>
-                </div>
-                    <div class="form-group">
-                     <label for="arquivo">ARQUIVO</label>
-                     <p class="form-control-static">{{$provas_geral_binomio->arquivo}}</p>
                 </div>
             </form>
 

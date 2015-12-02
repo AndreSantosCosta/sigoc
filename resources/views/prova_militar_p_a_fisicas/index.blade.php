@@ -25,7 +25,6 @@
                         <th>TESTCOOPER</th>
                         <th>NOTAFINAL</th>
                         <th>AMBITO</th>
-                        <th>ARQUIVO</th>
                             <th class="text-right">OPTIONS</th>
                         </tr>
                     </thead>
@@ -41,7 +40,6 @@
                     <td>{{$prova_militar_p_a_fisica->testcooper}}</td>
                     <td>{{$prova_militar_p_a_fisica->notafinal}}</td>
                     <td>{{$prova_militar_p_a_fisica->ambito}}</td>
-                    <td>{{$prova_militar_p_a_fisica->arquivo}}</td>
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="{{ route('prova_militar_p_a_fisicas.show', $prova_militar_p_a_fisica->id) }}"><i class="glyphicon glyphicon-eye-open"></i> View</a>
                                     <a class="btn btn-xs btn-warning" href="{{ route('prova_militar_p_a_fisicas.edit', $prova_militar_p_a_fisica->id) }}"><i class="glyphicon glyphicon-edit"></i> Edit</a>

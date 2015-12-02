@@ -27,6 +27,8 @@ Route::resource("caos","CaoController");
 
 Route::resource("binomios","BinomioController");
 
+Route::resource("entidades","EntidadeController");
+
 Route::resource("prova_militar_p_a_fisicas","ProvaMilitarPAFisicaController");
 
 Route::resource("prova_militar_teoricas","ProvaMilitarTeoricaController");

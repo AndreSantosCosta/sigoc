@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TipoProvasMilitar extends Model
+class Entidade extends Model
 {
     //
 }

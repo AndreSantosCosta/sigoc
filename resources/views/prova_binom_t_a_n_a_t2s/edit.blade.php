@@ -16,14 +16,7 @@
                 <input type="hidden" name="_method" value="PUT">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                <div class="form-group @if($errors->has('data_nascim')) has-error @endif">
-                       <label for="data_nascim-field">Data_nascim</label>
-                    <input type="text" id="data_nascim-field" name="data_nascim" class="form-control" value="{{ $prova_binom_t_a_n_a_t2->data_nascim }}"/>
-                       @if($errors->has("data_nascim"))
-                        <span class="help-block">{{ $errors->first("data_nascim") }}</span>
-                       @endif
-                    </div>
-                    <div class="form-group @if($errors->has('avaliador')) has-error @endif">
+                <div class="form-group @if($errors->has('avaliador')) has-error @endif">
                        <label for="avaliador-field">Avaliador</label>
                     <input type="text" id="avaliador-field" name="avaliador" class="form-control" value="{{ $prova_binom_t_a_n_a_t2->avaliador }}"/>
                        @if($errors->has("avaliador"))
@@ -147,20 +140,6 @@
                     <input type="text" id="notafinal-field" name="notafinal" class="form-control" value="{{ $prova_binom_t_a_n_a_t2->notafinal }}"/>
                        @if($errors->has("notafinal"))
                         <span class="help-block">{{ $errors->first("notafinal") }}</span>
-                       @endif
-                    </div>
-                    <div class="form-group @if($errors->has('observacoes')) has-error @endif">
-                       <label for="observacoes-field">Observacoes</label>
-                    <textarea class="form-control" id="observacoes-field" rows="3" name="observacoes">{{ $prova_binom_t_a_n_a_t2->observacoes }}</textarea>
-                       @if($errors->has("observacoes"))
-                        <span class="help-block">{{ $errors->first("observacoes") }}</span>
-                       @endif
-                    </div>
-                    <div class="form-group @if($errors->has('arquivo')) has-error @endif">
-                       <label for="arquivo-field">Arquivo</label>
-                    <input type="text" id="arquivo-field" name="arquivo" class="form-control" value="{{ $prova_binom_t_a_n_a_t2->arquivo }}"/>
-                       @if($errors->has("arquivo"))
-                        <span class="help-block">{{ $errors->first("arquivo") }}</span>
                        @endif
                     </div>
                 <div class="well well-sm">

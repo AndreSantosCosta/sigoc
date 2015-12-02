@@ -13,7 +13,7 @@ class CreateAmbitoMilitarPAFTable extends Migration
     public function up()
     {
         Schema::create('ambitoMilitarPAF', function (Blueprint $table) {
-            $table->integer('id')->primary()->unsigned();
+            $table->increments('id');
             $table->string('descricao');
             $table->timestamps();
         });

@@ -18,8 +18,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>DATA_NASCIM</th>
-                        <th>AVALIADOR</th>
+                            <th>AVALIADOR</th>
                         <th>LOCAL</th>
                         <th>ATITUTE</th>
                         <th>AGILIDADECONFIANCA</th>
@@ -34,8 +33,6 @@
                         <th>QUALIDMORDIDA</th>
                         <th>COMBATLUTA</th>
                         <th>NOTAFINAL</th>
-                        <th>OBSERVACOES</th>
-                        <th>ARQUIVO</th>
                             <th class="text-right">OPTIONS</th>
                         </tr>
                     </thead>
@@ -44,8 +41,7 @@
                         @foreach($prova_cao_t_a_n_a_t1s as $prova_cao_t_a_n_a_t1)
                             <tr>
                                 <td>{{$prova_cao_t_a_n_a_t1->id}}</td>
-                                <td>{{$prova_cao_t_a_n_a_t1->data_nascim}}</td>
-                    <td>{{$prova_cao_t_a_n_a_t1->avaliador}}</td>
+                                <td>{{$prova_cao_t_a_n_a_t1->avaliador}}</td>
                     <td>{{$prova_cao_t_a_n_a_t1->local}}</td>
                     <td>{{$prova_cao_t_a_n_a_t1->atitute}}</td>
                     <td>{{$prova_cao_t_a_n_a_t1->agilidadeconfianca}}</td>
@@ -60,8 +56,6 @@
                     <td>{{$prova_cao_t_a_n_a_t1->qualidmordida}}</td>
                     <td>{{$prova_cao_t_a_n_a_t1->combatluta}}</td>
                     <td>{{$prova_cao_t_a_n_a_t1->notafinal}}</td>
-                    <td>{{$prova_cao_t_a_n_a_t1->observacoes}}</td>
-                    <td>{{$prova_cao_t_a_n_a_t1->arquivo}}</td>
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="{{ route('prova_cao_t_a_n_a_t1s.show', $prova_cao_t_a_n_a_t1->id) }}"><i class="glyphicon glyphicon-eye-open"></i> View</a>
                                     <a class="btn btn-xs btn-warning" href="{{ route('prova_cao_t_a_n_a_t1s.edit', $prova_cao_t_a_n_a_t1->id) }}"><i class="glyphicon glyphicon-edit"></i> Edit</a>

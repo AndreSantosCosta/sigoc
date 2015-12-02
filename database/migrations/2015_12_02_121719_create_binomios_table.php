@@ -13,16 +13,12 @@ class CreateBinomiosTable extends Migration {
 	public function up()
 	{
 		Schema::create('binomios', function(Blueprint $table) {
-            $table->increments('id');
+            $table->integer('id')->primary()->unsigned();
             $table->date('data_inicio');
             $table->integer('militar_id')->unsigned();
             $table->integer('cao_id')->unsigned();
             $table->integer('vertente')->unsigned();
-            $table->boolean('inativo')->nullable();
-            $table->date('data_inativo')->nullable();
-            $table->date('data_ativo')->nullable();
             $table->text('motivo_inativo')->nullable();
-            $table->text('observacoes')->nullable();
             $table->timestamps();
         });
 	}

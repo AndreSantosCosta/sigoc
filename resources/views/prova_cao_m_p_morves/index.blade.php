@@ -18,8 +18,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>DATA_NASCIM</th>
-                        <th>PESO</th>
+                            <th>PESO</th>
                         <th>COMPRIMENTO</th>
                         <th>ALTGARROTE</th>
                         <th>ALTGARUPA</th>
@@ -30,8 +29,6 @@
                         <th>DISTOCCIPTRUFA</th>
                         <th>COMPCHANFRO</th>
                         <th>DIAMCHANFRO</th>
-                        <th>OBSERVACOES</th>
-                        <th>ARQUIVO</th>
                             <th class="text-right">OPTIONS</th>
                         </tr>
                     </thead>
@@ -40,8 +37,7 @@
                         @foreach($prova_cao_m_p_morves as $prova_cao_m_p_morf)
                             <tr>
                                 <td>{{$prova_cao_m_p_morf->id}}</td>
-                                <td>{{$prova_cao_m_p_morf->data_nascim}}</td>
-                    <td>{{$prova_cao_m_p_morf->peso}}</td>
+                                <td>{{$prova_cao_m_p_morf->peso}}</td>
                     <td>{{$prova_cao_m_p_morf->comprimento}}</td>
                     <td>{{$prova_cao_m_p_morf->altgarrote}}</td>
                     <td>{{$prova_cao_m_p_morf->altgarupa}}</td>
@@ -52,8 +48,6 @@
                     <td>{{$prova_cao_m_p_morf->distocciptrufa}}</td>
                     <td>{{$prova_cao_m_p_morf->compchanfro}}</td>
                     <td>{{$prova_cao_m_p_morf->diamchanfro}}</td>
-                    <td>{{$prova_cao_m_p_morf->observacoes}}</td>
-                    <td>{{$prova_cao_m_p_morf->arquivo}}</td>
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="{{ route('prova_cao_m_p_morves.show', $prova_cao_m_p_morf->id) }}"><i class="glyphicon glyphicon-eye-open"></i> View</a>
                                     <a class="btn btn-xs btn-warning" href="{{ route('prova_cao_m_p_morves.edit', $prova_cao_m_p_morf->id) }}"><i class="glyphicon glyphicon-edit"></i> Edit</a>

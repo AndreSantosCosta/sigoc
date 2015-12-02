@@ -34,10 +34,6 @@
                      <label for="notafinal">NOTAFINAL</label>
                      <p class="form-control-static">{{$prova_militar_tiro->notafinal}}</p>
                 </div>
-                    <div class="form-group">
-                     <label for="arquivo">ARQUIVO</label>
-                     <p class="form-control-static">{{$prova_militar_tiro->arquivo}}</p>
-                </div>
             </form>
 
             <a class="btn btn-link" href="{{ route('prova_militar_tiros.index') }}"><i class="glyphicon glyphicon-backward"></i>  Back</a>

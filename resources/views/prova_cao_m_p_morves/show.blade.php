@@ -23,10 +23,6 @@
                     <p class="form-control-static"></p>
                 </div>
                 <div class="form-group">
-                     <label for="data_nascim">DATA_NASCIM</label>
-                     <p class="form-control-static">{{$prova_cao_m_p_morf->data_nascim}}</p>
-                </div>
-                    <div class="form-group">
                      <label for="peso">PESO</label>
                      <p class="form-control-static">{{$prova_cao_m_p_morf->peso}}</p>
                 </div>
@@ -69,14 +65,6 @@
                     <div class="form-group">
                      <label for="diamchanfro">DIAMCHANFRO</label>
                      <p class="form-control-static">{{$prova_cao_m_p_morf->diamchanfro}}</p>
-                </div>
-                    <div class="form-group">
-                     <label for="observacoes">OBSERVACOES</label>
-                     <p class="form-control-static">{{$prova_cao_m_p_morf->observacoes}}</p>
-                </div>
-                    <div class="form-group">
-                     <label for="arquivo">ARQUIVO</label>
-                     <p class="form-control-static">{{$prova_cao_m_p_morf->arquivo}}</p>
                 </div>
             </form>
 

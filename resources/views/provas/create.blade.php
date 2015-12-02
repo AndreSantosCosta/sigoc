@@ -36,25 +36,18 @@
                         <span class="help-block">{{ $errors->first("dataprova") }}</span>
                        @endif
                     </div>
-                    <div class="form-group @if($errors->has('cao_id')) has-error @endif">
-                       <label for="cao_id-field">Cao_id</label>
-                    <input type="text" id="cao_id-field" name="cao_id" class="form-control" value="{{ old("cao_id") }}"/>
-                       @if($errors->has("cao_id"))
-                        <span class="help-block">{{ $errors->first("cao_id") }}</span>
+                    <div class="form-group @if($errors->has('entidade_id')) has-error @endif">
+                       <label for="entidade_id-field">Entidade_id</label>
+                    <input type="text" id="entidade_id-field" name="entidade_id" class="form-control" value="{{ old("entidade_id") }}"/>
+                       @if($errors->has("entidade_id"))
+                        <span class="help-block">{{ $errors->first("entidade_id") }}</span>
                        @endif
                     </div>
-                    <div class="form-group @if($errors->has('militar_id')) has-error @endif">
-                       <label for="militar_id-field">Militar_id</label>
-                    <input type="text" id="militar_id-field" name="militar_id" class="form-control" value="{{ old("militar_id") }}"/>
-                       @if($errors->has("militar_id"))
-                        <span class="help-block">{{ $errors->first("militar_id") }}</span>
-                       @endif
-                    </div>
-                    <div class="form-group @if($errors->has('binomio_id')) has-error @endif">
-                       <label for="binomio_id-field">Binomio_id</label>
-                    <input type="text" id="binomio_id-field" name="binomio_id" class="form-control" value="{{ old("binomio_id") }}"/>
-                       @if($errors->has("binomio_id"))
-                        <span class="help-block">{{ $errors->first("binomio_id") }}</span>
+                    <div class="form-group @if($errors->has('arquivo')) has-error @endif">
+                       <label for="arquivo-field">Arquivo</label>
+                    <input type="text" id="arquivo-field" name="arquivo" class="form-control" value="{{ old("arquivo") }}"/>
+                       @if($errors->has("arquivo"))
+                        <span class="help-block">{{ $errors->first("arquivo") }}</span>
                        @endif
                     </div>
                     <div class="form-group @if($errors->has('observacoes')) has-error @endif">

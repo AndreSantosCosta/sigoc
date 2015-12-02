@@ -23,10 +23,6 @@
                     <p class="form-control-static"></p>
                 </div>
                 <div class="form-group">
-                     <label for="data_nascim">DATA_NASCIM</label>
-                     <p class="form-control-static">{{$prova_cao_t_i_per->data_nascim}}</p>
-                </div>
-                    <div class="form-group">
                      <label for="avaliador">AVALIADOR</label>
                      <p class="form-control-static">{{$prova_cao_t_i_per->avaliador}}</p>
                 </div>
@@ -77,14 +73,6 @@
                     <div class="form-group">
                      <label for="notafinal">NOTAFINAL</label>
                      <p class="form-control-static">{{$prova_cao_t_i_per->notafinal}}</p>
-                </div>
-                    <div class="form-group">
-                     <label for="observacoes">OBSERVACOES</label>
-                     <p class="form-control-static">{{$prova_cao_t_i_per->observacoes}}</p>
-                </div>
-                    <div class="form-group">
-                     <label for="arquivo">ARQUIVO</label>
-                     <p class="form-control-static">{{$prova_cao_t_i_per->arquivo}}</p>
                 </div>
             </form>
 

@@ -18,8 +18,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>DATA_NASCIM</th>
-                        <th>AVALIADOR</th>
+                            <th>AVALIADOR</th>
                         <th>EXECUTANTE</th>
                         <th>LOCAL</th>
                         <th>SEGUIMENTO</th>
@@ -32,8 +31,6 @@
                         <th>MESA</th>
                         <th>DOR</th>
                         <th>NOTAFINAL</th>
-                        <th>OBSERVACOES</th>
-                        <th>ARQUIVO</th>
                             <th class="text-right">OPTIONS</th>
                         </tr>
                     </thead>
@@ -42,8 +39,7 @@
                         @foreach($prova_cao_t_i_pers as $prova_cao_t_i_per)
                             <tr>
                                 <td>{{$prova_cao_t_i_per->id}}</td>
-                                <td>{{$prova_cao_t_i_per->data_nascim}}</td>
-                    <td>{{$prova_cao_t_i_per->avaliador}}</td>
+                                <td>{{$prova_cao_t_i_per->avaliador}}</td>
                     <td>{{$prova_cao_t_i_per->executante}}</td>
                     <td>{{$prova_cao_t_i_per->local}}</td>
                     <td>{{$prova_cao_t_i_per->seguimento}}</td>
@@ -56,8 +52,6 @@
                     <td>{{$prova_cao_t_i_per->mesa}}</td>
                     <td>{{$prova_cao_t_i_per->dor}}</td>
                     <td>{{$prova_cao_t_i_per->notafinal}}</td>
-                    <td>{{$prova_cao_t_i_per->observacoes}}</td>
-                    <td>{{$prova_cao_t_i_per->arquivo}}</td>
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="{{ route('prova_cao_t_i_pers.show', $prova_cao_t_i_per->id) }}"><i class="glyphicon glyphicon-eye-open"></i> View</a>
                                     <a class="btn btn-xs btn-warning" href="{{ route('prova_cao_t_i_pers.edit', $prova_cao_t_i_per->id) }}"><i class="glyphicon glyphicon-edit"></i> Edit</a>

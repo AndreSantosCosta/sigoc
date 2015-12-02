@@ -14,7 +14,6 @@ class CreateProvaCaoMPMorvesTable extends Migration {
 	{
 		Schema::create('prova_cao_m_p_morves', function(Blueprint $table) {
             $table->integer('id')->primary()->unsigned();
-            $table->date('data_nascim');
             $table->double('peso');
             $table->double('comprimento');
             $table->double('altGarrote');
@@ -26,8 +25,6 @@ class CreateProvaCaoMPMorvesTable extends Migration {
             $table->double('distOccipTrufa');
             $table->double('compChanfro');
             $table->double('diamChanfro');
-            $table->text('observacoes');
-            $table->string('arquivo', 20);
             $table->timestamps();
         });
 	}

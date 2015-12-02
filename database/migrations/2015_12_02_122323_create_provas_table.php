@@ -17,9 +17,8 @@ class CreateProvasTable extends Migration {
             $table->string('tipoEntidade', 1);
             $table->string('tipoProva', 10);
             $table->date('dataProva');
-            $table->integer('cao_id')->unsigned()->nullable();
-            $table->integer('militar_id')->unsigned()->nullable();
-            $table->integer('binomio_id')->unsigned()->nullable();
+            $table->integer('entidade_id')->unsigned()->nullable();
+            $table->string('arquivo', 20);
             $table->text('observacoes')->nullable();
             $table->timestamps();
         });

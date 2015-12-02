@@ -35,16 +35,12 @@
                      <p class="form-control-static">{{$prova->dataprova}}</p>
                 </div>
                     <div class="form-group">
-                     <label for="cao_id">CAO_ID</label>
-                     <p class="form-control-static">{{$prova->cao_id}}</p>
+                     <label for="entidade_id">ENTIDADE_ID</label>
+                     <p class="form-control-static">{{$prova->entidade_id}}</p>
                 </div>
                     <div class="form-group">
-                     <label for="militar_id">MILITAR_ID</label>
-                     <p class="form-control-static">{{$prova->militar_id}}</p>
-                </div>
-                    <div class="form-group">
-                     <label for="binomio_id">BINOMIO_ID</label>
-                     <p class="form-control-static">{{$prova->binomio_id}}</p>
+                     <label for="arquivo">ARQUIVO</label>
+                     <p class="form-control-static">{{$prova->arquivo}}</p>
                 </div>
                     <div class="form-group">
                      <label for="observacoes">OBSERVACOES</label>

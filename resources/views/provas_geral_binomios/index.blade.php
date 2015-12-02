@@ -18,16 +18,13 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>DATA_NASCIM</th>
-                        <th>AVALIADOR1</th>
+                            <th>AVALIADOR1</th>
                         <th>AVALIADOR2</th>
                         <th>AVALIADOR3</th>
                         <th>LOCAL</th>
                         <th>AMBITO</th>
                         <th>NOTA</th>
                         <th>SITUACAO</th>
-                        <th>OBSERVACOES</th>
-                        <th>ARQUIVO</th>
                             <th class="text-right">OPTIONS</th>
                         </tr>
                     </thead>
@@ -36,16 +33,13 @@
                         @foreach($provas_geral_binomios as $provas_geral_binomio)
                             <tr>
                                 <td>{{$provas_geral_binomio->id}}</td>
-                                <td>{{$provas_geral_binomio->data_nascim}}</td>
-                    <td>{{$provas_geral_binomio->avaliador1}}</td>
+                                <td>{{$provas_geral_binomio->avaliador1}}</td>
                     <td>{{$provas_geral_binomio->avaliador2}}</td>
                     <td>{{$provas_geral_binomio->avaliador3}}</td>
                     <td>{{$provas_geral_binomio->local}}</td>
                     <td>{{$provas_geral_binomio->ambito}}</td>
                     <td>{{$provas_geral_binomio->nota}}</td>
                     <td>{{$provas_geral_binomio->situacao}}</td>
-                    <td>{{$provas_geral_binomio->observacoes}}</td>
-                    <td>{{$provas_geral_binomio->arquivo}}</td>
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="{{ route('provas_geral_binomios.show', $provas_geral_binomio->id) }}"><i class="glyphicon glyphicon-eye-open"></i> View</a>
                                     <a class="btn btn-xs btn-warning" href="{{ route('provas_geral_binomios.edit', $provas_geral_binomio->id) }}"><i class="glyphicon glyphicon-edit"></i> Edit</a>

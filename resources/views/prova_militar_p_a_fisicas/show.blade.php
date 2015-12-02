@@ -50,10 +50,6 @@
                      <label for="ambito">AMBITO</label>
                      <p class="form-control-static">{{$prova_militar_p_a_fisica->ambito}}</p>
                 </div>
-                    <div class="form-group">
-                     <label for="arquivo">ARQUIVO</label>
-                     <p class="form-control-static">{{$prova_militar_p_a_fisica->arquivo}}</p>
-                </div>
             </form>
 
             <a class="btn btn-link" href="{{ route('prova_militar_p_a_fisicas.index') }}"><i class="glyphicon glyphicon-backward"></i>  Back</a>

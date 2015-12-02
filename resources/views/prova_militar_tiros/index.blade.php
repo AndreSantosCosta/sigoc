@@ -21,7 +21,6 @@
                             <th>LOCAL</th>
                         <th>TIPO</th>
                         <th>NOTAFINAL</th>
-                        <th>ARQUIVO</th>
                             <th class="text-right">OPTIONS</th>
                         </tr>
                     </thead>
@@ -33,7 +32,6 @@
                                 <td>{{$prova_militar_tiro->local}}</td>
                     <td>{{$prova_militar_tiro->tipo}}</td>
                     <td>{{$prova_militar_tiro->notafinal}}</td>
-                    <td>{{$prova_militar_tiro->arquivo}}</td>
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="{{ route('prova_militar_tiros.show', $prova_militar_tiro->id) }}"><i class="glyphicon glyphicon-eye-open"></i> View</a>
                                     <a class="btn btn-xs btn-warning" href="{{ route('prova_militar_tiros.edit', $prova_militar_tiro->id) }}"><i class="glyphicon glyphicon-edit"></i> Edit</a>

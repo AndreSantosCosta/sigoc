@@ -18,8 +18,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>DATA_NASCIM</th>
-                        <th>AVALIADOR</th>
+                            <th>AVALIADOR</th>
                         <th>LOCAL</th>
                         <th>ATITUTE</th>
                         <th>MEMORIAMUSCULAR</th>
@@ -37,8 +36,6 @@
                         <th>QUALIDMORDIDA</th>
                         <th>COMBATLUTA</th>
                         <th>NOTAFINAL</th>
-                        <th>OBSERVACOES</th>
-                        <th>ARQUIVO</th>
                             <th class="text-right">OPTIONS</th>
                         </tr>
                     </thead>
@@ -47,8 +44,7 @@
                         @foreach($prova_binom_t_a_n_a_t2s as $prova_binom_t_a_n_a_t2)
                             <tr>
                                 <td>{{$prova_binom_t_a_n_a_t2->id}}</td>
-                                <td>{{$prova_binom_t_a_n_a_t2->data_nascim}}</td>
-                    <td>{{$prova_binom_t_a_n_a_t2->avaliador}}</td>
+                                <td>{{$prova_binom_t_a_n_a_t2->avaliador}}</td>
                     <td>{{$prova_binom_t_a_n_a_t2->local}}</td>
                     <td>{{$prova_binom_t_a_n_a_t2->atitute}}</td>
                     <td>{{$prova_binom_t_a_n_a_t2->memoriamuscular}}</td>
@@ -66,8 +62,6 @@
                     <td>{{$prova_binom_t_a_n_a_t2->qualidmordida}}</td>
                     <td>{{$prova_binom_t_a_n_a_t2->combatluta}}</td>
                     <td>{{$prova_binom_t_a_n_a_t2->notafinal}}</td>
-                    <td>{{$prova_binom_t_a_n_a_t2->observacoes}}</td>
-                    <td>{{$prova_binom_t_a_n_a_t2->arquivo}}</td>
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="{{ route('prova_binom_t_a_n_a_t2s.show', $prova_binom_t_a_n_a_t2->id) }}"><i class="glyphicon glyphicon-eye-open"></i> View</a>
                                     <a class="btn btn-xs btn-warning" href="{{ route('prova_binom_t_a_n_a_t2s.edit', $prova_binom_t_a_n_a_t2->id) }}"><i class="glyphicon glyphicon-edit"></i> Edit</a>

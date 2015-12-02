@@ -17,4 +17,9 @@ class Militar extends Model
 		return $unidade->descricao;
 	}
 
+	/*public function getNomeMotivoInativacaoAttribute(){
+		$motivoInatMilitar = MotivoInativoMilitar::findOrFail($this->motivo_inativo);
+		return $motivoInatMilitar->descricao;
+	} */
+
 }

@@ -13,6 +13,7 @@ class ForeingKeysIndexs extends Migration
     public function up()
     {
          Schema::table('militars', function($table){
+            $table->foreign('id')->references('id')->on('entidades');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('posto_id')->references('id')->on('postos');
             $table->foreign('unidade_id')->references('id')->on('unidades');
@@ -20,13 +21,15 @@ class ForeingKeysIndexs extends Migration
         });
 
         Schema::table('caos', function($table){
+            $table->foreign('id')->references('id')->on('entidades');
             $table->foreign('origem')->references('id')->on('origemCao');
             $table->foreign('mae_id')->references('id')->on('caos');
-            $table->foreign('pai')->references('id')->on('caos');
+            $table->foreign('pai_id')->references('id')->on('caos');
             $table->foreign('motivo_inativo')->references('id')->on('motivoInativoCao');
         });
 
         Schema::table('binomios', function($table){
+            $table->foreign('id')->references('id')->on('entidades');
             $table->unique(['cao_id','militar_id']);
             $table->foreign('cao_id')->references('id')->on('caos');
             $table->foreign('militar_id')->references('id')->on('militars');
@@ -69,11 +72,8 @@ class ForeingKeysIndexs extends Migration
         });
 
         Schema::table('provas', function($table){
-            $table->foreign('cao_id')->references('id')->on('caos');
-            $table->foreign('militar_id')->references('id')->on('militars');
-            $table->foreign('binomio_id')->references('id')->on('binomios');
+            $table->foreign('entidade_id')->references('id')->on('entidades');
         });
-
     }
 
     /**
@@ -84,6 +84,7 @@ class ForeingKeysIndexs extends Migration
     public function down()
     {
         Schema::table('militars', function($table){
+            $table->dropForeign('militars_id_foreign');
             $table->dropForeign('militars_user_id_foreign');
             $table->dropForeign('militars_posto_id_foreign');
             $table->dropForeign('militars_unidade_id_foreign');
@@ -91,13 +92,15 @@ class ForeingKeysIndexs extends Migration
         });
 
         Schema::table('caos', function($table){
+            $table->dropForeign('caos_id_foreign');
             $table->dropForeign('caos_origem_foreign');
             $table->dropForeign('caos_mae_id_foreign');
-            $table->dropForeign('caos_pai_foreign');
+            $table->dropForeign('caos_pai_id_foreign');
             $table->dropForeign('caos_motivo_inativo_foreign');
         });
 
         Schema::table('binomios', function($table){
+            $table->dropForeign('binomios_id_foreign');
             $table->dropForeign('binomios_cao_id_foreign');
             $table->dropForeign('binomios_militar_id_foreign');
             $table->dropUnique('binomios_cao_id_militar_id_unique');
@@ -119,7 +122,7 @@ class ForeingKeysIndexs extends Migration
         });
 
         Schema::table('prova_binom_t_a_n_a_t2s', function($table){
-            $table->dropForeign('prova_binom_t_a_n_a_t2s_IdProvaBinomio_foreign');
+            $table->dropForeign('prova_binom_t_a_n_a_t2s_id_foreign');
         });
 
         Schema::table('provas_geral_binomios', function($table){
@@ -140,10 +143,7 @@ class ForeingKeysIndexs extends Migration
         });
 
         Schema::table('provas', function($table){
-            $table->dropForeign('provas_cao_id_foreign');
-            $table->dropForeign('provas_militar_id_foreign');
-            $table->dropForeign('provas_binomio_id_foreign');
+            $table->dropForeign('provas_entidade_id_foreign');
         });
-
     }
 }

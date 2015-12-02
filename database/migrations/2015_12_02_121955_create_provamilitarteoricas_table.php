@@ -17,7 +17,6 @@ class CreateProvaMilitarTeoricasTable extends Migration {
             $table->integer('ambito')->unsigned();
             $table->string('materias');
             $table->double('notaFinal');
-            $table->string('arquivo', 20);
             $table->timestamps();
         });
 	}

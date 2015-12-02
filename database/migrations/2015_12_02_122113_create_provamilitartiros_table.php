@@ -17,7 +17,6 @@ class CreateProvaMilitarTirosTable extends Migration {
             $table->string('local', 100);
             $table->string('tipo', 50);
             $table->double('notaFinal');
-            $table->string('arquivo', 20);
             $table->timestamps();
         });
 	}

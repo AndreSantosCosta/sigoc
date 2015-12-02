@@ -21,9 +21,8 @@
                             <th>TIPOENTIDADE</th>
                         <th>TIPOPROVA</th>
                         <th>DATAPROVA</th>
-                        <th>CAO_ID</th>
-                        <th>MILITAR_ID</th>
-                        <th>BINOMIO_ID</th>
+                        <th>ENTIDADE_ID</th>
+                        <th>ARQUIVO</th>
                         <th>OBSERVACOES</th>
                             <th class="text-right">OPTIONS</th>
                         </tr>
@@ -36,9 +35,8 @@
                                 <td>{{$prova->tipoentidade}}</td>
                     <td>{{$prova->tipoprova}}</td>
                     <td>{{$prova->dataprova}}</td>
-                    <td>{{$prova->cao_id}}</td>
-                    <td>{{$prova->militar_id}}</td>
-                    <td>{{$prova->binomio_id}}</td>
+                    <td>{{$prova->entidade_id}}</td>
+                    <td>{{$prova->arquivo}}</td>
                     <td>{{$prova->observacoes}}</td>
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="{{ route('provas.show', $prova->id) }}"><i class="glyphicon glyphicon-eye-open"></i> View</a>

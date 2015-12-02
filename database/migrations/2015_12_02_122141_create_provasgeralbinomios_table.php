@@ -14,7 +14,6 @@ class CreateProvasGeralBinomiosTable extends Migration {
 	{
 		Schema::create('provas_geral_binomios', function(Blueprint $table) {
             $table->integer('id')->primary()->unsigned();
-            $table->date('data_nascim');
             $table->string('avaliador1', 50);
             $table->string('avaliador2', 50);
             $table->string('avaliador3', 50);
@@ -22,8 +21,6 @@ class CreateProvasGeralBinomiosTable extends Migration {
             $table->integer('ambito')->unsigned();
             $table->double('nota');
             $table->string('situacao', 100);
-            $table->text('observacoes');
-            $table->string('arquivo', 20);
             $table->timestamps();
         });
 	}

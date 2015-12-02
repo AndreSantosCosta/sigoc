@@ -21,7 +21,6 @@ class CreateProvaMilitarPAFisicasTable extends Migration {
             $table->double('testCooper');
             $table->double('notaFinal');
             $table->integer('ambito')->unsigned();
-            $table->string('arquivo', 20);
             $table->timestamps();
         });
 	}

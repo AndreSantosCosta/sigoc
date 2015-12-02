@@ -15,14 +15,7 @@
             <form action="{{ route('provas_geral_binomios.store') }}" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                <div class="form-group @if($errors->has('data_nascim')) has-error @endif">
-                       <label for="data_nascim-field">Data_nascim</label>
-                    <input type="text" id="data_nascim-field" name="data_nascim" class="form-control" value="{{ old("data_nascim") }}"/>
-                       @if($errors->has("data_nascim"))
-                        <span class="help-block">{{ $errors->first("data_nascim") }}</span>
-                       @endif
-                    </div>
-                    <div class="form-group @if($errors->has('avaliador1')) has-error @endif">
+                <div class="form-group @if($errors->has('avaliador1')) has-error @endif">
                        <label for="avaliador1-field">Avaliador1</label>
                     <input type="text" id="avaliador1-field" name="avaliador1" class="form-control" value="{{ old("avaliador1") }}"/>
                        @if($errors->has("avaliador1"))
@@ -69,20 +62,6 @@
                     <input type="text" id="situacao-field" name="situacao" class="form-control" value="{{ old("situacao") }}"/>
                        @if($errors->has("situacao"))
                         <span class="help-block">{{ $errors->first("situacao") }}</span>
-                       @endif
-                    </div>
-                    <div class="form-group @if($errors->has('observacoes')) has-error @endif">
-                       <label for="observacoes-field">Observacoes</label>
-                    <textarea class="form-control" id="observacoes-field" rows="3" name="observacoes">{{ old("observacoes") }}</textarea>
-                       @if($errors->has("observacoes"))
-                        <span class="help-block">{{ $errors->first("observacoes") }}</span>
-                       @endif
-                    </div>
-                    <div class="form-group @if($errors->has('arquivo')) has-error @endif">
-                       <label for="arquivo-field">Arquivo</label>
-                    <input type="text" id="arquivo-field" name="arquivo" class="form-control" value="{{ old("arquivo") }}"/>
-                       @if($errors->has("arquivo"))
-                        <span class="help-block">{{ $errors->first("arquivo") }}</span>
                        @endif
                     </div>
                 <div class="well well-sm">
