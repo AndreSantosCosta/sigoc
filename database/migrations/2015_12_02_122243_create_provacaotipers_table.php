@@ -14,19 +14,19 @@ class CreateProvaCaoTIPersTable extends Migration {
 	{
 		Schema::create('prova_cao_t_i_pers', function(Blueprint $table) {
             $table->integer('id')->primary()->unsigned();
-            $table->string('avaliador', 50);
-            $table->string('executante', 50);
-            $table->string('local', 100);
-            $table->integer('seguimento');
-            $table->integer('levantar');
-            $table->integer('submissao');
-            $table->integer('chamada');
-            $table->integer('buscaObj');
-            $table->integer('jornal');
-            $table->integer('chapeu');
-            $table->integer('mesa');
-            $table->integer('dor');
-            $table->double('notaFinal');
+            $table->string('avaliador', 50)->nullable();
+            $table->string('executante', 50)->nullable();
+            $table->string('local', 100)->nullable();
+            $table->integer('seguimento')->nullable();
+            $table->integer('levantar')->nullable();
+            $table->integer('submissao')->nullable();
+            $table->integer('chamada')->nullable();
+            $table->integer('buscaObj')->nullable();
+            $table->integer('jornal')->nullable();
+            $table->integer('chapeu')->nullable();
+            $table->integer('mesa')->nullable();
+            $table->integer('dor')->nullable();
+            $table->double('notaFinal')->nullable();
             $table->timestamps();
         });
 	}

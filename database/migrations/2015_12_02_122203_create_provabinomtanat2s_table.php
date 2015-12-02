@@ -14,24 +14,24 @@ class CreateProvaBinomTANAT2sTable extends Migration {
 	{
 		Schema::create('prova_binom_t_a_n_a_t2s', function(Blueprint $table) {
             $table->integer('id')->primary()->unsigned();
-            $table->string('avaliador', 50);
-            $table->string('local', 100);
-            $table->double('atitute');
-            $table->double('memoriaMuscular');
-            $table->double('agilidadeConfianca');
-            $table->double('rPisosSons');
-            $table->double('rAproxVulto');
-            $table->double('rDisparos');
-            $table->double('instPresaPerist');
-            $table->double('intsBusca');
-            $table->double('marcPessoasObj');
-            $table->double('inicPistas');
-            $table->double('ladrido');
-            $table->double('instDefesa');
-            $table->double('tecnMordida');
-            $table->double('qualidMordida');
-            $table->double('CombatLuta');
-            $table->double('notaFinal');
+            $table->string('avaliador', 50)->nullable();
+            $table->string('local', 100)->nullable();
+            $table->double('atitute')->nullable();
+            $table->double('memoriaMuscular')->nullable();
+            $table->double('agilidadeConfianca')->nullable();
+            $table->double('rPisosSons')->nullable();
+            $table->double('rAproxVulto')->nullable();
+            $table->double('rDisparos')->nullable();
+            $table->double('instPresaPerist')->nullable();
+            $table->double('intsBusca')->nullable();
+            $table->double('marcPessoasObj')->nullable();
+            $table->double('inicPistas')->nullable();
+            $table->double('ladrido')->nullable();
+            $table->double('instDefesa')->nullable();
+            $table->double('tecnMordida')->nullable();
+            $table->double('qualidMordida')->nullable();
+            $table->double('CombatLuta')->nullable();
+            $table->double('notaFinal')->nullable();
             $table->timestamps();
         });
 	}

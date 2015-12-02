@@ -14,17 +14,17 @@ class CreateProvaCaoMPMorvesTable extends Migration {
 	{
 		Schema::create('prova_cao_m_p_morves', function(Blueprint $table) {
             $table->integer('id')->primary()->unsigned();
-            $table->double('peso');
-            $table->double('comprimento');
-            $table->double('altGarrote');
-            $table->double('altGarupa');
-            $table->string('pelagem');
-            $table->double('perimetro');
-            $table->double('orelhas');
-            $table->double('distOlhos');
-            $table->double('distOccipTrufa');
-            $table->double('compChanfro');
-            $table->double('diamChanfro');
+            $table->double('peso')->nullable();
+            $table->double('comprimento')->nullable();
+            $table->double('altGarrote')->nullable();
+            $table->double('altGarupa')->nullable();
+            $table->string('pelagem')->nullable();
+            $table->double('perimetro')->nullable();
+            $table->double('orelhas')->nullable();
+            $table->double('distOlhos')->nullable();
+            $table->double('distOccipTrufa')->nullable();
+            $table->double('compChanfro')->nullable();
+            $table->double('diamChanfro')->nullable();
             $table->timestamps();
         });
 	}

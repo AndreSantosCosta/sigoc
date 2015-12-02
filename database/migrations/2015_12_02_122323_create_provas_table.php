@@ -17,7 +17,7 @@ class CreateProvasTable extends Migration {
             $table->string('tipoEntidade', 1);
             $table->string('tipoProva', 10);
             $table->date('dataProva');
-            $table->integer('entidade_id')->unsigned()->nullable();
+            $table->integer('entidade_id')->unsigned();
             $table->string('arquivo', 20);
             $table->text('observacoes')->nullable();
             $table->timestamps();

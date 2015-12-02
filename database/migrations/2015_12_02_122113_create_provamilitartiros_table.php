@@ -14,9 +14,9 @@ class CreateProvaMilitarTirosTable extends Migration {
 	{
 		Schema::create('prova_militar_tiros', function(Blueprint $table) {
             $table->integer('id')->primary()->unsigned();
-            $table->string('local', 100);
-            $table->string('tipo', 50);
-            $table->double('notaFinal');
+            $table->string('local', 100)->nullable();
+            $table->string('tipo', 50)->nullable();
+            $table->double('notaFinal')->nullable();
             $table->timestamps();
         });
 	}

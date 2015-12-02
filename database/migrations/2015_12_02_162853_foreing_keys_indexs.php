@@ -12,7 +12,7 @@ class ForeingKeysIndexs extends Migration
      */
     public function up()
     {
-         Schema::table('militars', function($table){
+        Schema::table('militars', function($table){
             $table->foreign('id')->references('id')->on('entidades');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('posto_id')->references('id')->on('postos');
