@@ -27,8 +27,9 @@ class BinomioController extends Controller {
 	 */
 	public function create()
 	{
+		$binomio = new Binomio();
 		$listaVertente = array(' '=>' ','Uso da Força'=>'Uso da Força', 'Intervenção Tática'=>'Intervenção Tática', 'Deteção de Odor'=>'Deteção de Odor', 'Humano'=>'Humano', 'Deteção de Explosivos'=>'Deteção de Explosivos', 'Deteção de Droga/Papel Moeda'=>'Deteção de Droga/Papel Moeda', 'Outras Deteções'=>'Outras Deteções','Formação e Desenvolvimento de Cachorros'=>'Formação e Desenvolvimento de Cachorros');
-		return view('binomios.create', compact('listaVertente'));
+		return view('binomios.create', compact('binomio', 'listaVertente'));
 	}
 
 	/**

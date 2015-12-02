@@ -27,10 +27,11 @@ class CaoController extends Controller {
 	 */
 	public function create()
 	{
+		$cao = new Cao();
 		$listaOrigem = array(' '=>' ', 'Procriação'=>'Procriação', 'Doacção'=>'Doacção', 'Remonta'=>'Remonta');
 		$listaMotivos = array(' '=>' ','Incapacidade Técnica'=>'Incapacidade Técnica', 'Incapacidade Veterinária'=>'Incapacidade Veterinária','Morte'=>'Morte');
 		$listaSexo = array(' '=>' ', 'Fêmea'=>'Fêmea', 'Macho'=>'Macho');
-		return view('caos.create', compact('listaMotivos', 'listaSexo', 'listaOrigem'));
+		return view('caos.create', compact('cao', 'listaMotivos', 'listaSexo', 'listaOrigem'));
 	}
 
 	/**
