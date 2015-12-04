@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
+use Database\Seeds\EntidadeTableSeeder;
 
 // composer require laracasts/testdummy
 //use Laracasts\TestDummy\Factory as TestDummy;
@@ -10,13 +11,15 @@ class MilitarTableSeeder extends Seeder {
 
     public function run()
     {
-        // TestDummy::times(20)->create('App\Post');
-
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        //DB::table('prova_militars')->truncate();
+        //DB::table('entidades')->truncate();
+        //DB::table('motivoInativoMilitar')->truncate();
+        //DB::table('postos')->truncate();
+        //DB::table('unidades')->truncate();
+        //DB::table('users')->truncate();
+        //DB::table('binomios')->truncate();
         DB::table('militars')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-
         //DB::table('militars')->truncate();
 
         $faker = Faker::create();
@@ -33,24 +36,26 @@ class MilitarTableSeeder extends Seeder {
         //$unidadeId = unidades::all()->lists('id');
         //$motivoInativoMilitarId = motivoInativoMilitar::all()->lists('id');
         for ($i=0; $i<10; $i++) {
+            $entidades::orderByRaw("RAND()")->first();
             DB::table('militars')->insert(array(
+                    'id' => $faker->numberBetween(1,10),
                 'num_mecanografico' => $faker->numberBetween($min = 1000000, $max = 7000000),
                     'user_id' => $faker->numberBetween(1,10),
                     'posto_id' => $faker->numberBetween(1,15),
                 'apelido' => $faker->lastName(),
-                'nome' => $faker->firstName(),
+                'nomeProprio' => $faker->firstName(),
                 'data_nascim' => $faker->date(),
-                'grupo_sang' => $faker->randomElement($array = ['A Positivo', 'A Negativo', 'B Positivo', 'B Negativo', 'AB Positivo', 'AB Negativo', 'O Positivo', 'O Negativo']),
-                'sexo' => $faker->randomElement($array = ['Masculino', 'Feminino']),
+                'grupo_sang' => $faker->randomElement($array = array ('A Positivo', 'A Negativo', 'B Positivo', 'B Negativo', 'AB Positivo', 'AB Negativo', 'O Positivo', 'O Negativo')),
+                'sexo' => $faker->randomElement($array = array ('Masculino', 'Feminino')),
                     'unidade_id' => $faker->numberBetween(1,22),
-                'fotografia' => $faker->image(),
-                'tamanhoImagem' => $faker->numberBetween(0,7),
-                'tipoImagem' => $faker->word(),
-                'inativo' => $faker->numberBetween(0,1),
-                'data_inativo' => $faker->date(),
                     'motivo_inativo' => $faker->numberBetween(1,4)
             ));
         } 
     }
 
 }
+
+
+//$users = User::orderByRaw("RAND()")->first();
+//$entidades = DB::table('entidades')->insert(array(
+//$users = Entidades::create(array(
