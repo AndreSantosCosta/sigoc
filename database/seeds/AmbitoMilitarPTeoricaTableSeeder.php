@@ -10,13 +10,9 @@ class AmbitoMilitarPTeoricaTableSeeder extends Seeder {
     {
     	
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        DB::table('prova_militar_teoricas')->truncate();
+        //DB::table('prova_militar_teoricas')->truncate();
         DB::table('ambitoMilitarPTeorica')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-
-
-
-        //DB::table('postos')->truncate();
 
     	$descricao = array(
     		array(

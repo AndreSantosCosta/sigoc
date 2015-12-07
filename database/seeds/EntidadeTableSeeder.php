@@ -22,9 +22,9 @@ class EntidadeTableSeeder extends Seeder {
 
          $faker = Faker::create();
 
-        for ($i=0; $i<10; $i++) {
-         	$entidades = DB::table('entidades')->insert(array(
-         		'tipoEntidade' => $faker->numberBetween(0,1),
+        for ($i=0; $i<100; $i++) {
+         	DB::table('entidades')->insert(array(
+         		'tipoEntidade' => $faker->randomElement($array=array('M','C','B')),
                 'nome' => $faker->firstName(),
                 'inativo' => $faker->numberBetween(0,1),
                 'data_inativo' => $faker->date(),

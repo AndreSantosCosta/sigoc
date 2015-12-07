@@ -10,13 +10,9 @@ class OrigemCaoTableSeeder extends Seeder {
     {
     	
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        DB::table('caos')->truncate();
+        //DB::table('caos')->truncate();
         DB::table('origemCao')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-
-
-
-        //DB::table('postos')->truncate();
 
     	$descricao = array(
     		array(

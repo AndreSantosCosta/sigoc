@@ -10,13 +10,9 @@ class AmbitoMilitarPafTableSeeder extends Seeder {
     {
     	
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        DB::table('prova_militar_p_a_fisicas')->truncate();
+        //DB::table('prova_militar_p_a_fisicas')->truncate();
         DB::table('ambitoMilitarPAF')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-
-
-
-        //DB::table('postos')->truncate();
 
     	$descricao = array(
     		array(

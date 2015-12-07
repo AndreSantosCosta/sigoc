@@ -15,18 +15,14 @@ class DatabaseSeeder extends Seeder
         $this->call('PostoTableSeeder');
         $this->call('UnidadeTableSeeder');
         $this->call('MotivoInativoMilitarTableSeeder');
-
-            $this->call('EntidadeTableSeeder');
-            $this->call('MilitarTableSeeder');
-
         $this->call('OrigemCaoTableSeeder');
         $this->call('MotivoInativoCaoTableSeeder');
-
         $this->call('VertenteBinomioTableSeeder');
-
         $this->call('AmbitoMilitarPafTableSeeder');
         $this->call('AmbitoMilitarPTeoricaTableSeeder');
-
         $this->call('AmbitoProvasGeralBinomioTableSeeder');
+
+        //Funciona
+        //$this->call('ProvaTableSeeder');
     }
 }

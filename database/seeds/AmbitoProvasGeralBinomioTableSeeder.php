@@ -10,13 +10,9 @@ class AmbitoProvasGeralBinomioTableSeeder extends Seeder {
     {
     	
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        DB::table('provas_geral_binomios')->truncate();
+        //DB::table('provas_geral_binomios')->truncate();
         DB::table('ambitoProvasGeralBinomio')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-
-
-
-        //DB::table('postos')->truncate();
 
     	$descricao = array(
     		array(

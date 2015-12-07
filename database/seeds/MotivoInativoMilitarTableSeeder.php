@@ -10,13 +10,9 @@ class MotivoInativoMilitarTableSeeder extends Seeder {
     {
     	
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        DB::table('militars')->truncate();
+        //DB::table('militars')->truncate();
         DB::table('motivoInativoMilitar')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-
-
-
-        //DB::table('postos')->truncate();
 
     	$descricao = array(
     		array(

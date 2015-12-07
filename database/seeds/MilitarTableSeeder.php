@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
-use Database\Seeds\EntidadeTableSeeder;
 
 // composer require laracasts/testdummy
 //use Laracasts\TestDummy\Factory as TestDummy;
@@ -36,17 +35,16 @@ class MilitarTableSeeder extends Seeder {
         //$unidadeId = unidades::all()->lists('id');
         //$motivoInativoMilitarId = motivoInativoMilitar::all()->lists('id');
         for ($i=0; $i<10; $i++) {
-            $entidades::orderByRaw("RAND()")->first();
             DB::table('militars')->insert(array(
                     'id' => $faker->numberBetween(1,10),
                 'num_mecanografico' => $faker->numberBetween($min = 1000000, $max = 7000000),
-                    'user_id' => $faker->numberBetween(1,10),
+                    //'user_id',
                     'posto_id' => $faker->numberBetween(1,15),
                 'apelido' => $faker->lastName(),
                 'nomeProprio' => $faker->firstName(),
                 'data_nascim' => $faker->date(),
-                'grupo_sang' => $faker->randomElement($array = array ('A Positivo', 'A Negativo', 'B Positivo', 'B Negativo', 'AB Positivo', 'AB Negativo', 'O Positivo', 'O Negativo')),
-                'sexo' => $faker->randomElement($array = array ('Masculino', 'Feminino')),
+                'grupo_sang' => $faker->randomElement($array=array('A Positivo','A Negativo','B Positivo','B Negativo','AB Positivo','AB Negativo','O Positivo','O Negativo')),
+                'sexo' => $faker->randomElement($array=array('Masculino', 'Feminino')),
                     'unidade_id' => $faker->numberBetween(1,22),
                     'motivo_inativo' => $faker->numberBetween(1,4)
             ));

@@ -10,13 +10,9 @@ class VertenteBinomioTableSeeder extends Seeder {
     {
     	
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        DB::table('binomios')->truncate();
+        //DB::table('binomios')->truncate();
         DB::table('vertenteBinomio')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-
-
-
-        //DB::table('postos')->truncate();
 
     	$descricao = array(
     		array(
