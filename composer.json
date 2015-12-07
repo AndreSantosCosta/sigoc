@@ -8,7 +8,8 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
         "laravelcollective/html": "dev-master",
-        "fzaninotto/faker": "^1.6@dev"
+        "fzaninotto/faker": "^1.6@dev",
+        "doctrine/dbal": "^2.5"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",

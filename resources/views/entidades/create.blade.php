@@ -5,7 +5,7 @@
         <h1><i class="glyphicon glyphicon-plus"></i> Entidades / Create </h1>
     </div>
 @endsection
-
+ 
 @section('content')
     @include('error')
 <!--  <div class="row">

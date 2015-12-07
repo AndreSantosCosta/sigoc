@@ -1,5 +1,5 @@
 <?php namespace App\Http\Controllers;
-
+ 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -36,8 +36,8 @@ class MilitarController extends Controller {
 		//$listaMotivos = MotivoInativoMilitar::lists('descricao', 'id');
 		$listaMotivos = array(' '=>' ','Afasto da Especialidade por Incapacidade Técnica'=>'Afasto da Especialidade por Incapacidade Técnica', 'Reforma'=>'Reforma','Transferido'=>'Transferido','Morte'=>'Morte');
 		$gruposSang= array(' '=>' ', 'A Positivo'=>'A Positivo','A Negativo'=>'A Negativo','B Positivo'=>'B Positivo','B Negativo'=>'B Negativo','O Positivo'=>'O Positivo','O Negativo'=>'O Negativo','AB Positivo'=>'AB Positivo','AB Negativo'=>'AB Negativo');
-		
-		return view('militars.create', compact('militar','listaPostos','listaUnidades','gruposSang','listaSexo','listaMotivos'));
+		$formToCreate = true;
+		return view('militars.create', compact('militar','listaPostos','listaUnidades','gruposSang','listaSexo','listaMotivos','formToCreate'));
 	}
 
 	/**
@@ -48,13 +48,19 @@ class MilitarController extends Controller {
 	 */
 	public function store(Request $request)
 	{
-		$militar = new Militar();
+		//$militar = new Militar();
+		$a = $request->input();
+		unset($a['_token']);
+		$militar = Militar::create($a);
+
+	var_dump($militar);
+	return ;
 
 		$militar->num_mecanografico = $request->input("num_mecanografico");
 		$militar->user_id = $request->input("user_id");
 		$militar->posto_id = $request->input("posto_id");
 		$militar->apelido = $request->input("apelido");
-		$militar->nome = $request->input("nome");
+		$militar->nomeProprio = $request->input("nomeProprio");
 		$militar->data_nascim = $request->input("data_nascim");
 		$militar->grupo_sang = $request->input("grupo_sang");
 		$militar->sexo = $request->input("sexo");
@@ -116,7 +122,7 @@ class MilitarController extends Controller {
 		$militar->user_id = $request->input("user_id");
 		$militar->posto_id = $request->input("posto_id");
 		$militar->apelido = $request->input("apelido");
-		$militar->nome = $request->input("nome");
+		$militar->nomeProprio = $request->input("nomeProprio");
 		$militar->data_nascim = $request->input("data_nascim");
 		$militar->grupo_sang = $request->input("grupo_sang");
 		$militar->sexo = $request->input("sexo");

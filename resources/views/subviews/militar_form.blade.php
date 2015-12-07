@@ -1,13 +1,22 @@
  @include('error')
 
-<div class="row">
+<div class="row"> 
  <div class="col-md-12">
 
     <!-- <form action="{{ route('militars.update', $militar->id) }}" method="POST">
-    <input type="hidden" name="_method" value="PUT"> -->
+    <input type="hidden" name="_method" value="PUT"> 
+
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-    {!! Form::model($militar, array('route' => array( 'militars.update', $militar->id ), 'method' =>'PUT')) !!}
+    -->
+    
+      <?php if (isset($formToCreate)): ?>
+        {!! Form::model($militar, array('route' => array( 'militars.store' ), 'method' =>'POST')) !!}
+      <?php else: ?>    
+        {!! Form::model($militar, array('route' => array( 'militars.update', $militar->id ), 'method' =>'PUT')) !!}
+        <input type="hidden" name="_method" value="PUT">
+      <?php endif; ?>
+    
     <div class="col-md-2">
       <div class="form-group @if($errors->has('num_mecanografico')) has-error @endif">
         {!! Form::label('num_mecanografico', 'Número Mecanográfico') !!}
@@ -18,11 +27,11 @@
       </div>
     </div>
     <div class="col-md-5">
-      <div class="form-group @if($errors->has('nome')) has-error @endif">
-        {!! Form::label('nome') !!}
-        {!! Form::text('nome', $militar->nome, array('class'=>'form-control')) !!}
-        @if($errors->has("nome"))
-        <span class="help-block">{{ $errors->first("nome") }}</span>
+      <div class="form-group @if($errors->has('nomeProprio')) has-error @endif">
+        {!! Form::label('nomeProprio') !!}
+        {!! Form::text('nomeProprio', $militar->nomeProprio, array('class'=>'form-control')) !!}
+        @if($errors->has("nomeProprio"))
+        <span class="help-block">{{ $errors->first("nomeProprio") }}</span>
         @endif
       </div>
     </div>
