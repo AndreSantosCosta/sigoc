@@ -1,5 +1,5 @@
 <?php namespace App\Http\Controllers;
-
+ 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -40,17 +40,17 @@ class BinomioController extends Controller {
 	 */
 	public function store(Request $request)
 	{
-		$binomio = new Binomio();
+		$a = new Binomio();
 
-		$binomio->data_inicio = $request->input("data_inicio");
-        $binomio->militar_id = $request->input("militar_id");
-        $binomio->cao_id = $request->input("cao_id");
-        $binomio->vertente = $request->input("vertente");
-        $binomio->inativo = $request->input("inativo");
-        $binomio->data_inativo = $request->input("data_inativo");
-        $binomio->motivo_inativo = $request->input("motivo_inativo");
+		$a->data_inicio = $request->input("data_inicio");
+        $a->militar_id = $request->input("militar_id");
+        $a->cao_id = $request->input("cao_id");
+        $a->vertente = $request->input("vertente");
+        $a->inativo = $request->input("inativo");
+        $a->data_inativo = $request->input("data_inativo");
+        $a->motivo_inativo = $request->input("motivo_inativo");
 
-		$binomio->save();
+		$a->save();
 
 		return redirect()->route('binomios.index')->with('message', 'Item created successfully.');
 	}
@@ -92,17 +92,17 @@ class BinomioController extends Controller {
 	 */
 	public function update(Request $request, $id)
 	{
-		$binomio = Binomio::findOrFail($id);
+		$a = Binomio::findOrFail($id);
 
-		$binomio->data_inicio = $request->input("data_inicio");
-        $binomio->militar_id = $request->input("militar_id");
-        $binomio->cao_id = $request->input("cao_id");
-        $binomio->vertente = $request->input("vertente");
-        $binomio->inativo = $request->input("inativo");
-        $binomio->data_inativo = $request->input("data_inativo");
-        $binomio->motivo_inativo = $request->input("motivo_inativo");
+		$a->data_inicio = $request->input("data_inicio");
+        $a->militar_id = $request->input("militar_id");
+        $a->cao_id = $request->input("cao_id");
+        $a->vertente = $request->input("vertente");
+        $a->inativo = $request->input("inativo");
+        $a->data_inativo = $request->input("data_inativo");
+        $a->motivo_inativo = $request->input("motivo_inativo");
 
-		$binomio->save();
+		$a->save();
 
 		return redirect()->route('binomios.index')->with('message', 'Item updated successfully.');
 	}
@@ -115,8 +115,8 @@ class BinomioController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		$binomio = Binomio::findOrFail($id);
-		$binomio->delete();
+		$a = Binomio::findOrFail($id);
+		$a->delete();
 
 		return redirect()->route('binomios.index')->with('message', 'Item deleted successfully.');
 	}
