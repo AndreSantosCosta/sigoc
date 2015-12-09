@@ -9,7 +9,7 @@
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
     -->
-    
+     
       <?php if (isset($formToCreate)): ?>
         {!! Form::model($militar, array('route' => array( 'militars.store' ), 'method' =>'POST')) !!}
       <?php else: ?>    

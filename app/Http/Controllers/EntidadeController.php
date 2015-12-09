@@ -39,7 +39,7 @@ class EntidadeController extends Controller {
 	public function store(Request $request)
 	{
 		$entidade = new Entidade();
-
+ 
 		$entidade->tipoEntidade = $request->input("tipoEntidade");
         $entidade->nome = $request->input("nome");
         $entidade->inativo = $request->input("inativo");

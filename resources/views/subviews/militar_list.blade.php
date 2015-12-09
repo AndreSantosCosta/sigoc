@@ -7,8 +7,9 @@
                         <tr>
                             
                             <th>Número Mecanográfico</th>
+                            <th>Nome</th>
                         <th>Apelido</th>
-                        <th>Nome</th>
+                        <th>Identificação</th>
                         <th>Posto</th>
                         <th>Unidade</th>
                         <th>Inativo</th>
@@ -20,6 +21,7 @@
                         @foreach($militars as $militar)
                             <tr>
                                 <td>{{$militar->num_mecanografico}}</td>
+                                <td>{{$militar->nomeProprio}}</td>
                     <td>{{$militar->apelido}}</td>
                     <td>{{$militar->nome}}</td>
                     <td>{{$militar->nomePosto}}</td>
