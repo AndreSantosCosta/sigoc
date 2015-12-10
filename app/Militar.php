@@ -49,7 +49,7 @@ class Militar extends Model
 
 	private function insertRecord(){
         // Insere na Entidade
-		$entidade = new Entidade();
+	$entidade = new Entidade();
         $entidade->tipoEntidade = "M";
         $entidade->nome = $this->calculateNome();
         $entidade->inativo = $this->inativo;
@@ -85,7 +85,7 @@ class Militar extends Model
 
 	private function updateRecord(){
         // Atualiza na Entidade
-		$entidade = Entidade::findOrFail($this->id);
+	$entidade = Entidade::findOrFail($this->id);
         $entidade->tipoEntidade = "M";
         $entidade->nome = $this->calculateNome();
         $entidade->inativo = $this->inativo;
@@ -105,7 +105,7 @@ class Militar extends Model
         $this->numero = $entidade->numero;
 
         // Atualiza no Militar
-		$militar = Militar_RealTable::findOrFail($this->id);
+	$militar = Militar_RealTable::findOrFail($this->id);
         $militar->id = $this->id;
         $militar->num_mecanografico = $this->num_mecanografico;
         $militar->user_id = $this->user_id;

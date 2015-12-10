@@ -76,7 +76,7 @@ class Binomio extends Model
 		$this->nome = $entidade->nome;
 		$this->numero = $entidade->numero;
 
-        // Insere no Militar (na tabela real - militars)
+        // Insere no Binomio (na tabela real - binomios)
 		$binomio = new Binomio_RealTable();
 		$binomio->id = $this->id;
 		$binomio->data_inicio = $this->data_inicio;
@@ -108,7 +108,7 @@ class Binomio extends Model
 		$this->nome = $entidade->nome;
 		$this->numero = $entidade->numero;
 
-        // Atualiza no Militar
+        // Atualiza no Binomio
 		$binomio = Binomio_RealTable::findOrFail($this->id);
 		$binomio->id = $this->id;
 		$binomio->data_inicio = $this->data_inicio;
@@ -120,7 +120,7 @@ class Binomio extends Model
 	}
 
 	private function deleteRecord(){
-        // Apaga do Militar
+        // Apaga do Binomio
 		$binomio = Binomio_RealTable::findOrFail($this->id);		
 		$binomio->delete();
 
