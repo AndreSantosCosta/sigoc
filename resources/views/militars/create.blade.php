@@ -1,4 +1,4 @@
-
+  
 @extends('layout')
 
 @section('header')
@@ -110,12 +110,35 @@
                  	@endif
                  </div>
 
-                 <div class="form-group @if($errors->has('unidade_id')) has-error @endif">
-                 	<label for="unidade_id-field">Unidade</label>
-                 	<input type="text" id="unidade_id-field" name="unidade_id" class="form-control" value="{{ old("unidade_id") }}"/>
-                 	@if($errors->has("unidade_id"))
-                 	<span class="help-block">{{ $errors->first("unidade_id") }}</span>
-                 	@endif
+               <!-- 
+                 <div class="form-group @if($errors->has('numero')) has-error @endif">
+                   <label for="numero-field">Número</label>
+                   <input type="text" id="numero-field" name="numero" class="form-control" value="{{ old("numero") }}"/>
+                   @if($errors->has("numero"))
+                   <span class="help-block">{{ $errors->first("numero") }}</span>
+                   @endif
+                 </div> -->
+
+                 <!-- <div class="form-group @if($errors->has('tipoentidade')) has-error @endif">
+                   <label for="tipoentidade-field">TipoEntidade</label>
+                   <input type="text" id="tipoentidade-field" name="tipoentidade" class="form-control" value="{{ old("tipoentidade") }}"/>
+                   @if($errors->has("tipoentidade"))
+                   <span class="help-block">{{ $errors->first("tipoentidade") }}</span>
+                   @endif
+                 </div> -->
+               <!--   <div class="form-group @if($errors->has('nome')) has-error @endif">
+                 <label for="nome-field">Nome</label>
+                 <input type="text" id="nome-field" name="nome" class="form-control" value="{{ old("nome") }}"/>
+                 @if($errors->has("nome"))
+                 <span class="help-block">{{ $errors->first("nome") }}</span>
+                 @endif
+               </div> -->
+                 <div class="form-group @if($errors->has('inativo')) has-error @endif">
+                  <label for="inativo-field">Inativo</label>
+                  <input type="text" id="inativo-field" name="inativo" class="form-control" value="{{ old("inativo") }}"/>
+                  @if($errors->has("inativo"))
+                  <span class="help-block">{{ $errors->first("inativo") }}</span>
+                  @endif
                  </div>
 <!-- 
                  <div class="form-group @if($errors->has('numero')) has-error @endif">

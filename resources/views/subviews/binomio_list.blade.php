@@ -6,6 +6,8 @@
                 <tr>
                     <th>Numero Mecanográfico</th>
                     <th>Número Matricula</th>
+                    <th>Identificação Nome</th>
+                    <th>Identificação Numero</th>
                     <th>Data de Inicio</th>
                     <th>Vertente</th>
                     <th>Inativo</th>
@@ -18,6 +20,8 @@
                 <tr>
                     <td>{{$binomio->numMecanog}}</td>
                     <td>{{$binomio->numMatricula}}</td>
+                    <td>{{$binomio->nome}}</td>
+                    <td>{{$binomio->numero}}</td>
                     <td>{{$binomio->data_inicio}}</td>
                     <td>{{$binomio->vertente}}</td>
                     <td>{{$binomio->inativo}}</td> 

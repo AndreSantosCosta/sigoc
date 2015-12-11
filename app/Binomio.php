@@ -67,7 +67,7 @@ class Binomio extends Model
 		$entidade->tamanhoImagem = $this->tamanhoImagem;
 		$entidade->observacoes = $this->observacoes;
 		$entidade->unidade_id = $this->unidade_id;
-		$entidade->numero = $this->num_mecanografico;
+		$entidade->numero = $this->calculateNumero();
 		$entidade->save();
 
         // Atualiza campos calculados
