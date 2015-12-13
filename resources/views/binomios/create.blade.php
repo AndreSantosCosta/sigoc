@@ -9,6 +9,7 @@
 @endsection
 
 @section('content')
+
 @include('error')
 
 <div class="row">
@@ -79,6 +80,7 @@
              	<span class="help-block">{{ $errors->first("inativo") }}</span>
              	@endif
              </div>
+
              <div class="form-group @if($errors->has('data_inativo')) has-error @endif">
              	<label for="data_inativo-field">Data de Inativação</label>
              	<input type="text" id="data_inativo-field" name="data_inativo" class="form-control" value="{{ old("data_inativo") }}"/>
@@ -94,6 +96,7 @@
              	<span class="help-block">{{ $errors->first("data_ativo") }}</span>
              	@endif
              </div>
+
              <div class="form-group @if($errors->has('fotografia')) has-error @endif">
              	<label for="fotografia-field">Fotografia</label>
              	<input type="text" id="fotografia-field" name="fotografia" class="form-control" value="{{ old("fotografia") }}"/>
@@ -101,6 +104,7 @@
              	<span class="help-block">{{ $errors->first("fotografia") }}</span>
              	@endif
              </div>
+
              <div class="form-group @if($errors->has('tamanhoimagem')) has-error @endif">
              	<label for="tamanhoimagem-field">TamanhoImagem</label>
              	<input type="text" id="tamanhoimagem-field" name="tamanhoimagem" class="form-control" value="{{ old("tamanhoimagem") }}"/>
@@ -108,6 +112,7 @@
              	<span class="help-block">{{ $errors->first("tamanhoimagem") }}</span>
              	@endif
              </div>
+
              <div class="form-group @if($errors->has('tipoimagem')) has-error @endif">
              	<label for="tipoimagem-field">TipoImagem</label>
              	<input type="text" id="tipoimagem-field" name="tipoimagem" class="form-control" value="{{ old("tipoimagem") }}"/>
@@ -131,7 +136,6 @@
              	<span class="help-block">{{ $errors->first("observacoes") }}</span>
              	@endif
              </div>
-
 
              <div class="well well-sm">
              	<button type="submit" class="btn btn-primary">Guardar</button>

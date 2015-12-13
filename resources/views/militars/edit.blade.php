@@ -27,7 +27,7 @@
          @endif
        </div> 
        <div class="form-group @if($errors->has('nomeProprio')) has-error @endif">
-         <label for="nomeProprio-field">Num_mecanografico</label>
+         <label for="nomeProprio-field">Nome Próprio</label>
          <input type="text" id="nomeProprio-field" name="nomeProprio" class="form-control" value="{{ $militar->nomeProprio }}"/>
          @if($errors->has("nomeProprio"))
          <span class="help-block">{{ $errors->first("nomeProprio") }}</span>
@@ -68,6 +68,13 @@
          <span class="help-block">{{ $errors->first("sexo") }}</span>
          @endif
        </div>
+       <div class="form-group @if($errors->has('motivo_inativo')) has-error @endif">
+        <label for="motivo_inativo-field">Motivo de Inativação</label>
+        <input type="text" id="motivo_inativo-field" name="motivo_inativo" class="form-control" value="{{ $militar->motivo_inativo  }}"/>
+        @if($errors->has("motivo_inativo"))
+        <span class="help-block">{{ $errors->first("motivo_inativo") }}</span>
+        @endif
+       </div>
        <div class="form-group @if($errors->has('unidade_id')) has-error @endif">
          <label for="unidade_id-field">Unidade</label>
          <input type="text" id="unidade_id-field" name="unidade_id" class="form-control" value="{{ $militar->unidade_id }}"/>
@@ -104,28 +111,21 @@
         @endif
       </div>
       <div class="form-group @if($errors->has('tamanhoimagem')) has-error @endif">
-        <label for="tamanhoimagem-field">TamanhoImagem</label>
+        <label for="tamanhoimagem-field">Tamanho Imagem</label>
         <input type="text" id="tamanhoimagem-field" name="tamanhoimagem" class="form-control" value="{{ $militar->tamanhoimagem  }}"/>
         @if($errors->has("tamanhoimagem"))
         <span class="help-block">{{ $errors->first("tamanhoimagem") }}</span>
         @endif
       </div>
       <div class="form-group @if($errors->has('tipoimagem')) has-error @endif">
-        <label for="tipoimagem-field">TipoImagem</label>
+        <label for="tipoimagem-field">Tipo Imagem</label>
         <input type="text" id="tipoimagem-field" name="tipoimagem" class="form-control" value="{{$militar->tipoimagem  }}"/>
         @if($errors->has("tipoimagem"))
         <span class="help-block">{{ $errors->first("tipoimagem") }}</span>
         @endif
       </div>
-      <div class="form-group @if($errors->has('motivo_inativo')) has-error @endif">
-        <label for="motivo_inativo-field">Motivo de Inativação</label>
-        <input type="text" id="motivo_inativo-field" name="motivo_inativo" class="form-control" value="{{ $militar->motivo_inativo  }}"/>
-        @if($errors->has("motivo_inativo"))
-        <span class="help-block">{{ $errors->first("motivo_inativo") }}</span>
-        @endif
-      </div>
       <div class="form-group @if($errors->has('observacoes')) has-error @endif">
-        <label for="observacoes-field">Observacoes</label>
+        <label for="observacoes-field">Observações</label>
         <textarea class="form-control" id="observacoes-field" rows="3" name="observacoes">{{ $militar->observacoes  }}</textarea>
         @if($errors->has("observacoes"))
         <span class="help-block">{{ $errors->first("observacoes") }}</span>
@@ -133,7 +133,7 @@
       </div>
       <div class="well well-sm">
         <button type="submit" class="btn btn-primary">Guardar</button>
-        <a class="btn btn-link pull-right" href="{{ route('binomios.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
+        <a class="btn btn-link pull-right" href="{{ route('militars.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
       </div>
     </div>
   </form>
@@ -141,4 +141,4 @@
 </div>
 </div>
 
-@endsection 
+@endsection

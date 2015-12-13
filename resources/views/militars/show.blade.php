@@ -19,7 +19,6 @@
 <div class="row">
     <div class="col-md-12">
 
-
         <form action="#">
            <div class="col-md-12">
            <!--  <div class="form-group">
@@ -27,7 +26,7 @@
                 <p class="form-control-static"></p>
             </div> -->
             <div class="form-group">
-            <label for="num_mecanografico">NUMERO MECANOGRAFICO</label>
+               <label for="num_mecanografico">NUMERO MECANOGRAFICO</label>
                <p class="form-control-static">{{$militar->num_mecanografico}}</p>
            </div>
            <!-- <div class="form-group">
@@ -51,7 +50,7 @@
                <p class="form-control-static">{{$militar->nomeProprio}}</p>
            </div>
            <div class="form-group">
-               <label for="data_nascim">DATA NASCIMENTO</label>
+               <label for="data_nascim">DATA DE NASCIMENTO</label>
                <p class="form-control-static">{{$militar->data_nascim}}</p>
            </div>
            <div class="form-group">
@@ -66,13 +65,9 @@
                <label for="motivo_inativo">MOTIVO INATIVO</label>
                <p class="form-control-static">{{$militar->motivo_inativo}}</p>
            </div>
-
        </div>
    </form>
-
    <a class="btn btn-link" href="{{ route('militars.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
-
 </div>
 </div>
-
 @endsection
