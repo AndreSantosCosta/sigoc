@@ -1,5 +1,5 @@
 @extends('layout')
- 
+
 @section('header')
 <div class="col-md-12">
   <div class="page-header">
@@ -68,75 +68,88 @@
          <span class="help-block">{{ $errors->first("sexo") }}</span>
          @endif
        </div>
-       <div class="form-group @if($errors->has('motivo_inativo')) has-error @endif">
-        <label for="motivo_inativo-field">Motivo de Inativação</label>
-        <input type="text" id="motivo_inativo-field" name="motivo_inativo" class="form-control" value="{{ $militar->motivo_inativo  }}"/>
-        @if($errors->has("motivo_inativo"))
-        <span class="help-block">{{ $errors->first("motivo_inativo") }}</span>
-        @endif
-       </div>
-       <div class="form-group @if($errors->has('unidade_id')) has-error @endif">
-         <label for="unidade_id-field">Unidade</label>
-         <input type="text" id="unidade_id-field" name="unidade_id" class="form-control" value="{{ $militar->unidade_id }}"/>
-         @if($errors->has("unidade_id"))
-         <span class="help-block">{{ $errors->first("unidade_id") }}</span>
-         @endif
-       </div>
-       <div class="form-group @if($errors->has('inativo')) has-error @endif">
-         <label for="inativo-field">Inativo</label>
-         <input type="text" id="sexo-field" name="inativo" class="form-control" value="{{ $militar->inativo }}"/>
-         @if($errors->has("inativo"))
-         <span class="help-block">{{ $errors->first("inativo") }}</span>
-         @endif
-       </div>
-       <div class="form-group @if($errors->has('data_inativo')) has-error @endif">
-         <label for="data_inativo-field">Data de Inativação</label>
-         <input type="text" id="data_inativo-field" name="data_inativo" class="form-control" value="{{ $militar->data_inativo }}"/>
-         @if($errors->has("data_inativo"))
-         <span class="help-block">{{ $errors->first("data_inativo") }}</span>
-         @endif
-       </div>
-       <div class="form-group @if($errors->has('data_ativo')) has-error @endif">
-        <label for="data_ativo-field">Data de Ativação</label>
-        <input type="text" id="data_ativo-field" name="data_ativo" class="form-control" value="{{ $militar->data_ativo }}"/>
-        @if($errors->has("data_ativo"))
-        <span class="help-block">{{ $errors->first("data_ativo") }}</span>
-        @endif
-      </div>
-      <div class="form-group @if($errors->has('fotografia')) has-error @endif">
-        <label for="fotografia-field">Fotografia</label>
-        <input type="text" id="fotografia-field" name="fotografia" class="form-control" value="{{ $militar->fotografia }}"/>
-        @if($errors->has("fotografia"))
-        <span class="help-block">{{ $errors->first("fotografia") }}</span>
-        @endif
-      </div>
-      <div class="form-group @if($errors->has('tamanhoimagem')) has-error @endif">
-        <label for="tamanhoimagem-field">Tamanho Imagem</label>
-        <input type="text" id="tamanhoimagem-field" name="tamanhoimagem" class="form-control" value="{{ $militar->tamanhoimagem  }}"/>
-        @if($errors->has("tamanhoimagem"))
-        <span class="help-block">{{ $errors->first("tamanhoimagem") }}</span>
-        @endif
-      </div>
-      <div class="form-group @if($errors->has('tipoimagem')) has-error @endif">
-        <label for="tipoimagem-field">Tipo Imagem</label>
-        <input type="text" id="tipoimagem-field" name="tipoimagem" class="form-control" value="{{$militar->tipoimagem  }}"/>
-        @if($errors->has("tipoimagem"))
-        <span class="help-block">{{ $errors->first("tipoimagem") }}</span>
-        @endif
-      </div>
-      <div class="form-group @if($errors->has('observacoes')) has-error @endif">
-        <label for="observacoes-field">Observações</label>
-        <textarea class="form-control" id="observacoes-field" rows="3" name="observacoes">{{ $militar->observacoes  }}</textarea>
-        @if($errors->has("observacoes"))
-        <span class="help-block">{{ $errors->first("observacoes") }}</span>
-        @endif
-      </div>
-      <div class="well well-sm">
-        <button type="submit" class="btn btn-primary">Guardar</button>
-        <a class="btn btn-link pull-right" href="{{ route('militars.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
-      </div>
+   
+
+      <div class="form-group @if($errors->has('unidade_id')) has-error @endif">
+       <label for="unidade_id-field">Unidade</label>
+       <select class="form-control" name="unidade_id">
+         @foreach($listaUnidades as $item)
+         <option value="{{$item->id}}" {{ ($militar->unidade_id== $item->id)? "selected" : ""}}>{{$item->descricao}}</option>
+         @endforeach
+       </select>
+       @if($errors->has("unidade_id"))
+       <span class="help-block">{{ $errors->first("unidade_id") }}</span>
+       @endif
+     </div>
+
+    
+    <div class="form-group @if($errors->has('inativo')) has-error @endif">
+       <label for="inativo-field">Inativo</label>
+       <input type="text" id="sexo-field" name="inativo" class="form-control" value="{{ $militar->inativo }}"/>
+       @if($errors->has("inativo"))
+       <span class="help-block">{{ $errors->first("inativo") }}</span>
+       @endif
+     </div>
+     <div class="form-group @if($errors->has('data_inativo')) has-error @endif">
+       <label for="data_inativo-field">Data de Inativação</label>
+       <input type="text" id="data_inativo-field" name="data_inativo" class="form-control" value="{{ $militar->data_inativo }}"/>
+       @if($errors->has("data_inativo"))
+       <span class="help-block">{{ $errors->first("data_inativo") }}</span>
+       @endif
+     </div>
+     <div class="form-group @if($errors->has('data_ativo')) has-error @endif">
+      <label for="data_ativo-field">Data de Ativação</label>
+      <input type="text" id="data_ativo-field" name="data_ativo" class="form-control" value="{{ $militar->data_ativo }}"/>
+      @if($errors->has("data_ativo"))
+      <span class="help-block">{{ $errors->first("data_ativo") }}</span>
+      @endif
     </div>
-  </form>
+    <div class="form-group @if($errors->has('fotografia')) has-error @endif">
+      <label for="fotografia-field">Fotografia</label>
+      <input type="text" id="fotografia-field" name="fotografia" class="form-control" value="{{ $militar->fotografia }}"/>
+      @if($errors->has("fotografia"))
+      <span class="help-block">{{ $errors->first("fotografia") }}</span>
+      @endif
+    </div>
+    <div class="form-group @if($errors->has('tamanhoimagem')) has-error @endif">
+      <label for="tamanhoimagem-field">Tamanho Imagem</label>
+      <input type="text" id="tamanhoimagem-field" name="tamanhoimagem" class="form-control" value="{{ $militar->tamanhoimagem  }}"/>
+      @if($errors->has("tamanhoimagem"))
+      <span class="help-block">{{ $errors->first("tamanhoimagem") }}</span>
+      @endif
+    </div>
+    <div class="form-group @if($errors->has('tipoimagem')) has-error @endif">
+      <label for="tipoimagem-field">Tipo Imagem</label>
+      <input type="text" id="tipoimagem-field" name="tipoimagem" class="form-control" value="{{$militar->tipoimagem  }}"/>
+      @if($errors->has("tipoimagem"))
+      <span class="help-block">{{ $errors->first("tipoimagem") }}</span>
+      @endif
+    </div>
+     <div class="form-group @if($errors->has('motivo_inativo')) has-error @endif">
+      <label for="motivo_inativo-field">Motivo Inativação</label>
+       <select class="form-control" name="motivo_inativo">
+         <option value="null"></option>
+         @foreach($listaMotivos as $item)
+         <option value="{{$item->id}}"{{ ($militar->motivo_inativo== $item->id)? "selected" : ""}}>{{$item->descricao}}</option>
+         @endforeach
+       </select>
+       @if($errors->has("motivo_inativo"))
+       <span class="help-block">{{ $errors->first("motivo_inativo") }}</span>
+       @endif
+     </div>
+    <div class="form-group @if($errors->has('observacoes')) has-error @endif">
+      <label for="observacoes-field">Observações</label>
+      <textarea class="form-control" id="observacoes-field" rows="3" name="observacoes">{{ $militar->observacoes  }}</textarea>
+      @if($errors->has("observacoes"))
+      <span class="help-block">{{ $errors->first("observacoes") }}</span>
+      @endif
+    </div>
+    <div class="well well-sm">
+      <button type="submit" class="btn btn-primary">Guardar</button>
+      <a class="btn btn-link pull-right" href="{{ route('militars.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
+    </div>
+  </div>
+</form>
 
 </div>
 </div>

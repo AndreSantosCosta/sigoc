@@ -54,9 +54,15 @@ class CaoController extends Controller {
         $cao->mae = $request->input("mae");
         $cao->pai = $request->input("pai");
         $cao->ninhada = $request->input("ninhada");
+        $cao->unidade_id = $request->input("unidade_id");
         $cao->inativo = $request->input("inativo");
         $cao->data_inativo = $request->input("data_inativo");
-        $cao->motivo_inativo = $request->input("motivo_inativo");
+        if(!trim($request->input("motivo_inativo")=="")){
+        	 $cao->motivo_inativo = $request->input("motivo_inativo");
+        }
+        
+        //var_dump($request);
+        //exit;
         $cao->observacoes = $request->input("observacoes");
 
 		$cao->save();

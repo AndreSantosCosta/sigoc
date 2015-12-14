@@ -31,13 +31,17 @@ class MilitarController extends Controller {
 	public function create()
 	{
 		$militar = new Militar();
-		$listaPostos = Posto::lists('descricao', 'id');
-		$listaUnidades = Unidade::lists('descricao', 'id');
+		$listaMotivos = MotivoInativoMilitar::all('descricao', 'id');
+
+		$listaPostos = Posto::all('descricao', 'id');
+		$listaUnidades = Unidade::all('descricao', 'id');
+
 		$listaSexo = array(' '=>' ', 'Feminino'=>'Feminino', 'Masculino'=>'Masculino');
-		//$listaMotivos = MotivoInativoMilitar::lists('descricao', 'id');
-		$listaMotivos = array('Afasto da Especialidade por Incapacidade Técnica'=>'Afasto da Especialidade por Incapacidade Técnica', 'Reforma'=>'Reforma','Transferido'=>'Transferido','Morte'=>'Morte');
+		
+		//$listaMotivos = array('Afasto da Especialidade por Incapacidade Técnica'=>'Afasto da Especialidade por Incapacidade Técnica', 'Reforma'=>'Reforma','Transferido'=>'Transferido','Morte'=>'Morte');
 		$gruposSang= array(' '=>' ', 'A Positivo'=>'A Positivo','A Negativo'=>'A Negativo','B Positivo'=>'B Positivo','B Negativo'=>'B Negativo','O Positivo'=>'O Positivo','O Negativo'=>'O Negativo','AB Positivo'=>'AB Positivo','AB Negativo'=>'AB Negativo');
 		$formToCreate = true;
+
 
 		return view('militars.create', compact('militar','listaPostos','listaUnidades','gruposSang','listaSexo','listaMotivos','formToCreate'));
 	}
@@ -92,11 +96,11 @@ class MilitarController extends Controller {
 	public function edit($id)
 	{
 		$militar = Militar::findOrFail($id);
-		$listaPostos = Posto::lists('descricao', 'id');
-		$listaUnidades = Unidade::lists('descricao', 'id');
+		$listaPostos = Posto::all('descricao', 'id');
+		$listaUnidades = Unidade::all('descricao', 'id');
 		$listaSexo = array(' '=>' ', 'Feminino'=>'Feminino', 'Masculino'=>'Masculino');
-		//$listaMotivos = MotivoInativoMilitar::lists('descricao','id');
-		$listaMotivos = array('Afasto da Especialidade por Incapacidade Técnica'=>'Afasto da Especialidade por Incapacidade Técnica', 'Reforma'=>'Reforma','Transferido'=>'Transferido','Morte'=>'Morte');
+		$listaMotivos = MotivoInativoMilitar::all('descricao','id');
+		//$listaMotivos = array('Afasto da Especialidade por Incapacidade Técnica'=>'Afasto da Especialidade por Incapacidade Técnica', 'Reforma'=>'Reforma','Transferido'=>'Transferido','Morte'=>'Morte');
 		$gruposSang= array(' '=>' ', 'A Positivo'=>'A Positivo','A Negativo'=>'A Negativo','B Positivo'=>'B Positivo','B Negativo'=>'B Negativo','O Positivo'=>'O Positivo','O Negativo'=>'O Negativo','AB Positivo'=>'AB Positivo','AB Negativo'=>'AB Negativo');
 		
 		return view('militars.edit', compact('militar', 'listaPostos','gruposSang', 'listaUnidades', 'listaSexo','listaMotivos'));

@@ -95,14 +95,6 @@
         			<span class="help-block">{{ $errors->first("ninhada") }}</span>
         			@endif
       			</div>
-      			<div class="form-group @if($errors->has('motivo_inativo')) has-error @endif">
-        			<label for="motivo_inativo-field">Motivo Inativo</label>
-        			<input type="text" id="motivo_inativo-field" name="motivo_inativo" class="form-control" value="{{ $cao->motivo_inativo }}"/>
-        			@if($errors->has("motivo_inativo"))
-        			<span class="help-block">{{ $errors->first("motivo_inativo") }}</span>
-        			@endif
-      			</div>
-
       			<div class="form-group @if($errors->has('inativo')) has-error @endif">
         			<label for="inativo-field">Inativo</label>
         			<input type="text" id="inativo-field" name="inativo" class="form-control" value="{{ $cao->inativo  }}"/>
@@ -145,6 +137,13 @@
         			<span class="help-block">{{ $errors->first("tipoimagem") }}</span>
         			@endif
       			</div>
+            <div class="form-group @if($errors->has('motivo_inativo')) has-error @endif">
+              <label for="motivo_inativo-field">Motivo Inativo</label>
+              <input type="text" id="motivo_inativo-field" name="motivo_inativo" class="form-control" value="{{ $cao->motivo_inativo }}"/>
+              @if($errors->has("motivo_inativo"))
+              <span class="help-block">{{ $errors->first("motivo_inativo") }}</span>
+              @endif
+            </div>
       			<div class="form-group @if($errors->has('observacoes')) has-error @endif">
         			<label for="observacoes-field">Observações</label>
         			<textarea class="form-control" id="observacoes-field" rows="3" name="observacoes">{{ $cao->observacoes  }}</textarea>

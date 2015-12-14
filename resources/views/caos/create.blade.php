@@ -24,6 +24,13 @@
 						<span class="help-block">{{ $errors->first("num_matricula") }}</span>
 						@endif
 					</div>
+          <div class="form-group @if($errors->has('nome')) has-error @endif">
+                    <label for="nome-field">Nome</label>
+                    <input type="text" id="nome-field" name="nome" class="form-control" value="{{ old("nome") }}"/>
+                    @if($errors->has("nome"))
+                    <span class="help-block">{{ $errors->first("nome") }}</span>
+                    @endif
+                   </div>
 					<div class="form-group @if($errors->has('num_chip')) has-error @endif">
                    		<label for="num_chip-field">Número Chip</label>
                    		<input type="text" id="num_chip-field" name="num_chip" class="form-control" value="{{ old("num_chip") }}"/>
@@ -94,15 +101,13 @@
                  		<span class="help-block">{{ $errors->first("ninhada") }}</span>
                  		@endif
                    </div>
-                   <div class="form-group @if($errors->has('motivo_inativo')) has-error @endif">
-                  		<label for="motivo_inativo-field">Motivo Inativo</label>
-                  		<input type="text" id="motivo_inativo-field" name="motivo_inativo" class="form-control" value="{{ old("motivo_inativo") }}"/>
-                  		@if($errors->has("motivo_inativo"))
-                  		<span class="help-block">{{ $errors->first("motivo_inativo") }}</span>
-                  		@endif
+                   <div class="form-group @if($errors->has('unidade_id')) has-error @endif">
+                    <label for="unidade_id-field">Unidade</label>
+                    <input type="text" id="unidade_id-field" name="unidade_id" class="form-control" value="{{ old("unidade_id") }}"/>
+                    @if($errors->has("unidade_id"))
+                    <span class="help-block">{{ $errors->first("unidade_id") }}</span>
+                    @endif
                    </div>
-                   
-                   <?php // Tabela Entidades ?>
                  	
                    <div class="form-group @if($errors->has('inativo')) has-error @endif">
                   		<label for="inativo-field">Inativo</label>
@@ -146,6 +151,13 @@
                  		<span class="help-block">{{ $errors->first("tipoimagem") }}</span>
                  		@endif
                    </div>
+                    <div class="form-group @if($errors->has('motivo_inativo')) has-error @endif">
+                      <label for="motivo_inativo-field">Motivo Inativo</label>
+                      <input type="text" id="motivo_inativo-field" name="motivo_inativo" class="form-control" value="{{ old("motivo_inativo") }}"/>
+                      @if($errors->has("motivo_inativo"))
+                      <span class="help-block">{{ $errors->first("motivo_inativo") }}</span>
+                      @endif
+                   </div>
                    <div class="form-group @if($errors->has('observacoes')) has-error @endif">
                  		<label for="observacoes-field">Observações</label>
                  		<textarea class="form-control" id="observacoes-field" rows="3" name="observacoes">{{ old("observacoes") }}</textarea>
@@ -153,8 +165,6 @@
                  		<span class="help-block">{{ $errors->first("observacoes") }}</span>
                  		@endif
                    </div>
-
-				           <?php // Fim Tabela Entidades ?>
 
                    <div class="well well-sm">
                  		<button type="submit" class="btn btn-primary">Criar</button>

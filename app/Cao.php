@@ -55,7 +55,7 @@ class Cao extends Model
                 $entidade->unidade_id = $this->unidade_id;
                 $entidade->numero = $this->num_matricula;
                 $entidade->save();
-
+ 
         // Atualiza campos calculados
                 $this->id = $entidade->id;
                 $this->tipoEntidade = $entidade->tipoEntidade;

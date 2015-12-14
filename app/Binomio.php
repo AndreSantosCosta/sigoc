@@ -25,7 +25,7 @@ class Binomio extends Model
 	}
 
 	public function getNomeCaoAttribute(){
-		$nomeCao = Cao::findOrFail($this->cao_id);
+		$nomeCao = Entidade::findOrFail($this->cao_id);
 		return $nomeCao->nome;
 	}
 

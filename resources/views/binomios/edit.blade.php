@@ -3,7 +3,7 @@
 @section('header')
 <div class="col-md-12">
   <div class="page-header">
-    <h1><i class="glyphicon glyphicon-edit"></i> Editar Binómio # {{$binomio->militar_id}}_{{$binomio->cao_id}}</h1>
+    <h1><i class="glyphicon glyphicon-edit"></i> Editar Binómio # {{$binomio->militar_id}} _ {{$binomio->cao_id}}</h1>
   </div>
 </div>
 @endsection

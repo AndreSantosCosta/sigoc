@@ -73,6 +73,14 @@
                  <span class="help-block">{{ $errors->first("nome") }}</span>
                  @endif
              </div> -->
+
+             <div class="form-group @if($errors->has('unidade_id')) has-error @endif">
+                    <label for="unidade_id-field">Unidade</label>
+                    <input type="text" id="unidade_id-field" name="unidade_id" class="form-control" value="{{ old("unidade_id") }}"/>
+                    @if($errors->has("unidade_id"))
+                    <span class="help-block">{{ $errors->first("unidade_id") }}</span>
+                    @endif
+                   </div>
              <div class="form-group @if($errors->has('inativo')) has-error @endif">
              	<label for="inativo-field">Inativo</label>
              	<input type="text" id="inativo-field" name="inativo" class="form-control" value="{{ old("inativo") }}"/>
