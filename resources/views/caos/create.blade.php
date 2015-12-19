@@ -24,11 +24,13 @@
 						<span class="help-block">{{ $errors->first("num_matricula") }}</span>
 						@endif
 					</div>
-          <div class="form-group @if($errors->has('nome')) has-error @endif">
-                    <label for="nome-field">Nome</label>
-                    <input type="text" id="nome-field" name="nome" class="form-control" value="{{ old("nome") }}"/>
-                    @if($errors->has("nome"))
-                    <span class="help-block">{{ $errors->first("nome") }}</span>
+       
+
+                   <div class="form-group @if($errors->has('nomeCao')) has-error @endif">
+                    <label for="nomeCao-field">Nome</label>
+                    <input type="text" id="nomeCao-field" name="nomeCao" class="form-control" value="{{ old("nomeCao") }}"/>
+                    @if($errors->has("nomeCao"))
+                    <span class="help-block">{{ $errors->first("nomeCao") }}</span>
                     @endif
                    </div>
 					<div class="form-group @if($errors->has('num_chip')) has-error @endif">

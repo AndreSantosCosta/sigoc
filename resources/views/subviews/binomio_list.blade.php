@@ -23,7 +23,7 @@
                     <td>{{$binomio->nome}}</td>
                     <td>{{$binomio->numero}}</td>
                     <td>{{$binomio->data_inicio}}</td>
-                    <td>{{$binomio->vertente}}</td>
+                    <td>{{$binomio->NomeVertente}}</td>
                     <td>{{$binomio->inativo}}</td> 
                     <td class="text-right">
                         <a class="btn btn-xs btn-primary" href="{{ route('binomios.show', $binomio->id) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver</a>

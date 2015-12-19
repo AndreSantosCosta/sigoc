@@ -66,6 +66,7 @@ class Cao extends Model
                 $cao = new Cao_RealTable();
                 $cao->id = $this->id;
                 $cao->num_matricula = $this->num_matricula;
+                $cao->nomeCao = $this->nomeCao;
                 $cao->num_chip = $this->num_chip;
                 $cao->raca = $this->raca;
                 $cao->sexo = $this->sexo;
@@ -105,6 +106,7 @@ class Cao extends Model
                $cao = Cao_RealTable::findOrFail($this->id);
                $cao->id = $this->id;
                $cao->num_matricula = $this->num_matricula;
+               $cao->nomeCao = $this->nomeCao;
                $cao->num_chip = $this->num_chip;
                $cao->raca = $this->raca;
                $cao->sexo = $this->sexo;

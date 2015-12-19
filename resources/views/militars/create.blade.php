@@ -95,13 +95,13 @@
 
                   <div class="form-group @if($errors->has('data_nascim')) has-error @endif">
                     <label for="data_nascim-field">Data de Nascimento</label>
-                    <input type="text" id="data_nascim-field" name="data_nascim" class="form-control" value="{{ old("data_nascim") }}"/>
+                    <input type="date" id="data_nascim-field" name="data_nascim" class="form-control" value="{{ old("data_nascim") }}"/>
                     @if($errors->has("data_nascim"))
                     <span class="help-block">{{ $errors->first("data_nascim") }}</span>
                     @endif
                   </div>
 
-<div class="form-group @if($errors->has('grupo_sang')) has-error @endif">
+                  <div class="form-group @if($errors->has('grupo_sang')) has-error @endif">
                      <label for="grupo_sang-field">Grupo Sanguineo</label>
                      <select class="form-control" name="grupo_sang">
                        @foreach($gruposSang as $chave => $valor)
@@ -119,34 +119,30 @@
                 @if($errors->has("grupo_sang"))
                 <span class="help-block">{{ $errors->first("grupo_sang") }}</span>
                 @endif
-              </div> -->
+              </div>
               <div class="form-group @if($errors->has('sexo')) has-error @endif">
                 <label for="sexo-field">Sexo</label>
                 <input type="text" id="sexo-field" name="sexo" class="form-control" value="{{ old("sexo") }}"/>
                 @if($errors->has("sexo"))
                 <span class="help-block">{{ $errors->first("sexo") }}</span>
                 @endif
-              </div>
-               <!--  
-                 <div class="form-group @if($errors->has('inativo')) has-error @endif">
-                  <label for="inativo-field">Inativo</label>
-                  <input type="text" id="inativo-field" name="inativo" class="form-control" value="{{ old("inativo") }}"/>
-                  @if($errors->has("inativo"))
-                  <span class="help-block">{{ $errors->first("inativo") }}</span>
-                  @endif
-                 </div>
-                   <div class="form-group @if($errors->has('unidade_id')) has-error @endif">
-        <label for="unidade_id-field">Unidade</label>
-        <input type="text" id="unidade_id-field" name="unidade_id" class="form-control" value="{{ old("unidade_id") }}"/>
-        @if($errors->has("unidade_id"))
-        <span class="help-block">{{ $errors->first("unidade_id") }}</span>
-        @endif
-      </div> -->
-
+              </div> -->
+              
+              <div class="form-group @if($errors->has('sexo')) has-error @endif">
+                     <label for="sexo-field">Sexo</label>
+                     <select class="form-control" name="sexo">
+                       @foreach($listaSexo as $chave => $valor)
+                       <option value="{{$chave}}">{{$valor}}</option>
+                       @endforeach
+                     </select>
+                     @if($errors->has("sexo"))
+                     <span class="help-block">{{ $errors->first("sexo") }}</span>
+                     @endif
+                   </div>
 
       <div class="form-group @if($errors->has('inativo')) has-error @endif">
         <label for="inativo-field">Inativo</label>
-        <input type="text" id="inativo-field" name="inativo" class="form-control" value="{{ old("inativo") }}"/>
+        <input type="checkbox" id="inativo-field" name="inativo" value="{{ old("inativo") }}"/>
         @if($errors->has("inativo"))
         <span class="help-block">{{ $errors->first("inativo") }}</span>
         @endif
@@ -154,7 +150,7 @@
 
       <div class="form-group @if($errors->has('data_inativo')) has-error @endif">
         <label for="data_inativo-field">Data de Inativação</label>
-        <input type="text" id="data_inativo-field" name="data_inativo" class="form-control" value="{{ old("data_inativo") }}"/>
+        <input type="date" id="data_inativo-field" name="data_inativo" class="form-control" value="{{ old("data_inativo") }}"/>
         @if($errors->has("data_inativo"))
         <span class="help-block">{{ $errors->first("data_inativo") }}</span>
         @endif
@@ -162,7 +158,7 @@
 
       <div class="form-group @if($errors->has('data_ativo')) has-error @endif">
         <label for="data_ativo-field">Data de Ativação</label>
-        <input type="text" id="data_ativo-field" name="data_ativo" class="form-control" value="{{ old("data_ativo") }}"/>
+        <input type="date" id="data_ativo-field" name="data_ativo" class="form-control" value="{{ old("data_ativo") }}"/>
         @if($errors->has("data_ativo"))
         <span class="help-block">{{ $errors->first("data_ativo") }}</span>
         @endif

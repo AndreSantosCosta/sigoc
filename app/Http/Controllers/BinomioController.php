@@ -4,6 +4,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Binomio;
+use App\Unidade;
+use App\VertenteBinomio;
 use Illuminate\Http\Request;
 
 class BinomioController extends Controller {
@@ -19,7 +21,7 @@ class BinomioController extends Controller {
 
 		return view('binomios.index', compact('binomios'));
 	}
-
+ 
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -28,8 +30,10 @@ class BinomioController extends Controller {
 	public function create()
 	{
 		$binomio = new Binomio();
-		$listaVertente = array(' '=>' ','Uso da Força'=>'Uso da Força', 'Intervenção Tática'=>'Intervenção Tática', 'Deteção de Odor'=>'Deteção de Odor', 'Humano'=>'Humano', 'Deteção de Explosivos'=>'Deteção de Explosivos', 'Deteção de Droga/Papel Moeda'=>'Deteção de Droga/Papel Moeda', 'Outras Deteções'=>'Outras Deteções','Formação e Desenvolvimento de Cachorros'=>'Formação e Desenvolvimento de Cachorros');
-		return view('binomios.create', compact('binomio', 'listaVertente'));
+		$listaVertente = VertenteBinomio::all('descricao', 'id');
+		$listaUnidades = Unidade::all('descricao', 'id');
+		
+		return view('binomios.create', compact('binomio', 'listaVertente','listaUnidades'));
 	}
 
 	/**
@@ -64,9 +68,9 @@ class BinomioController extends Controller {
 	public function show($id)
 	{
 		$binomio = Binomio::findOrFail($id);
-		$listaVertente = array(' '=>' ','Uso da Força'=>'Uso da Força', 'Intervenção Tática'=>'Intervenção Tática', 'Deteção de Odor'=>'Deteção de Odor', 'Humano'=>'Humano', 'Deteção de Explosivos'=>'Deteção de Explosivos', 'Deteção de Droga/Papel Moeda'=>'Deteção de Droga/Papel Moeda', 'Outras Deteções'=>'Outras Deteções','Formação e Desenvolvimento de Cachorros'=>'Formação e Desenvolvimento de Cachorros');
-		
-		return view('binomios.show', compact('binomio', 'listaVertente'));
+		$listaVertente = VertenteBinomio::all('descricao', 'id');
+		$listaUnidades = Unidade::all('descricao', 'id');
+		return view('binomios.show', compact('binomio', 'listaVertente','listaUnidades'));
 	}
 
 	/**
@@ -78,10 +82,10 @@ class BinomioController extends Controller {
 	public function edit($id)
 	{
 		$binomio = Binomio::findOrFail($id);
-		$listaVertente = array(' '=>' ','Uso da Força'=>'Uso da Força', 'Intervenção Tática'=>'Intervenção Tática', 'Deteção de Odor'=>'Deteção de Odor', 'Humano'=>'Humano', 'Deteção de Explosivos'=>'Deteção de Explosivos', 'Deteção de Droga/Papel Moeda'=>'Deteção de Droga/Papel Moeda', 'Outras Deteções'=>'Outras Deteções','Formação e Desenvolvimento de Cachorros'=>'Formação e Desenvolvimento de Cachorros');
-		//$militar = Militar::findOrFail($id);
-		return view('binomios.edit', compact('binomio', 'listaVertente'));
-	}
+		$listaVertente = VertenteBinomio::all('descricao', 'id');
+		$listaUnidades = Unidade::all('descricao', 'id');
+		return view('binomios.edit', compact('binomio', 'listaVertente','listaUnidades'));
+	}  
 
 	/**
 	 * Update the specified resource in storage.
@@ -106,7 +110,7 @@ class BinomioController extends Controller {
 
 		return redirect()->route('binomios.index')->with('message', 'Item updated successfully.');
 	}
-
+ 
 	/**
 	 * Remove the specified resource from storage.
 	 *

@@ -30,25 +30,43 @@
                    <label for="data_inicio">DATA DE INICIO</label>
                    <p class="form-control-static">{{$binomio->data_inicio}}</p>
                </div>
+
                <div class="form-group">
-                   <label for="militar_id">NUMERO MECANOGRAFICO</label>
-                   <p class="form-control-static">{{$binomio->militar_id}}</p>
+                   <label for="nome">NOME</label>
+                   <p class="form-control-static">{{$binomio->NomeMilitar . " + " . $binomio->NomeCao}}</p>
                </div>
                <div class="form-group">
-                   <label for="cao_id">NUMERO MATRICULA</label>
-                   <p class="form-control-static">{{$binomio->cao_id}}</p>
+                   <label for="numero">NUMERO</label>
+                   <p class="form-control-static">{{$binomio->NumMecanog . " + " . $binomio->NumMatricula}}</p>
                </div>
+               
                <div class="form-group">
                    <label for="vertente">VERTENTE</label>
-                   <p class="form-control-static">{{$binomio->vertente}}</p>
+                   <p class="form-control-static">{{$binomio->NomeVertente}}</p>
                </div>
                <div class="form-group">
                  <label for="unidade_id">UNIDADE</label>
                  <p class="form-control-static">{{$binomio->NomeUnidade}}</p>
              </div>
+              <div class="form-group">
+               <label for="inativo">INATIVO</label>
+               <p class="form-control-static">{{$binomio->inativo}}</p>
+           </div>
+           <div class="form-group">
+               <label for="data_inativo">DATA DE INATIVAÇÃO</label>
+               <p class="form-control-static">{{$binomio->data_inativo}}</p>
+           </div>
+           <div class="form-group">
+               <label for="data_ativo">DATA DE ATIVAÇÃO</label>
+               <p class="form-control-static">{{$binomio->data_ativo}}</p>
+           </div>
              <div class="form-group">
                <label for="motivo_inativo">MOTIVO DE INATIVAÇÃO</label>
                <p class="form-control-static">{{$binomio->motivo_inativo}}</p>
+           </div>
+            <div class="form-group">
+               <label for="observacoes">OBSERVAÇÕES</label>
+               <p class="form-control-static">{{$binomio->observacoes}}</p>
            </div>
            
        </form>

@@ -45,6 +45,7 @@ class CaoController extends Controller {
 		$cao = new Cao();
 
 		$cao->num_matricula = $request->input("num_matricula");
+		$cao->nomeCao = $request->input("nomeCao");
         $cao->num_chip = $request->input("num_chip");
         $cao->nome = $request->input("nome");
         $cao->raca = $request->input("raca");
@@ -60,9 +61,6 @@ class CaoController extends Controller {
         if(!trim($request->input("motivo_inativo")=="")){
         	 $cao->motivo_inativo = $request->input("motivo_inativo");
         }
-        
-        //var_dump($request);
-        //exit;
         $cao->observacoes = $request->input("observacoes");
 
 		$cao->save();
@@ -114,6 +112,7 @@ class CaoController extends Controller {
 		$cao = Cao::findOrFail($id);
 
 		$cao->num_matricula = $request->input("num_matricula");
+		$cao->nomeCao = $request->input("nomeCao");
         $cao->num_chip = $request->input("num_chip");
         $cao->nome = $request->input("nome");
         $cao->raca = $request->input("raca");

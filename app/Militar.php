@@ -26,7 +26,19 @@ class Militar extends Model
 
 	private function calculateNome(){
 		return $this->getNomePostoAttribute() . " " . $this->apelido; 
+
 	}
+
+  private function getNomeInativoAttribute(){
+    if($this->inativo ==0){
+
+      return $this->inativo==2;
+    }else{
+      return $this->inativo==3;
+
+}
+
+  }
 
 	// ----------------------------------------------
 	// Implementação das SuperClasses / SubClasses

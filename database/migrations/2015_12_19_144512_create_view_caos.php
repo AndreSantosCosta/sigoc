@@ -26,6 +26,7 @@ class CreateViewCaos extends Migration
             ' e.unidade_id, '.
             ' e.numero, '.
             ' c.num_matricula, '.
+            ' c.nomeCao, '.
             ' c.num_chip, '.
             ' c.raca, '.
             ' c.sexo, '.
@@ -43,6 +44,7 @@ class CreateViewCaos extends Migration
             ' INNER JOIN caos as c '.
             ' ON e.id = c.id'
             );
+
     }
 
     /**

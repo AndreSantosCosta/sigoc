@@ -62,8 +62,24 @@
                <p class="form-control-static">{{$militar->sexo}}</p>
            </div>
            <div class="form-group">
+               <label for="inativo">INATIVO</label>
+               <p class="form-control-static">{{$militar->inativo}}</p>
+           </div>
+           <div class="form-group">
+               <label for="data_inativo">DATA DE INATIVAÇÃO</label>
+               <p class="form-control-static">{{$militar->data_inativo}}</p>
+           </div>
+           <div class="form-group">
+               <label for="data_ativo">DATA DE ATIVAÇÃO</label>
+               <p class="form-control-static">{{$militar->data_ativo}}</p>
+           </div>
+           <div class="form-group">
                <label for="motivo_inativo">MOTIVO INATIVO</label>
                <p class="form-control-static">{{$militar->motivo_inativo}}</p>
+           </div>
+            <div class="form-group">
+               <label for="observacoes">OBSERVAÇÕES</label>
+               <p class="form-control-static">{{$militar->observacoes}}</p>
            </div>
        </div>
    </form>

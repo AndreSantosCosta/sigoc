@@ -20,7 +20,7 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
         <div class="form-group @if($errors->has('num_mecanografico')) has-error @endif">
-         <label for="num_mecanografico-field">Num_mecanografico</label>
+         <label for="num_mecanografico-field">Num Mecanografico</label>
          <input type="text" id="num_mecanografico-field" name="num_mecanografico" class="form-control" value="{{ $militar->num_mecanografico }}"/>
          @if($errors->has("num_mecanografico"))
          <span class="help-block">{{ $errors->first("num_mecanografico") }}</span>
@@ -40,37 +40,59 @@
          <span class="help-block">{{ $errors->first("apelido") }}</span>
          @endif
        </div>
+       
        <div class="form-group @if($errors->has('posto_id')) has-error @endif">
          <label for="posto_id-field">Posto</label>
-         <input type="text" id="posto_id-field" name="posto_id" class="form-control" value="{{ $militar->posto_id }}"/>
+         <select class="form-control" name="posto_id">
+           @foreach($listaPostos as $item)
+           <option value="{{$item->id}}" {{ ($militar->posto_id== $item->id)? "selected" : ""}}>{{$item->descricao}}</option>
+           @endforeach
+         </select>
          @if($errors->has("posto_id"))
          <span class="help-block">{{ $errors->first("posto_id") }}</span>
          @endif
        </div>
+
        <div class="form-group @if($errors->has('data_nascim')) has-error @endif">
          <label for="data_nascim-field">Data de Nascimento</label>
-         <input type="text" id="data_nascim-field" name="data_nascim" class="form-control" value="{{ $militar->data_nascim }}"/>
+         <input type="date" id="data_nascim-field" name="data_nascim" class="form-control" value="{{ $militar->data_nascim }}"/>
          @if($errors->has("data_nascim"))
          <span class="help-block">{{ $errors->first("data_nascim") }}</span>
          @endif
        </div>
-       <div class="form-group @if($errors->has('grupo_sang')) has-error @endif">
-         <label for="grupo_sang-field">Grupo Sanguineo</label>
-         <input type="text" id="grupo_sang-field" name="grupo_sang" class="form-control" value="{{ $militar->grupo_sang }}"/>
-         @if($errors->has("grupo_sang"))
-         <span class="help-block">{{ $errors->first("grupo_sang") }}</span>
-         @endif
-       </div>
-       <div class="form-group @if($errors->has('sexo')) has-error @endif">
-         <label for="sexo-field">Sexo</label>
-         <input type="text" id="sexo-field" name="sexo" class="form-control" value="{{ $militar->sexo }}"/>
-         @if($errors->has("sexo"))
-         <span class="help-block">{{ $errors->first("sexo") }}</span>
-         @endif
-       </div>
-   
+      <!--  <div class="form-group @if($errors->has('grupo_sang')) has-error @endif">
+        <label for="grupo_sang-field">Grupo Sanguineo</label>
+        <input type="text" id="grupo_sang-field" name="grupo_sang" class="form-control" value="{{ $militar->grupo_sang }}"/>
+        @if($errors->has("grupo_sang"))
+        <span class="help-block">{{ $errors->first("grupo_sang") }}</span>
+        @endif
+      </div> -->
 
-      <div class="form-group @if($errors->has('unidade_id')) has-error @endif">
+      <div class="form-group @if($errors->has('grupo_sang')) has-error @endif">
+       <label for="grupo_sang-field">Grupo Sanguineo</label>
+       <select class="form-control" name="grupo_sang">
+         @foreach($gruposSang as $chave => $valor)
+         <option value="{{$chave}}" {{ ($militar->grupo_sang== $valor)? "selected" : ""}}>{{$valor}}</option>
+         @endforeach
+       </select>
+       @if($errors->has("grupo_sang"))
+       <span class="help-block">{{ $errors->first("grupo_sang") }}</span>
+       @endif
+     </div>
+    
+    <div class="form-group @if($errors->has('sexo')) has-error @endif">
+       <label for="sexo-field">Sexo</label>
+       <select class="form-control" name="sexo">
+         @foreach($listaSexo as $chave => $valor)
+         <option value="{{$chave}}" {{ ($militar->sexo== $valor)? "selected" : ""}}>{{$valor}}</option>
+         @endforeach
+       </select>
+       @if($errors->has("sexo"))
+       <span class="help-block">{{ $errors->first("sexo") }}</span>
+       @endif
+     </div>
+
+     <div class="form-group @if($errors->has('unidade_id')) has-error @endif">
        <label for="unidade_id-field">Unidade</label>
        <select class="form-control" name="unidade_id">
          @foreach($listaUnidades as $item)
@@ -82,24 +104,33 @@
        @endif
      </div>
 
-    
-    <div class="form-group @if($errors->has('inativo')) has-error @endif">
+<!-- 
+     <div class="form-group @if($errors->has('inativo')) has-error @endif">
        <label for="inativo-field">Inativo</label>
-       <input type="text" id="sexo-field" name="inativo" class="form-control" value="{{ $militar->inativo }}"/>
+       <input type="checkbox" id="inativo-field" name="inativo" value="{{ $militar->inativo }}"/>
        @if($errors->has("inativo"))
        <span class="help-block">{{ $errors->first("inativo") }}</span>
        @endif
      </div>
+ -->
+      <div class="form-group @if($errors->has('inativo')) has-error @endif">
+       <label for="inativo-field">Inativo</label>
+        <input type="checkbox" id="inativo-field" value="{{ $militar->inativo }}" {{ ($militar->inativo==1)? "checked" : ""}}/>
+       @if($errors->has("inativo"))
+       <span class="help-block">{{ $errors->first("inativo") }}</span>
+       @endif
+     </div>
+
      <div class="form-group @if($errors->has('data_inativo')) has-error @endif">
        <label for="data_inativo-field">Data de Inativação</label>
-       <input type="text" id="data_inativo-field" name="data_inativo" class="form-control" value="{{ $militar->data_inativo }}"/>
+       <input type="date" id="data_inativo-field" name="data_inativo" class="form-control" value="{{ $militar->data_inativo }}"/>
        @if($errors->has("data_inativo"))
        <span class="help-block">{{ $errors->first("data_inativo") }}</span>
        @endif
      </div>
      <div class="form-group @if($errors->has('data_ativo')) has-error @endif">
       <label for="data_ativo-field">Data de Ativação</label>
-      <input type="text" id="data_ativo-field" name="data_ativo" class="form-control" value="{{ $militar->data_ativo }}"/>
+      <input type="date" id="data_ativo-field" name="data_ativo" class="form-control" value="{{ $militar->data_ativo }}"/>
       @if($errors->has("data_ativo"))
       <span class="help-block">{{ $errors->first("data_ativo") }}</span>
       @endif
@@ -125,30 +156,30 @@
       <span class="help-block">{{ $errors->first("tipoimagem") }}</span>
       @endif
     </div>
-     <div class="form-group @if($errors->has('motivo_inativo')) has-error @endif">
+    <div class="form-group @if($errors->has('motivo_inativo')) has-error @endif">
       <label for="motivo_inativo-field">Motivo Inativação</label>
-       <select class="form-control" name="motivo_inativo">
-         <option value="null"></option>
-         @foreach($listaMotivos as $item)
-         <option value="{{$item->id}}"{{ ($militar->motivo_inativo== $item->id)? "selected" : ""}}>{{$item->descricao}}</option>
-         @endforeach
-       </select>
-       @if($errors->has("motivo_inativo"))
-       <span class="help-block">{{ $errors->first("motivo_inativo") }}</span>
-       @endif
-     </div>
-    <div class="form-group @if($errors->has('observacoes')) has-error @endif">
-      <label for="observacoes-field">Observações</label>
-      <textarea class="form-control" id="observacoes-field" rows="3" name="observacoes">{{ $militar->observacoes  }}</textarea>
-      @if($errors->has("observacoes"))
-      <span class="help-block">{{ $errors->first("observacoes") }}</span>
-      @endif
-    </div>
-    <div class="well well-sm">
-      <button type="submit" class="btn btn-primary">Guardar</button>
-      <a class="btn btn-link pull-right" href="{{ route('militars.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
-    </div>
+      <select class="form-control" name="motivo_inativo">
+       <option value="null"></option>
+       @foreach($listaMotivos as $item)
+       <option value="{{$item->id}}"{{ ($militar->motivo_inativo== $item->id)? "selected" : ""}}>{{$item->descricao}}</option>
+       @endforeach
+     </select>
+     @if($errors->has("motivo_inativo"))
+     <span class="help-block">{{ $errors->first("motivo_inativo") }}</span>
+     @endif
+   </div>
+   <div class="form-group @if($errors->has('observacoes')) has-error @endif">
+    <label for="observacoes-field">Observações</label>
+    <textarea class="form-control" id="observacoes-field" rows="3" name="observacoes">{{ $militar->observacoes  }}</textarea>
+    @if($errors->has("observacoes"))
+    <span class="help-block">{{ $errors->first("observacoes") }}</span>
+    @endif
   </div>
+  <div class="well well-sm">
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a class="btn btn-link pull-right" href="{{ route('militars.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
+  </div>
+</div>
 </form>
 
 </div>

@@ -19,13 +19,23 @@ class Binomio extends Model
 		return $numM->num_matricula;
 	}
 
+	public function getNomeVertenteAttribute(){
+		$vertente = VertenteBinomio::findOrFail($this->vertente);
+		return $vertente->descricao;
+	}
+
+	public function getNomeUnidadeAttribute(){
+		$unidade = Unidade::findOrFail($this->unidade_id);
+		return $unidade->descricao;
+	}
+
 	public function getNomeMilitarAttribute(){
 		$nomeMilitar = Militar::findOrFail($this->militar_id);
 		return $nomeMilitar->nomeProprio;
 	}
-
+ 
 	public function getNomeCaoAttribute(){
-		$nomeCao = Entidade::findOrFail($this->cao_id);
+		$nomeCao = Cao::findOrFail($this->cao_id);
 		return $nomeCao->nome;
 	}
 

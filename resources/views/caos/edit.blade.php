@@ -32,6 +32,13 @@
          			<span class="help-block">{{ $errors->first("num_chip") }}</span>
          			@endif
        			</div>
+            <div class="form-group @if($errors->has('nomeCao')) has-error @endif">
+              <label for="nomeCao-field">Nome</label>
+              <input type="text" id="nomeCao-field" name="nomeCao" class="form-control" value="{{ $cao->nomeCao }}"/>
+              @if($errors->has("nomeCao"))
+              <span class="help-block">{{ $errors->first("nomeCao") }}</span>
+              @endif
+            </div>
        			<div class="form-group @if($errors->has('raca')) has-error @endif">
          			<label for="raca-field">Raça</label>
          			<input type="text" id="raca-field" name="raca" class="form-control" value="{{ $cao->raca }}"/>
