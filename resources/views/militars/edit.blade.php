@@ -115,7 +115,7 @@
  -->
       <div class="form-group @if($errors->has('inativo')) has-error @endif">
        <label for="inativo-field">Inativo</label>
-        <input type="checkbox" id="inativo-field" value="{{ $militar->inativo }}" {{ ($militar->inativo==1)? "checked" : ""}}/>
+        <input type="checkbox" id="inativo-field" name="inativo" {{ ($militar->inativo==1)? "checked" : ""}}/>
        @if($errors->has("inativo"))
        <span class="help-block">{{ $errors->first("inativo") }}</span>
        @endif

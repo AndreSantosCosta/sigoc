@@ -2,7 +2,7 @@
  
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\OrigemCao;
 use App\Cao;
 use Illuminate\Http\Request;
 
@@ -29,6 +29,7 @@ class CaoController extends Controller {
 	{
 		$cao = new Cao();
 		$listaOrigem = array(' '=>' ', 'Procriação'=>'Procriação', 'Doacção'=>'Doacção', 'Remonta'=>'Remonta');
+		$listaOrigem = OrigemCao::all('descricao', 'id');
 		$listaMotivos = array(' '=>' ','Incapacidade Técnica'=>'Incapacidade Técnica', 'Incapacidade Veterinária'=>'Incapacidade Veterinária','Morte'=>'Morte');
 		$listaSexo = array(' '=>' ', 'Fêmea'=>'Fêmea', 'Macho'=>'Macho');
 		return view('caos.create', compact('cao', 'listaMotivos', 'listaSexo', 'listaOrigem'));

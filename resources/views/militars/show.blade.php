@@ -59,11 +59,11 @@
            </div>
            <div class="form-group">
                <label for="sexo">SEXO</label>
-               <p class="form-control-static">{{$militar->sexo}}</p>
+               <p class="form-control-static">{{$militar->DescSexo}}</p>
            </div>
            <div class="form-group">
                <label for="inativo">INATIVO</label>
-               <p class="form-control-static">{{$militar->inativo}}</p>
+               <p class="form-control-static">{{$militar->NomeInativo}}</p>
            </div>
            <div class="form-group">
                <label for="data_inativo">DATA DE INATIVAÇÃO</label>
