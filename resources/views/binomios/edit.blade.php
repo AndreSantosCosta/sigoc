@@ -72,12 +72,12 @@
        @endif
      </div>
        <div class="form-group @if($errors->has('inativo')) has-error @endif">
-         <label for="inativo-field">Inativo</label>
-         <input type="checkbox" id="sexo-field" name="inativo" value="{{ $binomio->inativo }}"/>
-         @if($errors->has("inativo"))
-         <span class="help-block">{{ $errors->first("inativo") }}</span>
-         @endif
-       </div>
+       <label for="inativo-field">Inativo</label>
+        <input type="checkbox" id="inativo-field" name="inativo" {{ ($binomio->inativo==1)? "checked" : ""}}/>
+       @if($errors->has("inativo"))
+       <span class="help-block">{{ $errors->first("inativo") }}</span>
+       @endif
+     </div>
        <div class="form-group @if($errors->has('data_inativo')) has-error @endif">
          <label for="data_inativo-field">Data de Inativação</label>
          <input type="date" id="data_inativo-field" name="data_inativo" class="form-control" value="{{ $binomio->data_inativo }}"/>

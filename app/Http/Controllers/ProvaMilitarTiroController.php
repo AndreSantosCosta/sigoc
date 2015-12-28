@@ -1,5 +1,5 @@
 <?php namespace App\Http\Controllers;
-
+ 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -27,7 +27,8 @@ class ProvaMilitarTiroController extends Controller {
 	 */
 	public function create()
 	{
-		return view('prova_militar_tiros.create');
+		$prova_militar_tiros = new ProvaMilitarTiro();
+		return view('prova_militar_tiros.create', compact("prova_militar_tiros"));
 	}
 
 	/**
@@ -38,15 +39,16 @@ class ProvaMilitarTiroController extends Controller {
 	 */
 	public function store(Request $request)
 	{
-		$prova_militar_tiro = new ProvaMilitarTiro();
+		$a = new ProvaMilitarTiro();
+		$a->dataProva = $request->input("dataProva");
+		$a->entidade_id = $request->input("entidade_id");
+        $a->local = $request->input("local");
+        $a->tipo = $request->input("tipo");
+        $a->notaFinal = $request->input("notaFinal");
+        $a->arquivo = $request->input("arquivo");
+        $a->observacoes = $request->input("observacoes");
 
-		$prova_militar_tiro->IdProvaMilitar = $request->input("IdProvaMilitar");
-        $prova_militar_tiro->local = $request->input("local");
-        $prova_militar_tiro->tipo = $request->input("tipo");
-        $prova_militar_tiro->notaFinal = $request->input("notaFinal");
-        $prova_militar_tiro->arquivo = $request->input("arquivo");
-
-		$prova_militar_tiro->save();
+		$a->save();
 
 		return redirect()->route('prova_militar_tiros.index')->with('message', 'Item created successfully.');
 	}
@@ -86,15 +88,17 @@ class ProvaMilitarTiroController extends Controller {
 	 */
 	public function update(Request $request, $id)
 	{
-		$prova_militar_tiro = ProvaMilitarTiro::findOrFail($id);
+		$a = ProvaMilitarTiro::findOrFail($id);
 
-		$prova_militar_tiro->IdProvaMilitar = $request->input("IdProvaMilitar");
-        $prova_militar_tiro->local = $request->input("local");
-        $prova_militar_tiro->tipo = $request->input("tipo");
-        $prova_militar_tiro->notaFinal = $request->input("notaFinal");
-        $prova_militar_tiro->arquivo = $request->input("arquivo");
+		$a->dataProva = $request->input("dataProva");
+		$a->entidade_id = $request->input("entidade_id");
+        $a->local = $request->input("local");
+        $a->tipo = $request->input("tipo");
+        $a->notaFinal = $request->input("notaFinal");
+        $a->arquivo = $request->input("arquivo");
+        $a->observacoes = $request->input("observacoes");
 
-		$prova_militar_tiro->save();
+		$a->save();
 
 		return redirect()->route('prova_militar_tiros.index')->with('message', 'Item updated successfully.');
 	}
@@ -107,8 +111,8 @@ class ProvaMilitarTiroController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		$prova_militar_tiro = ProvaMilitarTiro::findOrFail($id);
-		$prova_militar_tiro->delete();
+		$a = ProvaMilitarTiro::findOrFail($id);
+		$a->delete();
 
 		return redirect()->route('prova_militar_tiros.index')->with('message', 'Item deleted successfully.');
 	}

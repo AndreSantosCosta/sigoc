@@ -43,28 +43,28 @@ class CaoController extends Controller {
 	 */
 	public function store(Request $request)
 	{
-		$cao = new Cao();
+		$a = new Cao();
 
-		$cao->num_matricula = $request->input("num_matricula");
-		$cao->nomeCao = $request->input("nomeCao");
-        $cao->num_chip = $request->input("num_chip");
-        $cao->nome = $request->input("nome");
-        $cao->raca = $request->input("raca");
-        $cao->sexo = $request->input("sexo");
-        $cao->origem = $request->input("origem");
-        $cao->data_nascim = $request->input("data_nascim");
-        $cao->mae = $request->input("mae");
-        $cao->pai = $request->input("pai");
-        $cao->ninhada = $request->input("ninhada");
-        $cao->unidade_id = $request->input("unidade_id");
-        $cao->inativo = $request->input("inativo");
-        $cao->data_inativo = $request->input("data_inativo");
+		$a->num_matricula = $request->input("num_matricula");
+		$a->nomeCao = $request->input("nomeCao");
+        $a->num_chip = $request->input("num_chip");
+        $a->nome = $request->input("nome");
+        $a->raca = $request->input("raca");
+        $a->sexo = $request->input("sexo");
+        $a->origem = $request->input("origem");
+        $a->data_nascim = $request->input("data_nascim");
+        $a->mae = $request->input("mae");
+        $a->pai = $request->input("pai");
+        $a->ninhada = $request->input("ninhada");
+        $a->unidade_id = $request->input("unidade_id");
+        $a->inativo = $request->input("inativo");
+        $a->data_inativo = $request->input("data_inativo");
         if(!trim($request->input("motivo_inativo")=="")){
-        	 $cao->motivo_inativo = $request->input("motivo_inativo");
+        	 $a->motivo_inativo = $request->input("motivo_inativo");
         }
-        $cao->observacoes = $request->input("observacoes");
+        $a->observacoes = $request->input("observacoes");
 
-		$cao->save();
+		$a->save();
 
 		return redirect()->route('caos.index')->with('message', 'Item created successfully.');
 	}
@@ -110,25 +110,25 @@ class CaoController extends Controller {
 	 */
 	public function update(Request $request, $id)
 	{
-		$cao = Cao::findOrFail($id);
+		$a = Cao::findOrFail($id);
 
-		$cao->num_matricula = $request->input("num_matricula");
-		$cao->nomeCao = $request->input("nomeCao");
-        $cao->num_chip = $request->input("num_chip");
-        $cao->nome = $request->input("nome");
-        $cao->raca = $request->input("raca");
-        $cao->sexo = $request->input("sexo");
-        $cao->origem = $request->input("origem");
-        $cao->data_nascim = $request->input("data_nascim");
-        $cao->mae = $request->input("mae");
-        $cao->pai = $request->input("pai");
-        $cao->ninhada = $request->input("ninhada");
-        $cao->inativo = $request->input("inativo");
-        $cao->data_inativo = $request->input("data_inativo");
-        $cao->motivo_inativo = $request->input("motivo_inativo");
-        $cao->observacoes = $request->input("observacoes");
+		$a->num_matricula = $request->input("num_matricula");
+		$a->nomeCao = $request->input("nomeCao");
+        $a->num_chip = $request->input("num_chip");
+        $a->nome = $request->input("nome");
+        $a->raca = $request->input("raca");
+        $a->sexo = $request->input("sexo");
+        $a->origem = $request->input("origem");
+        $a->data_nascim = $request->input("data_nascim");
+        $a->mae = $request->input("mae");
+        $a->pai = $request->input("pai");
+        $a->ninhada = $request->input("ninhada");
+        $a->inativo = $request->input("inativo");
+        $a->data_inativo = $request->input("data_inativo");
+        $a->motivo_inativo = $request->input("motivo_inativo");
+        $a->observacoes = $request->input("observacoes");
 
-		$cao->save();
+		$a->save();
 
 		return redirect()->route('caos.index')->with('message', 'Item updated successfully.');
 	}
@@ -141,8 +141,8 @@ class CaoController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		$cao = Cao::findOrFail($id);
-		$cao->delete();
+		$a = Cao::findOrFail($id);
+		$a->delete();
 
 		return redirect()->route('caos.index')->with('message', 'Item deleted successfully.');
 	}

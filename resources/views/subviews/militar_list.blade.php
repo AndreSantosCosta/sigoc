@@ -26,7 +26,7 @@
                     <td>{{$militar->nome}}</td>
                     <td>{{$militar->nomePosto}}</td>
                     <td>{{$militar->nomeUnidade}}</td>
-                    <td>{{$militar->inativo}}</td>
+                    <td>{{$militar->NomeInativo}}</td>
                     <td class="text-right">
                         <a class="btn btn-xs btn-primary" href="{{ route('militars.show', $militar->id) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver</a>
                         <a class="btn btn-xs btn-warning" href="{{ route('militars.edit', $militar->id) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>

@@ -20,6 +20,10 @@ class Cao extends Model
 		return $caoMotivoInatCao->descricao;
 	}
 
+private function calculateNome(){
+    return $this->nomeCao; 
+
+  }
 
 	// ----------------------------------------------
 	// Implementação das SuperClasses / SubClasses
@@ -45,7 +49,7 @@ class Cao extends Model
         // Insere na Entidade
 		$entidade = new Entidade();
                 $entidade->tipoEntidade = "C";
-                $entidade->nome = $this->nome;
+                $entidade->nome = $this->nomeCao;
                 $entidade->inativo = $this->inativo;
                 $entidade->data_inativo = $this->data_inativo;
                 $entidade->data_ativo = $this->data_ativo;

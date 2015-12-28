@@ -75,7 +75,7 @@
            </div>
            <div class="form-group">
                <label for="motivo_inativo">MOTIVO INATIVO</label>
-               <p class="form-control-static">{{$militar->motivo_inativo}}</p>
+               <p class="form-control-static">{{$militar->NomeMotivoInativacao}}</p>
            </div>
             <div class="form-group">
                <label for="observacoes">OBSERVAÇÕES</label>

@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Prova;
+use App\Enumeraveis;
 use Illuminate\Http\Request;
 
 class ProvaController extends Controller {
@@ -27,9 +28,11 @@ class ProvaController extends Controller {
 	 */
 	public function create()
 	{
-		return view('provas.create');
+		$listaEntidade = Enumeraveis::getEntidadeList();
+		$listaTipoProva = Enumeraveis::getTiposProvasList();
+		return view('provas.create', compact("listaEntidade", "listaTipoProva"));
 	}
-
+ 
 	/**
 	 * Store a newly created resource in storage.
 	 *
@@ -39,12 +42,12 @@ class ProvaController extends Controller {
 	public function store(Request $request)
 	{
 		$prova = new Prova();
-
-		$prova->tipo_prova = $request->input("tipo_prova");
-        $prova->data_prova = $request->input("data_prova");
-        $prova->militar_id = $request->input("militar_id");
-        $prova->cao_id = $request->input("cao_id");
-        $prova->binomio_id = $request->input("binomio_id");
+		$prova->tipoEntidade = $request->input("tipoEntidade");
+		$prova->tipoProva = $request->input("tipoProva");
+        $prova->dataProva = $request->input("dataProva");
+        $prova->entidade_id = $request->input("entidade_id");
+        $prova->arquivo = $request->input("arquivo");
+        $prova->observacoes = $request->input("observacoes");
 
 		$prova->save();
 
@@ -88,11 +91,12 @@ class ProvaController extends Controller {
 	{
 		$prova = Prova::findOrFail($id);
 
-		$prova->tipo_prova = $request->input("tipo_prova");
-        $prova->data_prova = $request->input("data_prova");
-        $prova->militar_id = $request->input("militar_id");
-        $prova->cao_id = $request->input("cao_id");
-        $prova->binomio_id = $request->input("binomio_id");
+		$prova->tipoEntidade = $request->input("tipoEntidade");
+		$prova->tipoProva = $request->input("tipoProva");
+        $prova->dataProva = $request->input("dataProva");
+        $prova->entidade_id = $request->input("entidade_id");
+        $prova->arquivo = $request->input("arquivo");
+        $prova->observacoes = $request->input("observacoes");
 
 		$prova->save();
 

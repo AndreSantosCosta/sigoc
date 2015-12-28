@@ -9,7 +9,7 @@ use App\Unidade;
 use App\MotivoInativoMilitar;
 use App\Enumeraveis;
 use Illuminate\Http\Request;
-
+ 
 class MilitarController extends Controller {
 
 	/**
@@ -36,9 +36,8 @@ class MilitarController extends Controller {
 		$listaPostos = Posto::all('descricao', 'id');
 		$listaUnidades = Unidade::all('descricao', 'id');
 		$listaSexo = Enumeraveis::getSexoList(); 
-		$gruposSang= array('A Positivo'=>'A Positivo','A Negativo'=>'A Negativo','B Positivo'=>'B Positivo','B Negativo'=>'B Negativo','O Positivo'=>'O Positivo','O Negativo'=>'O Negativo','AB Positivo'=>'AB Positivo','AB Negativo'=>'AB Negativo');
+		$gruposSang= Enumeraveis::getGrupoSangList(); 
 		$formToCreate = true;
-
 
 		return view('militars.create', compact('militar','listaPostos','listaUnidades','gruposSang','listaSexo','listaMotivos','formToCreate'));
 	}
@@ -48,7 +47,7 @@ class MilitarController extends Controller {
 	 *
 	 * @param Request $request
 	 * @return Response
-	 */
+	 */ 
 	public function store(Request $request)
 	{
 		
@@ -83,9 +82,8 @@ class MilitarController extends Controller {
 	public function show($id)
 	{
 		$militar = Militar::findOrFail($id);
-		$listaSexo = array('Feminino'=>'Feminino', 'Masculino'=>'Masculino');
-		$gruposSang= array('A Positivo'=>'A Positivo','A Negativo'=>'A Negativo','B Positivo'=>'B Positivo','B Negativo'=>'B Negativo','O Positivo'=>'O Positivo','O Negativo'=>'O Negativo','AB Positivo'=>'AB Positivo','AB Negativo'=>'AB Negativo');
-		
+		$listaSexo = Enumeraveis::getSexoList();
+		$gruposSang= Enumeraveis::getGrupoSangList(); 
 		return view('militars.show', compact('militar', 'listaSexo', 'gruposSang'));
 	}
 
@@ -134,13 +132,12 @@ class MilitarController extends Controller {
 		}
 		$a->data_inativo = $request->input("data_inativo");
 		$a->data_ativo = $request->input("data_ativo");
-		//$a->motivo_inativo = $request->input("motivo_inativo");
-
-		if(!trim($request->input("motivo_inativo")=="")){
+		
+		if($request->input("motivo_inativo")!="-1"){
         	 $a->motivo_inativo = $request->input("motivo_inativo");
         }
         else{
-        	 $a->{$motivo_inativo} = "";
+        	 $a->motivo_inativo = null;
         }
 		$a->observacoes = $request->input("observacoes");
 

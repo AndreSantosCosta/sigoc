@@ -35,7 +35,7 @@
 
                     <div class="form-group">
                          <label for="nome">NOME</label>
-                         <p class="form-control-static">{{$cao->nome}}</p>
+                         <p class="form-control-static">{{$cao->nomeCao}}</p>
                     </div>
 
                     <div class="form-group">

@@ -1,5 +1,5 @@
 <?php
-
+ 
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
@@ -8,8 +8,6 @@ use DB;
 class Militar extends Model
 {
 	protected $table = 'view_militars';
-
-  protected $forcedNullFields = ['motivo_inativo'];
 
 	public function getNomePostoAttribute(){
 		$posto = Posto::findOrFail($this->posto_id);
@@ -27,7 +25,7 @@ class Militar extends Model
 	}
 
 	private function calculateNome(){
-		return $this->getNomePostoAttribute() . " " . $this->apelido; 
+		return $this->getNomePostoAttribute() . " " . $this->apelido;
 
 	}
 

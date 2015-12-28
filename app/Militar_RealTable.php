@@ -9,6 +9,6 @@ class Militar_RealTable extends Model
 {
 	protected $table = 'militars';
 	public $timestamps = false;
-	  protected $forcedNullFields = ['motivo_inativo'];
+	  
 }
  

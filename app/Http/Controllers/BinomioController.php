@@ -7,7 +7,7 @@ use App\Binomio;
 use App\Unidade;
 use App\VertenteBinomio;
 use Illuminate\Http\Request;
-
+ 
 class BinomioController extends Controller {
 
 	/**
@@ -34,7 +34,7 @@ class BinomioController extends Controller {
 		$listaUnidades = Unidade::all('descricao', 'id');
 		
 		return view('binomios.create', compact('binomio', 'listaVertente','listaUnidades'));
-	}
+	} 
 
 	/**
 	 * Store a newly created resource in storage.
@@ -50,9 +50,11 @@ class BinomioController extends Controller {
         $a->militar_id = $request->input("militar_id");
         $a->cao_id = $request->input("cao_id");
         $a->vertente = $request->input("vertente");
-        $a->inativo = $request->input("inativo");
+        $a->inativo = $request->input("NomeInativo");
         $a->data_inativo = $request->input("data_inativo");
         $a->motivo_inativo = $request->input("motivo_inativo");
+        $a->observacoes = $request->input("observacoes");
+		$a->unidade_id = $request->input("unidade_id");
 
 		$a->save();
 
@@ -102,9 +104,18 @@ class BinomioController extends Controller {
         $a->militar_id = $request->input("militar_id");
         $a->cao_id = $request->input("cao_id");
         $a->vertente = $request->input("vertente");
-        $a->inativo = $request->input("inativo");
+
+        if($request->input("inativo")==""){
+			$a->inativo = false;
+
+		}else{
+			$a->inativo = true;
+		}
+ 
         $a->data_inativo = $request->input("data_inativo");
+        $a->data_ativo = $request->input("data_ativo");
         $a->motivo_inativo = $request->input("motivo_inativo");
+        $a->observacoes = $request->input("observacoes");
 
 		$a->save();
 

@@ -17,8 +17,8 @@
                 <tr>
                     <td>{{$prova->tipo_prova}}</td>
                     <td>{{$prova->data_prova}}</td>
-                    <td>{{$prova->numMecanog}}</td>
-                    <td>{{$prova->numMatricula}}</td>
+                   <!--  <td>{{$prova->numMecanog}}</td>
+                   <td>{{$prova->numMatricula}}</td> -->
                     <td class="text-right">
                         <a class="btn btn-xs btn-primary" href="{{ route('provas.show', $prova->id) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver</a>
                         <a class="btn btn-xs btn-warning" href="{{ route('provas.edit', $prova->id) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>
