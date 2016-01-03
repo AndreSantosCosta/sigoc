@@ -46,20 +46,57 @@
          			<span class="help-block">{{ $errors->first("raca") }}</span>
          			@endif
        			</div>
-       			<div class="form-group @if($errors->has('sexo')) has-error @endif">
+       			<!--<div class="form-group @if($errors->has('sexo')) has-error @endif">
          			<label for="sexo-field">Sexo</label>
          			<input type="text" id="sexo-field" name="sexo" class="form-control" value="{{ $cao->sexo }}"/>
          			@if($errors->has("sexo"))
          			<span class="help-block">{{ $errors->first("sexo") }}</span>
          			@endif
-       			</div>
-       			<div class="form-group @if($errors->has('origem')) has-error @endif">
+       			</div>-->
+            <div class="form-group @if($errors->has('sexo')) has-error @endif">
+              <label for="sexo-field">Sexo</label>
+              <select class="form-control" name="sexo">
+              @foreach($listaSexo as $chave => $valor)
+              <option value="{{$chave}}" {{ ($cao->sexo== $valor)? "selected" : ""}}>{{$valor}}</option>
+              @endforeach
+              </select>
+              @if($errors->has("sexo"))
+              <span class="help-block">{{ $errors->first("sexo") }}</span>
+              @endif
+            </div>
+
+
+
+
+
+
+
+       			<!--<div class="form-group @if($errors->has('origem')) has-error @endif">
          			<label for="origem-field">Origem</label>
          			<input type="text" id="origem-field" name="origem" class="form-control" value="{{ $cao->origem }}"/>
          			@if($errors->has("origem"))
          			<span class="help-block">{{ $errors->first("origem") }}</span>
          			@endif
-       			</div>
+       			</div>-->
+            <div class="form-group @if($errors->has('origem')) has-error @endif">
+              <label for="origem-field">Origem</label>
+              <select class="form-control" name="origem">
+              @foreach($listaOrigem as $item)
+              <option value="{{$item->id}}" {{ ($cao->origem== $item->id)? "selected" : ""}}>{{$item->descricao}}</option>
+              @endforeach
+              </select>
+              @if($errors->has("origem"))
+              <span class="help-block">{{ $errors->first("origem") }}</span>
+              @endif
+            </div>
+
+
+
+
+
+
+
+
        			<div class="form-group @if($errors->has('data_nascim')) has-error @endif">
          			<label for="data_nascim-field">Data de Nascimento</label>
          			<input type="text" id="data_nascim-field" name="data_nascim" class="form-control" value="{{ $cao->data_nascim }}"/>
@@ -102,6 +139,25 @@
         			<span class="help-block">{{ $errors->first("ninhada") }}</span>
         			@endif
       			</div>
+            <div class="form-group @if($errors->has('unidade_id')) has-error @endif">
+              <label for="unidade_id-field">Unidade</label>
+              <select class="form-control" name="unidade_id">
+              @foreach($listaUnidades as $item)
+              <option value="{{$item->id}}" {{ ($militar->unidade_id== $item->id)? "selected" : ""}}>{{$item->descricao}}</option>
+              @endforeach
+              </select>
+              @if($errors->has("unidade_id"))
+              <span class="help-block">{{ $errors->first("unidade_id") }}</span>
+              @endif
+            </div>
+
+
+
+
+
+
+
+
       			<div class="form-group @if($errors->has('inativo')) has-error @endif">
         			<label for="inativo-field">Inativo</label>
         			<input type="text" id="inativo-field" name="inativo" class="form-control" value="{{ $cao->inativo  }}"/>
@@ -144,13 +200,28 @@
         			<span class="help-block">{{ $errors->first("tipoimagem") }}</span>
         			@endif
       			</div>
-            <div class="form-group @if($errors->has('motivo_inativo')) has-error @endif">
+            <!--<div class="form-group @if($errors->has('motivo_inativo')) has-error @endif">
               <label for="motivo_inativo-field">Motivo Inativo</label>
               <input type="text" id="motivo_inativo-field" name="motivo_inativo" class="form-control" value="{{ $cao->motivo_inativo }}"/>
               @if($errors->has("motivo_inativo"))
               <span class="help-block">{{ $errors->first("motivo_inativo") }}</span>
               @endif
+            </div>-->
+            <div class="form-group @if($errors->has('motivo_inativo')) has-error @endif">
+              <label for="motivo_inativo-field">Motivo Inativação</label>
+              <select class="form-control" name="motivo_inativo">
+              <option value="null"></option>
+              @foreach($listaMotivos as $item)
+              <option value="{{$item->id}}"{{ ($cao->motivo_inativo== $item->id)? "selected" : ""}}>{{$item->descricao}}</option>
+              @endforeach
+              </select>
+              @if($errors->has("motivo_inativo"))
+              <span class="help-block">{{ $errors->first("motivo_inativo") }}</span>
+              @endif
             </div>
+
+            
+
       			<div class="form-group @if($errors->has('observacoes')) has-error @endif">
         			<label for="observacoes-field">Observações</label>
         			<textarea class="form-control" id="observacoes-field" rows="3" name="observacoes">{{ $cao->observacoes  }}</textarea>
