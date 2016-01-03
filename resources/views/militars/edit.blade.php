@@ -115,7 +115,7 @@
  -->
       <div class="form-group @if($errors->has('inativo')) has-error @endif">
        <label for="inativo-field">Inativo</label>
-        <input type="checkbox" id="inativo-field" value="{{ $militar->inativo }}" {{ ($militar->inativo==1)? "checked" : ""}}/>
+        <input type="checkbox" id="inativo-field" name="inativo" {{ ($militar->inativo==1)? "checked" : ""}}/>
        @if($errors->has("inativo"))
        <span class="help-block">{{ $errors->first("inativo") }}</span>
        @endif
@@ -159,7 +159,7 @@
     <div class="form-group @if($errors->has('motivo_inativo')) has-error @endif">
       <label for="motivo_inativo-field">Motivo Inativação</label>
       <select class="form-control" name="motivo_inativo">
-       <option value="null"></option>
+       <option value="-1"></option>
        @foreach($listaMotivos as $item)
        <option value="{{$item->id}}"{{ ($militar->motivo_inativo== $item->id)? "selected" : ""}}>{{$item->descricao}}</option>
        @endforeach

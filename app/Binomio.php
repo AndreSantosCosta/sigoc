@@ -33,18 +33,26 @@ class Binomio extends Model
 		$nomeMilitar = Militar::findOrFail($this->militar_id);
 		return $nomeMilitar->nomeProprio;
 	}
- 
+
 	public function getNomeCaoAttribute(){
 		$nomeCao = Cao::findOrFail($this->cao_id);
-		return $nomeCao->nome;
+		return $nomeCao->nomeCao;
 	}
 
 	private function calculateNome(){
-		return $this->getNomeMilitarAttribute() . " " . $this->getNomeCaoAttribute; 
+		return $this->getNomeMilitarAttribute() . " + " . $this->getNomeCaoAttribute(); 
 	}
 
 	private function calculateNumero(){
-		return $this->getNumMecanogAttribute() . " " . $this->getNumMatriculaAttribute; 
+		return $this->getNumMecanogAttribute() . " + " . $this->getNumMatriculaAttribute(); 
+	}
+
+	public function getNomeInativoAttribute(){
+		if($this->inativo ==0){
+			return "Ativo";
+		}else{
+			return "Inativo";
+		}
 	}
 	// ----------------------------------------------
 	// ImplementaÃ§Ã£o das SuperClasses / SubClasses
@@ -109,7 +117,7 @@ class Binomio extends Model
 		$entidade->tamanhoImagem = $this->tamanhoImagem;
 		$entidade->observacoes = $this->observacoes;
 		$entidade->unidade_id = $this->unidade_id;
-		$entidade->numero = $this->num_mecanografico;
+		$entidade->numero = $this->calculateNumero();
 		$entidade->save();
 
         // Atualiza campos calculados
@@ -127,7 +135,7 @@ class Binomio extends Model
 		$binomio->vertente = $this->vertente;
 		$binomio->motivo_inativo = $this->motivo_inativo;
 		$binomio->save();
-	}
+	} 
 
 	private function deleteRecord(){
         // Apaga do Binomio

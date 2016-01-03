@@ -1,8 +1,8 @@
 @extends('layout')
 @section('header')
-<div class="page-header">
-  <div class="col-md-12">
-    <h1>Ver Binomio #{{$binomio->id}}</h1>
+<div class="col-md-12">
+<div class="page-header"> 
+    <h1>Ver Binomio #{{$binomio->NumMecanog . " + " . $binomio->NumMatricula}}</h1>
     <form action="{{ route('binomios.destroy', $binomio->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
         <input type="hidden" name="_method" value="DELETE">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -10,9 +10,8 @@
             <a class="btn btn-warning btn-group" role="group" href="{{ route('binomios.edit', $binomio->id) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>
             <button type="submit" class="btn btn-danger">Apagar <i class="glyphicon glyphicon-trash"></i></button>
         </div>
+      </form>
     </div>
-</form>
-
 </div> 
 @endsection
 
@@ -50,7 +49,7 @@
              </div>
               <div class="form-group">
                <label for="inativo">INATIVO</label>
-               <p class="form-control-static">{{$binomio->inativo}}</p>
+               <p class="form-control-static">{{$binomio->NomeInativo}}</p>
            </div>
            <div class="form-group">
                <label for="data_inativo">DATA DE INATIVAÇÃO</label>

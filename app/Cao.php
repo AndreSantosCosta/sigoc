@@ -29,6 +29,10 @@ class Cao extends Model
     return $MotivoInativoCao->descricao;
   }
 
+private function calculateNome(){
+    return $this->nomeCao; 
+
+  }
 
 	// ----------------------------------------------
 	// Implementação das SuperClasses / SubClasses

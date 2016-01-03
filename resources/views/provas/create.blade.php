@@ -1,8 +1,10 @@
 @extends('layout')
 
 @section('header')
+<div class="col-md-12">
     <div class="page-header">
-        <h1><i class="glyphicon glyphicon-plus"></i> Provas / Create </h1>
+        <h1><i class="glyphicon glyphicon-plus"></i> Criar Prova</h1>
+    </div>
     </div>
 @endsection
 
@@ -13,23 +15,49 @@
         <div class="col-md-12">
 
             <form action="{{ route('provas.store') }}" method="POST">
+              <div class="col-md-12">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                 <div class="form-group @if($errors->has('tipoentidade')) has-error @endif">
-                       <label for="tipoentidade-field">TipoEntidade</label>
-                    <input type="text" id="tipoentidade-field" name="tipoentidade" class="form-control" value="{{ old("tipoentidade") }}"/>
-                       @if($errors->has("tipoentidade"))
-                        <span class="help-block">{{ $errors->first("tipoentidade") }}</span>
-                       @endif
-                    </div>
+                     <label for="tipoentidade-field">Entidade</label>
+                     <select class="form-control" name="tipoentidade">
+                       @foreach($listaEntidade as $chave => $valor)
+                       <option value="{{$chave}}">{{$valor}}</option>
+                       @endforeach
+                     </select>
+                     @if($errors->has("tipoentidade"))
+                     <span class="help-block">{{ $errors->first("tipoentidade") }}</span>
+                     @endif
+                   </div>
+
+              <!--   <div class="form-group @if($errors->has('tipoentidade')) has-error @endif">
+                     <label for="tipoentidade-field">Entidade</label>
+                  <input type="text" id="tipoentidade-field" name="tipoentidade" class="form-control" value="{{ old("tipoentidade") }}"/>
+                     @if($errors->has("tipoentidade"))
+                      <span class="help-block">{{ $errors->first("tipoentidade") }}</span>
+                     @endif
+                  </div> -->
+                   <!--  <div class="form-group @if($errors->has('tipoprova')) has-error @endif">
+                      <label for="tipoprova-field">Tipo de Prova</label>
+                   <input type="text" id="tipoprova-field" name="tipoprova" class="form-control" value="{{ old("tipoprova") }}"/>
+                      @if($errors->has("tipoprova"))
+                       <span class="help-block">{{ $errors->first("tipoprova") }}</span>
+                      @endif
+                   </div> -->
+
                     <div class="form-group @if($errors->has('tipoprova')) has-error @endif">
-                       <label for="tipoprova-field">TipoProva</label>
-                    <input type="text" id="tipoprova-field" name="tipoprova" class="form-control" value="{{ old("tipoprova") }}"/>
-                       @if($errors->has("tipoprova"))
-                        <span class="help-block">{{ $errors->first("tipoprova") }}</span>
-                       @endif
-                    </div>
-                    <div class="form-group @if($errors->has('dataprova')) has-error @endif">
+                     <label for="tipoprova-field">Tipo de Prova</label>
+                     <select class="form-control" name="tipoprova">
+                       @foreach($listaTipoProva as $chave => $valor)
+                       <option value="{{$chave}}">{{$valor}}</option>
+                       @endforeach
+                     </select>
+                     @if($errors->has("tipoprova"))
+                     <span class="help-block">{{ $errors->first("tipoprova") }}</span>
+                     @endif
+                   </div>
+
+                    <!-- <div class="form-group @if($errors->has('dataprova')) has-error @endif">
                        <label for="dataprova-field">DataProva</label>
                     <input type="text" id="dataprova-field" name="dataprova" class="form-control" value="{{ old("dataprova") }}"/>
                        @if($errors->has("dataprova"))
@@ -56,10 +84,10 @@
                        @if($errors->has("observacoes"))
                         <span class="help-block">{{ $errors->first("observacoes") }}</span>
                        @endif
-                    </div>
+                    </div> -->
                 <div class="well well-sm">
-                    <button type="submit" class="btn btn-primary">Create</button>
-                    <a class="btn btn-link pull-right" href="{{ route('provas.index') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>
+                    <button type="submit" class="btn btn-primary">Criar </button>
+                    <a class="btn btn-link pull-right" href="{{ route('provas.index') }}"><i class="glyphicon glyphicon-backward"></i> Voltar </a>
                 </div>
             </form>
 
