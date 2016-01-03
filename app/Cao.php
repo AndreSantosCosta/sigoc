@@ -11,14 +11,23 @@ class Cao extends Model
 
 	
 	public function getNomeOrigemAttribute(){
-		$origem = Origem::findOrFail($this->origem);
+		$origem = OrigemCao::findOrFail($this->origem);
 		return $origem->descricao;
 	}
 
-	public function getNomeMotivoInativoAttribute(){
+  public function getNomeUnidadeAttribute(){
+    $unidade = Unidade::findOrFail($this->unidade_id);
+    return $unidade->descricao;
+  }
+	/*public function getNomeMotivoInativoAttribute(){
 		$caoMotivoInatCao = MotivoInativoCao::findOrFail($this->motivo_inativo);
 		return $caoMotivoInatCao->descricao;
-	}
+	}*/
+
+    public function getNomeMotivoInativacaoAttribute(){
+    $MotivoInativoCao = MotivoInativoCao::findOrFail($this->motivo_inativo);
+    return $MotivoInativoCao->descricao;
+  }
 
 private function calculateNome(){
     return $this->nomeCao; 
