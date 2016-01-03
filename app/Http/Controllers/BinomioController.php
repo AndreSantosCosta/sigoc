@@ -15,6 +15,7 @@ class BinomioController extends Controller {
 	 *
 	 * @return Response
 	 */
+	
 	public function index()
 	{
 		$binomios = Binomio::orderBy('id', 'desc')->paginate(10);
