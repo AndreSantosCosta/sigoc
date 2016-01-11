@@ -15,4 +15,4 @@
 @include('subviews.militar_list')
 
 @endsection 
- 
+  
