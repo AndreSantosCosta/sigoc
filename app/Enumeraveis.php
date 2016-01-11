@@ -32,4 +32,7 @@ class Enumeraveis
 	public static function getTiposProvasFromKey($chave){
 		return Enumeraveis::getTiposProvasList()[$chave];
 	}
+
+
+	
 }
