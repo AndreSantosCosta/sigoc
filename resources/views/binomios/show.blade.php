@@ -2,11 +2,12 @@
 @section('header')
 <div class="col-md-12">
 <div class="page-header"> 
-    <h1>Ver Binomio #{{$binomio->NumMecanog . " + " . $binomio->NumMatricula}}</h1>
+    <h1>Ver Binomio # <a href="{{ route('militars.show', $binomio->militar_id) }}">{{$binomio->NumMecanog}}</a> + <a href="{{ route('caos.show', $binomio->cao_id) }}">{{$binomio->NumMatricula}}</a></h1>
     <form action="{{ route('binomios.destroy', $binomio->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
         <input type="hidden" name="_method" value="DELETE">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="btn-group pull-right" role="group" aria-label="...">
+        <a class="btn btn-primary" href="{{ route('provasPorEntidade', array('tipoEntidade'=>'B', 'entidade_id'=>$binomio->id)) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver Provas</a>
             <a class="btn btn-warning btn-group" role="group" href="{{ route('binomios.edit', $binomio->id) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>
             <button type="submit" class="btn btn-danger">Apagar <i class="glyphicon glyphicon-trash"></i></button>
         </div>
@@ -21,10 +22,6 @@
 
         <form action="#">
            <div class="col-md-12">
-                <!-- <div class="form-group">
-                    <label for="nome">ID</label>
-                    <p class="form-control-static"></p>
-                </div> -->
                 <div class="form-group">
                    <label for="data_inicio">DATA DE INICIO</label>
                    <p class="form-control-static">{{$binomio->data_inicio}}</p>
@@ -32,11 +29,11 @@
 
                <div class="form-group">
                    <label for="nome">NOME</label>
-                   <p class="form-control-static">{{$binomio->NomeMilitar . " + " . $binomio->NomeCao}}</p>
+                   <p class="form-control-static"><a href="{{ route('militars.show', $binomio->militar_id) }}">{{$binomio->NomeMilitar}}</a> + <a href="{{ route('caos.show', $binomio->cao_id) }}">{{$binomio->NomeCao}}</a></p>
                </div>
                <div class="form-group">
                    <label for="numero">NUMERO</label>
-                   <p class="form-control-static">{{$binomio->NumMecanog . " + " . $binomio->NumMatricula}}</p>
+                   <p class="form-control-static"><a href="{{ route('militars.show', $binomio->militar_id) }}">{{$binomio->NumMecanog}}</a> + <a href="{{ route('caos.show', $binomio->cao_id) }}">{{$binomio->NumMatricula}}</a></p>
                </div>
                
                <div class="form-group">

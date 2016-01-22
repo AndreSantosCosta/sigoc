@@ -5,6 +5,10 @@ use App\Http\Controllers\Controller;
 
 use App\Prova;
 use App\Enumeraveis;
+use App\Entidade;
+use App\ProvaMilitarTiro;
+use App\ProvaCaoTIPer;
+use App\ProvaBinomTANAT2;
 use Illuminate\Http\Request;
 
 class ProvaController extends Controller {
@@ -115,6 +119,38 @@ class ProvaController extends Controller {
 		$prova->delete();
 
 		return redirect()->route('provas.index')->with('message', 'Item deleted successfully.');
+	}
+
+	public function provasEntidade($tipoEntidade, $entidade_id){
+		$provas = Prova::whereRaw('tipoEntidade = ? and entidade_id = ?', array($tipoEntidade, $entidade_id))->paginate(10);
+		$entidade = Entidade::findOrFail($entidade_id);
+
+		$descricaoEntidade = '[' . $entidade -> nome . ' : ' . $entidade -> numero . ']'; //ir buscar à BD info sobre a pessoa que esta a ver provas
+		return view('provas.index', compact('provas', 'descricaoEntidade'));
+	}
+
+	public function prova ($id){
+		$prova = Prova::findOrFail($id);
+		$tipoProva = $prova ->tipoProva;
+
+		switch ($tipoProva) {
+			case 'Tiro':
+				$prova = ProvaMilitarTiro::findOrFail($id);
+				return view('prova_militar_tiros.show', compact('prova'));
+				break;
+			case 'TIP': 
+				$prova = ProvaCaoTIPer::findOrFail($id);
+				return view('prova_cao_t_i_pers.show', compact('prova'));
+				break;
+			case 'TANAT2': 
+				$prova = ProvaBinomTANAT2::findOrFail($id);
+				return view('prova_binom_t_a_n_a_t2s.show', compact('prova'));
+				break;
+			default:
+				echo "Tipo de Prova não Existe!"; //meter uma view aqui 
+				break;
+		}
+		
 	}
 
 }

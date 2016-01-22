@@ -14,12 +14,12 @@
                     <th class="text-right">Opções</th>
                 </tr>
             </thead>
-
+ 
             <tbody>
                 @foreach($binomios as $binomio)
                 <tr>
-                    <td>{{$binomio->numMecanog}}</td>
-                    <td>{{$binomio->numMatricula}}</td>
+                    <td><a href="{{ route('militars.show', $binomio->militar_id) }}">{{$binomio->numMecanog}}</a></td>
+                    <td><a href="{{ route('caos.show', $binomio->cao_id) }}">{{$binomio->numMatricula}}</a></td>
                     <td>{{$binomio->nome}}</td>
                     <td>{{$binomio->numero}}</td>
                     <td>{{$binomio->data_inicio}}</td>

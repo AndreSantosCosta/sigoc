@@ -30,21 +30,6 @@
                      @endif
                    </div>
 
-              <!--   <div class="form-group @if($errors->has('tipoentidade')) has-error @endif">
-                     <label for="tipoentidade-field">Entidade</label>
-                  <input type="text" id="tipoentidade-field" name="tipoentidade" class="form-control" value="{{ old("tipoentidade") }}"/>
-                     @if($errors->has("tipoentidade"))
-                      <span class="help-block">{{ $errors->first("tipoentidade") }}</span>
-                     @endif
-                  </div> -->
-                   <!--  <div class="form-group @if($errors->has('tipoprova')) has-error @endif">
-                      <label for="tipoprova-field">Tipo de Prova</label>
-                   <input type="text" id="tipoprova-field" name="tipoprova" class="form-control" value="{{ old("tipoprova") }}"/>
-                      @if($errors->has("tipoprova"))
-                       <span class="help-block">{{ $errors->first("tipoprova") }}</span>
-                      @endif
-                   </div> -->
-
                     <div class="form-group @if($errors->has('tipoprova')) has-error @endif">
                      <label for="tipoprova-field">Tipo de Prova</label>
                      <select class="form-control" name="tipoprova">
@@ -56,7 +41,7 @@
                      <span class="help-block">{{ $errors->first("tipoprova") }}</span>
                      @endif
                    </div>
-
+                  
                     <!-- <div class="form-group @if($errors->has('dataprova')) has-error @endif">
                        <label for="dataprova-field">DataProva</label>
                     <input type="text" id="dataprova-field" name="dataprova" class="form-control" value="{{ old("dataprova") }}"/>

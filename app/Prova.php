@@ -6,27 +6,33 @@ use Illuminate\Database\Eloquent\Model;
 
 class Prova extends Model
 {
-	/*public function getNumMecanogAttribute(){
+	public function getNumMecanogAttribute(){
 		$num = Militar::findOrFail($this->entidade_id);
 		return $num->num_mecanografico;
 	}
 
 	public function getNumMatriculaAttribute(){
 		$numM = Cao::findOrFail($this->entidade_id);
-		return $numM->num_matricula;
-	}*/
+		return $numM->cao_id;
+	} 
 
     public function getNumIdentificacaoAttribute(){
     	if($this->tipoEntidade=="M"){
 			$num = Militar::findOrFail($this->entidade_id);
 			return $num->num_mecanografico;
     	}
-		else if($this->tipoEntidade=="C"){
+		if($this->tipoEntidade=="C"){
 			$num = Cao::findOrFail($this->entidade_id);
 			return $num->num_matricula;
 		}
-		/*else if($this->tipoEntidade=="B"){
-			return $this->getNumMecanogAttribute() . " + " . $this->getNumMatriculaAttribute();
+		if($this->tipoEntidade=="B"){
+			$num = Binomio::findOrFail($this->entidade_id);
+			return $num->militar_id . ' + ' . $num->cao_id;
+		}
+		/*if($this->tipoEntidade=="B"){
+			$num = Militar::findOrFail($this->entidade_id);
+			$numC = Cao::findOrFail($this->entidade_id);
+			return $num->num_mecanografico . ' + ' . $numC->num_matricula;
 		}*/
 	}
 
@@ -35,15 +41,19 @@ class Prova extends Model
 			$nome = Militar::findOrFail($this->entidade_id);
 			return $nome->nome;
     	} 
-    	else if($this->tipoEntidade=="C"){
+    	if($this->tipoEntidade=="C"){
 			$nome = Cao::findOrFail($this->entidade_id);
 			return $nome->nomeCao;
 		}
+		if($this->tipoEntidade=="B"){
+			$num = Binomio::findOrFail($this->entidade_id);
+			return $num->militar_id . ' + ' . $num->cao_id;
+		}
 		/*else if($this->tipoEntidade=="B"){
-			$nomeM = Militar::findOrFail($this->entidade_id);
-			return $nomeM->numero;
+			$numM = Militar::findOrFail($this->entidade_id);
+			$numC = Cao::findOrFail($this->entidade_id);
+			return $num->nome . ' + ' . $numC->nomeCao;
 		}*/
-		
 	}
 	
 	public function getNomeEntidadeAttribute(){

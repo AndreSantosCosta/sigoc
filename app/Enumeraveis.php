@@ -13,6 +13,14 @@ class Enumeraveis
 		return Enumeraveis::getSexoList()[$chave];
 	}
 
+	public static function getSexoCaoList(){
+		return array('F'=>'Fêmea', 'M'=>'Macho');
+	}
+
+	public static function getSexoCaoFromKey($chave){
+		return Enumeraveis::getSexoCaoList()[$chave];
+	}
+
 	public static function getGrupoSangList(){
 		return array('A+'=>'A+', 'A-'=>'A-', 'B+'=>'B+', 'B-'=>'B-', 'O+'=>'O+', 'O-'=>'O-', 'AB+'=>'AB+', 'AB-'=>'AB-');
 	}

@@ -7,6 +7,7 @@
             <input type="hidden" name="_method" value="DELETE">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="btn-group pull-right" role="group" aria-label="...">
+                <a class="btn btn-primary" href="{{ route('provasPorEntidade', array('tipoEntidade'=>'M', 'entidade_id'=>$militar->id)) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver Provas</a>
                 <a class="btn btn-warning btn-group" role="group" href="{{ route('militars.edit', $militar->id) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>
                 <button type="submit" class="btn btn-danger">Apagar <i class="glyphicon glyphicon-trash"></i></button>
             </div>
@@ -18,7 +19,7 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
-
+ 
         <form action="#">
            <div class="col-md-12">
            <!--  <div class="form-group">

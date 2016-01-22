@@ -22,9 +22,9 @@
                     <td>{{$cao->num_chip}}</td>
                     <td>{{$cao->nome}}</td>
                     <td>{{$cao->raca}}</td>
-                    <td>{{$cao->origem}}</td>
+                    <td>{{$cao->nomeOrigem}}</td>
                     <td>{{$cao->ninhada}}</td>
-                    <td>{{$cao->inativo}}</td>
+                    <td>{{$cao->NomeInativo}}</td>
 
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="{{ route('caos.show', $cao->id) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver</a>

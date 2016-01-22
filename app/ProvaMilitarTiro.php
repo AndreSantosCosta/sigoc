@@ -29,11 +29,12 @@ class ProvaMilitarTiro extends Model
 		});		
 	}
 
+
 	private function insertRecord(){
         // Insere na Prova
 		$prova = new Prova();
         $prova->tipoEntidade = "M";
-        $prova->tipoProva = $this->"Tiro";
+        $prova->tipoProva = "Tiro";
         $prova->dataProva = $this->dataProva;
         $prova->entidade_id = $this->entidade_id;
         $prova->arquivo = $this->arquivo;

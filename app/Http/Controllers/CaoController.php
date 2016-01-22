@@ -2,10 +2,14 @@
  
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
 use App\OrigemCao;
 use App\Cao;
+use App\Unidade;
+use App\Enumeraveis;
+use App\MotivoInativoCao;
 use Illuminate\Http\Request;
-
+ 
 class CaoController extends Controller {
 	/**
 	 * Display a listing of the resource.
@@ -25,11 +29,11 @@ class CaoController extends Controller {
 	public function create()
 	{
 		$cao = new Cao();
-		$listaOrigem = array(' '=>' ', 'Procriação'=>'Procriação', 'Doacção'=>'Doacção', 'Remonta'=>'Remonta');
 		$listaOrigem = OrigemCao::all('descricao', 'id');
-		$listaMotivos = array(' '=>' ','Incapacidade Técnica'=>'Incapacidade Técnica', 'Incapacidade Veterinária'=>'Incapacidade Veterinária','Morte'=>'Morte');
-		$listaSexo = array(' '=>' ', 'Fêmea'=>'Fêmea', 'Macho'=>'Macho');
-		return view('caos.create', compact('cao', 'listaMotivos', 'listaSexo', 'listaOrigem'));
+		$listaUnidades = Unidade::all('descricao', 'id');
+		$listaMotivos = MotivoInativoCao::all('descricao', 'id');
+		$listaSexo = Enumeraveis::getSexoCaoList();
+		return view('caos.create', compact('cao', 'listaMotivos', 'listaSexo', 'listaOrigem', 'listaUnidades'));
 	}
 	/**
 	 * Store a newly created resource in storage.
@@ -72,7 +76,7 @@ class CaoController extends Controller {
 		$cao = Cao::findOrFail($id);
 		$listaOrigem = array(' '=>' ', 'Procriação'=>'Procriação', 'Doacção'=>'Doacção', 'Remonta'=>'Remonta');
 		$listaMotivos = array(' '=>' ','Incapacidade Técnica'=>'Incapacidade Técnica', 'Incapacidade Veterinária'=>'Incapacidade Veterinária','Morte'=>'Morte');
-		$listaSexo = array(' '=>' ', 'Fêmea'=>'Fêmea', 'Macho'=>'Macho');
+		$listaSexo = Enumeraveis::getSexoCaoList();
 		
 		return view('caos.show', compact('cao', 'listaOrigem', 'listaMotivos', 'listaSexo'));
 	}
@@ -85,11 +89,12 @@ class CaoController extends Controller {
 	public function edit($id)
 	{
 		$cao = Cao::findOrFail($id);
-		$listaOrigem = array(' '=>' ', 'Procriação'=>'Procriação', 'Doacção'=>'Doacção', 'Remonta'=>'Remonta');
-		$listaMotivos = array(' '=>' ','Incapacidade Técnica'=>'Incapacidade Técnica', 'Incapacidade Veterinária'=>'Incapacidade Veterinária','Morte'=>'Morte');
-		$listaSexo = array(' '=>' ', 'Fêmea'=>'Fêmea', 'Macho'=>'Macho');
+		$listaOrigem = OrigemCao::all('descricao', 'id');
+		$listaUnidades = Unidade::all('descricao', 'id');
+		$listaMotivos = MotivoInativoCao::all('descricao', 'id');
+		$listaSexo = Enumeraveis::getSexoCaoList();
 		
-		return view('caos.edit', compact('cao', 'listaOrigem', 'listaMotivos', 'listaSexo'));
+		return view('caos.edit', compact('cao', 'listaOrigem', 'listaMotivos', 'listaUnidades', 'listaSexo'));
 	}
 	/**
 	 * Update the specified resource in storage.
@@ -112,9 +117,21 @@ class CaoController extends Controller {
         $a->mae = $request->input("mae");
         $a->pai = $request->input("pai");
         $a->ninhada = $request->input("ninhada");
-        $a->inativo = $request->input("inativo");
+        $a->unidade_id = $request->input("unidade_id");
+        if($request->input("inativo")==""){
+			$a->inativo = false;
+
+		}else{
+			$a->inativo = true;
+		}
         $a->data_inativo = $request->input("data_inativo");
-        $a->motivo_inativo = $request->input("motivo_inativo");
+        $a->data_ativo = $request->input("data_ativo");
+        if($request->input("motivo_inativo")!="-1"){
+        	 $a->motivo_inativo = $request->input("motivo_inativo");
+        }
+        else{
+        	 $a->motivo_inativo = null;
+        }
         $a->observacoes = $request->input("observacoes");
 		$a->save();
 		return redirect()->route('caos.index')->with('message', 'Item updated successfully.');

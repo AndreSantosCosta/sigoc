@@ -20,7 +20,11 @@ class Militar extends Model
 	}
 
 	public function getNomeMotivoInativacaoAttribute(){
+    if(is_null($this->motivo_inativo)){
+      return "";
+    }
 		$militarotivoInatMilitar = MotivoInativoMilitar::findOrFail($this->motivo_inativo);
+
 		return $militarotivoInatMilitar->descricao;
 	}
 

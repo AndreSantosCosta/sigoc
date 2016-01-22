@@ -33,7 +33,7 @@ class ProvaCaoTIPer extends Model
         // Insere na Prova
 		$prova = new Prova();
         $prova->tipoEntidade = "C";
-        $prova->tipoProva = $this->"TIP";
+        $prova->tipoProva = "TIP";
         $prova->dataProva = $this->dataProva;
         $prova->entidade_id = $this->entidade_id;
         $prova->arquivo = $this->arquivo;
@@ -112,5 +112,3 @@ class ProvaCaoTIPer extends Model
 }
  
 
-
-}

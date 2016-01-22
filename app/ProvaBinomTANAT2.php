@@ -33,7 +33,7 @@ class ProvaBinomTANAT2 extends Model
         // Insere na Prova
               $prova = new Prova();
               $prova->tipoEntidade = "B";
-              $prova->tipoProva = $this->"TANAT2";
+              $prova->tipoProva = "TANAT2";
               $prova->dataProva = $this->dataProva;
               $prova->entidade_id = $this->entidade_id;
               $prova->arquivo = $this->arquivo;

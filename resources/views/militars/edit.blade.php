@@ -20,7 +20,7 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
         <div class="form-group @if($errors->has('num_mecanografico')) has-error @endif">
-         <label for="num_mecanografico-field">Num Mecanografico</label>
+         <label for="num_mecanografico-field">Número Mecanografico</label>
          <input type="text" id="num_mecanografico-field" name="num_mecanografico" class="form-control" value="{{ $militar->num_mecanografico }}"/>
          @if($errors->has("num_mecanografico"))
          <span class="help-block">{{ $errors->first("num_mecanografico") }}</span>

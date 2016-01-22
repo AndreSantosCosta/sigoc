@@ -20,7 +20,6 @@ Route::get('login', ['as' => 'login', function () {
 }]);
 
 
-
 Route::resource("militars","MilitarController");
 
 Route::resource("caos","CaoController");
@@ -46,3 +45,7 @@ Route::resource("prova_cao_t_i_pers","ProvaCaoTIPerController");
 Route::resource("prova_cao_t_a_n_a_t1s","ProvaCaoTANAT1Controller");
 
 Route::resource("provas","ProvaController");
+
+Route::get('provas/{tipoEntidade}/{id}', ['as' => 'provasPorEntidade', 'uses' => 'ProvaController@provasEntidade']);
+
+Route::get('prova/{id}', ['as' => 'prova', 'uses' => 'ProvaController@prova']);

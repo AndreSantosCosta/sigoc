@@ -113,21 +113,6 @@
                      @endif
                    </div>
 
-              <!--   <div class="form-group @if($errors->has('grupo_sang')) has-error @endif">
-                <label for="grupo_sang-field">Grupo Sanguíneo</label>
-                <input type="text" id="grupo_sang-field" name="grupo_sang" class="form-control" value="{{ old("grupo_sang") }}"/>
-                @if($errors->has("grupo_sang"))
-                <span class="help-block">{{ $errors->first("grupo_sang") }}</span>
-                @endif
-              </div>
-              <div class="form-group @if($errors->has('sexo')) has-error @endif">
-                <label for="sexo-field">Sexo</label>
-                <input type="text" id="sexo-field" name="sexo" class="form-control" value="{{ old("sexo") }}"/>
-                @if($errors->has("sexo"))
-                <span class="help-block">{{ $errors->first("sexo") }}</span>
-                @endif
-              </div> -->
-              
               <div class="form-group @if($errors->has('sexo')) has-error @endif">
                      <label for="sexo-field">Sexo</label>
                      <select class="form-control" name="sexo">
@@ -187,7 +172,7 @@
       <div class="form-group @if($errors->has('motivo_inativo')) has-error @endif">
         <label for="motivo_inativo-field">Motivo Inativação</label>
         <select class="form-control" name="motivo_inativo">
-          <option value=""></option>
+          <option value=" "></option>
           @foreach($listaMotivos as $item)
           <option value="{{$item->id}}">{{$item->descricao}}</option>
           @endforeach
