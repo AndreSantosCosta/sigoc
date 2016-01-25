@@ -1,26 +1,28 @@
 @extends('layout')
 @section('header')
+<div class="col-md-12">
 <div class="page-header">
-        <h1>ProvaCaoTIPers / Show #{{$prova->id}}</h1>
+        <h1>Ver Teste Inicial de Personalidade Cão #<a href="{{ route('goEntidade', array('id'=>$prova->entidade_id)) }}">{{$prova->NumIdentificacao}}</a></h1>
         <form action="{{ route('prova_cao_t_i_pers.destroy', $prova->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
             <input type="hidden" name="_method" value="DELETE">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="btn-group pull-right" role="group" aria-label="...">
-                <a class="btn btn-warning btn-group" role="group" href="{{ route('prova_cao_t_i_pers.edit', $prova->id) }}"><i class="glyphicon glyphicon-edit"></i> Edit</a>
-                <button type="submit" class="btn btn-danger">Delete <i class="glyphicon glyphicon-trash"></i></button>
+                <a class="btn btn-warning btn-group" role="group" href="{{ route('editarProva', array('id'=>$prova->id)) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>
+                <button type="submit" class="btn btn-danger">Apagar <i class="glyphicon glyphicon-trash"></i></button>
             </div>
         </form>
+    </div>
     </div>
 @endsection
  
 @section('content')
     <div class="row">
         <div class="col-md-12">
-
+<div class="col-md-12">
             <form action="#">
                 <div class="form-group">
-                    <label for="nome">ID</label>
-                    <p class="form-control-static"></p>
+                     <label for="dataprova">DATA PROVA</label>
+                     <p class="form-control-static">{{$prova->dataprova}}</p>
                 </div>
                 <div class="form-group">
                      <label for="avaliador">AVALIADOR</label>
@@ -51,8 +53,8 @@
                      <p class="form-control-static">{{$prova->chamada}}</p>
                 </div>
                     <div class="form-group">
-                     <label for="buscaobj">BUSCAOBJ</label>
-                     <p class="form-control-static">{{$prova->buscaobj}}</p>
+                     <label for="buscaObj">BUSCAOBJ</label>
+                     <p class="form-control-static">{{$prova->buscaObj}}</p>
                 </div>
                     <div class="form-group">
                      <label for="jornal">JORNAL</label>
@@ -71,8 +73,16 @@
                      <p class="form-control-static">{{$prova->dor}}</p>
                 </div>
                     <div class="form-group">
-                     <label for="notafinal">NOTAFINAL</label>
-                     <p class="form-control-static">{{$prova->notafinal}}</p>
+                     <label for="notaFinal">NOTAFINAL</label>
+                     <p class="form-control-static">{{$prova->notaFinal}}</p>
+                </div>
+                  <div class="form-group">
+                     <label for="arquivo">ARQUIVO</label>
+                     <p class="form-control-static">{{$prova->arquivo}}</p>
+                </div>
+                 <div class="form-group">
+                     <label for="observacoes">OBSERVAÇÕES</label>
+                     <p class="form-control-static">{{$prova->observacoes}}</p>
                 </div>
             </form>
 

@@ -11,7 +11,7 @@
                     <th>Data de Inicio</th>
                     <th>Vertente</th>
                     <th>Inativo</th>
-                    <th class="text-right">Opções</th>
+                    <th class="text-right"></th>
                 </tr>
             </thead>
  

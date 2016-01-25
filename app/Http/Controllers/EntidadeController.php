@@ -4,6 +4,9 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Entidade;
+use App\Militar;
+use App\Cao;
+use App\Binomio;
 use Illuminate\Http\Request;
 
 class EntidadeController extends Controller {
@@ -49,6 +52,7 @@ class EntidadeController extends Controller {
         $entidade->tamanhoImagem = $request->input("tamanhoImagem");
         $entidade->tipoImagem = $request->input("tipoImagem");
         $entidade->observacoes = $request->input("observacoes");
+        $entidade->numero = $request->input("numero");
 
 		$entidade->save();
 
@@ -101,6 +105,7 @@ class EntidadeController extends Controller {
         $entidade->tamanhoImagem = $request->input("tamanhoImagem");
         $entidade->tipoImagem = $request->input("tipoImagem");
         $entidade->observacoes = $request->input("observacoes");
+        $entidade->numero = $request->input("numero");
 
 		$entidade->save();
 
@@ -121,4 +126,27 @@ class EntidadeController extends Controller {
 		return redirect()->route('entidades.index')->with('message', 'Item deleted successfully.');
 	}
 
+
+	public function goEntidade($id){
+		$entidade = Entidade::findOrFail($id);
+		$tipoEntidades = $entidade ->tipoEntidade;
+
+		switch ($tipoEntidades) {
+			case 'M':
+				$militar = Militar::findOrFail($id);
+				return view('militars.show', compact('militar'));
+				break;
+			case 'C': 
+				$cao = Cao::findOrFail($id);
+				return view('caos.show', compact('cao'));
+				break;
+			case 'B': 
+				$binomio = Binomio::findOrFail($id);
+				return view('binomios.show', compact('binomio'));
+				break;
+			default:
+				echo "Tipo de Prova não Existe!"; //meter uma view aqui 
+				break;
+		}
+	}
 }

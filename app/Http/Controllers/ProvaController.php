@@ -32,9 +32,10 @@ class ProvaController extends Controller {
 	 */
 	public function create()
 	{
+		$prova = new Prova();
 		$listaEntidade = Enumeraveis::getEntidadeList();
 		$listaTipoProva = Enumeraveis::getTiposProvasList();
-		return view('provas.create', compact("listaEntidade", "listaTipoProva"));
+		return view('provas.create', compact("prova", "listaEntidade", "listaTipoProva"));
 	}
  
 	/**
@@ -80,8 +81,10 @@ class ProvaController extends Controller {
 	public function edit($id)
 	{
 		$prova = Prova::findOrFail($id);
-
-		return view('provas.edit', compact('prova'));
+		$entidadeProva = $prova ->entidade_id;
+		$entidade = Entidade::findOrFail($entidadeProva);
+	
+		return view('provas.edit', compact('prova', 'entidade'));
 	}
 
 	/**
@@ -145,6 +148,51 @@ class ProvaController extends Controller {
 			case 'TANAT2': 
 				$prova = ProvaBinomTANAT2::findOrFail($id);
 				return view('prova_binom_t_a_n_a_t2s.show', compact('prova'));
+				break;
+			default:
+				echo "Tipo de Prova não Existe!"; //meter uma view aqui 
+				break;
+		}
+		
+	}
+
+	public function criarProva ($tipoProva){
+
+		switch ($tipoProva) {
+			case 'Tiro':
+				$prova = new ProvaMilitarTiro();
+				return view('prova_militar_tiros.create', compact('prova'));
+				break;
+			case 'TIP': 
+				$prova = new ProvaCaoTIPer();
+				return view('prova_cao_t_i_pers.create', compact('prova'));
+				break;
+			case 'TANAT2': 
+				$prova = new ProvaBinomTANAT2();
+				return view('prova_binom_t_a_n_a_t2s.create', compact('prova'));
+				break;
+			default:
+				echo "Tipo de Prova não Existe!"; //meter uma view aqui 
+				break;
+		}
+		
+	}
+
+	public function editarProva ($id){
+		$prova = Prova::findOrFail($id);
+		$tipoProva = $prova ->tipoProva;
+		switch ($tipoProva) {
+			case 'Tiro':
+				$prova = ProvaMilitarTiro::findOrFail($id);
+				return view('prova_militar_tiros.edit', compact('prova'));
+				break;
+			case 'TIP': 
+				$prova = ProvaCaoTIPer::findOrFail($id);
+				return view('prova_cao_t_i_pers.edit', compact('prova'));
+				break;
+			case 'TANAT2': 
+				$prova = ProvaBinomTANAT2::findOrFail($id);
+				return view('prova_binom_t_a_n_a_t2s.edit', compact('prova'));
 				break;
 			default:
 				echo "Tipo de Prova não Existe!"; //meter uma view aqui 

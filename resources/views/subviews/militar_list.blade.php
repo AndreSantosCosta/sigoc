@@ -13,7 +13,7 @@
                     <th>Posto</th>
                     <th>Unidade</th>
                     <th>Inativo</th>
-                    <th class="text-right">Opções</th>
+                    <th class="text-right"></th>
                 </tr>
             </thead>
 

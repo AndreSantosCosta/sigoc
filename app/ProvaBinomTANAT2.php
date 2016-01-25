@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use DB;
-
+use App\Entidade;
 class ProvaBinomTANAT2 extends Model
 {
        protected $table = 'view_provabinomiotanat2';
@@ -112,14 +112,20 @@ class ProvaBinomTANAT2 extends Model
 }
 
 private function deleteRecord(){
-        // Apaga do Militar
+        // Apaga da prova tanat2
 	$tanat2 = ProvaBinomioTANAT2_RealTable::findOrFail($this->id);		
 	$tanat2->delete();
 
-        // Apaga da Entidade		
+        // Apaga da prova		
 	$prova = Prova::findOrFail($this->id);		
 	$prova->delete();
 }
+
+public function getNumIdentificacaoAttribute(){
+    $num = Entidade::findOrFail($this->entidade_id);
+    return $num->numero;
+  }
+
 
 }
 

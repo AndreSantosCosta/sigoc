@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use DB;
-
+use App\Entidade;
 class ProvaCaoTIPer extends Model
 {
     protected $table = 'view_provacaotip';
-
-
+ 
+ 
 	// ----------------------------------------------
 	// ImplementaÃ§Ã£o das SuperClasses / SubClasses
 	// ----------------------------------------------
@@ -108,6 +108,11 @@ class ProvaCaoTIPer extends Model
 		$prova = Prova::findOrFail($this->id);		
 		$prova->delete();
 	}
+
+    public function getNumIdentificacaoAttribute(){
+        $num = Cao::findOrFail($this->entidade_id);
+        return $num->num_matricula;
+  }
     
 }
  

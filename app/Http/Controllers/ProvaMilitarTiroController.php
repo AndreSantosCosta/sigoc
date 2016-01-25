@@ -102,7 +102,7 @@ class ProvaMilitarTiroController extends Controller {
 
 		return redirect()->route('prova_militar_tiros.index')->with('message', 'Item updated successfully.');
 	}
-
+ 
 	/**
 	 * Remove the specified resource from storage.
 	 *

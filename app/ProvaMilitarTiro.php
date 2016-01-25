@@ -89,6 +89,10 @@ class ProvaMilitarTiro extends Model
 		$prova = Prova::findOrFail($this->id);		
 		$prova->delete();
 	}
+     public function getNumIdentificacaoAttribute(){
+        $num = Militar::findOrFail($this->entidade_id);
+        return $num->num_mecanografico;
+    }
     
 }
  

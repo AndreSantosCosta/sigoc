@@ -1,26 +1,29 @@
 @extends('layout')
 @section('header')
+<div class="col-md-12">
 <div class="page-header">
-        <h1>ProvaBinomTANAT2s / Show #{{$prova->id}}</h1>
+        <h1>Ver Prova TANAT2 Binomio #<a href="{{ route('goEntidade', array('id'=>$prova->entidade_id)) }}">{{$prova->NumIdentificacao}}</a></h1>
         <form action="{{ route('prova_binom_t_a_n_a_t2s.destroy', $prova->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
             <input type="hidden" name="_method" value="DELETE">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="btn-group pull-right" role="group" aria-label="...">
-                <a class="btn btn-warning btn-group" role="group" href="{{ route('prova_binom_t_a_n_a_t2s.edit', $prova->id) }}"><i class="glyphicon glyphicon-edit"></i> Edit</a>
-                <button type="submit" class="btn btn-danger">Delete <i class="glyphicon glyphicon-trash"></i></button>
+                <a class="btn btn-warning btn-group" role="group" href="{{ route('editarProva', array('id'=>$prova->id)) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>
+                <button type="submit" class="btn btn-danger">Apagar <i class="glyphicon glyphicon-trash"></i></button>
             </div>
         </form>
     </div>
-@endsection
+  </div>
+@endsection 
 
 @section('content')
     <div class="row">
         <div class="col-md-12">
+        <div class="col-md-12">
 
             <form action="#">
                 <div class="form-group">
-                    <label for="nome">ID</label>
-                    <p class="form-control-static"></p>
+                     <label for="dataprova">DATA PROVA</label>
+                     <p class="form-control-static">{{$prova->dataprova}}</p>
                 </div>
                 <div class="form-group">
                      <label for="avaliador">AVALIADOR</label>
@@ -35,70 +38,79 @@
                      <p class="form-control-static">{{$prova->atitute}}</p>
                 </div>
                     <div class="form-group">
-                     <label for="memoriamuscular">MEMORIAMUSCULAR</label>
-                     <p class="form-control-static">{{$prova->memoriamuscular}}</p>
+                     <label for="memoriaMuscular">MEMORIA MUSCULAR</label>
+                     <p class="form-control-static">{{$prova->memoriaMuscular}}</p>
                 </div>
                     <div class="form-group">
-                     <label for="agilidadeconfianca">AGILIDADECONFIANCA</label>
-                     <p class="form-control-static">{{$prova->agilidadeconfianca}}</p>
+                     <label for="agilidadeConfianca">AGILIDADE E CONFIANCA</label>
+                     <p class="form-control-static">{{$prova->agilidadeConfianca}}</p>
                 </div>
                     <div class="form-group">
-                     <label for="rpisossons">RPISOSSONS</label>
-                     <p class="form-control-static">{{$prova->rpisossons}}</p>
+                     <label for="rPisosSons">REAÇÃO PISOS SONS</label>
+                     <p class="form-control-static">{{$prova->rPisosSons}}</p>
                 </div>
                     <div class="form-group">
-                     <label for="raproxvulto">RAPROXVULTO</label>
-                     <p class="form-control-static">{{$prova->raproxvulto}}</p>
+                     <label for="rAproxVulto">REAÇÃO APROXIMAÇÃO VULTO</label>
+                     <p class="form-control-static">{{$prova->rAproxVulto}}</p>
                 </div>
                     <div class="form-group">
-                     <label for="rdisparos">RDISPAROS</label>
-                     <p class="form-control-static">{{$prova->rdisparos}}</p>
+                     <label for="rDisparos">REAÇÃO DISPAROS</label>
+                     <p class="form-control-static">{{$prova->rDisparos}}</p>
                 </div>
                     <div class="form-group">
-                     <label for="instpresaperist">INSTPRESAPERIST</label>
-                     <p class="form-control-static">{{$prova->instpresaperist}}</p>
+                     <label for="instPresaPerist">INSTINTO PRESA PERSISTENCIA</label>
+                     <p class="form-control-static">{{$prova->instPresaPerist}}</p>
                 </div>
                     <div class="form-group">
-                     <label for="intsbusca">INTSBUSCA</label>
-                     <p class="form-control-static">{{$prova->intsbusca}}</p>
+                     <label for="intsBusca">INTENSIDADE BUSCA</label>
+                     <p class="form-control-static">{{$prova->intsBusca}}</p>
                 </div>
                     <div class="form-group">
-                     <label for="marcpessoasobj">MARCPESSOASOBJ</label>
-                     <p class="form-control-static">{{$prova->marcpessoasobj}}</p>
+                     <label for="marcPessoasObj">MARCAÇÃO PESSOAS OBJETOS</label>
+                     <p class="form-control-static">{{$prova->marcPessoasObj}}</p>
                 </div>
                     <div class="form-group">
-                     <label for="inicpistas">INICPISTAS</label>
-                     <p class="form-control-static">{{$prova->inicpistas}}</p>
+                     <label for="inicPistas">INICIAÇÃO PISTAS</label>
+                     <p class="form-control-static">{{$prova->inicPistas}}</p>
                 </div>
                     <div class="form-group">
                      <label for="ladrido">LADRIDO</label>
                      <p class="form-control-static">{{$prova->ladrido}}</p>
                 </div>
                     <div class="form-group">
-                     <label for="instdefesa">INSTDEFESA</label>
-                     <p class="form-control-static">{{$prova->instdefesa}}</p>
+                     <label for="instDefesa">INSTINTO DEFESA</label>
+                     <p class="form-control-static">{{$prova->instDefesa}}</p>
                 </div>
                     <div class="form-group">
-                     <label for="tecnmordida">TECNMORDIDA</label>
-                     <p class="form-control-static">{{$prova->tecnmordida}}</p>
+                     <label for="tecnMordida">TECNICA MORDIDA</label>
+                     <p class="form-control-static">{{$prova->tecnMordida}}</p>
                 </div>
                     <div class="form-group">
-                     <label for="qualidmordida">QUALIDMORDIDA</label>
-                     <p class="form-control-static">{{$prova->qualidmordida}}</p>
+                     <label for="qualidMordida">QUALIDADE MORDIDA</label>
+                     <p class="form-control-static">{{$prova->qualidMordida}}</p>
                 </div>
                     <div class="form-group">
-                     <label for="combatluta">COMBATLUTA</label>
-                     <p class="form-control-static">{{$prova->combatluta}}</p>
+                     <label for="CombatLuta">COMBATIVIDADE LUTA</label>
+                     <p class="form-control-static">{{$prova->CombatLuta}}</p>
                 </div>
                     <div class="form-group">
-                     <label for="notafinal">NOTAFINAL</label>
-                     <p class="form-control-static">{{$prova->notafinal}}</p>
+                     <label for="notaFinal">NOTA FINAL</label>
+                     <p class="form-control-static">{{$prova->notaFinal}}</p>
                 </div>
+                 <div class="form-group">
+                     <label for="arquivo">ARQUIVO</label>
+                     <p class="form-control-static">{{$prova->arquivo}}</p>
+                </div>
+                 <div class="form-group">
+                     <label for="observacoes">OBSERVAÇÕES</label>
+                     <p class="form-control-static">{{$prova->observacoes}}</p>
+                </div>
+               
             </form>
 
-            <a class="btn btn-link" href="{{ route('prova_binom_t_a_n_a_t2s.index') }}"><i class="glyphicon glyphicon-backward"></i>  Back</a>
+            <a class="btn btn-link" href="{{ route('prova_binom_t_a_n_a_t2s.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
 
         </div>
     </div>
-
+  </div>
 @endsection

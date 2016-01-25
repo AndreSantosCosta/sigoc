@@ -41,7 +41,7 @@
                      <span class="help-block">{{ $errors->first("tipoprova") }}</span>
                      @endif
                    </div>
-                  
+                   
                     <!-- <div class="form-group @if($errors->has('dataprova')) has-error @endif">
                        <label for="dataprova-field">DataProva</label>
                     <input type="text" id="dataprova-field" name="dataprova" class="form-control" value="{{ old("dataprova") }}"/>
@@ -70,8 +70,9 @@
                         <span class="help-block">{{ $errors->first("observacoes") }}</span>
                        @endif
                     </div> -->
-                <div class="well well-sm">
-                    <button type="submit" class="btn btn-primary">Criar </button>
+                <div class="well well-sm"> 
+                    <a class="btn btn-primary" href="{{ route('criarProva', array('tipoprova'=>$prova->tipoprova)) }}"><i class="glyphicon glyphicon-plus"></i> Criar</a>
+                   
                     <a class="btn btn-link pull-right" href="{{ route('provas.index') }}"><i class="glyphicon glyphicon-backward"></i> Voltar </a>
                 </div>
             </form>

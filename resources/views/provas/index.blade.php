@@ -27,7 +27,7 @@
                         <th>Identificação Numero</th>
                         <th>Identificação Nome</th>
                         <th>Data de Prova</th>
-                            <th class="text-right">Opções</th>
+                            <th class="text-right"></th>
                         </tr>
                     </thead>
 
@@ -36,12 +36,12 @@
                             <tr>
                             <td>{{$prova->tipoProva}}</td>
                     <td>{{$prova->NomeEntidade}}</td>
-                    <td>{{$prova->NumIdentificacao}}</td>
-                    <td>{{$prova->NomeIdentificacao}}</td>
+                    <td><a href="{{ route('goEntidade', array('id'=>$prova->entidade_id)) }}">{{$prova->NumIdentificacao}}</a></td>
+                    <td><a href="{{ route('goEntidade', array('id'=>$prova->entidade_id)) }}">{{$prova->NomeIdentificacao}}</a></td>
                     <td>{{$prova->dataProva}}</td>
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="{{ route('prova', array('id'=>$prova->id)) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver </a>
-                                    <a class="btn btn-xs btn-warning" href="{{ route('provas.edit', $prova->id) }}"><i class="glyphicon glyphicon-edit"></i> Editar </a>
+                                    <a class="btn btn-xs btn-warning" href="{{ route('editarProva', array('id'=>$prova->id)) }}"><i class="glyphicon glyphicon-edit"></i> Editar </a>
                                     <form action="{{ route('provas.destroy', $prova->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">

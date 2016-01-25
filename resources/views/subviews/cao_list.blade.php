@@ -11,7 +11,7 @@
                         <th>Origem</th>
                         <th>Ninhada</th>
                         <th>Inativo</th>
-                            <th class="text-right">Opções</th>
+                            <th class="text-right"></th>
                         </tr>
                     </thead>
 
