@@ -19,11 +19,11 @@
             <form action="{{ route('prova_cao_t_i_pers.update', $prova->id) }}" method="POST">
                 <input type="hidden" name="_method" value="PUT">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                 <div class="form-group @if($errors->has('dataprova')) has-error @endif">
-                       <label for="dataprova-field">Data de Prova</label>
-                    <input type="date" id="dataprova-field" name="dataprova" class="form-control" value="{{ $prova->dataprova }}"/>
-                       @if($errors->has("dataprova"))
-                        <span class="help-block">{{ $errors->first("dataprova") }}</span>
+                 <div class="form-group @if($errors->has('dataProva')) has-error @endif">
+                       <label for="dataProva-field">Data de Prova</label>
+                    <input type="date" id="dataProva-field" name="dataProva" class="form-control" value="{{ $prova->dataProva }}"/>
+                       @if($errors->has("dataProva"))
+                        <span class="help-block">{{ $errors->first("dataProva") }}</span>
                        @endif
                     </div>
 
@@ -133,8 +133,8 @@
                        @endif
                     </div>
                 <div class="well well-sm">
-                    <button type="submit" class="btn btn-primary">Guardar</button>
-                    <a class="btn btn-link pull-right" href="{{ route('prova_cao_t_i_pers.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
+                    <button type="submit" class="btn btn-primary" href=" route('provasPorEntidade', array('tipoEntidade'=>'C', 'entidade_id'=>$prova->entidade_id)) }}">Guardar</button>
+                    <a class="btn btn-link pull-right" href="{{ route('provas.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
                 </div>
             </form>
 

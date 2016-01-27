@@ -97,7 +97,7 @@ class ProvaCaoTIPerController extends Controller {
 	 */
 	public function update(Request $request, $id)
 	{
-		$prova_cao_t_i_per = ProvaCaoTIPer::findOrFail($id);
+		$a = ProvaCaoTIPer::findOrFail($id);
 
 		$a->avaliador = $request->input("avaliador");
         $a->executante = $request->input("executante");

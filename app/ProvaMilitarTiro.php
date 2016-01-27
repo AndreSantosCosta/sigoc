@@ -54,7 +54,7 @@ class ProvaMilitarTiro extends Model
         $tiro->notaFinal = $this->notaFinal;
         $tiro->save();
 	}
-
+ 
 	private function updateRecord(){
         // Atualiza na Prova
 		$prova = Prova::findOrFail($this->id);
@@ -92,8 +92,12 @@ class ProvaMilitarTiro extends Model
      public function getNumIdentificacaoAttribute(){
         $num = Militar::findOrFail($this->entidade_id);
         return $num->num_mecanografico;
-    }
+    } 
     
+     public function getNomeIdentificacaoAttribute(){
+        $nome = Militar::findOrFail($this->entidade_id);
+        return $nome->nomeProprio;
+    }
 }
  
 

@@ -6,9 +6,16 @@
   
     <?php if(!isset($descricaoEntidade)){ ?>
         <h1><i class="glyphicon glyphicon-align-justify"></i> Provas </h1>
+        <div class="btn-group pull-left" role="group" aria-label="...">
+        <a class="btn btn-primary" href="{{ route('prova_militar_tiros.index') }}">Provas Tiro</a>
+        <a class="btn btn-primary" href="{{ route('prova_cao_t_i_pers.index') }}">Provas TIP</a>
+        <a class="btn btn-primary" href="{{ route('prova_binom_t_a_n_a_t2s.index') }}">Provas TANAT2</a>
+        </div>
         <?php } else { ?>
         <h1><i class="glyphicon glyphicon-align-justify"></i> Provas {{$descricaoEntidade}} </h1>
     <?php } ?>
+
+   
     <a class="btn btn-success pull-right" href="{{ route('provas.create') }}"><i class="glyphicon glyphicon-plus"></i> Criar </a>  
    
    </div>

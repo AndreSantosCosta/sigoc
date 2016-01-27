@@ -3,7 +3,7 @@
 @section('header')
 <div class="col-md-12">
     <div class="page-header">
-        <h1><i class="glyphicon glyphicon-plus"></i> ProvaBinomTANAT2s / Create </h1>
+        <h1><i class="glyphicon glyphicon-plus"></i> Criar Prova TANAT2 </h1>
     </div>
       </div>
 @endsection
@@ -17,11 +17,11 @@
             <form action="{{ route('prova_binom_t_a_n_a_t2s.store') }}" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                <div class="form-group @if($errors->has('dataprova')) has-error @endif">
-                       <label for="dataprova-field">Data Prova</label>
-                    <input type="date" id="dataprova-field" name="dataprova" class="form-control" value="{{ old("dataprova") }}"/>
-                       @if($errors->has("dataprova"))
-                        <span class="help-block">{{ $errors->first("dataprova") }}</span>
+                <div class="form-group @if($errors->has('dataProva')) has-error @endif">
+                       <label for="dataProva-field">Data Prova</label>
+                    <input type="date" id="dataProva-field" name="dataProva" class="form-control" value="{{ old("dataProva") }}"/>
+                       @if($errors->has("dataProva"))
+                        <span class="help-block">{{ $errors->first("dataProva") }}</span>
                        @endif
                     </div>
 

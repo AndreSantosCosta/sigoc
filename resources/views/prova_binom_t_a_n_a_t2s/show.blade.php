@@ -22,8 +22,8 @@
 
             <form action="#">
                 <div class="form-group">
-                     <label for="dataprova">DATA PROVA</label>
-                     <p class="form-control-static">{{$prova->dataprova}}</p>
+                     <label for="dataProva">DATA PROVA</label>
+                     <p class="form-control-static">{{$prova->dataProva}}</p>
                 </div>
                 <div class="form-group">
                      <label for="avaliador">AVALIADOR</label>

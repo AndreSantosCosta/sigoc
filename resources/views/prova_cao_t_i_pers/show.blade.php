@@ -21,8 +21,8 @@
 <div class="col-md-12">
             <form action="#">
                 <div class="form-group">
-                     <label for="dataprova">DATA PROVA</label>
-                     <p class="form-control-static">{{$prova->dataprova}}</p>
+                     <label for="dataProva">DATA PROVA</label>
+                     <p class="form-control-static">{{$prova->dataProva}}</p>
                 </div>
                 <div class="form-group">
                      <label for="avaliador">AVALIADOR</label>
@@ -86,7 +86,7 @@
                 </div>
             </form>
 
-            <a class="btn btn-link" href="{{ route('prova_cao_t_i_pers.index') }}"><i class="glyphicon glyphicon-backward"></i>  Back</a>
+            <a class="btn btn-link" href="{{ route('prova_cao_t_i_pers.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
 
         </div>
     </div>

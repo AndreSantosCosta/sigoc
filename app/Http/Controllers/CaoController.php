@@ -74,8 +74,8 @@ class CaoController extends Controller {
 	public function show($id)
 	{
 		$cao = Cao::findOrFail($id);
-		$listaOrigem = array(' '=>' ', 'Procriação'=>'Procriação', 'Doacção'=>'Doacção', 'Remonta'=>'Remonta');
-		$listaMotivos = array(' '=>' ','Incapacidade Técnica'=>'Incapacidade Técnica', 'Incapacidade Veterinária'=>'Incapacidade Veterinária','Morte'=>'Morte');
+		$listaOrigem = OrigemCao::all('descricao', 'id');
+		$listaMotivos = MotivoInativoCao::all('descricao', 'id');
 		$listaSexo = Enumeraveis::getSexoCaoList();
 		
 		return view('caos.show', compact('cao', 'listaOrigem', 'listaMotivos', 'listaSexo'));

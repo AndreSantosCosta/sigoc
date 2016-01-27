@@ -41,6 +41,7 @@ class ProvaBinomTANAT2Controller extends Controller {
 	{
 		$a = new ProvaBinomTANAT2();
 
+		$a->dataProva = $request->input("dataProva");
         $a->avaliador = $request->input("avaliador");
         $a->local = $request->input("local");
         $a->atitute = $request->input("atitute");
@@ -103,7 +104,8 @@ class ProvaBinomTANAT2Controller extends Controller {
 	public function update(Request $request, $id)
 	{
 		$a = ProvaBinomTANAT2::findOrFail($id);
-
+		
+		$a->dataProva = $request->input("dataProva");
         $a->avaliador = $request->input("avaliador");
         $a->local = $request->input("local");
         $a->atitute = $request->input("atitute");

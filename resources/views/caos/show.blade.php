@@ -50,7 +50,7 @@
                  <div class="form-group">
                      <label for="origem">ORIGEM</label>
                      <p class="form-control-static">{{$cao->NomeOrigem}}</p>
-                 </div> 
+                 </div>
                  <div class="form-group">
                      <label for="unidade_id">UNIDADE</label>
                      <p class="form-control-static">{{$cao->NomeUnidade}}</p>
