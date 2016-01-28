@@ -56,9 +56,7 @@ class Prova extends Model
 		}
 		else if($this->tipoEntidade=="B"){
 			return "Binomio";
-		}
-
-		
+		}	
 	}
 
 

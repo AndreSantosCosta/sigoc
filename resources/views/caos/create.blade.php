@@ -176,7 +176,7 @@
    <div class="form-group @if($errors->has('motivo_inativo')) has-error @endif">
     <label for="motivo_inativo-field">Motivo Inativação</label>
     <select class="form-control" name="motivo_inativo">
-      <option value="null"></option>
+      <option value=" "></option>
       @foreach($listaMotivos as $item)
       <option value="{{$item->id}}">{{$item->descricao}}</option>
       @endforeach

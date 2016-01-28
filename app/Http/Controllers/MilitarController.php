@@ -62,12 +62,9 @@ class MilitarController extends Controller {
 		$a->inativo = $request->input("NomeInativo");
 		$a->observacoes = $request->input("observacoes");
 		$a->unidade_id = $request->input("unidade_id");
-        if(!trim($request->input("motivo_inativo")=="")){
+        if(!trim($request->input("motivo_inativo")==" ")){
         	 $a->motivo_inativo = $request->input("motivo_inativo");
         }
-/*        else{
-        	 $a->motivo_inativo = null;
-        }*/
 		$a->save();
 
 		return redirect()->route('militars.index')->with('message', 'Item created successfully.');
@@ -132,7 +129,6 @@ class MilitarController extends Controller {
 		}
 		$a->data_inativo = $request->input("data_inativo");
 		$a->data_ativo = $request->input("data_ativo");
-		
 		if($request->input("motivo_inativo")!="-1"){
         	 $a->motivo_inativo = $request->input("motivo_inativo");
         }

@@ -32,13 +32,11 @@ class ProvaController extends Controller {
 	 */
 	public function create()
 	{
-		//$prova = new Prova();
-		//$listaEntidade = Enumeraveis::getEntidadeList();
-		//$listaTipoProva = Enumeraveis::getTiposProvasList();
-		//return view('provas.create', compact("prova", "listaEntidade", "listaTipoProva"));
-		$entidadeProva = $prova ->entidade_id;
-		$entidade = Entidade::findOrFail($entidadeProva);
-		return view('provas.create', compact('entidade'));
+		$prova = new Prova();
+		$listaEntidade = Enumeraveis::getEntidadeList();
+		$listaTipoProva = Enumeraveis::getTiposProvasList();
+		return view('provas.create', compact("prova", "listaEntidade", "listaTipoProva"));
+	
 	}
  
 	/**
@@ -49,8 +47,6 @@ class ProvaController extends Controller {
 	 */ 
 	public function store(Request $request)
 	{
-		var_dump( $request->input("tipoprova"));
-		exit;
 		$prova = new Prova();
 		$prova->tipoEntidade = $request->input("tipoEntidade");
 		$prova->tipoProva = $request->input("tipoProva");
@@ -61,7 +57,7 @@ class ProvaController extends Controller {
 
 		$prova->save();
 
-		return redirect()->route('provas.index')->with('message', 'Item created successfully.');
+		return redirect()->route('prova_militar_tiros.create')->with('message', 'Item created successfully.');
 	}
 
 	/**
@@ -161,14 +157,13 @@ class ProvaController extends Controller {
 		
 	}
 
-	/*public function criarProva ($tipoEntidade, $entidade_id){
-
+	public function criarProva ($tipoEntidade, $entidade_id){
 
 		switch ($tipoEntidade) {
 			case 'M':
 				$prova = new ProvaMilitarTiro();
-				$entidade = Entidade::findOrFail($entidade_id);
-				return view('prova_militar_tiros.create', compact('prova', 'entidade'));
+				$eu = "Olaaaaaaaaaaaaaaaaaaaaaaaa";
+				return view('prova_militar_tiros.create', compact('prova', 'entidade_id', 'eu'));
 				break;
 			case 'C': 
 				$prova = new ProvaCaoTIPer();
@@ -183,7 +178,7 @@ class ProvaController extends Controller {
 				break;
 		}
 		
-	}*/
+	}
 
 	public function editarProva ($id){
 		$prova = Prova::findOrFail($id);

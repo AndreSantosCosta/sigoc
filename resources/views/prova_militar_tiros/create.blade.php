@@ -13,7 +13,7 @@
 
     <div class="row">
         <div class="col-md-12">
-<div class="col-md-12">
+<div class="col-md-12"> 
             <form action="{{ route('prova_militar_tiros.store') }}" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 

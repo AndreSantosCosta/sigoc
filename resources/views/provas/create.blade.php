@@ -42,15 +42,15 @@
                      @endif
                    </div>
                    
-                    <!-- <div class="form-group @if($errors->has('dataprova')) has-error @endif">
-                       <label for="dataprova-field">DataProva</label>
-                    <input type="text" id="dataprova-field" name="dataprova" class="form-control" value="{{ old("dataprova") }}"/>
-                       @if($errors->has("dataprova"))
-                        <span class="help-block">{{ $errors->first("dataprova") }}</span>
+                    <div class="form-group @if($errors->has('dataProva')) has-error @endif">
+                       <label for="dataProva-field">DataProva</label>
+                    <input type="date" id="dataProva-field" name="dataProva" class="form-control" value="{{ old("dataProva") }}"/>
+                       @if($errors->has("dataProva"))
+                        <span class="help-block">{{ $errors->first("dataProva") }}</span>
                        @endif
                     </div>
                     <div class="form-group @if($errors->has('entidade_id')) has-error @endif">
-                       <label for="entidade_id-field">Entidade_id</label>
+                       <label for="entidade_id-field">Numero </label>
                     <input type="text" id="entidade_id-field" name="entidade_id" class="form-control" value="{{ old("entidade_id") }}"/>
                        @if($errors->has("entidade_id"))
                         <span class="help-block">{{ $errors->first("entidade_id") }}</span>
@@ -69,10 +69,10 @@
                        @if($errors->has("observacoes"))
                         <span class="help-block">{{ $errors->first("observacoes") }}</span>
                        @endif
-                    </div> -->
+                    </div> 
                 <div class="well well-sm"> 
-                    <a class="btn btn-primary" href="{{ route('criarProva', array('tipoprova'=>$prova->tipoprova)) }}"><i class="glyphicon glyphicon-plus"></i> Criar</a>
-                   <input type ="submit" value="guardar"> 
+                    <button type="submit" class="btn btn-primary">Criar</button>
+         
                     <a class="btn btn-link pull-right" href="{{ route('provas.index') }}"><i class="glyphicon glyphicon-backward"></i> Voltar </a>
                 </div>
             </form>

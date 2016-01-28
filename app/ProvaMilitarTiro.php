@@ -36,9 +36,10 @@ class ProvaMilitarTiro extends Model
         $prova->tipoEntidade = "M";
         $prova->tipoProva = "Tiro";
         $prova->dataProva = $this->dataProva;
-        var_dump($this->entidade_id);
+        
+        $prova->entidade_id = $entidade_id;
+        var_dump($entidade_id);
         exit;
-        $prova->entidade_id = $this->entidade_id;
         $prova->arquivo = $this->arquivo;
         $prova->observacoes = $this->observacoes;
         $prova->save();

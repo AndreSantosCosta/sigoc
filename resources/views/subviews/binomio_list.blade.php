@@ -14,7 +14,7 @@
                     <th class="text-right"></th>
                 </tr>
             </thead>
- 
+  
             <tbody>
                 @foreach($binomios as $binomio)
                 <tr>

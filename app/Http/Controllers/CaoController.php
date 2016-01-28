@@ -58,7 +58,7 @@ class CaoController extends Controller {
         $a->unidade_id = $request->input("unidade_id");
         $a->inativo = $request->input("inativo");
         $a->data_inativo = $request->input("data_inativo");
-        if(!trim($request->input("motivo_inativo")=="")){
+        if(!trim($request->input("motivo_inativo")==" ")){
         	 $a->motivo_inativo = $request->input("motivo_inativo");
         }
         $a->observacoes = $request->input("observacoes");

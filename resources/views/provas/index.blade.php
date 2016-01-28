@@ -16,7 +16,7 @@
     <?php } ?>
 
    
-    <!--<a class="btn btn-success pull-right" href="{{ route('provas.create') }}"><i class="glyphicon glyphicon-plus"></i> Criar </a>-->
+    <a class="btn btn-success pull-right" href="{{ route('provas.create') }}"><i class="glyphicon glyphicon-plus"></i> Criar </a>
    
    </div>
     </div>

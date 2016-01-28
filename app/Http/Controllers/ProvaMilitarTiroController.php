@@ -27,8 +27,10 @@ class ProvaMilitarTiroController extends Controller {
 	 */
 	public function create()
 	{
-		$prova_militar_tiros = new ProvaMilitarTiro();
-		return view('prova_militar_tiros.create', compact("prova_militar_tiros"));
+		$prova = new ProvaMilitarTiro();
+
+		
+		return view('prova_militar_tiros.create', compact("prova"));
 	}
 
 	/**
@@ -40,13 +42,16 @@ class ProvaMilitarTiroController extends Controller {
 	public function store(Request $request)
 	{
 		$a = new ProvaMilitarTiro();
+		
 		$a->dataProva = $request->input("dataProva");
         $a->local = $request->input("local");
         $a->tipo = $request->input("tipo");
+
+        //$a->entidade_id = $request->input("entidade_id");
         $a->notaFinal = $request->input("notaFinal");
         $a->arquivo = $request->input("arquivo");
         $a->observacoes = $request->input("observacoes");
-
+ 
 		$a->save();
 
 		return redirect()->route('prova_militar_tiros.index')->with('message', 'Item created successfully.');

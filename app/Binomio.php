@@ -18,7 +18,7 @@ class Binomio extends Model
 		$numM = Cao::findOrFail($this->cao_id);
 		return $numM->num_matricula;
 	}
-
+ 
 	public function getNomeVertenteAttribute(){
 		$vertente = VertenteBinomio::findOrFail($this->vertente);
 		return $vertente->descricao;
@@ -31,7 +31,7 @@ class Binomio extends Model
 
 	public function getNomeMilitarAttribute(){
 		$nomeMilitar = Militar::findOrFail($this->militar_id);
-		return $nomeMilitar->nomeProprio;
+		return $nomeMilitar->nome;
 	}
 
 	public function getNomeCaoAttribute(){
