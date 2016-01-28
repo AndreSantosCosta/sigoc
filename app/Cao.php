@@ -4,7 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use DB;
-
+ 
+ 
 class Cao extends Model
 {
 	protected $table = 'view_caos';

@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+ 
 use Illuminate\Database\Eloquent\Model;
 use DB;
 use App\Entidade;

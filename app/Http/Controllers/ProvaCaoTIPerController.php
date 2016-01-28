@@ -1,5 +1,5 @@
 <?php namespace App\Http\Controllers;
-
+ 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -41,6 +41,7 @@ class ProvaCaoTIPerController extends Controller {
 	{
 		$a = new ProvaCaoTIPer();
 
+		$a->dataProva = $request->input("dataProva");
         $a->avaliador = $request->input("avaliador");
         $a->executante = $request->input("executante");
         $a->local = $request->input("local");
@@ -99,6 +100,7 @@ class ProvaCaoTIPerController extends Controller {
 	{
 		$a = ProvaCaoTIPer::findOrFail($id);
 
+		$a->dataProva = $request->input("dataProva");
 		$a->avaliador = $request->input("avaliador");
         $a->executante = $request->input("executante");
         $a->local = $request->input("local");

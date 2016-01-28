@@ -41,7 +41,6 @@ class ProvaMilitarTiroController extends Controller {
 	{
 		$a = new ProvaMilitarTiro();
 		$a->dataProva = $request->input("dataProva");
-		$a->entidade_id = $request->input("entidade_id");
         $a->local = $request->input("local");
         $a->tipo = $request->input("tipo");
         $a->notaFinal = $request->input("notaFinal");
@@ -89,9 +88,7 @@ class ProvaMilitarTiroController extends Controller {
 	public function update(Request $request, $id)
 	{
 		$a = ProvaMilitarTiro::findOrFail($id);
-
 		$a->dataProva = $request->input("dataProva");
-		$a->entidade_id = $request->input("entidade_id");
         $a->local = $request->input("local");
         $a->tipo = $request->input("tipo");
         $a->notaFinal = $request->input("notaFinal");

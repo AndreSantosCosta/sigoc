@@ -7,7 +7,7 @@ use App\ProvaBinomTANAT2;
 use Illuminate\Http\Request;
 
 class ProvaBinomTANAT2Controller extends Controller {
-
+ 
 	/**
 	 * Display a listing of the resource.
 	 *

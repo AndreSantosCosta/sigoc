@@ -18,27 +18,27 @@
               <div class="col-md-12">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                <div class="form-group @if($errors->has('tipoentidade')) has-error @endif">
-                     <label for="tipoentidade-field">Entidade</label>
-                     <select class="form-control" name="tipoentidade">
+                <div class="form-group @if($errors->has('tipoEntidade')) has-error @endif">
+                     <label for="tipoEntidade-field">Entidade</label>
+                     <select class="form-control" name="tipoEntidade">
                        @foreach($listaEntidade as $chave => $valor)
                        <option value="{{$chave}}">{{$valor}}</option>
                        @endforeach
                      </select>
-                     @if($errors->has("tipoentidade"))
-                     <span class="help-block">{{ $errors->first("tipoentidade") }}</span>
+                     @if($errors->has("tipoEntidade"))
+                     <span class="help-block">{{ $errors->first("tipoEntidade") }}</span>
                      @endif
                    </div>
 
-                    <div class="form-group @if($errors->has('tipoprova')) has-error @endif">
-                     <label for="tipoprova-field">Tipo de Prova</label>
-                     <select class="form-control" name="tipoprova">
+                    <div class="form-group @if($errors->has('tipoProva')) has-error @endif">
+                     <label for="tipoProva-field">Tipo de Prova</label>
+                     <select class="form-control" name="tipoProva">
                        @foreach($listaTipoProva as $chave => $valor)
                        <option value="{{$chave}}">{{$valor}}</option>
                        @endforeach
                      </select>
-                     @if($errors->has("tipoprova"))
-                     <span class="help-block">{{ $errors->first("tipoprova") }}</span>
+                     @if($errors->has("tipoProva"))
+                     <span class="help-block">{{ $errors->first("tipoProva") }}</span>
                      @endif
                    </div>
                    
@@ -72,7 +72,7 @@
                     </div> -->
                 <div class="well well-sm"> 
                     <a class="btn btn-primary" href="{{ route('criarProva', array('tipoprova'=>$prova->tipoprova)) }}"><i class="glyphicon glyphicon-plus"></i> Criar</a>
-                   
+                   <input type ="submit" value="guardar"> 
                     <a class="btn btn-link pull-right" href="{{ route('provas.index') }}"><i class="glyphicon glyphicon-backward"></i> Voltar </a>
                 </div>
             </form>

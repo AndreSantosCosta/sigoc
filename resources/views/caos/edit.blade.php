@@ -11,6 +11,7 @@
 @section('content')
 @include('error')
 
+
 <div class="row">
 	<div class="col-md-12">
 		<form action="{{ route('caos.update', $cao->id) }}" method="POST">

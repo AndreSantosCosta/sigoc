@@ -19,11 +19,11 @@
             <form action="{{ route('prova_binom_t_a_n_a_t2s.update', $prova->id) }}" method="POST">
                 <input type="hidden" name="_method" value="PUT">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <div class="form-group @if($errors->has('dataprova')) has-error @endif">
-                       <label for="dataprova-field">Data de Prova</label>
-                    <input type="date" id="dataprova-field" name="dataprova" class="form-control" value="{{ $prova->dataprova }}"/>
-                       @if($errors->has("dataprova"))
-                        <span class="help-block">{{ $errors->first("dataprova") }}</span>
+                <div class="form-group @if($errors->has('dataProva')) has-error @endif">
+                       <label for="dataProva-field">Data de Prova</label>
+                    <input type="date" id="dataProva-field" name="dataProva" class="form-control" value="{{ $prova->dataProva }}"/>
+                       @if($errors->has("dataProva"))
+                        <span class="help-block">{{ $errors->first("dataProva") }}</span>
                        @endif
                     </div> 
                 <div class="form-group @if($errors->has('avaliador')) has-error @endif">

@@ -14,6 +14,7 @@
 <div class="row">
   <div class="col-md-12">
 
+
     <form action="{{ route('militars.update', $militar->id) }}" method="POST">
       <div class="col-md-12">
         <input type="hidden" name="_method" value="PUT">

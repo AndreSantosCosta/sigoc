@@ -14,5 +14,6 @@
 @section('content')
 @include('subviews.militar_list')
 
+
 @endsection 
   

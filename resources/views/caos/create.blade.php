@@ -10,6 +10,7 @@
 
 @section('content')
 
+
 @include('error')
 
 <div class="row">

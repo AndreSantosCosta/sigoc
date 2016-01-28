@@ -52,6 +52,6 @@ Route::get('prova/{id}', ['as' => 'prova', 'uses' => 'ProvaController@prova']);
 
 Route::get('editarProva/{id}', ['as' => 'editarProva', 'uses' => 'ProvaController@editarProva']);
 
-Route::get('criarProva/{tipoprova}', ['as' => 'criarProva', 'uses' => 'ProvaController@criarProva']);
+Route::get('criarProva/{tipoEntidade}/{id}', ['as' => 'criarProva', 'uses' => 'ProvaController@criarProva']);
 
 Route::get('goEntidade/{id}', ['as' => 'goEntidade', 'uses' => 'EntidadeController@goEntidade']);

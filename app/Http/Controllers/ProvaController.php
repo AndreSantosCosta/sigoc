@@ -32,10 +32,13 @@ class ProvaController extends Controller {
 	 */
 	public function create()
 	{
-		$prova = new Prova();
-		$listaEntidade = Enumeraveis::getEntidadeList();
-		$listaTipoProva = Enumeraveis::getTiposProvasList();
-		return view('provas.create', compact("prova", "listaEntidade", "listaTipoProva"));
+		//$prova = new Prova();
+		//$listaEntidade = Enumeraveis::getEntidadeList();
+		//$listaTipoProva = Enumeraveis::getTiposProvasList();
+		//return view('provas.create', compact("prova", "listaEntidade", "listaTipoProva"));
+		$entidadeProva = $prova ->entidade_id;
+		$entidade = Entidade::findOrFail($entidadeProva);
+		return view('provas.create', compact('entidade'));
 	}
  
 	/**
@@ -43,9 +46,11 @@ class ProvaController extends Controller {
 	 *
 	 * @param Request $request
 	 * @return Response
-	 */
+	 */ 
 	public function store(Request $request)
 	{
+		var_dump( $request->input("tipoprova"));
+		exit;
 		$prova = new Prova();
 		$prova->tipoEntidade = $request->input("tipoEntidade");
 		$prova->tipoProva = $request->input("tipoProva");
@@ -156,18 +161,20 @@ class ProvaController extends Controller {
 		
 	}
 
-	public function criarProva ($tipoProva){
+	/*public function criarProva ($tipoEntidade, $entidade_id){
 
-		switch ($tipoProva) {
-			case 'Tiro':
+
+		switch ($tipoEntidade) {
+			case 'M':
 				$prova = new ProvaMilitarTiro();
-				return view('prova_militar_tiros.create', compact('prova'));
+				$entidade = Entidade::findOrFail($entidade_id);
+				return view('prova_militar_tiros.create', compact('prova', 'entidade'));
 				break;
-			case 'TIP': 
+			case 'C': 
 				$prova = new ProvaCaoTIPer();
 				return view('prova_cao_t_i_pers.create', compact('prova'));
 				break;
-			case 'TANAT2': 
+			case 'B': 
 				$prova = new ProvaBinomTANAT2();
 				return view('prova_binom_t_a_n_a_t2s.create', compact('prova'));
 				break;
@@ -176,7 +183,7 @@ class ProvaController extends Controller {
 				break;
 		}
 		
-	}
+	}*/
 
 	public function editarProva ($id){
 		$prova = Prova::findOrFail($id);

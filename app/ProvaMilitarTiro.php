@@ -36,6 +36,8 @@ class ProvaMilitarTiro extends Model
         $prova->tipoEntidade = "M";
         $prova->tipoProva = "Tiro";
         $prova->dataProva = $this->dataProva;
+        var_dump($this->entidade_id);
+        exit;
         $prova->entidade_id = $this->entidade_id;
         $prova->arquivo = $this->arquivo;
         $prova->observacoes = $this->observacoes;
@@ -58,6 +60,7 @@ class ProvaMilitarTiro extends Model
 	private function updateRecord(){
         // Atualiza na Prova
 		$prova = Prova::findOrFail($this->id);
+       
         $prova->tipoEntidade = "M";
         $prova->tipoProva = "Tiro";
         $prova->dataProva = $this->dataProva;
