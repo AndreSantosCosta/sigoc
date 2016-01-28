@@ -14,7 +14,6 @@
                     <th class="text-right"></th>
                 </tr>
             </thead>
- 
             <tbody>
                 @foreach($binomios as $binomio)
                 <tr>
@@ -42,8 +41,5 @@
         @else
         <h3 class="text-center alert alert-info">Vazio!</h3>
         @endif
-
     </div>
 </div>
-
-@endsection
