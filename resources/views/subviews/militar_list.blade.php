@@ -1,11 +1,9 @@
-
 <div class="row">
     <div class="col-md-12">
         @if($militars->count())
         <table class="table table-condensed table-striped">
             <thead>
                 <tr>
-                    
                     <th>Número Mecanográfico</th>
                     <th>Nome</th>
                     <th>Apelido</th>
@@ -16,7 +14,6 @@
                     <th class="text-right"></th>
                 </tr>
             </thead>
-
             <tbody>
                 @foreach($militars as $militar)
                 <tr>
@@ -44,8 +41,5 @@
         @else
         <h3 class="text-center alert alert-info">Vazio!</h3>
         @endif
-
     </div>
 </div>
-
-@endsection

@@ -55,3 +55,32 @@ Route::get('editarProva/{id}', ['as' => 'editarProva', 'uses' => 'ProvaControlle
 Route::get('criarProva/{tipoEntidade}/{id}', ['as' => 'criarProva', 'uses' => 'ProvaController@criarProva']);
 
 Route::get('goEntidade/{id}', ['as' => 'goEntidade', 'uses' => 'EntidadeController@goEntidade']);
+
+
+
+
+Route::resource("users","UserController");
+
+
+
+// Authentication routes...
+Route::get('auth/login', ['as' => 'login', 'uses' => 'Auth\AuthController@getLogin']);
+Route::post('auth/login', ['as' => 'login', 'uses' => 'Auth\AuthController@postLogin']);
+Route::post('auth/login', ['as' => 'login', 'uses' => 'Auth\AuthController@postLogin']);
+
+Route::get('auth/logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@getLogout']);
+
+// Registration routes...
+Route::get('auth/register', ['as' => 'register', 'uses' => 'Auth\AuthController@getRegister']);
+Route::post('auth/register', ['as' => 'register', 'uses' => 'Auth\AuthController@postRegister']);
+
+
+// Password reset link request routes...
+Route::get('password/email', ['as' => 'email', 'uses' => 'Auth\PasswordController@getEmail']);
+Route::post('password/email', ['as' => 'email', 'uses' => 'Auth\PasswordController@postEmail']);
+
+// Password reset routes...
+Route::get('password/reset/{token}', ['as' => 'reset', 'uses' => 'Auth\PasswordController@getReset']);
+Route::post('password/reset', ['as' => 'reset', 'uses' => 'Auth\PasswordController@postReset']);
+
+

@@ -41,8 +41,13 @@ class Enumeraveis
 		return Enumeraveis::getTiposProvasList()[$chave];
 	}
 
+	public static function getTiposMilitarList(){
+		return array('A'=>'Administrador', 'G'=>'Gestor', 'U'=>'Utilizador');
+	}
 
-
+	public static function getTiposFromKey($chave){
+		return Enumeraveis::getTiposMilitarList()[$chave];
+	}
 
 	
 }
