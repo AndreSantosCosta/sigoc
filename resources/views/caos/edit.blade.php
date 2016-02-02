@@ -7,7 +7,7 @@
   </div>
 </div>
 @endsection
-
+ 
 @section('content')
 @include('error')
 
@@ -185,7 +185,7 @@
    <div class="form-group @if($errors->has('motivo_inativo')) has-error @endif">
     <label for="motivo_inativo-field">Motivo Inativação</label>
     <select class="form-control" name="motivo_inativo">
-      <option value="null"></option>
+      <option value="-1"></option>
       @foreach($listaMotivos as $item)
       <option value="{{$item->id}}"{{ ($cao->motivo_inativo== $item->id)? "selected" : ""}}>{{$item->descricao}}</option>
       @endforeach

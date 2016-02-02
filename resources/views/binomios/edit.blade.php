@@ -41,14 +41,7 @@
          <span class="help-block">{{ $errors->first("NumMecanog") }}</span>
          @endif
        </div>
-       <!-- <div class="form-group @if($errors->has('vertente')) has-error @endif">
-         <label for="vertente-field">Vertente</label>
-         <input type="text" id="vertente-field" name="vertente" class="form-control" value="{{ $binomio->vertente }}"/>
-         @if($errors->has("vertente"))
-         <span class="help-block">{{ $errors->first("vertente") }}</span>
-         @endif
-       </div> -->
-   <div class="form-group @if($errors->has('vertente')) has-error @endif">
+       <div class="form-group @if($errors->has('vertente')) has-error @endif">
          <label for="vertente-field">Vertente</label>
          <select class="form-control" name="vertente">
            @foreach($listaVertente as $item)
@@ -61,23 +54,23 @@
        </div>
 
        <div class="form-group @if($errors->has('unidade_id')) has-error @endif">
-       <label for="unidade_id-field">Unidade</label>
-       <select class="form-control" name="unidade_id">
-         @foreach($listaUnidades as $item)
-         <option value="{{$item->id}}" {{ ($binomio->unidade_id== $item->id)? "selected" : ""}}>{{$item->descricao}}</option>
-         @endforeach
-       </select>
-       @if($errors->has("unidade_id"))
-       <span class="help-block">{{ $errors->first("unidade_id") }}</span>
-       @endif
-     </div>
+         <label for="unidade_id-field">Unidade</label>
+         <select class="form-control" name="unidade_id">
+           @foreach($listaUnidades as $item)
+           <option value="{{$item->id}}" {{ ($binomio->unidade_id== $item->id)? "selected" : ""}}>{{$item->descricao}}</option>
+           @endforeach
+         </select>
+         @if($errors->has("unidade_id"))
+         <span class="help-block">{{ $errors->first("unidade_id") }}</span>
+         @endif
+       </div>
        <div class="form-group @if($errors->has('inativo')) has-error @endif">
-       <label for="inativo-field">Inativo</label>
-        <input type="checkbox" id="inativo-field" name="inativo" {{ ($binomio->inativo==1)? "checked" : ""}}/>
-       @if($errors->has("inativo"))
-       <span class="help-block">{{ $errors->first("inativo") }}</span>
-       @endif
-     </div>
+         <label for="inativo-field">Inativo</label>
+         <input type="checkbox" id="inativo-field" name="inativo" {{ ($binomio->inativo==1)? "checked" : ""}}/>
+         @if($errors->has("inativo"))
+         <span class="help-block">{{ $errors->first("inativo") }}</span>
+         @endif
+       </div>
        <div class="form-group @if($errors->has('data_inativo')) has-error @endif">
          <label for="data_inativo-field">Data de Inativação</label>
          <input type="date" id="data_inativo-field" name="data_inativo" class="form-control" value="{{ $binomio->data_inativo }}"/>
@@ -100,14 +93,14 @@
         @endif
       </div>
       <div class="form-group @if($errors->has('tamanhoimagem')) has-error @endif">
-        <label for="tamanhoimagem-field">TamanhoImagem</label>
+        <label for="tamanhoimagem-field">Tamanho Imagem</label>
         <input type="text" id="tamanhoimagem-field" name="tamanhoimagem" class="form-control" value="{{ $binomio->tamanhoimagem  }}"/>
         @if($errors->has("tamanhoimagem"))
         <span class="help-block">{{ $errors->first("tamanhoimagem") }}</span>
         @endif
       </div>
       <div class="form-group @if($errors->has('tipoimagem')) has-error @endif">
-        <label for="tipoimagem-field">TipoImagem</label>
+        <label for="tipoimagem-field">Tipo Imagem</label>
         <input type="text" id="tipoimagem-field" name="tipoimagem" class="form-control" value="{{$binomio->tipoimagem  }}"/>
         @if($errors->has("tipoimagem"))
         <span class="help-block">{{ $errors->first("tipoimagem") }}</span>

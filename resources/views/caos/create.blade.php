@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-
+ 
 
 @include('error')
 

@@ -121,7 +121,7 @@ class CaoController extends Controller {
         if($request->input("inativo")==""){
 			$a->inativo = false;
 
-		}else{
+		}else{ 
 			$a->inativo = true;
 		}
         $a->data_inativo = $request->input("data_inativo");

@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use DB;
  
- 
+  
 class Cao extends Model
 {
 	protected $table = 'view_caos';
@@ -21,6 +21,9 @@ class Cao extends Model
   }
 
   public function getNomeMotivoInativacaoAttribute(){
+    if(is_null($this->motivo_inativo)){
+      return "";
+    }
     $MotivoInativoCao = MotivoInativoCao::findOrFail($this->motivo_inativo);
     return $MotivoInativoCao->descricao;
   }

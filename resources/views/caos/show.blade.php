@@ -1,5 +1,5 @@
 @extends('layout')
-@section('header')
+@section('header') 
 <div class="col-md-12">
     <div class="page-header">
         <h1>Ver Cão #{{$cao->num_matricula}} {{$cao->nome}}</h1>
@@ -36,7 +36,7 @@
                  </div>
 
                  <div class="form-group">
-                     <label for="nome">NOME</label>
+                     <label for="nomeCao">NOME</label>
                      <p class="form-control-static">{{$cao->nomeCao}}</p>
                  </div>
 

@@ -17,7 +17,7 @@
                 <tr>
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
-                    <td>{{$user->TiposCompletoMilitar}}</td>
+                    <td>{{$user->tipo}}</td>
                     <td>{{$user->NomeProprioMilitar}}</td>
                     <td>{{$user->NomeApelidoMilitar}}</td>
                     <td></td>
