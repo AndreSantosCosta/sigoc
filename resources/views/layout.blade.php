@@ -56,6 +56,7 @@
             <li>
               <a href="{{ route('provas.index') }}">Provas</a>
             </li>
+           
             <li>  
               <a href="{{ route('users.index') }}">Users</a>
             </li>

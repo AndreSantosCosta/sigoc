@@ -61,13 +61,6 @@
          <span class="help-block">{{ $errors->first("data_nascim") }}</span>
          @endif
        </div>
-      <!--  <div class="form-group @if($errors->has('grupo_sang')) has-error @endif">
-        <label for="grupo_sang-field">Grupo Sanguineo</label>
-        <input type="text" id="grupo_sang-field" name="grupo_sang" class="form-control" value="{{ $militar->grupo_sang }}"/>
-        @if($errors->has("grupo_sang"))
-        <span class="help-block">{{ $errors->first("grupo_sang") }}</span>
-        @endif
-      </div> -->
 
       <div class="form-group @if($errors->has('grupo_sang')) has-error @endif">
        <label for="grupo_sang-field">Grupo Sanguineo</label>
@@ -105,15 +98,6 @@
        @endif
      </div>
 
-<!-- 
-     <div class="form-group @if($errors->has('inativo')) has-error @endif">
-       <label for="inativo-field">Inativo</label>
-       <input type="checkbox" id="inativo-field" name="inativo" value="{{ $militar->inativo }}"/>
-       @if($errors->has("inativo"))
-       <span class="help-block">{{ $errors->first("inativo") }}</span>
-       @endif
-     </div>
- -->
       <div class="form-group @if($errors->has('inativo')) has-error @endif">
        <label for="inativo-field">Inativo</label>
         <input type="checkbox" id="inativo-field" name="inativo" {{ ($militar->inativo==1)? "checked" : ""}}/>

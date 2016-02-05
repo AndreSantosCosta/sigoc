@@ -6,6 +6,17 @@
     <form action="{{ route('binomios.destroy', $binomio->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
         <input type="hidden" name="_method" value="DELETE">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
+         <div class="btn-group pull-left" role="group" aria-label="...">
+            <a class="btn btn-success" href="{{ route('criarProva' , array('tipoEntidade'=>'B', 'tipoProva'=>'TANAT2', 'entidade_id'=>$binomio->id)) }}"><i class="glyphicon glyphicon-plus"></i> Criar Prova TANAT2</a>
+             <a class="btn btn-success" href="{{ route('criarProva' , array('tipoEntidade'=>'B', 'tipoProva'=>'ABO', 'entidade_id'=>$binomio->id)) }}"><i class="glyphicon glyphicon-plus"></i> Criar Prova Obediência</a>
+             <a class="btn btn-success" href="{{ route('criarProva' , array('tipoEntidade'=>'B', 'tipoProva'=>'ABD', 'entidade_id'=>$binomio->id)) }}"><i class="glyphicon glyphicon-plus"></i> Criar Prova Defesa</a>
+             <a class="btn btn-success" href="{{ route('criarProva' , array('tipoEntidade'=>'B', 'tipoProva'=>'DOHBGA', 'entidade_id'=>$binomio->id)) }}"><i class="glyphicon glyphicon-plus"></i> Criar Prova DOH(BGA)</a>
+             <a class="btn btn-success" href="{{ route('criarProva' , array('tipoEntidade'=>'B', 'tipoProva'=>'DOHP', 'entidade_id'=>$binomio->id)) }}"><i class="glyphicon glyphicon-plus"></i> Criar Prova DOH(Pistas)</a>
+             <a class="btn btn-success" href="{{ route('criarProva' , array('tipoEntidade'=>'B', 'tipoProva'=>'DOHEC', 'entidade_id'=>$binomio->id)) }}"><i class="glyphicon glyphicon-plus"></i> Criar Prova DOH(EC)</a>
+             <a class="btn btn-success" href="{{ route('criarProva' , array('tipoEntidade'=>'B', 'tipoProva'=>'DOHIT', 'entidade_id'=>$binomio->id)) }}"><i class="glyphicon glyphicon-plus"></i> Criar Prova DOH(IT)</a>
+             <a class="btn btn-success" href="{{ route('criarProva' , array('tipoEntidade'=>'B', 'tipoProva'=>'ABP', 'entidade_id'=>$binomio->id)) }}"><i class="glyphicon glyphicon-plus"></i> Criar Prova Policial</a>
+             <a class="btn btn-success" href="{{ route('criarProva' , array('tipoEntidade'=>'B', 'tipoProva'=>'DOD', 'entidade_id'=>$binomio->id)) }}"><i class="glyphicon glyphicon-plus"></i> Criar Prova DOD</a>
+          </div>
         <div class="btn-group pull-right" role="group" aria-label="...">
         <a class="btn btn-primary" href="{{ route('provasPorEntidade', array('tipoEntidade'=>'B', 'entidade_id'=>$binomio->id)) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver Provas</a>
             <a class="btn btn-warning btn-group" role="group" href="{{ route('binomios.edit', $binomio->id) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>

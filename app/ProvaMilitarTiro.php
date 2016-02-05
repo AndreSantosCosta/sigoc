@@ -4,12 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use DB;
-
+ 
 class ProvaMilitarTiro extends Model
 {
     protected $table = 'view_provamilitartiros';
 
-
+  public function getNomeIdentificacaoAttribute(){
+        $nome = Militar::findOrFail($this->entidade_id);
+        return $nome->nomeProprio;
+    }
 	// ----------------------------------------------
 	// ImplementaÃ§Ã£o das SuperClasses / SubClasses
 	// ----------------------------------------------
@@ -36,10 +39,7 @@ class ProvaMilitarTiro extends Model
         $prova->tipoEntidade = "M";
         $prova->tipoProva = "Tiro";
         $prova->dataProva = $this->dataProva;
-        
-        $prova->entidade_id = $entidade_id;
-        var_dump($entidade_id);
-        exit;
+        $prova->entidade_id = $this->entidade_id;
         $prova->arquivo = $this->arquivo;
         $prova->observacoes = $this->observacoes;
         $prova->save();
@@ -98,10 +98,7 @@ class ProvaMilitarTiro extends Model
         return $num->num_mecanografico;
     } 
     
-     public function getNomeIdentificacaoAttribute(){
-        $nome = Militar::findOrFail($this->entidade_id);
-        return $nome->nomeProprio;
-    }
+   
 }
  
 

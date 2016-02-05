@@ -28,8 +28,7 @@ class ProvaMilitarTiroController extends Controller {
 	public function create()
 	{
 		$prova = new ProvaMilitarTiro();
-
-		
+	
 		return view('prova_militar_tiros.create', compact("prova"));
 	}
 
@@ -46,8 +45,7 @@ class ProvaMilitarTiroController extends Controller {
 		$a->dataProva = $request->input("dataProva");
         $a->local = $request->input("local");
         $a->tipo = $request->input("tipo");
-
-        //$a->entidade_id = $request->input("entidade_id");
+        $a->entidade_id = $request->input("entidade_id");
         $a->notaFinal = $request->input("notaFinal");
         $a->arquivo = $request->input("arquivo");
         $a->observacoes = $request->input("observacoes");

@@ -5,8 +5,7 @@
     <div class="page-header clearfix">
         <h1>
             <i class="glyphicon glyphicon-align-justify"></i> Provas Tiro
-            <a class="btn btn-success pull-right" href="{{ route('prova_militar_tiros.create') }}"><i class="glyphicon glyphicon-plus"></i> Criar</a>
-        </h1>
+       </h1>
     </div>
     </div>
 @endsection

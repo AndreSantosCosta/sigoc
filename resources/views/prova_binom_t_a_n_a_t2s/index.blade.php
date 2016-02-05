@@ -5,8 +5,7 @@
     <div class="page-header clearfix">
         <h1>
             <i class="glyphicon glyphicon-align-justify"></i> Provas TANAT2
-            <a class="btn btn-success pull-right" href="{{ route('prova_binom_t_a_n_a_t2s.create') }}"><i class="glyphicon glyphicon-plus"></i> Criar</a>
-        </h1>
+       </h1>
     </div>
 </div>
 @endsection

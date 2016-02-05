@@ -18,6 +18,8 @@
             <form action="{{ route('prova_militar_tiros.update', $prova->id) }}" method="POST">
                 <input type="hidden" name="_method" value="PUT">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                
+               
 
                 <div class="form-group @if($errors->has('local')) has-error @endif">
                        <label for="local-field">Local</label>

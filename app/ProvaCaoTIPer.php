@@ -9,7 +9,10 @@ class ProvaCaoTIPer extends Model
 {
     protected $table = 'view_provacaotip';
  
- 
+    public function getNumIdentificacaoAttribute(){
+        $num = Cao::findOrFail($this->entidade_id);
+        return $num->num_matricula;
+  }
 	// ----------------------------------------------
 	// ImplementaÃ§Ã£o das SuperClasses / SubClasses
 	// ----------------------------------------------
@@ -109,10 +112,7 @@ class ProvaCaoTIPer extends Model
 		$prova->delete();
 	}
 
-    public function getNumIdentificacaoAttribute(){
-        $num = Cao::findOrFail($this->entidade_id);
-        return $num->num_matricula;
-  }
+ 
     
 }
  

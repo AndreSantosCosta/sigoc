@@ -11,7 +11,7 @@
 @section('content')
 
 @include('error')
-
+ 
 <div class="row">
 	<div class="col-md-12">
 		<form action="{{ route('binomios.store') }}" method="POST">
@@ -25,7 +25,6 @@
 					<span class="help-block">{{ $errors->first("data_inicio") }}</span>
 					@endif
 				</div>
-
 <!--        <div class="form-group @if($errors->has('NumMecanog')) has-error @endif">
              <label for="NumMecanog-field">Número Mecanográfico</label>
              <input type="text" id="NumMecanog-field" name="NumMecanog" class="form-control" value="{{ old("NumMecanog") }}"/>
@@ -39,9 +38,10 @@
              @if($errors->has("NumMatricula"))
              <span class="help-block">{{ $errors->first("NumMatricula") }}</span>
              @endif
-           </div>  -->
+           </div>  
 
-           <div class="form-group @if($errors->has('militar_id')) has-error @endif">
+ -->  
+        <div class="form-group @if($errors->has('militar_id')) has-error @endif">
             <label for="militar_id-field">Número Mecanográfico</label>
             <input type="text" id="militar_id-field" name="militar_id" class="form-control" value="{{ old("militar_id") }}"/>
             @if($errors->has("militar_id"))

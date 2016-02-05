@@ -5,8 +5,7 @@
     <div class="page-header clearfix">
         <h1>
             <i class="glyphicon glyphicon-align-justify"></i> Testes Iniciais de Personalidade
-            <a class="btn btn-success pull-right" href="{{ route('prova_cao_t_i_pers.create') }}"><i class="glyphicon glyphicon-plus"></i> Criar</a>
-        </h1>
+       </h1>
     </div>
 </div>
 @endsection

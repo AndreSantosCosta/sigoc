@@ -53,7 +53,7 @@
                      <p class="form-control-static">{{$prova->chamada}}</p>
                 </div>
                     <div class="form-group">
-                     <label for="buscaObj">BUSCAOBJ</label>
+                     <label for="buscaObj">BUSCA OBJETO</label>
                      <p class="form-control-static">{{$prova->buscaObj}}</p>
                 </div>
                     <div class="form-group">
@@ -73,7 +73,7 @@
                      <p class="form-control-static">{{$prova->dor}}</p>
                 </div>
                     <div class="form-group">
-                     <label for="notaFinal">NOTAFINAL</label>
+                     <label for="notaFinal">NOTA FINAL</label>
                      <p class="form-control-static">{{$prova->notaFinal}}</p>
                 </div>
                   <div class="form-group">

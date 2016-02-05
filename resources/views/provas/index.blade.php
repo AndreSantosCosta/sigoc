@@ -14,9 +14,6 @@
         <?php } else { ?>
         <h1><i class="glyphicon glyphicon-align-justify"></i> Provas {{$descricaoEntidade}} </h1>
     <?php } ?>
-
-   
-    <a class="btn btn-success pull-right" href="{{ route('provas.create') }}"><i class="glyphicon glyphicon-plus"></i> Criar </a>
    
    </div>
     </div>

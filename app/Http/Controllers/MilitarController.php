@@ -36,10 +36,10 @@ class MilitarController extends Controller {
 		$listaPostos = Posto::all('descricao', 'id');
 		$listaUnidades = Unidade::all('descricao', 'id');
 		$listaSexo = Enumeraveis::getSexoList(); 
-		$gruposSang= Enumeraveis::getGrupoSangList(); 
+		$gruposSang= Enumeraveis::getGrupoSangList();
 		$formToCreate = true;
-
-		return view('militars.create', compact('militar','listaPostos','listaUnidades','gruposSang','listaSexo','listaMotivos','formToCreate'));
+		
+		return view('militars.create', compact('militar','listaPostos','listaUnidades','gruposSang','listaSexo','listaMotivos', 'formToCreate'));
 	}
 
 	/**
@@ -120,7 +120,6 @@ class MilitarController extends Controller {
 		$a->grupo_sang = $request->input("grupo_sang");
 		$a->sexo = $request->input("sexo");
 		$a->unidade_id = $request->input("unidade_id");
-
 		if($request->input("inativo")==""){
 			$a->inativo = false;
 

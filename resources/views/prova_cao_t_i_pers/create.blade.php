@@ -16,11 +16,14 @@
 <div class="col-md-12">
             <form action="{{ route('prova_cao_t_i_pers.store') }}" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <div class="form-group @if($errors->has('dataprova')) has-error @endif">
-                       <label for="dataprova-field">Data Prova</label>
-                    <input type="date" id="dataprova-field" name="dataprova" class="form-control" value="{{ old("dataprova") }}"/>
-                       @if($errors->has("dataprova"))
-                        <span class="help-block">{{ $errors->first("dataprova") }}</span>
+
+               <input type="text" id="entidade_id-field" name="entidade_id" value="{{ $entidade_id }}">
+
+                <div class="form-group @if($errors->has('dataProva')) has-error @endif">
+                       <label for="dataProva-field">Data Prova</label>
+                    <input type="date" id="dataProva-field" name="dataProva" class="form-control" value="{{ old("dataProva") }}"/>
+                       @if($errors->has("dataProva"))
+                        <span class="help-block">{{ $errors->first("dataProva") }}</span>
                        @endif
                     </div>
 
@@ -73,11 +76,11 @@
                         <span class="help-block">{{ $errors->first("chamada") }}</span>
                        @endif
                     </div>
-                    <div class="form-group @if($errors->has('buscaobj')) has-error @endif">
-                       <label for="buscaobj-field">Busca Objeto</label>
-                    <input type="text" id="buscaobj-field" name="buscaobj" class="form-control" value="{{ old("buscaobj") }}"/>
-                       @if($errors->has("buscaobj"))
-                        <span class="help-block">{{ $errors->first("buscaobj") }}</span>
+                    <div class="form-group @if($errors->has('buscaObj')) has-error @endif">
+                       <label for="buscaObj-field">Busca Objeto</label>
+                    <input type="text" id="buscaObj-field" name="buscaObj" class="form-control" value="{{ old("buscaObj") }}"/>
+                       @if($errors->has("buscaObj"))
+                        <span class="help-block">{{ $errors->first("buscaObj") }}</span>
                        @endif
                     </div>
                     <div class="form-group @if($errors->has('jornal')) has-error @endif">
@@ -108,11 +111,11 @@
                         <span class="help-block">{{ $errors->first("dor") }}</span>
                        @endif
                     </div>
-                    <div class="form-group @if($errors->has('notafinal')) has-error @endif">
-                       <label for="notafinal-field">NotaFinal</label>
-                    <input type="text" id="notafinal-field" name="notafinal" class="form-control" value="{{ old("notafinal") }}"/>
-                       @if($errors->has("notafinal"))
-                        <span class="help-block">{{ $errors->first("notafinal") }}</span>
+                    <div class="form-group @if($errors->has('notaFinal')) has-error @endif">
+                       <label for="notaFinal-field">NotaFinal</label>
+                    <input type="text" id="notaFinal-field" name="notaFinal" class="form-control" value="{{ old("notaFinal") }}"/>
+                       @if($errors->has("notaFinal"))
+                        <span class="help-block">{{ $errors->first("notaFinal") }}</span>
                        @endif
                     </div>
                     <div class="form-group @if($errors->has('arquivo')) has-error @endif">

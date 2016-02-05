@@ -16,6 +16,8 @@
         <div class="col-md-12">
             <form action="{{ route('prova_binom_t_a_n_a_t2s.store') }}" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                
+                <input type="hidden" id="entidade_id-field" name="entidade_id" value="{{ $entidade_id }}">
 
                 <div class="form-group @if($errors->has('dataProva')) has-error @endif">
                        <label for="dataProva-field">Data Prova</label>
@@ -46,67 +48,67 @@
                         <span class="help-block">{{ $errors->first("atitute") }}</span>
                        @endif
                     </div>
-                    <div class="form-group @if($errors->has('memoriamuscular')) has-error @endif">
-                       <label for="memoriamuscular-field">Memoria Muscular</label>
-                    <input type="text" id="memoriamuscular-field" name="memoriamuscular" class="form-control" value="{{ old("memoriamuscular") }}"/>
-                       @if($errors->has("memoriamuscular"))
-                        <span class="help-block">{{ $errors->first("memoriamuscular") }}</span>
+                    <div class="form-group @if($errors->has('memoriaMuscular')) has-error @endif">
+                       <label for="memoriaMuscular-field">Memoria Muscular</label>
+                    <input type="text" id="memoriaMuscular-field" name="memoriaMuscular" class="form-control" value="{{ old("memoriaMuscular") }}"/>
+                       @if($errors->has("memoriaMuscular"))
+                        <span class="help-block">{{ $errors->first("memoriaMuscular") }}</span>
                        @endif
                     </div>
-                    <div class="form-group @if($errors->has('agilidadeconfianca')) has-error @endif">
-                       <label for="agilidadeconfianca-field">Agilidade e Confianca</label>
-                    <input type="text" id="agilidadeconfianca-field" name="agilidadeconfianca" class="form-control" value="{{ old("agilidadeconfianca") }}"/>
-                       @if($errors->has("agilidadeconfianca"))
-                        <span class="help-block">{{ $errors->first("agilidadeconfianca") }}</span>
+                    <div class="form-group @if($errors->has('agilidadeConfianca')) has-error @endif">
+                       <label for="agilidadeConfianca-field">Agilidade e Confianca</label>
+                    <input type="text" id="agilidadeConfianca-field" name="agilidadeConfianca" class="form-control" value="{{ old("agilidadeConfianca") }}"/>
+                       @if($errors->has("agilidadeConfianca"))
+                        <span class="help-block">{{ $errors->first("agilidadeConfianca") }}</span>
                        @endif
                     </div>
-                    <div class="form-group @if($errors->has('rpisossons')) has-error @endif">
-                       <label for="rpisossons-field">Reação Pisos Sons</label>
-                    <input type="text" id="rpisossons-field" name="rpisossons" class="form-control" value="{{ old("rpisossons") }}"/>
-                       @if($errors->has("rpisossons"))
-                        <span class="help-block">{{ $errors->first("rpisossons") }}</span>
+                    <div class="form-group @if($errors->has('rPisosSons')) has-error @endif">
+                       <label for="rPisosSons-field">Reação Pisos Sons</label>
+                    <input type="text" id="rPisosSons-field" name="rPisosSons" class="form-control" value="{{ old("rPisosSons") }}"/>
+                       @if($errors->has("rPisosSons"))
+                        <span class="help-block">{{ $errors->first("rPisosSons") }}</span>
                        @endif
                     </div>
-                    <div class="form-group @if($errors->has('raproxvulto')) has-error @endif">
-                       <label for="raproxvulto-field">Reação Aproximação Vulto</label>
-                    <input type="text" id="raproxvulto-field" name="raproxvulto" class="form-control" value="{{ old("raproxvulto") }}"/>
-                       @if($errors->has("raproxvulto"))
-                        <span class="help-block">{{ $errors->first("raproxvulto") }}</span>
+                    <div class="form-group @if($errors->has('rAproxVulto')) has-error @endif">
+                       <label for="rAproxVulto-field">Reação Aproximação Vulto</label>
+                    <input type="text" id="rAproxVulto-field" name="rAproxVulto" class="form-control" value="{{ old("rAproxVulto") }}"/>
+                       @if($errors->has("rAproxVulto"))
+                        <span class="help-block">{{ $errors->first("rAproxVulto") }}</span>
                        @endif
                     </div>
-                    <div class="form-group @if($errors->has('rdisparos')) has-error @endif">
-                       <label for="rdisparos-field">Reação Disparos</label>
-                    <input type="text" id="rdisparos-field" name="rdisparos" class="form-control" value="{{ old("rdisparos") }}"/>
-                       @if($errors->has("rdisparos"))
-                        <span class="help-block">{{ $errors->first("rdisparos") }}</span>
+                    <div class="form-group @if($errors->has('rDisparos')) has-error @endif">
+                       <label for="rDisparos-field">Reação Disparos</label>
+                    <input type="text" id="rDisparos-field" name="rDisparos" class="form-control" value="{{ old("rDisparos") }}"/>
+                       @if($errors->has("rDisparos"))
+                        <span class="help-block">{{ $errors->first("rDisparos") }}</span>
                        @endif
                     </div>
-                    <div class="form-group @if($errors->has('instpresaperist')) has-error @endif">
-                       <label for="instpresaperist-field">Instinto Presa Persistencia</label>
-                    <input type="text" id="instpresaperist-field" name="instpresaperist" class="form-control" value="{{ old("instpresaperist") }}"/>
-                       @if($errors->has("instpresaperist"))
-                        <span class="help-block">{{ $errors->first("instpresaperist") }}</span>
+                    <div class="form-group @if($errors->has('instPresaPerist')) has-error @endif">
+                       <label for="instPresaPerist-field">Instinto Presa Persistencia</label>
+                    <input type="text" id="instPresaPerist-field" name="instPresaPerist" class="form-control" value="{{ old("instPresaPerist") }}"/>
+                       @if($errors->has("instPresaPerist"))
+                        <span class="help-block">{{ $errors->first("instPresaPerist") }}</span>
                        @endif
                     </div>
-                    <div class="form-group @if($errors->has('intsbusca')) has-error @endif">
-                       <label for="intsbusca-field">Intensidade Busca</label>
-                    <input type="text" id="intsbusca-field" name="intsbusca" class="form-control" value="{{ old("intsbusca") }}"/>
-                       @if($errors->has("intsbusca"))
-                        <span class="help-block">{{ $errors->first("intsbusca") }}</span>
+                    <div class="form-group @if($errors->has('intsBusca')) has-error @endif">
+                       <label for="intsBusca-field">Intensidade Busca</label>
+                    <input type="text" id="intsBusca-field" name="intsBusca" class="form-control" value="{{ old("intsBusca") }}"/>
+                       @if($errors->has("intsBusca"))
+                        <span class="help-block">{{ $errors->first("intsBusca") }}</span>
                        @endif
                     </div>
-                    <div class="form-group @if($errors->has('marcpessoasobj')) has-error @endif">
-                       <label for="marcpessoasobj-field">Marcação Pessoas Objetos</label>
-                    <input type="text" id="marcpessoasobj-field" name="marcpessoasobj" class="form-control" value="{{ old("marcpessoasobj") }}"/>
-                       @if($errors->has("marcpessoasobj"))
-                        <span class="help-block">{{ $errors->first("marcpessoasobj") }}</span>
+                    <div class="form-group @if($errors->has('marcPessoasObj')) has-error @endif">
+                       <label for="marcPessoasObj-field">Marcação Pessoas Objetos</label>
+                    <input type="text" id="marcPessoasObj-field" name="marcPessoasObj" class="form-control" value="{{ old("marcPessoasObj") }}"/>
+                       @if($errors->has("marcPessoasObj"))
+                        <span class="help-block">{{ $errors->first("marcPessoasObj") }}</span>
                        @endif
                     </div>
-                    <div class="form-group @if($errors->has('inicpistas')) has-error @endif">
-                       <label for="inicpistas-field">Iniciação Pistas</label>
-                    <input type="text" id="inicpistas-field" name="inicpistas" class="form-control" value="{{ old("inicpistas") }}"/>
-                       @if($errors->has("inicpistas"))
-                        <span class="help-block">{{ $errors->first("inicpistas") }}</span>
+                    <div class="form-group @if($errors->has('inicPistas')) has-error @endif">
+                       <label for="inicPistas-field">Iniciação Pistas</label>
+                    <input type="text" id="inicPistas-field" name="inicPistas" class="form-control" value="{{ old("inicPistas") }}"/>
+                       @if($errors->has("inicPistas"))
+                        <span class="help-block">{{ $errors->first("inicPistas") }}</span>
                        @endif
                     </div>
                     <div class="form-group @if($errors->has('ladrido')) has-error @endif">
@@ -116,39 +118,39 @@
                         <span class="help-block">{{ $errors->first("ladrido") }}</span>
                        @endif
                     </div>
-                    <div class="form-group @if($errors->has('instdefesa')) has-error @endif">
-                       <label for="instdefesa-field">Instinto Defesa</label>
-                    <input type="text" id="instdefesa-field" name="instdefesa" class="form-control" value="{{ old("instdefesa") }}"/>
-                       @if($errors->has("instdefesa"))
-                        <span class="help-block">{{ $errors->first("instdefesa") }}</span>
+                    <div class="form-group @if($errors->has('instDefesa')) has-error @endif">
+                       <label for="instDefesa-field">Instinto Defesa</label>
+                    <input type="text" id="instDefesa-field" name="instDefesa" class="form-control" value="{{ old("instDefesa") }}"/>
+                       @if($errors->has("instDefesa"))
+                        <span class="help-block">{{ $errors->first("instDefesa") }}</span>
                        @endif
                     </div>
-                    <div class="form-group @if($errors->has('tecnmordida')) has-error @endif">
-                       <label for="tecnmordida-field">Tecnica Mordida</label>
-                    <input type="text" id="tecnmordida-field" name="tecnmordida" class="form-control" value="{{ old("tecnmordida") }}"/>
-                       @if($errors->has("tecnmordida"))
-                        <span class="help-block">{{ $errors->first("tecnmordida") }}</span>
+                    <div class="form-group @if($errors->has('tecnMordida')) has-error @endif">
+                       <label for="tecnMordida-field">Tecnica Mordida</label>
+                    <input type="text" id="tecnMordida-field" name="tecnMordida" class="form-control" value="{{ old("tecnMordida") }}"/>
+                       @if($errors->has("tecnMordida"))
+                        <span class="help-block">{{ $errors->first("tecnMordida") }}</span>
                        @endif
                     </div>
-                    <div class="form-group @if($errors->has('qualidmordida')) has-error @endif">
-                       <label for="qualidmordida-field">Qualidade Mordida</label>
-                    <input type="text" id="qualidmordida-field" name="qualidmordida" class="form-control" value="{{ old("qualidmordida") }}"/>
-                       @if($errors->has("qualidmordida"))
-                        <span class="help-block">{{ $errors->first("qualidmordida") }}</span>
+                    <div class="form-group @if($errors->has('qualidMordida')) has-error @endif">
+                       <label for="qualidMordida-field">Qualidade Mordida</label>
+                    <input type="text" id="qualidMordida-field" name="qualidMordida" class="form-control" value="{{ old("qualidMordida") }}"/>
+                       @if($errors->has("qualidMordida"))
+                        <span class="help-block">{{ $errors->first("qualidMordida") }}</span>
                        @endif
                     </div>
-                    <div class="form-group @if($errors->has('combatluta')) has-error @endif">
-                       <label for="combatluta-field">Combatividade Luta</label>
-                    <input type="text" id="combatluta-field" name="combatluta" class="form-control" value="{{ old("combatluta") }}"/>
-                       @if($errors->has("combatluta"))
-                        <span class="help-block">{{ $errors->first("combatluta") }}</span>
+                    <div class="form-group @if($errors->has('CombatLuta')) has-error @endif">
+                       <label for="CombatLuta-field">Combatividade Luta</label>
+                    <input type="text" id="CombatLuta-field" name="CombatLuta" class="form-control" value="{{ old("CombatLuta") }}"/>
+                       @if($errors->has("CombatLuta"))
+                        <span class="help-block">{{ $errors->first("CombatLuta") }}</span>
                        @endif
                     </div>
-                    <div class="form-group @if($errors->has('notafinal')) has-error @endif">
-                       <label for="notafinal-field">Nota Final</label>
-                    <input type="text" id="notafinal-field" name="notafinal" class="form-control" value="{{ old("notafinal") }}"/>
-                       @if($errors->has("notafinal"))
-                        <span class="help-block">{{ $errors->first("notafinal") }}</span>
+                    <div class="form-group @if($errors->has('notaFinal')) has-error @endif">
+                       <label for="notaFinal-field">Nota Final</label>
+                    <input type="text" id="notaFinal-field" name="notaFinal" class="form-control" value="{{ old("notaFinal") }}"/>
+                       @if($errors->has("notaFinal"))
+                        <span class="help-block">{{ $errors->first("notaFinal") }}</span>
                        @endif
                     </div>
                     <div class="form-group @if($errors->has('arquivo')) has-error @endif">
@@ -159,7 +161,7 @@
                        @endif
                     </div>
                     <div class="form-group @if($errors->has('observacoes')) has-error @endif">
-                       <label for="observacoes-field">Observacoes</label>
+                       <label for="observacoes-field">Observações</label>
                     <textarea class="form-control" id="observacoes-field" rows="3" name="observacoes">{{ old("observacoes") }}</textarea>
                        @if($errors->has("observacoes"))
                         <span class="help-block">{{ $errors->first("observacoes") }}</span>

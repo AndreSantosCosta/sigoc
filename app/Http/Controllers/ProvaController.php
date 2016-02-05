@@ -129,7 +129,7 @@ class ProvaController extends Controller {
 		$provas = Prova::whereRaw('tipoEntidade = ? and entidade_id = ?', array($tipoEntidade, $entidade_id))->paginate(10);
 		$entidade = Entidade::findOrFail($entidade_id);
 
-		$descricaoEntidade = '[' . $entidade -> nome . ' : ' . $entidade -> numero . ']'; //ir buscar à BD info sobre a pessoa que esta a ver provas
+		$descricaoEntidade = '#'.  $entidade -> numero . '  ' . $entidade -> nome; //ir buscar à BD info sobre a pessoa que esta a ver provas
 		return view('provas.index', compact('provas', 'descricaoEntidade'));
 	}
 
@@ -151,30 +151,60 @@ class ProvaController extends Controller {
 				return view('prova_binom_t_a_n_a_t2s.show', compact('prova'));
 				break;
 			default:
-				echo "Tipo de Prova não Existe!"; //meter uma view aqui 
+				return view('pages.not_found_prova');
 				break;
 		}
 		
 	}
 
-	public function criarProva ($tipoEntidade, $entidade_id){
+	public function criarProva ($tipoEntidade, $tipoProva, $entidade_id){
 
 		switch ($tipoEntidade) {
 			case 'M':
-				$prova = new ProvaMilitarTiro();
-				$eu = "Olaaaaaaaaaaaaaaaaaaaaaaaa";
-				return view('prova_militar_tiros.create', compact('prova', 'entidade_id', 'eu'));
+				if($tipoProva == "Tiro"){
+					$prova = new ProvaMilitarTiro();
+					return view('prova_militar_tiros.create', compact('prova', 'entidade_id'));
+				}else if($tipoProva == "Teorica"){
+					return view('pages.not_found_prova');
+				}else if($tipoProva == "PAF"){
+					return view('pages.not_found_prova');
+				}
 				break;
 			case 'C': 
-				$prova = new ProvaCaoTIPer();
-				return view('prova_cao_t_i_pers.create', compact('prova'));
+				if($tipoProva == "TIP"){
+					$prova = new ProvaCaoTIPer();
+					return view('prova_cao_t_i_pers.create', compact('prova', 'entidade_id'));
+				} else if($tipoProva == "TANAT1"){
+					return view('pages.not_found_prova');
+				}else if($tipoProva == "PMORF"){
+					return view('pages.not_found_prova');
+				}
 				break;
 			case 'B': 
-				$prova = new ProvaBinomTANAT2();
-				return view('prova_binom_t_a_n_a_t2s.create', compact('prova'));
+				if($tipoProva == "TANAT2"){
+					$prova = new ProvaBinomTANAT2();
+					return view('prova_binom_t_a_n_a_t2s.create', compact('prova', 'entidade_id'));
+				}else if($tipoProva == "ABO"){
+					//ESTA PROVA E AS SEGUINTES PERTENCEM À PROVA_GERAL_BINOMIOS
+					return view('pages.not_found_prova');
+				}else if($tipoProva == "ABD"){
+					return view('pages.not_found_prova');
+				}else if($tipoProva == "DOHBGA"){
+					return view('pages.not_found_prova');
+				}else if($tipoProva == "DOHP"){
+					return view('pages.not_found_prova');
+				}else if($tipoProva == "DOHEC"){
+					return view('pages.not_found_prova');
+				}else if($tipoProva == "DOHIT"){
+					return view('pages.not_found_prova');
+				}else if($tipoProva == "ABP"){
+					return view('pages.not_found_prova');
+				}else if($tipoProva == "DOD"){
+					return view('pages.not_found_prova');
+				}
 				break;
 			default:
-				echo "Tipo de Prova não Existe!"; //meter uma view aqui 
+				return view('pages.not_found_prova');
 				break;
 		}
 		
@@ -197,7 +227,7 @@ class ProvaController extends Controller {
 				return view('prova_binom_t_a_n_a_t2s.edit', compact('prova'));
 				break;
 			default:
-				echo "Tipo de Prova não Existe!"; //meter uma view aqui 
+				return view('pages.not_found_prova');
 				break;
 		}
 		

@@ -19,6 +19,7 @@
             <form action="{{ route('prova_cao_t_i_pers.update', $prova->id) }}" method="POST">
                 <input type="hidden" name="_method" value="PUT">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
                  <div class="form-group @if($errors->has('dataProva')) has-error @endif">
                        <label for="dataProva-field">Data de Prova</label>
                     <input type="date" id="dataProva-field" name="dataProva" class="form-control" value="{{ $prova->dataProva }}"/>
@@ -63,7 +64,7 @@
                        @endif
                     </div>
                     <div class="form-group @if($errors->has('submissao')) has-error @endif">
-                       <label for="submissao-field">Submissao</label>
+                       <label for="submissao-field">Submissão</label>
                     <input type="text" id="submissao-field" name="submissao" class="form-control" value="{{ $prova->submissao }}"/>
                        @if($errors->has("submissao"))
                         <span class="help-block">{{ $errors->first("submissao") }}</span>
@@ -77,7 +78,7 @@
                        @endif
                     </div> 
                     <div class="form-group @if($errors->has('buscaObj')) has-error @endif">
-                       <label for="buscaObj-field">BuscaObj</label>
+                       <label for="buscaObj-field">Busca Objeto</label>
                     <input type="text" id="buscaObj-field" name="buscaObj" class="form-control" value="{{ $prova->buscaObj }}"/>
                        @if($errors->has("buscaObj"))
                         <span class="help-block">{{ $errors->first("buscaObj") }}</span>
@@ -112,7 +113,7 @@
                        @endif
                     </div>
                     <div class="form-group @if($errors->has('notaFinal')) has-error @endif">
-                       <label for="notaFinal-field">NotaFinal</label>
+                       <label for="notaFinal-field">Nota Final</label>
                     <input type="text" id="notaFinal-field" name="notaFinal" class="form-control" value="{{ $prova->notaFinal }}"/>
                        @if($errors->has("notaFinal"))
                         <span class="help-block">{{ $errors->first("notaFinal") }}</span>
@@ -126,7 +127,7 @@
                        @endif
                     </div>
                     <div class="form-group @if($errors->has('observacoes')) has-error @endif">
-                       <label for="observacoes-field">Observacoes</label>
+                       <label for="observacoes-field">Observações</label>
                     <textarea class="form-control" id="observacoes-field" rows="3" name="observacoes">{{ $prova->observacoes }}</textarea>
                        @if($errors->has("observacoes"))
                         <span class="help-block">{{ $errors->first("observacoes") }}</span>

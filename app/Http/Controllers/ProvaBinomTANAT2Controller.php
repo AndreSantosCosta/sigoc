@@ -40,7 +40,7 @@ class ProvaBinomTANAT2Controller extends Controller {
 	public function store(Request $request)
 	{
 		$a = new ProvaBinomTANAT2();
-
+		$a->entidade_id = $request->input("entidade_id");
 		$a->dataProva = $request->input("dataProva");
         $a->avaliador = $request->input("avaliador");
         $a->local = $request->input("local");

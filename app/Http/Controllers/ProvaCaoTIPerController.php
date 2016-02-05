@@ -27,8 +27,8 @@ class ProvaCaoTIPerController extends Controller {
 	 */
 	public function create()
 	{
-		$prova_cao_t_i_pers = new ProvaCaoTIPer();
-		return view('prova_cao_t_i_pers.create', compact('prova_cao_t_i_pers'));
+		$prova = new ProvaCaoTIPer();
+		return view('prova_cao_t_i_pers.create', compact('prova'));
 	}
 
 	/**
@@ -40,7 +40,8 @@ class ProvaCaoTIPerController extends Controller {
 	public function store(Request $request)
 	{
 		$a = new ProvaCaoTIPer();
-
+		
+		$a->entidade_id = $request->input("entidade_id");
 		$a->dataProva = $request->input("dataProva");
         $a->avaliador = $request->input("avaliador");
         $a->executante = $request->input("executante");
