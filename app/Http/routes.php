@@ -15,9 +15,9 @@ Route::get('/', ['as' => 'home', function () {
     return view('pages.index');
 }]);
 
-Route::get('login', ['as' => 'login', function () {
+/*Route::get('login', ['as' => 'login', function () {
 	return view('pages.login');
-}]);
+}]);*/
 
 
 Route::resource("militars","MilitarController");

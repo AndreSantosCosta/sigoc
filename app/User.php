@@ -3,11 +3,14 @@
 namespace App;
 
 use Illuminate\Foundation\Auth\User as BaseUser;
+
 use Illuminate\Contracts\Auth\CanResetPassword;
 
 use App\Militar;
 use App\Entidade;
 use Illuminate\Database\Eloquent\Model;
+
+
 //use DB;
 
 class User extends BaseUser
@@ -18,7 +21,7 @@ class User extends BaseUser
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'tipo', 'password'
+        'name', 'email', 'password'
     ];
 
     /**
@@ -82,15 +85,23 @@ class User extends BaseUser
     return Enumeraveis::getTiposFromKey($this->tipo);
   }
 
-
- /*public function setPasswordAttribute($password)
+ public function setPasswordAttribute($password)
     {   
         $this->attributes['password'] = \Hash::make ($password);
         //$password = bcrypt('secret');
         //$password = Hash::make('secret');
-    }*/
+    }
 
 
+public static function tipoUserLogado(){
+    if (!\Auth::check())
+        return "*";
+    $user = User::whereRaw('name=?', [\Auth::user()->name]);
+    if ($user->count()==1) {
+        return $user->first()->tipo;
+    }
+    return "";
+  }
 
 
 

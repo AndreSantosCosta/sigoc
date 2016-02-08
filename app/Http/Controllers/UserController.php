@@ -7,6 +7,7 @@ use App\Militar;
 use App\Enumeraveis;
 use Illuminate\Http\Request;
 
+
 class UserController extends Controller {
 
 	/**
@@ -28,9 +29,12 @@ class UserController extends Controller {
 	 */
 	public function create()
 	{
+				/*if (User::tipoUserLogado()=='A'){
+			echo abort(403, 'Acesso não autorizado');
+		}*/
 		$user = new User();
 		$listaTipoMilitar =  Enumeraveis::getTiposMilitarList();
-		$listaNomeProprioMilitar = Militar::all('nomeProprio', 'id');
+		//$listaNomeProprioMilitar = Militar::all('nomeProprio', 'id');
 		//$listaApelidoMilitar = Militar::all('apelido', 'id');
 		return view('users.create', compact('user', 'listaTipoMilitar'));
 	}
@@ -43,12 +47,21 @@ class UserController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+		/*if (User::tipoUserLogado()=='A'){
+			echo abort(403, 'Acesso não autorizado');
+		}*/
 		$a = new User();
 		$a->name = $request->input("name");
 		$a->email = $request->input("email");
 		$a->password = $request->input("password");
         $a->tipo = $request->input("tipo");
-        $a->inativo = $request->input("NomeInativo");
+        //$a->inativo = $request->input("NomeInativo");
+        if($request->input("inativo")==""){
+			$a->inativo = false;
+
+		}else{
+			$a->inativo = true;
+		}
 		$a->save();
 		return redirect()->route('users.index')->with('message', 'Item created successfully.');
 	}

@@ -1,3 +1,7 @@
+<?php
+use App\User;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -44,22 +48,25 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-left">
+           <?php if (Auth::check()) {?>
             <li>
-              <a href="{{ route('militars.index') }}">Militar</a>
+              <a href="{{ route('militars.index') }}">Militares</a>
+            </li>
+            <?php }?>
+            <?php if (User::tipoUserLogado()=='A' || User::tipoUserLogado()=='U') {?>
+            <li>
+              <a href="{{ route('caos.index') }}">Cães</a>
             </li>
             <li>
-              <a href="{{ route('caos.index') }}">Cão</a>
-            </li>
-            <li>
-              <a href="{{ route('binomios.index') }}">Binómio</a>
+              <a href="{{ route('binomios.index') }}">Binómios</a>
             </li>
             <li>
               <a href="{{ route('provas.index') }}">Provas</a>
             </li>
-           
             <li>  
-              <a href="{{ route('users.index') }}">Users</a>
+              <a href="{{ route('users.index') }}">Utilizadores</a>
             </li>
+           <?php }?>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             @if(!Auth::check())

@@ -3,7 +3,7 @@
 @section('header')
 <div class="col-md-12">
   <div class="page-header">
-    <h1><i <i class="glyphicon glyphicon-edit"></i> Editar User #{{$user->name}}</h1>
+    <h1><i <i class="glyphicon glyphicon-edit"></i> Editar Utilizador #{{$user->name}}</h1>
   </div>
 </div>
 @endsection
@@ -44,9 +44,10 @@
 
        <div class="form-group @if($errors->has('tipo')) has-error @endif">
         <label for="tipo-field">Tipo</label>
+        
         <select class="form-control" name="tipo">
-          @foreach($listaTipoMilitar as $chave => $valor)
-          <option value="{{$chave}}" {{ ($user->tipo == $valor)? "selected" : ""}}>{{$valor}}</option>
+          @foreach($listaTipoMilitar as $chave => $descricao)
+          <option value="{{$chave}}" {{ ($user->tipo == $chave)? " selected" : ""}}>{{$descricao}}</option>
           @endforeach
         </select>
         @if($errors->has("tipo"))
@@ -63,7 +64,7 @@
       </div>
 
 
-
+      
 
       <div class="well well-sm">
         <button type="submit" class="btn btn-primary">Guardar</button>
