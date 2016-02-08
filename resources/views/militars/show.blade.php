@@ -28,18 +28,10 @@
  
         <form action="#">
            <div class="col-md-12">
-           <!--  <div class="form-group">
-                <label for="nome">ID</label>
-                <p class="form-control-static"></p>
-            </div> -->
             <div class="form-group">
                <label for="num_mecanografico">NUMERO MECANOGRAFICO</label>
                <p class="form-control-static">{{$militar->num_mecanografico}}</p>
            </div>
-           <!-- <div class="form-group">
-               <label for="user_id">USER_ID</label>
-               <p class="form-control-static">{{$militar->user_id}}</p>
-           </div> -->
            <div class="form-group">
                <label for="posto_id">POSTO</label>
                <p class="form-control-static">{{$militar->NomePosto}}</p>

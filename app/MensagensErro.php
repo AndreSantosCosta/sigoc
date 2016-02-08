@@ -6,22 +6,27 @@ namespace App;
 class MensagensErro
 {
 
+	protected $fillable = [
+        'text', 'date',
+    ];
+
 	public function rules()
 	{
 		return [
-		'email' => 'required|email'
-		'password' => 'required|min:8'
 		'text' => 'required'
 		'date' => 'required'
 
 		];
 	}
 
-	$messages = [
-	'required' => 'The :attribute field is required.',
-	'required|email' => 'We need to know your e-mail address!',
+	protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'name' => 'required|max:255',
+            'date' => 'required'
+        ]);
+    }
 
-	];
 
 
 }

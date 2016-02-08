@@ -59,7 +59,12 @@ class MilitarController extends Controller {
 		$a->data_nascim = $request->input("data_nascim");
 		$a->grupo_sang = $request->input("grupo_sang");
 		$a->sexo = $request->input("sexo");
-		$a->inativo = $request->input("NomeInativo");
+		if($request->input("inativo")==""){
+			$a->inativo = false;
+
+		}else{
+			$a->inativo = true;
+		}
 		$a->observacoes = $request->input("observacoes");
 		$a->unidade_id = $request->input("unidade_id");
         if(!trim($request->input("motivo_inativo")==" ")){

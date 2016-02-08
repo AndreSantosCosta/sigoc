@@ -4,6 +4,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Binomio;
+use App\Militar;
+use App\Cao;
 use App\Unidade;
 use App\VertenteBinomio;
 use Illuminate\Http\Request;
@@ -29,12 +31,13 @@ class BinomioController extends Controller {
 	 * @return Response
 	 */
 	public function create()
-	{
+	{ 
 		$binomio = new Binomio();
 		$listaVertente = VertenteBinomio::all('descricao', 'id');
 		$listaUnidades = Unidade::all('descricao', 'id');
-		
-		return view('binomios.create', compact('binomio', 'listaVertente','listaUnidades'));
+		$listaMilitares = Militar::all('nome', 'num_mecanografico', 'id');
+		$listaCaes = Cao::all('nomeCao', 'num_matricula', 'id');
+		return view('binomios.create', compact('binomio', 'listaVertente','listaUnidades', 'listaMilitares', 'listaCaes'));
 	} 
 
 	/**
@@ -73,7 +76,9 @@ class BinomioController extends Controller {
 		$binomio = Binomio::findOrFail($id);
 		$listaVertente = VertenteBinomio::all('descricao', 'id');
 		$listaUnidades = Unidade::all('descricao', 'id');
-		return view('binomios.show', compact('binomio', 'listaVertente','listaUnidades'));
+		$listaMilitares = Militar::all('nome', 'num_mecanografico', 'id');
+		$listaCaes = Cao::all('nomeCao', 'num_matricula', 'id');
+		return view('binomios.show', compact('binomio', 'listaVertente','listaUnidades', 'listaMilitares', 'listaCaes'));
 	}
 
 	/**
@@ -87,7 +92,9 @@ class BinomioController extends Controller {
 		$binomio = Binomio::findOrFail($id);
 		$listaVertente = VertenteBinomio::all('descricao', 'id');
 		$listaUnidades = Unidade::all('descricao', 'id');
-		return view('binomios.edit', compact('binomio', 'listaVertente','listaUnidades'));
+		$listaMilitares = Militar::all('nome', 'num_mecanografico', 'id');
+		$listaCaes = Cao::all('nomeCao', 'num_matricula', 'id');
+		return view('binomios.edit', compact('binomio', 'listaVertente','listaUnidades', 'listaMilitares', 'listaCaes'));
 	}  
 
 	/**

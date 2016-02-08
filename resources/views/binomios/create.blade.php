@@ -25,37 +25,30 @@
 					<span class="help-block">{{ $errors->first("data_inicio") }}</span>
 					@endif
 				</div>
-<!--        <div class="form-group @if($errors->has('NumMecanog')) has-error @endif">
-             <label for="NumMecanog-field">Número Mecanográfico</label>
-             <input type="text" id="NumMecanog-field" name="NumMecanog" class="form-control" value="{{ old("NumMecanog") }}"/>
-             @if($errors->has("NumMecanog"))
-             <span class="help-block">{{ $errors->first("NumMecanog") }}</span>
-             @endif
-         </div> 
-         <div class="form-group @if($errors->has('NumMatricula')) has-error @endif">
-             <label for="NumMatricula-field">Número Matricula</label>
-             <input type="text" id="NumMatricula-field" name="NumMatricula" class="form-control" value="{{ old("NumMatricula") }}"/>
-             @if($errors->has("NumMatricula"))
-             <span class="help-block">{{ $errors->first("NumMatricula") }}</span>
-             @endif
-           </div>  
 
- -->  
-        <div class="form-group @if($errors->has('militar_id')) has-error @endif">
-            <label for="militar_id-field">Número Mecanográfico</label>
-            <input type="text" id="militar_id-field" name="militar_id" class="form-control" value="{{ old("militar_id") }}"/>
-            @if($errors->has("militar_id"))
-            <span class="help-block">{{ $errors->first("militar_id") }}</span>
-            @endif
-          </div> 
+          <div class="form-group @if($errors->has('militar_id')) has-error @endif">
+           <label for="militar_id-field">Número Mecanográfico</label>
+           <select class="form-control" name="militar_id">
+             @foreach($listaMilitares as $item)
+             <option value="{{$item->id}}">{{$item->num_mecanografico}} - {{$item->nome}}</option>
+             @endforeach
+           </select>
+           @if($errors->has("militar_id"))
+           <span class="help-block">{{ $errors->first("militar_id") }}</span>
+           @endif
+         </div>
 
-          <div class="form-group @if($errors->has('cao_id')) has-error @endif">
-            <label for="cao_id-field">Número Matricula</label>
-            <input type="text" id="cao_id-field" name="cao_id" class="form-control" value="{{ old("cao_id") }}"/>
-            @if($errors->has("cao_id"))
-            <span class="help-block">{{ $errors->first("cao_id") }}</span>
-            @endif
-          </div>
+         <div class="form-group @if($errors->has('cao_id')) has-error @endif">
+           <label for="cao_id-field">Número Matricula</label>
+           <select class="form-control" name="cao_id">
+             @foreach($listaCaes as $item)
+             <option value="{{$item->id}}">{{$item->num_matricula}} - {{$item->nomeCao}}</option>
+             @endforeach
+           </select>
+           @if($errors->has("cao_id"))
+           <span class="help-block">{{ $errors->first("cao_id") }}</span>
+           @endif
+         </div>
 
           <div class="form-group @if($errors->has('vertente')) has-error @endif">
            <label for="vertente-field">Vertente</label>
@@ -150,7 +143,7 @@
           <a class="btn btn-link pull-right" href="{{ route('binomios.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
         </div>
       </div>
-
+ 
     </div>
   </form>
 

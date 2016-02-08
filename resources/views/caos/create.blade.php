@@ -60,8 +60,6 @@
        @endif
      </div>
 
-
-
      <div class="form-group @if($errors->has('origem')) has-error @endif">
        <label for="origem-field">Origem</label>
        <select class="form-control" name="origem">
@@ -127,16 +125,15 @@
        @if($errors->has("unidade_id"))
        <span class="help-block">{{ $errors->first("unidade_id") }}</span>
        @endif
-     </div>
+     </div> 
 
-     <div class="form-group @if($errors->has('inativo')) has-error @endif">
+    <div class="form-group @if($errors->has('inativo')) has-error @endif">
       <label for="inativo-field">Inativo</label>
-      <input type="checkbox" id="inativo-field" name="inativo" value="{{ old("inativo") }}"/>
+      <input type="checkbox" id="inativo-field" name="inativo"/>
       @if($errors->has("inativo"))
       <span class="help-block">{{ $errors->first("inativo") }}</span>
       @endif
     </div>
-
     <div class="form-group @if($errors->has('data_inativo')) has-error @endif">
      <label for="data_inativo-field">Data de Inativação</label>
      <input type="date" id="data_inativo-field" name="data_inativo" class="form-control" value="{{ old("data_inativo") }}"/>

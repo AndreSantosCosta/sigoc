@@ -27,20 +27,28 @@
          <span class="help-block">{{ $errors->first("data_inicio") }}</span>
          @endif
        </div> 
-       <div class="form-group @if($errors->has('NumMatricula')) has-error @endif">
-         <label for="NumMatricula-field">Numero Matricula</label>
-         <input type="text" id="NumMatricula-field" name="NumMatricula" class="form-control" value="{{ $binomio->NumMatricula }}"/>
-         @if($errors->has("NumMatricula"))
-         <span class="help-block">{{ $errors->first("NumMatricula") }}</span>
+      <div class="form-group @if($errors->has('cao_id')) has-error @endif">
+         <label for="cao_id-field">Número Matricula</label>
+         <select class="form-control" name="cao_id">
+           @foreach($listaCaes as $item)
+           <option value="{{$item->id}}" {{ ($binomio->cao_id== $item->id)? "selected" : ""}}>{{$item->num_matricula}} - {{$item->nomeCao}}</option>
+           @endforeach
+         </select>
+         @if($errors->has("cao_id"))
+         <span class="help-block">{{ $errors->first("cao_id") }}</span>
          @endif
-       </div>
-       <div class="form-group @if($errors->has('NumMecanog')) has-error @endif">
-         <label for="NumMecanog-field">Numero Mecanográfico</label>
-         <input type="text" id="NumMecanog-field" name="NumMecanog" class="form-control" value="{{ $binomio->NumMecanog }}"/>
-         @if($errors->has("NumMecanog"))
-         <span class="help-block">{{ $errors->first("NumMecanog") }}</span>
+       </div> 
+      <div class="form-group @if($errors->has('militar_id')) has-error @endif">
+         <label for="militar_id-field">Número Mecanográfico</label>
+         <select class="form-control" name="militar_id">
+           @foreach($listaMilitares as $item)
+           <option value="{{$item->id}}" {{ ($binomio->militar_id== $item->id)? "selected" : ""}}>{{$item->num_mecanografico}} - {{$item->nome}}</option>
+           @endforeach
+         </select>
+         @if($errors->has("militar_id"))
+         <span class="help-block">{{ $errors->first("militar_id") }}</span>
          @endif
-       </div>
+       </div> 
        <div class="form-group @if($errors->has('vertente')) has-error @endif">
          <label for="vertente-field">Vertente</label>
          <select class="form-control" name="vertente">

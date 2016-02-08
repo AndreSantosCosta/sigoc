@@ -66,7 +66,7 @@
        <label for="grupo_sang-field">Grupo Sanguineo</label>
        <select class="form-control" name="grupo_sang">
          @foreach($gruposSang as $chave => $valor)
-         <option value="{{$chave}}" {{ ($militar->grupo_sang== $valor)? "selected" : ""}}>{{$valor}}</option>
+         <option value="{{$chave}}" {{ ($militar->grupo_sang== $chave)? "selected" : ""}}>{{$valor}}</option>
          @endforeach
        </select>
        @if($errors->has("grupo_sang"))
@@ -77,8 +77,8 @@
     <div class="form-group @if($errors->has('sexo')) has-error @endif">
        <label for="sexo-field">Sexo</label>
        <select class="form-control" name="sexo">
-         @foreach($listaSexo as $chave => $valor)
-         <option value="{{$chave}}" {{ ($militar->sexo== $valor)? "selected" : ""}}>{{$valor}}</option>
+         @foreach($listaSexo as $chave => $descricao)
+         <option value="{{$chave}}" {{ ($militar->sexo== $chave)? "selected" : ""}}>{{$descricao}}</option>
          @endforeach
        </select>
        @if($errors->has("sexo"))
@@ -97,7 +97,7 @@
        <span class="help-block">{{ $errors->first("unidade_id") }}</span>
        @endif
      </div>
-
+ 
       <div class="form-group @if($errors->has('inativo')) has-error @endif">
        <label for="inativo-field">Inativo</label>
         <input type="checkbox" id="inativo-field" name="inativo" {{ ($militar->inativo==1)? "checked" : ""}}/>

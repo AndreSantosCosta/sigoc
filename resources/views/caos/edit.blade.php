@@ -54,8 +54,8 @@
       <div class="form-group @if($errors->has('sexo')) has-error @endif">
         <label for="sexo-field">Sexo</label>
         <select class="form-control" name="sexo">
-          @foreach($listaSexo as $chave => $valor)
-          <option value="{{$chave}}" {{ ($cao->sexo== $valor)? "selected" : ""}}>{{$valor}}</option>
+          @foreach($listaSexo as $chave => $descricao)
+          <option value="{{$chave}}" {{ ($cao->sexo== $chave)? "selected" : ""}}>{{$descricao}}</option>
           @endforeach
         </select>
         @if($errors->has("sexo"))
@@ -135,13 +135,13 @@
       @endif
     </div>
 
-    <div class="form-group @if($errors->has('inativo')) has-error @endif">
-     <label for="inativo-field">Inativo</label>
-     <input type="checkbox" id="inativo-field" name="inativo" {{ ($cao->inativo==1)? "checked" : ""}}/>
-     @if($errors->has("inativo"))
-     <span class="help-block">{{ $errors->first("inativo") }}</span>
-     @endif
-   </div>
+      <div class="form-group @if($errors->has('inativo')) has-error @endif">
+       <label for="inativo-field">Inativo</label>
+        <input type="checkbox" id="inativo-field" name="inativo" {{ ($cao->inativo==1)? "checked" : ""}}/>
+       @if($errors->has("inativo"))
+       <span class="help-block">{{ $errors->first("inativo") }}</span>
+       @endif
+     </div>
    <div class="form-group @if($errors->has('data_inativo')) has-error @endif">
      <label for="data_inativo-field">Data de Inativação</label>
      <input type="date" id="data_inativo-field" name="data_inativo" class="form-control" value="{{ $cao->data_inativo  }}"/>

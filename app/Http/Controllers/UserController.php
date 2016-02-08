@@ -30,7 +30,7 @@ class UserController extends Controller {
 	{
 		$user = new User();
 		$listaTipoMilitar =  Enumeraveis::getTiposMilitarList();
-		//$listaNomeProprioMilitar = Militar::all('nomeProprio', 'id');
+		$listaNomeProprioMilitar = Militar::all('nomeProprio', 'id');
 		//$listaApelidoMilitar = Militar::all('apelido', 'id');
 		return view('users.create', compact('user', 'listaTipoMilitar'));
 	}
