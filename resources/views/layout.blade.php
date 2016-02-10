@@ -50,19 +50,19 @@ use App\User;
           <ul class="nav navbar-nav navbar-left">
             <?php if (Auth::check()) {?>
             <li>
-              <a href="{{ route('militars.index') }}">Militar</a>
+              <a href="{{ route('militars.index') }}">Militares</a>
             </li>
             <li>
-              <a href="{{ route('caos.index') }}">Cão</a>
+              <a href="{{ route('caos.index') }}">Cães</a>
             </li>
             <li>
-              <a href="{{ route('binomios.index') }}">Binómio</a>
+              <a href="{{ route('binomios.index') }}">Binómios</a>
             </li>
             <li>
               <a href="{{ route('provas.index') }}">Provas</a>
             </li>
             <?php }?>
-            <?php if (User::tipoUserLogado()=='A' || User::tipoUserLogado()=='U') {?>
+            <?php if (User::tipoUserLogado()=='A') {?>
             <li>  
               <a href="{{ route('users.index') }}">Utilizadores</a>
             </li>
@@ -92,12 +92,13 @@ use App\User;
         <!--/.nav-collapse -->
       </div>
       <!-- /.container -->
-    </nav>
-
-    <!-- DIV AMARELA -->
+          <!-- DIV AMARELA -->
     <div id="barra-navbar">
     </div>
     <!-- FIM DIV AMARELA -->
+    </nav>
+
+
 
 <!-- Page Content -->
 <div class="geral_container">

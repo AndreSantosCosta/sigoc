@@ -4,18 +4,8 @@
 
 body{
 	padding-top: 44px;
-	/*background-image: url('/assets/img/fundo_formas.jpg');*/
-	/*background-position-y: 60px;*/
-    /*background-repeat: repeat;*/
     background-color: #080826;
 }
-
-/*html, body {
-	padding-top: 44px;
-	background-image: url ("/img/sigoc.jpg");
-	background-image: url('img/barra_nav.png');
-	
-}*/
 
 /* ************************************************************************** */
 /* Navbar da Página                                                           */
@@ -43,11 +33,6 @@ body{
     border-bottom: 0px;
 }
 
-/*.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
-	background-color: #080826;
-	color: #a37b40;
-}*/
-
 .navbar-inverse .navbar-nav>li>a{
 	color: #ffffff;
 }
@@ -72,7 +57,7 @@ body{
 
 #barra-navbar{
 	background-color: #a37b40;
-    height: 16px;
+    height: 11px;
 }
 
 /* ************************************************************************** */
@@ -84,8 +69,6 @@ body{
 /* ****************************************************** */
 
 .geral_container{
-    /*text-align: center;*/
-    /*background-image: url('/assets/img/sigoc_1.jpg');*/
     background-color: #ffffff;
     margin: 30px;
     opacity: 0.8;
@@ -130,29 +113,11 @@ body{
 	padding: 0 37px 0 37px;
 }
 
-/*.geral_container .container .row .col-lg-12 .sub-intro-text img.img-barra-left, .geral_container .container .row .col-lg-12 .sub-intro-text img.img-barra-right{
-	line-height: 66px;
-}*/
-
-/*.geral_container .container .row .col-lg-12 .sub-intro-text .sub-intro-text-left-color{
-	background-color: red;
-}
-.geral_container .container .row .col-lg-12 .sub-intro-text .sub-intro-text-right-color{
-	background-color: red;
-}*/
-
-/*
-.starter-template{
-	background-color: red;
-}*/
-
 /* ****************************************************** */
 /* 		Comum na Página Login e Página Registar           */
 /* ****************************************************** */
 
 .container_login, .container_register{
-    /*padding-top: 100px;
-    padding-bottom: 100px;*/
     padding: 144px 455px 144px 455px;
     background-image: url('/assets/img/login_register_formas.png');
     background-repeat: no-repeat;
@@ -164,14 +129,7 @@ body{
 /* 		Página Login                                      */
 /* ****************************************************** */
 
-/*.container_login{
-    padding: 144px 455px 144px 455px;
-    background-image: url('/assets/img/login_formas.png');
-    background-repeat: no-repeat;
-}*/
-
 .container_login .sub-container_login{
-	/*background-color: #a37b40;*/
 	background-color: #080826;
 	border-radius: 10px;
 	border-width: 5px;
@@ -204,18 +162,7 @@ body{
 /* 		Página Registar                                   */
 /* ****************************************************** */
 
-/*.container_register{*/
-    /*padding-top: 100px;
-    padding-bottom: 100px;*/
-    
-    /*padding: 144px 455px 144px 455px;
-    background-image: url('/assets/img/login_formas.png');
-    background-repeat: no-repeat;
-    height: 556px;
-}*/
-
 .container_register .sub-container_register{
-	/*background-color: #a37b40;*/
 	background-color: #080826;
 	border-radius: 10px;
 	border-width: 5px;

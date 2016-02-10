@@ -21,7 +21,7 @@ use App\User;
             <form action="{{ route('prova_cao_t_i_pers.store') }}" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-               <input type="text" id="entidade_id-field" name="entidade_id" value="{{ $entidade_id }}">
+               <input type="hidden" id="entidade_id-field" name="entidade_id" value="{{ $entidade_id }}">
 
                 <div class="form-group @if($errors->has('dataProva')) has-error @endif">
                        <label for="dataProva-field">Data Prova</label>
