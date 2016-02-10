@@ -7,7 +7,7 @@ class Enumeraveis
 {
 	public static function getSexoList(){
 		return array('F'=>'Feminino', 'M'=>'Masculino');
-	} 
+	}
 
 	public static function getSexoFromKey($chave){
 		return Enumeraveis::getSexoList()[$chave];

@@ -1,15 +1,21 @@
+<?php
+use App\User;
+?>
+
 @extends('layout')
 @section('header')
 <div class="page-header">
         <h1>ProvaCaoMPMorves / Show #{{$prova_cao_m_p_morf->id}}</h1>
-        <form action="{{ route('prova_cao_m_p_morves.destroy', $prova_cao_m_p_morf->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <div class="btn-group pull-right" role="group" aria-label="...">
-                <a class="btn btn-warning btn-group" role="group" href="{{ route('prova_cao_m_p_morves.edit', $prova_cao_m_p_morf->id) }}"><i class="glyphicon glyphicon-edit"></i> Edit</a>
-                <button type="submit" class="btn btn-danger">Delete <i class="glyphicon glyphicon-trash"></i></button>
-            </div>
-        </form>
+        <?php if (User::tipoUserLogado()=='A') {?>
+            <form action="{{ route('prova_cao_m_p_morves.destroy', $prova_cao_m_p_morf->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <div class="btn-group pull-right" role="group" aria-label="...">
+                    <a class="btn btn-warning btn-group" role="group" href="{{ route('prova_cao_m_p_morves.edit', $prova_cao_m_p_morf->id) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>
+                    <button type="submit" class="btn btn-danger">Apagar <i class="glyphicon glyphicon-trash"></i></button>
+                </div>
+            </form>
+        <?php }?>
     </div>
 @endsection
 
@@ -68,7 +74,7 @@
                 </div>
             </form>
 
-            <a class="btn btn-link" href="{{ route('prova_cao_m_p_morves.index') }}"><i class="glyphicon glyphicon-backward"></i>  Back</a>
+            <a class="btn btn-link" href="{{ route('prova_cao_m_p_morves.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
 
         </div>
     </div>

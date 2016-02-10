@@ -1,16 +1,22 @@
+<?php
+use App\User;
+?>
+
 @extends('layout')
 @section('header')
 <div class="col-md-12">
 <div class="page-header">
         <h1>Ver Prova TANAT2 Binomio #<a href="{{ route('goEntidade', array('id'=>$prova->entidade_id)) }}">{{$prova->NumIdentificacao}}</a></h1>
-        <form action="{{ route('prova_binom_t_a_n_a_t2s.destroy', $prova->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <div class="btn-group pull-right" role="group" aria-label="...">
-                <a class="btn btn-warning btn-group" role="group" href="{{ route('editarProva', array('id'=>$prova->id)) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>
-                <button type="submit" class="btn btn-danger">Apagar <i class="glyphicon glyphicon-trash"></i></button>
-            </div>
-        </form>
+            <?php if (User::tipoUserLogado()=='A') {?>
+                <form action="{{ route('prova_binom_t_a_n_a_t2s.destroy', $prova->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <div class="btn-group pull-right" role="group" aria-label="...">
+                        <a class="btn btn-warning btn-group" role="group" href="{{ route('editarProva', array('id'=>$prova->id)) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>
+                        <button type="submit" class="btn btn-danger">Apagar <i class="glyphicon glyphicon-trash"></i></button>
+                    </div>
+                </form>
+            <?php }?>
     </div>
   </div>
 @endsection 

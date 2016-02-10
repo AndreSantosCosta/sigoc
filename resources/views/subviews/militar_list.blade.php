@@ -34,8 +34,6 @@ use App\User;
                         <?php }?>
                         <?php if (User::tipoUserLogado()=='A') {?>
                             <a class="btn btn-xs btn-warning" href="{{ route('militars.edit', $militar->id) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>
-                         <?php }?>
-                        <?php if (User::tipoUserLogado()=='A') {?>
                             <form action="{{ route('militars.destroy', $militar->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">

@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\User;
 use App\ProvaMilitarPAFisica;
 use Illuminate\Http\Request;
 
@@ -27,6 +27,9 @@ class ProvaMilitarPAFisicaController extends Controller {
 	 */
 	public function create()
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		return view('prova_militar_p_a_fisicas.create');
 	}
 
@@ -38,6 +41,9 @@ class ProvaMilitarPAFisicaController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova_militar_p_a_fisica = new ProvaMilitarPAFisica();
 
 		$prova_militar_p_a_fisica->IdProvaMilitar = $request->input("IdProvaMilitar");
@@ -76,6 +82,9 @@ class ProvaMilitarPAFisicaController extends Controller {
 	 */
 	public function edit($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova_militar_p_a_fisica = ProvaMilitarPAFisica::findOrFail($id);
 
 		return view('prova_militar_p_a_fisicas.edit', compact('prova_militar_p_a_fisica'));
@@ -90,6 +99,9 @@ class ProvaMilitarPAFisicaController extends Controller {
 	 */
 	public function update(Request $request, $id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova_militar_p_a_fisica = ProvaMilitarPAFisica::findOrFail($id);
 
 		$prova_militar_p_a_fisica->IdProvaMilitar = $request->input("IdProvaMilitar");
@@ -115,6 +127,9 @@ class ProvaMilitarPAFisicaController extends Controller {
 	 */
 	public function destroy($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova_militar_p_a_fisica = ProvaMilitarPAFisica::findOrFail($id);
 		$prova_militar_p_a_fisica->delete();
 

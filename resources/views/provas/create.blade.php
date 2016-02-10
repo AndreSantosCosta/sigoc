@@ -1,3 +1,7 @@
+<?php
+use App\User;
+?>
+
 @extends('layout')
 
 @section('header')
@@ -70,9 +74,10 @@
                         <span class="help-block">{{ $errors->first("observacoes") }}</span>
                        @endif
                     </div> 
-                <div class="well well-sm"> 
+                <div class="well well-sm">
+                <?php if (User::tipoUserLogado()=='A' || User::tipoUserLogado()=='G') {?> 
                     <button type="submit" class="btn btn-primary">Criar</button>
-         
+                <?php }?>
                     <a class="btn btn-link pull-right" href="{{ route('provas.index') }}"><i class="glyphicon glyphicon-backward"></i> Voltar </a>
                 </div>
             </form>

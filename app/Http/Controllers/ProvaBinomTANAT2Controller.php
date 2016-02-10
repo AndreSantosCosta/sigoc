@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\User;
 use App\ProvaBinomTANAT2;
 use Illuminate\Http\Request;
 
@@ -27,6 +27,9 @@ class ProvaBinomTANAT2Controller extends Controller {
 	 */
 	public function create()
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova_binom_t_a_n_a_t2s = new ProvaBinomTANAT2();
 		return view('prova_binom_t_a_n_a_t2s.create', compact("prova_binom_t_a_n_a_t2s"));
 	}
@@ -39,6 +42,9 @@ class ProvaBinomTANAT2Controller extends Controller {
 	 */
 	public function store(Request $request)
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$a = new ProvaBinomTANAT2();
 		$a->entidade_id = $request->input("entidade_id");
 		$a->dataProva = $request->input("dataProva");
@@ -89,6 +95,9 @@ class ProvaBinomTANAT2Controller extends Controller {
 	 */
 	public function edit($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova_binom_t_a_n_a_t2 = ProvaBinomTANAT2::findOrFail($id);
 
 		return view('prova_binom_t_a_n_a_t2s.edit', compact('prova_binom_t_a_n_a_t2'));
@@ -103,8 +112,10 @@ class ProvaBinomTANAT2Controller extends Controller {
 	 */
 	public function update(Request $request, $id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$a = ProvaBinomTANAT2::findOrFail($id);
-		
 		$a->dataProva = $request->input("dataProva");
         $a->avaliador = $request->input("avaliador");
         $a->local = $request->input("local");
@@ -140,6 +151,9 @@ class ProvaBinomTANAT2Controller extends Controller {
 	 */
 	public function destroy($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$a = ProvaBinomTANAT2::findOrFail($id);
 		$a->delete();
 

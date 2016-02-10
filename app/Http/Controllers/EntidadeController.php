@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\User;
 use App\Entidade;
 use App\Militar;
 use App\Cao;
@@ -30,6 +30,9 @@ class EntidadeController extends Controller {
 	 */
 	public function create()
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		return view('entidades.create');
 	}
 
@@ -41,8 +44,10 @@ class EntidadeController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$entidade = new Entidade();
- 
 		$entidade->tipoEntidade = $request->input("tipoEntidade");
         $entidade->nome = $request->input("nome");
         $entidade->inativo = $request->input("inativo");
@@ -80,6 +85,9 @@ class EntidadeController extends Controller {
 	 */
 	public function edit($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$entidade = Entidade::findOrFail($id);
 
 		return view('entidades.edit', compact('entidade'));
@@ -94,8 +102,10 @@ class EntidadeController extends Controller {
 	 */
 	public function update(Request $request, $id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$entidade = Entidade::findOrFail($id);
-
 		$entidade->tipoEntidade = $request->input("tipoEntidade");
         $entidade->nome = $request->input("nome");
         $entidade->inativo = $request->input("inativo");
@@ -120,6 +130,9 @@ class EntidadeController extends Controller {
 	 */
 	public function destroy($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$entidade = Entidade::findOrFail($id);
 		$entidade->delete();
 
@@ -145,7 +158,7 @@ class EntidadeController extends Controller {
 				return view('binomios.show', compact('binomio'));
 				break;
 			default:
-				echo "Tipo de Prova não Existe!"; //meter uma view aqui 
+				echo "Tipo de Entidade não Existe!";
 				break;
 		}
 	}

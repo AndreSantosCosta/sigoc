@@ -48,21 +48,21 @@ use App\User;
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-left">
-           <?php if (Auth::check()) {?>
+            <?php if (Auth::check()) {?>
             <li>
-              <a href="{{ route('militars.index') }}">Militares</a>
-            </li>
-            <?php }?>
-            <?php if (User::tipoUserLogado()=='A' || User::tipoUserLogado()=='U') {?>
-            <li>
-              <a href="{{ route('caos.index') }}">Cães</a>
+              <a href="{{ route('militars.index') }}">Militar</a>
             </li>
             <li>
-              <a href="{{ route('binomios.index') }}">Binómios</a>
+              <a href="{{ route('caos.index') }}">Cão</a>
+            </li>
+            <li>
+              <a href="{{ route('binomios.index') }}">Binómio</a>
             </li>
             <li>
               <a href="{{ route('provas.index') }}">Provas</a>
             </li>
+            <?php }?>
+            <?php if (User::tipoUserLogado()=='A' || User::tipoUserLogado()=='U') {?>
             <li>  
               <a href="{{ route('users.index') }}">Utilizadores</a>
             </li>

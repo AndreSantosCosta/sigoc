@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\User;
 use App\Prova;
 use App\Enumeraveis;
 use App\Entidade;
@@ -32,6 +33,9 @@ class ProvaController extends Controller {
 	 */
 	public function create()
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova = new Prova();
 		$listaEntidade = Enumeraveis::getEntidadeList();
 		$listaTipoProva = Enumeraveis::getTiposProvasList();
@@ -47,6 +51,9 @@ class ProvaController extends Controller {
 	 */ 
 	public function store(Request $request)
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova = new Prova();
 		$prova->tipoEntidade = $request->input("tipoEntidade");
 		$prova->tipoProva = $request->input("tipoProva");
@@ -81,6 +88,9 @@ class ProvaController extends Controller {
 	 */
 	public function edit($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova = Prova::findOrFail($id);
 		$entidadeProva = $prova ->entidade_id;
 		$entidade = Entidade::findOrFail($entidadeProva);
@@ -97,6 +107,9 @@ class ProvaController extends Controller {
 	 */
 	public function update(Request $request, $id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova = Prova::findOrFail($id);
 
 		$prova->tipoEntidade = $request->input("tipoEntidade");
@@ -119,6 +132,9 @@ class ProvaController extends Controller {
 	 */
 	public function destroy($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova = Prova::findOrFail($id);
 		$prova->delete();
 
@@ -158,6 +174,9 @@ class ProvaController extends Controller {
 	}
 
 	public function criarProva ($tipoEntidade, $tipoProva, $entidade_id){
+				if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 
 		switch ($tipoEntidade) {
 			case 'M':
@@ -211,6 +230,9 @@ class ProvaController extends Controller {
 	}
 
 	public function editarProva ($id){
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova = Prova::findOrFail($id);
 		$tipoProva = $prova ->tipoProva;
 		switch ($tipoProva) {

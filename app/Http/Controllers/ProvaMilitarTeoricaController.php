@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\User;
 use App\ProvaMilitarTeorica;
 use Illuminate\Http\Request;
 
@@ -27,6 +27,9 @@ class ProvaMilitarTeoricaController extends Controller {
 	 */
 	public function create()
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		return view('prova_militar_teoricas.create');
 	}
 
@@ -38,6 +41,9 @@ class ProvaMilitarTeoricaController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova_militar_teorica = new ProvaMilitarTeorica();
 
 		$prova_militar_teorica->IdProvaMilitar = $request->input("IdProvaMilitar");
@@ -72,6 +78,9 @@ class ProvaMilitarTeoricaController extends Controller {
 	 */
 	public function edit($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova_militar_teorica = ProvaMilitarTeorica::findOrFail($id);
 
 		return view('prova_militar_teoricas.edit', compact('prova_militar_teorica'));
@@ -86,6 +95,9 @@ class ProvaMilitarTeoricaController extends Controller {
 	 */
 	public function update(Request $request, $id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova_militar_teorica = ProvaMilitarTeorica::findOrFail($id);
 
 		$prova_militar_teorica->IdProvaMilitar = $request->input("IdProvaMilitar");
@@ -107,6 +119,9 @@ class ProvaMilitarTeoricaController extends Controller {
 	 */
 	public function destroy($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova_militar_teorica = ProvaMilitarTeorica::findOrFail($id);
 		$prova_militar_teorica->delete();
 

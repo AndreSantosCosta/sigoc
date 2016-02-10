@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\User;
 use App\Militar;
 use App\Posto;
 use App\Unidade;
@@ -31,6 +31,9 @@ class MilitarController extends Controller {
 	 */
 	public function create()
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$militar = new Militar();
 		$listaMotivos = MotivoInativoMilitar::all('descricao', 'id');
 		$listaPostos = Posto::all('descricao', 'id');
@@ -50,7 +53,9 @@ class MilitarController extends Controller {
 	 */ 
 	public function store(Request $request)
 	{
-		
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$a = new Militar();
 		$a->num_mecanografico = $request->input("num_mecanografico");
 		$a->posto_id = $request->input("posto_id");
@@ -97,6 +102,9 @@ class MilitarController extends Controller {
 	 */
 	public function edit($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$militar = Militar::findOrFail($id);
 		$listaPostos = Posto::all('descricao', 'id');
 		$listaUnidades = Unidade::all('descricao', 'id');
@@ -115,8 +123,10 @@ class MilitarController extends Controller {
 	 */
 	public function update(Request $request, $id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$a = Militar::findOrFail($id);
-
 		$a->num_mecanografico = $request->input("num_mecanografico");
 		$a->posto_id = $request->input("posto_id");
 		$a->apelido = $request->input("apelido");
@@ -154,9 +164,11 @@ class MilitarController extends Controller {
 	 */
 	public function destroy($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$a = Militar::findOrFail($id);
 		$a->delete();
-
 		return redirect()->route('militars.index')->with('message', 'Item deleted successfully.');
 	}
 

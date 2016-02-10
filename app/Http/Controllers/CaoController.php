@@ -2,7 +2,7 @@
  
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\User;
 use App\OrigemCao;
 use App\Cao;
 use App\Unidade;
@@ -28,6 +28,9 @@ class CaoController extends Controller {
 	 */
 	public function create()
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$cao = new Cao();
 		$listaOrigem = OrigemCao::all('descricao', 'id');
 		$listaUnidades = Unidade::all('descricao', 'id');
@@ -43,6 +46,9 @@ class CaoController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$a = new Cao();
 		$a->num_matricula = $request->input("num_matricula");
 		$a->nomeCao = $request->input("nomeCao");
@@ -88,6 +94,9 @@ class CaoController extends Controller {
 	 */
 	public function edit($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$cao = Cao::findOrFail($id);
 		$listaOrigem = OrigemCao::all('descricao', 'id');
 		$listaUnidades = Unidade::all('descricao', 'id');
@@ -105,6 +114,9 @@ class CaoController extends Controller {
 	 */
 	public function update(Request $request, $id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$a = Cao::findOrFail($id);
 		$a->num_matricula = $request->input("num_matricula");
 		$a->nomeCao = $request->input("nomeCao");
@@ -144,6 +156,9 @@ class CaoController extends Controller {
 	 */
 	public function destroy($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$a = Cao::findOrFail($id);
 		$a->delete();
 		return redirect()->route('caos.index')->with('message', 'Item deleted successfully.');

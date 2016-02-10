@@ -29,9 +29,9 @@ class UserController extends Controller {
 	 */
 	public function create()
 	{
-				/*if (User::tipoUserLogado()=='A'){
+		if (User::tipoUserLogado()=='U'){
 			echo abort(403, 'Acesso não autorizado');
-		}*/
+		}
 		$user = new User();
 		$listaTipoMilitar =  Enumeraveis::getTiposMilitarList();
 		//$listaNomeProprioMilitar = Militar::all('nomeProprio', 'id');
@@ -47,9 +47,9 @@ class UserController extends Controller {
 	 */
 	public function store(Request $request)
 	{
-		/*if (User::tipoUserLogado()=='A'){
+		if (User::tipoUserLogado()=='U'){
 			echo abort(403, 'Acesso não autorizado');
-		}*/
+		}
 		$a = new User();
 		$a->name = $request->input("name");
 		$a->email = $request->input("email");
@@ -88,6 +88,9 @@ class UserController extends Controller {
 	 */
 	public function edit($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$user = User::findOrFail($id);
 		$listaTipoMilitar =  Enumeraveis::getTiposMilitarList();
 		//$listaNomeProprioMilitar = Militar::all('nomeProprio', 'id');
@@ -104,6 +107,9 @@ class UserController extends Controller {
 	 */
 	public function update(Request $request, $id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$a = User::findOrFail($id);
 		$a->name = $request->input("name");
 		$a->email = $request->input("email");
@@ -127,6 +133,9 @@ class UserController extends Controller {
 	 */
 	public function destroy($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$user = User::findOrFail($id);
 		$user->delete();
 		return redirect()->route('users.index')->with('message', 'Item deleted successfully.');

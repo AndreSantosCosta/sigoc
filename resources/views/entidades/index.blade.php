@@ -1,10 +1,16 @@
+<?php
+use App\User;
+?>
+
 @extends('layout')
 
 @section('header')
     <div class="page-header clearfix">
         <h1>
             <i class="glyphicon glyphicon-align-justify"></i> Entidades
-            <a class="btn btn-success pull-right" href="{{ route('entidades.create') }}"><i class="glyphicon glyphicon-plus"></i> Create</a>
+            <?php if (User::tipoUserLogado()=='A' || User::tipoUserLogado()=='G') {?>
+                <a class="btn btn-success pull-right" href="{{ route('entidades.create') }}"><i class="glyphicon glyphicon-plus"></i> Criar</a>
+            <?php }?>
         </h1>
 
     </div>
@@ -45,13 +51,17 @@
                     <td>{{$entidade->tipoimagem}}</td>
                     <td>{{$entidade->observacoes}}</td>
                                 <td class="text-right">
-                                    <a class="btn btn-xs btn-primary" href="{{ route('entidades.show', $entidade->id) }}"><i class="glyphicon glyphicon-eye-open"></i> View</a>
-                                    <a class="btn btn-xs btn-warning" href="{{ route('entidades.edit', $entidade->id) }}"><i class="glyphicon glyphicon-edit"></i> Edit</a>
-                                    <form action="{{ route('entidades.destroy', $entidade->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Delete</button>
-                                    </form>
+                                    <?php if (User::tipoUserLogado()=='A' || User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U') {?>
+                                        <a class="btn btn-xs btn-primary" href="{{ route('entidades.show', $entidade->id) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver</a>
+                                    <?php }?>
+                                    <?php if (User::tipoUserLogado()=='A') {?>
+                                        <a class="btn btn-xs btn-warning" href="{{ route('entidades.edit', $entidade->id) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>
+                                        <form action="{{ route('entidades.destroy', $entidade->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Apagar</button>
+                                        </form>
+                                    <?php }?>
                                 </td>
                             </tr>
                         @endforeach
@@ -59,7 +69,7 @@
                 </table>
                 {!! $entidades->render() !!}
             @else
-                <h3 class="text-center alert alert-info">Empty!</h3>
+                <h3 class="text-center alert alert-info">Vazio!</h3>
             @endif
 
         </div>

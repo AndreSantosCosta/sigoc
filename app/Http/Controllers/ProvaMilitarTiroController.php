@@ -2,7 +2,7 @@
  
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\User;
 use App\ProvaMilitarTiro;
 use Illuminate\Http\Request;
 
@@ -27,6 +27,9 @@ class ProvaMilitarTiroController extends Controller {
 	 */
 	public function create()
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova = new ProvaMilitarTiro();
 	
 		return view('prova_militar_tiros.create', compact("prova"));
@@ -40,6 +43,9 @@ class ProvaMilitarTiroController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$a = new ProvaMilitarTiro();
 		
 		$a->dataProva = $request->input("dataProva");
@@ -76,6 +82,9 @@ class ProvaMilitarTiroController extends Controller {
 	 */
 	public function edit($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova_militar_tiro = ProvaMilitarTiro::findOrFail($id);
 
 		return view('prova_militar_tiros.edit', compact('prova_militar_tiro'));
@@ -90,6 +99,9 @@ class ProvaMilitarTiroController extends Controller {
 	 */
 	public function update(Request $request, $id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$a = ProvaMilitarTiro::findOrFail($id);
 		$a->dataProva = $request->input("dataProva");
         $a->local = $request->input("local");
@@ -111,6 +123,9 @@ class ProvaMilitarTiroController extends Controller {
 	 */
 	public function destroy($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$a = ProvaMilitarTiro::findOrFail($id);
 		$a->delete();
 

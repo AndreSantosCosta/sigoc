@@ -2,7 +2,7 @@
   
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\User;
 use App\Binomio;
 use App\Militar;
 use App\Cao;
@@ -31,7 +31,10 @@ class BinomioController extends Controller {
 	 * @return Response
 	 */
 	public function create()
-	{ 
+	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		} 
 		$binomio = new Binomio();
 		$listaVertente = VertenteBinomio::all('descricao', 'id');
 		$listaUnidades = Unidade::all('descricao', 'id');
@@ -48,8 +51,10 @@ class BinomioController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$a = new Binomio();
-
 		$a->data_inicio = $request->input("data_inicio");
         $a->militar_id = $request->input("militar_id");
         $a->cao_id = $request->input("cao_id");
@@ -89,6 +94,9 @@ class BinomioController extends Controller {
 	 */
 	public function edit($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$binomio = Binomio::findOrFail($id);
 		$listaVertente = VertenteBinomio::all('descricao', 'id');
 		$listaUnidades = Unidade::all('descricao', 'id');
@@ -106,8 +114,10 @@ class BinomioController extends Controller {
 	 */
 	public function update(Request $request, $id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$a = Binomio::findOrFail($id);
-
 		$a->data_inicio = $request->input("data_inicio");
         $a->militar_id = $request->input("militar_id");
         $a->cao_id = $request->input("cao_id");
@@ -138,9 +148,11 @@ class BinomioController extends Controller {
 	 */
 	public function destroy($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$a = Binomio::findOrFail($id);
 		$a->delete();
-
 		return redirect()->route('binomios.index')->with('message', 'Item deleted successfully.');
 	}
 

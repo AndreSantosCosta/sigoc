@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\User;
 use App\ProvasGeralBinomio;
 use Illuminate\Http\Request;
 
@@ -27,6 +27,9 @@ class ProvasGeralBinomioController extends Controller {
 	 */
 	public function create()
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		return view('provas_geral_binomios.create');
 	}
 
@@ -38,6 +41,9 @@ class ProvasGeralBinomioController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$provas_geral_binomio = new ProvasGeralBinomio();
 
 		$provas_geral_binomio->IdProvaBinomio = $request->input("IdProvaBinomio");
@@ -78,6 +84,9 @@ class ProvasGeralBinomioController extends Controller {
 	 */
 	public function edit($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$provas_geral_binomio = ProvasGeralBinomio::findOrFail($id);
 
 		return view('provas_geral_binomios.edit', compact('provas_geral_binomio'));
@@ -92,6 +101,9 @@ class ProvasGeralBinomioController extends Controller {
 	 */
 	public function update(Request $request, $id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$provas_geral_binomio = ProvasGeralBinomio::findOrFail($id);
 
 		$provas_geral_binomio->IdProvaBinomio = $request->input("IdProvaBinomio");
@@ -119,6 +131,9 @@ class ProvasGeralBinomioController extends Controller {
 	 */
 	public function destroy($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$provas_geral_binomio = ProvasGeralBinomio::findOrFail($id);
 		$provas_geral_binomio->delete();
 

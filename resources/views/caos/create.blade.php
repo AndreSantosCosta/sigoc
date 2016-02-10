@@ -1,3 +1,7 @@
+<?php
+use App\User;
+?>
+
 @extends('layout')
 
 @section('header')
@@ -192,7 +196,9 @@
  </div>
 
  <div class="well well-sm">
+  <?php if (User::tipoUserLogado()=='A' || User::tipoUserLogado()=='G') {?>
    <button type="submit" class="btn btn-primary">Criar</button>
+  <?php }?>
    <a class="btn btn-link pull-right" href="{{ route('caos.index') }}"><i class="glyphicon glyphicon-backward"></i> Voltar</a>
  </div>
 </div>

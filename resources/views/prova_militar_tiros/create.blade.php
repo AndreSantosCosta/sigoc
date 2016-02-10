@@ -1,3 +1,7 @@
+<?php
+use App\User;
+?>
+
 @extends('layout')
 
 @section('header')
@@ -58,7 +62,9 @@
          @endif
        </div>
        <div class="well well-sm">
-        <button type="submit" class="btn btn-primary">Criar</button>
+        <?php if (User::tipoUserLogado()=='A' || User::tipoUserLogado()=='G') {?>
+          <button type="submit" class="btn btn-primary">Criar</button>
+        <?php }?>
         <a class="btn btn-link pull-right" href="{{ route('prova_militar_tiros.index') }}"><i class="glyphicon glyphicon-backward"></i> Voltar</a>
       </div>
     </form>

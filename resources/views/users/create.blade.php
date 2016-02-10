@@ -1,3 +1,7 @@
+<?php
+use App\User;
+?>
+
 @extends('layout')
 
 @section('header')
@@ -61,58 +65,11 @@
         <span class="help-block">{{ $errors->first("inativo") }}</span>
         @endif
       </div>
-
-        <!-- *********************************************************************************************** -->
-        <?php /*<div class="form-group @if($errors->has('password')) has-error @endif">
-          <label for="password-field">Password</label>
-          <input type="password" id="password-field" name="password" class="form-control" value="{{ old("password") }}"/>
-          @if($errors->has("password"))
-          <span class="help-block">{{ $errors->first("password") }}</span>
-          @endif
-        </div>-->
-        <!--<div class="form-group @if($errors->has('tipo')) has-error @endif">
-          <label for="tipo-field">Tipo</label>
-          <input type="text" id="tipo-field" name="tipo" class="form-control" value="{{ old("tipo") }}"/>
-          @if($errors->has("tipo"))
-          <span class="help-block">{{ $errors->first("tipo") }}</span>
-          @endif
-        </div>
-        <div class="form-group @if($errors->has('inativo')) has-error @endif">
-          <label for="inativo-field">Inativo</label>
-          <input type="text" id="inativo-field" name="inativo" class="form-control" value="{{ old("inativo") }}"/>
-          @if($errors->has("inativo"))
-          <span class="help-block">{{ $errors->first("inativo") }}</span>
-          @endif
-        </div>
-        */ ?>
-      <!-- *********************************************************************************************** -->
-      <?php /*NOME PROPRIO E APELIDO
-      <div class="form-group @if($errors->has('nomeProprio')) has-error @endif">
-        <label for="nomeProprio-field">Nome Próprio Militar</label>
-        <select class="form-control" name="nomeProprio">
-          @foreach($listaNomeProprioMilitar as $item)
-          <option value="{{$item->id}}">{{$item->nomeProprio}}</option>
-          @endforeach
-        </select>
-        @if($errors->has("nomeProprio"))
-        <span class="help-block">{{ $errors->first("nomeProprio") }}</span>
-        @endif
-      </div>
-      <div class="form-group @if($errors->has('apelido')) has-error @endif">
-        <label for="apelido-field">Apelido Militar</label>
-        <select class="form-control" name="apelido">
-          @foreach($listaApelidoMilitar as $item)
-          <option value="{{$item->id}}">{{$item->apelido}}</option>
-          @endforeach
-        </select>
-        @if($errors->has("apelido"))
-        <span class="help-block">{{ $errors->first("apelido") }}</span>
-        @endif
-      </div>
-      */ ?>
       <!-- *********************************************************************************************** -->
         <div class="well well-sm">
-          <button type="submit" class="btn btn-primary">Criar</button>
+          <?php if (User::tipoUserLogado()=='A' || User::tipoUserLogado()=='G') {?>
+            <button type="submit" class="btn btn-primary">Criar</button>
+          <?php }?>
           <a class="btn btn-link pull-right" href="{{ route('users.index') }}"><i class="glyphicon glyphicon-backward"></i> Voltar</a>
         </div>
       </div>

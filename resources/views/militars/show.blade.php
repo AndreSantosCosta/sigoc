@@ -1,4 +1,8 @@
- @extends('layout')
+<?php
+use App\User;
+?>
+
+@extends('layout')
 @section('header')
 <div class="col-md-12">
     <div class="page-header">
@@ -6,15 +10,21 @@
         <form action="{{ route('militars.destroy', $militar->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
             <input type="hidden" name="_method" value="DELETE">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <div class="btn-group pull-left" role="group" aria-label="...">
-             <a class="btn btn-success" href="{{ route('criarProva' , array('tipoEntidade'=>'M', 'tipoProva'=>'Tiro', 'entidade_id'=>$militar->id)) }}"><i class="glyphicon glyphicon-plus"></i> Criar Prova Tiro</a>
-             <a class="btn btn-success" href="{{ route('criarProva' , array('tipoEntidade'=>'M', 'tipoProva'=>'Teorica', 'entidade_id'=>$militar->id)) }}"><i class="glyphicon glyphicon-plus"></i> Criar Prova Teorica</a>
-             <a class="btn btn-success" href="{{ route('criarProva' , array('tipoEntidade'=>'M', 'tipoProva'=>'PAF', 'entidade_id'=>$militar->id)) }}"><i class="glyphicon glyphicon-plus"></i> Criar Prova PAF</a>
-             </div>
+            <?php if (User::tipoUserLogado()=='A' || User::tipoUserLogado()=='G') {?>
+              <div class="btn-group pull-left" role="group" aria-label="...">
+               <a class="btn btn-success" href="{{ route('criarProva' , array('tipoEntidade'=>'M', 'tipoProva'=>'Tiro', 'entidade_id'=>$militar->id)) }}"><i class="glyphicon glyphicon-plus"></i> Criar Prova Tiro</a>
+               <a class="btn btn-success" href="{{ route('criarProva' , array('tipoEntidade'=>'M', 'tipoProva'=>'Teorica', 'entidade_id'=>$militar->id)) }}"><i class="glyphicon glyphicon-plus"></i> Criar Prova Teorica</a>
+               <a class="btn btn-success" href="{{ route('criarProva' , array('tipoEntidade'=>'M', 'tipoProva'=>'PAF', 'entidade_id'=>$militar->id)) }}"><i class="glyphicon glyphicon-plus"></i> Criar Prova PAF</a>
+               </div>
+            <?php }?>
             <div class="btn-group pull-right" role="group" aria-label="...">
-                <a class="btn btn-primary" href="{{ route('provasPorEntidade', array('tipoEntidade'=>'M', 'entidade_id'=>$militar->id)) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver Provas</a>
-                <a class="btn btn-warning btn-group" role="group" href="{{ route('militars.edit', $militar->id) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>
-                <button type="submit" class="btn btn-danger">Apagar <i class="glyphicon glyphicon-trash"></i></button>
+                <?php if (User::tipoUserLogado()=='A' || User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U') {?>
+                  <a class="btn btn-primary" href="{{ route('provasPorEntidade', array('tipoEntidade'=>'M', 'entidade_id'=>$militar->id)) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver Provas</a>
+                <?php }?>
+                <?php if (User::tipoUserLogado()=='A') {?>
+                  <a class="btn btn-warning btn-group" role="group" href="{{ route('militars.edit', $militar->id) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>
+                  <button type="submit" class="btn btn-danger">Apagar <i class="glyphicon glyphicon-trash"></i></button>
+                <?php }?>
             </div>
         </form>
     </div>

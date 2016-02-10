@@ -1,3 +1,7 @@
+<?php
+use App\User;
+?>
+
 @extends('layout')
 @section('header')
 <div class="col-md-12">
@@ -6,6 +10,7 @@
     <form action="{{ route('binomios.destroy', $binomio->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
         <input type="hidden" name="_method" value="DELETE">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
+         <?php if (User::tipoUserLogado()=='A' || User::tipoUserLogado()=='G') {?>
          <div class="btn-group pull-left" role="group" aria-label="...">
             <a class="btn btn-success" href="{{ route('criarProva' , array('tipoEntidade'=>'B', 'tipoProva'=>'TANAT2', 'entidade_id'=>$binomio->id)) }}"><i class="glyphicon glyphicon-plus"></i> Criar Prova TANAT2</a>
              <a class="btn btn-success" href="{{ route('criarProva' , array('tipoEntidade'=>'B', 'tipoProva'=>'ABO', 'entidade_id'=>$binomio->id)) }}"><i class="glyphicon glyphicon-plus"></i> Criar Prova Obediência</a>
@@ -17,11 +22,17 @@
              <a class="btn btn-success" href="{{ route('criarProva' , array('tipoEntidade'=>'B', 'tipoProva'=>'ABP', 'entidade_id'=>$binomio->id)) }}"><i class="glyphicon glyphicon-plus"></i> Criar Prova Policial</a>
              <a class="btn btn-success" href="{{ route('criarProva' , array('tipoEntidade'=>'B', 'tipoProva'=>'DOD', 'entidade_id'=>$binomio->id)) }}"><i class="glyphicon glyphicon-plus"></i> Criar Prova DOD</a>
           </div>
+          <?php }?>
         <div class="btn-group pull-right" role="group" aria-label="...">
-        <a class="btn btn-primary" href="{{ route('provasPorEntidade', array('tipoEntidade'=>'B', 'entidade_id'=>$binomio->id)) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver Provas</a>
-            <a class="btn btn-warning btn-group" role="group" href="{{ route('binomios.edit', $binomio->id) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>
-            <button type="submit" class="btn btn-danger">Apagar <i class="glyphicon glyphicon-trash"></i></button>
+        <?php if (User::tipoUserLogado()=='A' || User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U') {?>
+          <a class="btn btn-primary" href="{{ route('provasPorEntidade', array('tipoEntidade'=>'B', 'entidade_id'=>$binomio->id)) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver Provas</a>
+        <?php }?>
+            <?php if (User::tipoUserLogado()=='A') {?>
+              <a class="btn btn-warning btn-group" role="group" href="{{ route('binomios.edit', $binomio->id) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>
+              <button type="submit" class="btn btn-danger">Apagar <i class="glyphicon glyphicon-trash"></i></button>
+            <?php }?>
         </div>
+      
       </form>
     </div>
 </div> 

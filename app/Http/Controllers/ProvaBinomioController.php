@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\User;
 use App\ProvaBinomio;
 use Illuminate\Http\Request;
 
@@ -27,6 +27,9 @@ class ProvaBinomioController extends Controller {
 	 */
 	public function create()
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		return view('prova_binomios.create');
 	}
 
@@ -38,8 +41,10 @@ class ProvaBinomioController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova_binomio = new ProvaBinomio();
-
 		$prova_binomio->prova_id = $request->input("prova_id");
         $prova_binomio->binomio_id = $request->input("binomio_id");
         $prova_binomio->tipoProva = $request->input("tipoProva");
@@ -71,6 +76,9 @@ class ProvaBinomioController extends Controller {
 	 */
 	public function edit($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova_binomio = ProvaBinomio::findOrFail($id);
 
 		return view('prova_binomios.edit', compact('prova_binomio'));
@@ -85,8 +93,10 @@ class ProvaBinomioController extends Controller {
 	 */
 	public function update(Request $request, $id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova_binomio = ProvaBinomio::findOrFail($id);
-
 		$prova_binomio->prova_id = $request->input("prova_id");
         $prova_binomio->binomio_id = $request->input("binomio_id");
         $prova_binomio->tipoProva = $request->input("tipoProva");
@@ -105,9 +115,11 @@ class ProvaBinomioController extends Controller {
 	 */
 	public function destroy($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova_binomio = ProvaBinomio::findOrFail($id);
 		$prova_binomio->delete();
-
 		return redirect()->route('prova_binomios.index')->with('message', 'Item deleted successfully.');
 	}
 

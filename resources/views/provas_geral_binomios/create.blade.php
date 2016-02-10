@@ -1,8 +1,12 @@
+<?php
+use App\User;
+?>
+
 @extends('layout')
 
 @section('header')
     <div class="page-header">
-        <h1><i class="glyphicon glyphicon-plus"></i> ProvasGeralBinomios / Create </h1>
+        <h1><i class="glyphicon glyphicon-plus"></i> ProvasGeralBinomios / Criar </h1>
     </div>
 @endsection
 
@@ -65,8 +69,10 @@
                        @endif
                     </div>
                 <div class="well well-sm">
-                    <button type="submit" class="btn btn-primary">Create</button>
-                    <a class="btn btn-link pull-right" href="{{ route('provas_geral_binomios.index') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>
+                  <?php if (User::tipoUserLogado()=='A' || User::tipoUserLogado()=='G') {?>
+                    <button type="submit" class="btn btn-primary">Criar</button>
+                  <?php }?>
+                    <a class="btn btn-link pull-right" href="{{ route('provas_geral_binomios.index') }}"><i class="glyphicon glyphicon-backward"></i> Voltar</a>
                 </div>
             </form>
 

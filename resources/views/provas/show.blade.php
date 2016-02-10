@@ -1,15 +1,21 @@
+<?php
+use App\User;
+?>
+
 @extends('layout')
 @section('header')
 <div class="page-header">
         <h1>Provas / Show #{{$prova->id}}</h1>
-        <form action="{{ route('provas.destroy', $prova->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <div class="btn-group pull-right" role="group" aria-label="...">
-                <a class="btn btn-warning btn-group" role="group" href="{{ route('provas.edit', $prova->id) }}"><i class="glyphicon glyphicon-edit"></i> Edit</a>
-                <button type="submit" class="btn btn-danger">Delete <i class="glyphicon glyphicon-trash"></i></button>
-            </div>
-        </form>
+        <?php if (User::tipoUserLogado()=='A') {?>
+            <form action="{{ route('provas.destroy', $prova->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <div class="btn-group pull-right" role="group" aria-label="...">
+                    <a class="btn btn-warning btn-group" role="group" href="{{ route('provas.edit', $prova->id) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>
+                    <button type="submit" class="btn btn-danger">Apagar <i class="glyphicon glyphicon-trash"></i></button>
+                </div>
+            </form>
+        <?php }?>
     </div>
 @endsection
 
@@ -48,7 +54,7 @@
                 </div>
             </form>
 
-            <a class="btn btn-link" href="{{ route('provas.index') }}"><i class="glyphicon glyphicon-backward"></i>  Back</a>
+            <a class="btn btn-link" href="{{ route('provas.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
 
         </div>
     </div>

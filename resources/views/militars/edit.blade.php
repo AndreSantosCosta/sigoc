@@ -1,3 +1,7 @@
+<?php
+use App\User;
+?>
+
 @extends('layout')
 
 @section('header')
@@ -161,7 +165,9 @@
     @endif
   </div>
   <div class="well well-sm">
-    <button type="submit" class="btn btn-primary">Guardar</button>
+    <?php if (User::tipoUserLogado()=='A') {?>
+      <button type="submit" class="btn btn-primary">Guardar</button>
+    <?php }?>
     <a class="btn btn-link pull-right" href="{{ route('militars.index') }}"><i class="glyphicon glyphicon-backward"></i>  Voltar</a>
   </div>
 </div>

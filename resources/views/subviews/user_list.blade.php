@@ -24,6 +24,7 @@ use App\User;
                     <td>{{$user->TiposCompletoMilitar}}</td>
                     <td>{{$user->NomeProprioMilitar}}</td>
                     <td>{{$user->NomeApelidoMilitar}}</td>
+
                     <td></td>
                     <td></td>
                     <td class="text-right">
@@ -32,8 +33,6 @@ use App\User;
                         <?php }?>
                         <?php if (User::tipoUserLogado()=='A') {?>
                             <a class="btn btn-xs btn-warning" href="{{ route('users.edit', $user->id) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>
-                        <?php }?>
-                        <?php if (User::tipoUserLogado()=='A') {?>
                             <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">

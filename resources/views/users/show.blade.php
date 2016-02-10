@@ -26,10 +26,6 @@ use App\User;
         <div class="col-md-12">
             <form action="#">
                 <div class="col-md-12">
-                    <!--<div class="form-group">
-                        <label for="nome">ID</label>
-                        <p class="form-control-static"></p>
-                    </div>-->
                     <div class="form-group">
                          <label for="name">Nome</label>
                          <p class="form-control-static">{{$user->name}}</p>

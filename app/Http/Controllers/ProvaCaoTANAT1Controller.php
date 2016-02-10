@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\User;
 use App\ProvaCaoTANAT1;
 use Illuminate\Http\Request;
 
@@ -27,6 +27,9 @@ class ProvaCaoTANAT1Controller extends Controller {
 	 */
 	public function create()
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		return view('prova_cao_t_a_n_a_t1s.create');
 	}
 
@@ -38,6 +41,9 @@ class ProvaCaoTANAT1Controller extends Controller {
 	 */
 	public function store(Request $request)
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova_cao_t_a_n_a_t1 = new ProvaCaoTANAT1();
 
 		$prova_cao_t_a_n_a_t1->IdProvaCao = $request->input("IdProvaCao");
@@ -86,6 +92,9 @@ class ProvaCaoTANAT1Controller extends Controller {
 	 */
 	public function edit($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova_cao_t_a_n_a_t1 = ProvaCaoTANAT1::findOrFail($id);
 
 		return view('prova_cao_t_a_n_a_t1s.edit', compact('prova_cao_t_a_n_a_t1'));
@@ -100,6 +109,9 @@ class ProvaCaoTANAT1Controller extends Controller {
 	 */
 	public function update(Request $request, $id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova_cao_t_a_n_a_t1 = ProvaCaoTANAT1::findOrFail($id);
 
 		$prova_cao_t_a_n_a_t1->IdProvaCao = $request->input("IdProvaCao");
@@ -135,6 +147,9 @@ class ProvaCaoTANAT1Controller extends Controller {
 	 */
 	public function destroy($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova_cao_t_a_n_a_t1 = ProvaCaoTANAT1::findOrFail($id);
 		$prova_cao_t_a_n_a_t1->delete();
 

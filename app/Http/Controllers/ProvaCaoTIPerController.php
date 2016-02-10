@@ -2,7 +2,7 @@
  
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\User;
 use App\ProvaCaoTIPer;
 use Illuminate\Http\Request;
 
@@ -27,6 +27,9 @@ class ProvaCaoTIPerController extends Controller {
 	 */
 	public function create()
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova = new ProvaCaoTIPer();
 		return view('prova_cao_t_i_pers.create', compact('prova'));
 	}
@@ -39,6 +42,9 @@ class ProvaCaoTIPerController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$a = new ProvaCaoTIPer();
 		
 		$a->entidade_id = $request->input("entidade_id");
@@ -85,6 +91,9 @@ class ProvaCaoTIPerController extends Controller {
 	 */
 	public function edit($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova_cao_t_i_per = ProvaCaoTIPer::findOrFail($id);
 
 		return view('prova_cao_t_i_pers.edit', compact('prova_cao_t_i_per'));
@@ -99,6 +108,9 @@ class ProvaCaoTIPerController extends Controller {
 	 */
 	public function update(Request $request, $id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$a = ProvaCaoTIPer::findOrFail($id);
 
 		$a->dataProva = $request->input("dataProva");
@@ -131,6 +143,9 @@ class ProvaCaoTIPerController extends Controller {
 	 */
 	public function destroy($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$a = ProvaCaoTIPer::findOrFail($id);
 		$a->delete();
 

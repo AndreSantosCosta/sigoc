@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\User;
 use App\ProvaCaoMPMorf;
 use Illuminate\Http\Request;
 
@@ -27,6 +27,9 @@ class ProvaCaoMPMorfController extends Controller {
 	 */
 	public function create()
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		return view('prova_cao_m_p_morves.create');
 	}
 
@@ -38,8 +41,10 @@ class ProvaCaoMPMorfController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+		if (User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova_cao_m_p_morf = new ProvaCaoMPMorf();
-
 		$prova_cao_m_p_morf->IdProvaCao = $request->input("IdProvaCao");
         $prova_cao_m_p_morf->data_nascim = $request->input("data_nascim");
         $prova_cao_m_p_morf->peso = $request->input("peso");
@@ -82,6 +87,9 @@ class ProvaCaoMPMorfController extends Controller {
 	 */
 	public function edit($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova_cao_m_p_morf = ProvaCaoMPMorf::findOrFail($id);
 
 		return view('prova_cao_m_p_morves.edit', compact('prova_cao_m_p_morf'));
@@ -96,8 +104,10 @@ class ProvaCaoMPMorfController extends Controller {
 	 */
 	public function update(Request $request, $id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova_cao_m_p_morf = ProvaCaoMPMorf::findOrFail($id);
-
 		$prova_cao_m_p_morf->IdProvaCao = $request->input("IdProvaCao");
         $prova_cao_m_p_morf->data_nascim = $request->input("data_nascim");
         $prova_cao_m_p_morf->peso = $request->input("peso");
@@ -127,6 +137,9 @@ class ProvaCaoMPMorfController extends Controller {
 	 */
 	public function destroy($id)
 	{
+		if (User::tipoUserLogado()=='G' || User::tipoUserLogado()=='U'){
+			echo abort(403, 'Acesso não autorizado');
+		}
 		$prova_cao_m_p_morf = ProvaCaoMPMorf::findOrFail($id);
 		$prova_cao_m_p_morf->delete();
 
