@@ -118,7 +118,7 @@ body{
 /* ****************************************************** */
 
 .container_login, .container_register{
-    padding: 144px 455px 144px 455px;
+    padding: 80px 455px 41px 470px;
     background-image: url('/assets/img/login_register_formas.png');
     background-repeat: no-repeat;
     width: 1226px;
@@ -169,7 +169,7 @@ body{
 	border-style: solid;
 	border-color: #a37b40;
     width: 300px;
-    height: 373px;
+    height: 423px;
     opacity: 0.9;
 }
 

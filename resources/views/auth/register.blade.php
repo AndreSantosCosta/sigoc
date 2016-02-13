@@ -34,6 +34,9 @@
                 <div class='col-xs-8 col-xs-offset-2'>
                     <input type="password" name="password_confirmation" class="form-control" placeholder="Confirmar Password">
                 </div>
+                <div class='col-xs-8 col-xs-offset-2'>
+                    <input type="text" name="tipo" value="{{ old('tipo') }}" class="form-control" placeholder="Tipo Utilizador">
+                </div>
                 <div class='col-xs-12 text-center'>
                     <button type="submit" class="btn btn-primary">Registar</button>
                 </div>

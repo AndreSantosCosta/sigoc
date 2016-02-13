@@ -21,7 +21,7 @@ class User extends BaseUser
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password'
+        'name', 'email', 'password', 'tipo'
     ];
 
     /**
@@ -101,7 +101,7 @@ public static function tipoUserLogado(){
         return $user->first()->tipo;
     }
     return "";
-  }
+}
 
 
 

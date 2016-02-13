@@ -7,7 +7,7 @@ use App\User;
 @section('header')
 <div class="col-md-12">
     <div class="page-header">
-        <h1><i class="glyphicon glyphicon-plus"></i> ProvaCaoTIPers / Criar </h1>
+        <h1><i class="glyphicon glyphicon-plus"></i>Criar Teste Inicial de Personalidade</h1>
     </div>
      </div>
 @endsection
